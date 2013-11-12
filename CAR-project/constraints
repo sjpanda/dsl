@@ -1,0 +1,3 @@
+1. "defaultvalue" of Column must have the same type as "type" of Column
+2. size of Bit ranges from 1 to 64
+3. sizes of Char and Varchar range from 0 to 255

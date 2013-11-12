@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="webapp" nsURI="http://webapp/1.0" nsPrefix="webapp">
+  <eAnnotations source="http://www.eclipse.org/OCL/Import">
+    <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore#/"/>
+  </eAnnotations>
+  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="WebApp">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="appConfig" lowerBound="1"
+        eType="#//AppConfig" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="webConfig" lowerBound="1"
+        eType="#//WebConfig" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="library" upperBound="-1"
+        eType="#//Library" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="view" upperBound="-1" eType="#//View"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" upperBound="-1"
+        eType="#//Controller" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="resource" eType="#//Resource"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="framework" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AppConfig"/>
+  <eClassifiers xsi:type="ecore:EClass" name="View"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Library"/>
+  <eClassifiers xsi:type="ecore:EClass" name="WebConfig"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Model">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="table" upperBound="-1"
+        eType="#//Table" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="databaseName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userName" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Resource">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="image" upperBound="-1"
+        eType="#//Image" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="file" upperBound="-1" eType="#//File"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="propertie" upperBound="-1"
+        eType="#//Properties" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Image"/>
+  <eClassifiers xsi:type="ecore:EClass" name="File"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Properties"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Table">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" upperBound="-1"
+        eType="#//Column" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//Constraint"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="charset" eType="#//Charset"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Column">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="detailC"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="detailC" value="&#xA;&#x9;&#x9;self.type &lt;> ColumnType::NUMERIC implies self.detail->isEmpty()"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNotNull" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useZeroFill" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="detail" eType="#//Detail"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ColumnType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="primaryKey" eType="#//PrimaryKey"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="unique" upperBound="-1"
+        eType="#//Unique" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="check" upperBound="-1"
+        eType="#//Check" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="foreignKey" upperBound="-1"
+        eType="#//ForeignKey" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="PrimaryKey">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
+        upperBound="-1" eType="#//Column"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ForeignKey">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
+        eType="#//Column"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onDelete" eType="#//OnDelete"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="onUpdate" eType="#//OnUpdate"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Unique">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
+        upperBound="-1" eType="#//Column"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Check">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expr" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Behavior">
+    <eLiterals name="CASCADE"/>
+    <eLiterals name="RESTRICT" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnDelete">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behavior" lowerBound="1"
+        eType="#//Behavior"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="OnUpdate">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="behavior" lowerBound="1"
+        eType="#//Behavior"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Charset">
+    <eLiterals name="ARMSCII8" value="20"/>
+    <eLiterals name="ASCII" value="8"/>
+    <eLiterals name="BIG5"/>
+    <eLiterals name="CP852" value="27"/>
+    <eLiterals name="CP866" value="23"/>
+    <eLiterals name="CP932" value="34"/>
+    <eLiterals name="CP1250" value="17"/>
+    <eLiterals name="CP1251" value="29"/>
+    <eLiterals name="CP1256" value="30"/>
+    <eLiterals name="CP1257" value="31"/>
+    <eLiterals name="DEC8" value="1"/>
+    <eLiterals name="BINARY" value="32"/>
+    <eLiterals name="CP850" value="2"/>
+    <eLiterals name="LATIN2" value="6"/>
+    <eLiterals name="EUCJMPS" value="35"/>
+    <eLiterals name="EUCKR" value="13"/>
+    <eLiterals name="GB2312" value="15"/>
+    <eLiterals name="GBK" value="18"/>
+    <eLiterals name="GEOSTD8" value="33"/>
+    <eLiterals name="GREEK" value="16"/>
+    <eLiterals name="HEBREW" value="11"/>
+    <eLiterals name="HP8" value="3"/>
+    <eLiterals name="KEYBCS2" value="24"/>
+    <eLiterals name="KOI8R" value="4"/>
+    <eLiterals name="KOI8U" value="14"/>
+    <eLiterals name="LATIN1" value="5"/>
+    <eLiterals name="LATIN5" value="19"/>
+    <eLiterals name="LATIN7" value="28"/>
+    <eLiterals name="MACCE" value="25"/>
+    <eLiterals name="MACROMAN" value="26"/>
+    <eLiterals name="SJIS" value="10"/>
+    <eLiterals name="SWE7" value="7"/>
+    <eLiterals name="TIS620" value="12"/>
+    <eLiterals name="UCS2" value="22"/>
+    <eLiterals name="UJIS" value="9"/>
+    <eLiterals name="UTF8" value="21"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Numeric" eSuperTypes="#//NotIntBitNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Detail">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Decimal" eSuperTypes="#//NotIntBitNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Int" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useZeroFill" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Integer" eSuperTypes="#//Int"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SmallInt" eSuperTypes="#//Int"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TinyInt" eSuperTypes="#//Int"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MediumInt" eSuperTypes="#//Int"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BigInt" eSuperTypes="#//Int"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NotIntBitNumericType" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="detail" eType="#//Detail"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Float" eSuperTypes="#//NotIntBitNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Real" eSuperTypes="#//NotIntBitNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Double" eSuperTypes="#//NotIntBitNumericType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Bit">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Date"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DateTime"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TimeStamp"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Time"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Year">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="#//YearSize"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="YearSize">
+    <eLiterals name="TWO"/>
+    <eLiterals name="FOUR" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Char">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Varchar">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Binary">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="VarBinary">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Blob" abstract="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TinyBlob"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MediumBlob"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LongBlob"/>
+  <eClassifiers xsi:type="ecore:EClass" name="TinyText"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Text"/>
+  <eClassifiers xsi:type="ecore:EClass" name="MediumText"/>
+  <eClassifiers xsi:type="ecore:EClass" name="LongText"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="ColumnType">
+    <eLiterals name="BIGINT"/>
+    <eLiterals name="TINYINT" value="1"/>
+    <eLiterals name="MEDIUMINT" value="2"/>
+    <eLiterals name="SMALLINT" value="3"/>
+    <eLiterals name="INTEGER" value="4"/>
+    <eLiterals name="NUMERIC" value="5"/>
+    <eLiterals name="REAL" value="6"/>
+    <eLiterals name="DOUBLE" value="7"/>
+    <eLiterals name="DECIMAL" value="8"/>
+    <eLiterals name="FLOAT" value="9"/>
+    <eLiterals name="BIT" value="10"/>
+    <eLiterals name="TINYBLOB" value="11"/>
+    <eLiterals name="BLOB" value="12"/>
+    <eLiterals name="MEDIUMBLOB" value="13"/>
+    <eLiterals name="LONGBLOB" value="14"/>
+    <eLiterals name="CHAR" value="15"/>
+    <eLiterals name="VARCHAR" value="16"/>
+    <eLiterals name="BINARY" value="17"/>
+    <eLiterals name="VARBINARY" value="18"/>
+    <eLiterals name="TEXT" value="19"/>
+    <eLiterals name="TINYTEXT" value="20"/>
+    <eLiterals name="MEDIUMTEXT" value="21"/>
+    <eLiterals name="LONGTEXT" value="22"/>
+    <eLiterals name="DATE" value="23"/>
+    <eLiterals name="DATETIME" value="24"/>
+    <eLiterals name="TIME" value="25"/>
+    <eLiterals name="TIMESTAMP" value="26"/>
+    <eLiterals name="YEAR" value="27"/>
+  </eClassifiers>
+</ecore:EPackage>

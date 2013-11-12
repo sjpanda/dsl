@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/CAR-project/src" modelPluginID="CAR-project" modelName="WebApp"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore"
+    complianceLevel="7.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
+  <foreignModel>WebApp.ecore</foreignModel>
+  <genPackages prefix="Webapp" disposableProviderFactory="true" ecorePackage="WebApp.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebApp.ecore#//Behavior">
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Behavior/CASCADE"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Behavior/RESTRICT"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebApp.ecore#//Charset">
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/ARMSCII8"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/ASCII"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/BIG5"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP852"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP866"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP932"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP1250"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP1251"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP1256"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP1257"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/DEC8"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/BINARY"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/CP850"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/LATIN2"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/EUCJMPS"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/EUCKR"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/GB2312"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/GBK"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/GEOSTD8"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/GREEK"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/HEBREW"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/HP8"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/KEYBCS2"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/KOI8R"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/KOI8U"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/LATIN1"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/LATIN5"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/LATIN7"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/MACCE"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/MACROMAN"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/SJIS"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/SWE7"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/TIS620"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/UCS2"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/UJIS"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/UTF8"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebApp.ecore#//YearSize">
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//YearSize/TWO"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//YearSize/FOUR"/>
+    </genEnums>
+    <genClasses ecoreClass="WebApp.ecore#//WebApp">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//WebApp/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/appConfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/webConfig"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/library"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/view"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/model"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/controller"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/resource"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//WebApp/framework"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//AppConfig"/>
+    <genClasses ecoreClass="WebApp.ecore#//View"/>
+    <genClasses ecoreClass="WebApp.ecore#//Library"/>
+    <genClasses ecoreClass="WebApp.ecore#//WebConfig"/>
+    <genClasses ecoreClass="WebApp.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Model/table"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/databaseName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/url"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/userName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/password"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Controller"/>
+    <genClasses ecoreClass="WebApp.ecore#//Resource">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Resource/image"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Resource/file"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Resource/propertie"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Image"/>
+    <genClasses ecoreClass="WebApp.ecore#//File"/>
+    <genClasses ecoreClass="WebApp.ecore#//Properties"/>
+    <genClasses ecoreClass="WebApp.ecore#//Table">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Table/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Table/column"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Table/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Table/charset"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Column">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/isNotNull"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/defaultValue"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Column/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="WebApp.ecore#//Constraint">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Constraint/primaryKey"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Constraint/unique"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Constraint/check"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Constraint/foreignKey"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//PrimaryKey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//PrimaryKey/column"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//ForeignKey">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/column"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/onDelete"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/onUpdate"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Unique">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Unique/column"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Check">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Check/expr"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//OnDelete">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//OnDelete/behavior"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//OnUpdate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//OnUpdate/behavior"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="WebApp.ecore#//ColumnType"/>
+    <genClasses ecoreClass="WebApp.ecore#//Numeric"/>
+    <genClasses ecoreClass="WebApp.ecore#//Detail">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/precision"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/scale"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Decimal"/>
+    <genClasses image="false" ecoreClass="WebApp.ecore#//Int">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Int/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Int/useZeroFill"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Integer"/>
+    <genClasses ecoreClass="WebApp.ecore#//SmallInt"/>
+    <genClasses ecoreClass="WebApp.ecore#//TinyInt"/>
+    <genClasses ecoreClass="WebApp.ecore#//MediumInt"/>
+    <genClasses ecoreClass="WebApp.ecore#//BigInt"/>
+    <genClasses image="false" ecoreClass="WebApp.ecore#//NotIntBitNumericType">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//NotIntBitNumericType/detail"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Float"/>
+    <genClasses ecoreClass="WebApp.ecore#//Real"/>
+    <genClasses ecoreClass="WebApp.ecore#//Double"/>
+    <genClasses ecoreClass="WebApp.ecore#//Bit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Bit/size"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Date"/>
+    <genClasses ecoreClass="WebApp.ecore#//DateTime"/>
+    <genClasses ecoreClass="WebApp.ecore#//TimeStamp"/>
+    <genClasses ecoreClass="WebApp.ecore#//Time"/>
+    <genClasses ecoreClass="WebApp.ecore#//Year">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Year/size"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Char">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Char/size"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Varchar">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Varchar/size"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Binary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Binary/size"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//VarBinary">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//VarBinary/size"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="WebApp.ecore#//Blob"/>
+    <genClasses ecoreClass="WebApp.ecore#//TinyBlob"/>
+    <genClasses ecoreClass="WebApp.ecore#//MediumBlob"/>
+    <genClasses ecoreClass="WebApp.ecore#//LongBlob"/>
+    <genClasses ecoreClass="WebApp.ecore#//TinyText"/>
+    <genClasses ecoreClass="WebApp.ecore#//Text"/>
+    <genClasses ecoreClass="WebApp.ecore#//MediumText"/>
+    <genClasses ecoreClass="WebApp.ecore#//LongText"/>
+  </genPackages>
+</genmodel:GenModel>
