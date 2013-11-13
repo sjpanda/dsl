@@ -7,63 +7,38 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import webapp.AppConfig;
 import webapp.Behavior;
-import webapp.BigInt;
-import webapp.Binary;
-import webapp.Bit;
-import webapp.Blob;
-import webapp.Char;
 import webapp.Charset;
 import webapp.Check;
 import webapp.Column;
 import webapp.ColumnType;
 import webapp.Constraint;
 import webapp.Controller;
-import webapp.Date;
-import webapp.DateTime;
-import webapp.Decimal;
 import webapp.Detail;
 import webapp.File;
 import webapp.ForeignKey;
 import webapp.Image;
-import webapp.Int;
 import webapp.Library;
-import webapp.LongBlob;
-import webapp.LongText;
-import webapp.MediumBlob;
-import webapp.MediumInt;
-import webapp.MediumText;
 import webapp.Model;
-import webapp.NotIntBitNumericType;
-import webapp.Numeric;
 import webapp.OnDelete;
 import webapp.OnUpdate;
 import webapp.PrimaryKey;
 import webapp.Properties;
-import webapp.Real;
 import webapp.Resource;
-import webapp.SmallInt;
 import webapp.Table;
-import webapp.Text;
-import webapp.Time;
-import webapp.TimeStamp;
-import webapp.TinyBlob;
-import webapp.TinyInt;
-import webapp.TinyText;
 import webapp.Unique;
-import webapp.VarBinary;
-import webapp.Varchar;
 import webapp.View;
 import webapp.WebApp;
 import webapp.WebConfig;
 import webapp.WebappFactory;
 import webapp.WebappPackage;
-import webapp.Year;
-import webapp.YearSize;
+
+import webapp.util.WebappValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -217,224 +192,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass columnTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass numericEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass detailEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass decimalEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass intEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass integerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass smallIntEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tinyIntEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mediumIntEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass bigIntEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass notIntBitNumericTypeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass floatEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass realEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass doubleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass bitEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dateEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dateTimeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass timeStampEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass timeEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass yearEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass charEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass varcharEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass binaryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass varBinaryEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass blobEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tinyBlobEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mediumBlobEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass longBlobEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tinyTextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass textEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass mediumTextEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass longTextEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -455,7 +213,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum yearSizeEEnum = null;
+	private EEnum columnTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -508,6 +266,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 
 		// Initialize created meta-data
 		theWebappPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theWebappPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return WebappValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theWebappPackage.freeze();
@@ -847,7 +614,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getColumn_DefaultValue() {
+	public EAttribute getColumn_Size() {
 		return (EAttribute)columnEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -856,8 +623,35 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getColumn_Type() {
-		return (EReference)columnEClass.getEStructuralFeatures().get(3);
+	public EAttribute getColumn_UseZeroFill() {
+		return (EAttribute)columnEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getColumn_Detail() {
+		return (EReference)columnEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getColumn_Type() {
+		return (EAttribute)columnEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getColumn_DefaultValue() {
+		return (EAttribute)columnEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -1036,24 +830,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getColumnType() {
-		return columnTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNumeric() {
-		return numericEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getDetail() {
 		return detailEClass;
 	}
@@ -1081,348 +857,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDecimal() {
-		return decimalEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getInt() {
-		return intEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getInt_Size() {
-		return (EAttribute)intEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getInt_UseZeroFill() {
-		return (EAttribute)intEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getInteger() {
-		return integerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getSmallInt() {
-		return smallIntEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTinyInt() {
-		return tinyIntEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMediumInt() {
-		return mediumIntEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBigInt() {
-		return bigIntEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNotIntBitNumericType() {
-		return notIntBitNumericTypeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getNotIntBitNumericType_Detail() {
-		return (EReference)notIntBitNumericTypeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getFloat() {
-		return floatEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getReal() {
-		return realEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDouble() {
-		return doubleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBit() {
-		return bitEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBit_Size() {
-		return (EAttribute)bitEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDate() {
-		return dateEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getDateTime() {
-		return dateTimeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTimeStamp() {
-		return timeStampEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTime() {
-		return timeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getYear() {
-		return yearEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getYear_Size() {
-		return (EAttribute)yearEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getChar() {
-		return charEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getChar_Size() {
-		return (EAttribute)charEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVarchar() {
-		return varcharEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVarchar_Size() {
-		return (EAttribute)varcharEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBinary() {
-		return binaryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getBinary_Size() {
-		return (EAttribute)binaryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVarBinary() {
-		return varBinaryEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getVarBinary_Size() {
-		return (EAttribute)varBinaryEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getBlob() {
-		return blobEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTinyBlob() {
-		return tinyBlobEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMediumBlob() {
-		return mediumBlobEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLongBlob() {
-		return longBlobEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getTinyText() {
-		return tinyTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getText() {
-		return textEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getMediumText() {
-		return mediumTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getLongText() {
-		return longTextEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EEnum getBehavior() {
 		return behaviorEEnum;
 	}
@@ -1441,8 +875,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getYearSize() {
-		return yearSizeEEnum;
+	public EEnum getColumnType() {
+		return columnTypeEEnum;
 	}
 
 	/**
@@ -1521,8 +955,11 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		columnEClass = createEClass(COLUMN);
 		createEAttribute(columnEClass, COLUMN__NAME);
 		createEAttribute(columnEClass, COLUMN__IS_NOT_NULL);
+		createEAttribute(columnEClass, COLUMN__SIZE);
+		createEAttribute(columnEClass, COLUMN__USE_ZERO_FILL);
+		createEReference(columnEClass, COLUMN__DETAIL);
+		createEAttribute(columnEClass, COLUMN__TYPE);
 		createEAttribute(columnEClass, COLUMN__DEFAULT_VALUE);
-		createEReference(columnEClass, COLUMN__TYPE);
 
 		constraintEClass = createEClass(CONSTRAINT);
 		createEReference(constraintEClass, CONSTRAINT__PRIMARY_KEY);
@@ -1550,85 +987,14 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		onUpdateEClass = createEClass(ON_UPDATE);
 		createEAttribute(onUpdateEClass, ON_UPDATE__BEHAVIOR);
 
-		columnTypeEClass = createEClass(COLUMN_TYPE);
-
-		numericEClass = createEClass(NUMERIC);
-
 		detailEClass = createEClass(DETAIL);
 		createEAttribute(detailEClass, DETAIL__PRECISION);
 		createEAttribute(detailEClass, DETAIL__SCALE);
 
-		decimalEClass = createEClass(DECIMAL);
-
-		intEClass = createEClass(INT);
-		createEAttribute(intEClass, INT__SIZE);
-		createEAttribute(intEClass, INT__USE_ZERO_FILL);
-
-		integerEClass = createEClass(INTEGER);
-
-		smallIntEClass = createEClass(SMALL_INT);
-
-		tinyIntEClass = createEClass(TINY_INT);
-
-		mediumIntEClass = createEClass(MEDIUM_INT);
-
-		bigIntEClass = createEClass(BIG_INT);
-
-		notIntBitNumericTypeEClass = createEClass(NOT_INT_BIT_NUMERIC_TYPE);
-		createEReference(notIntBitNumericTypeEClass, NOT_INT_BIT_NUMERIC_TYPE__DETAIL);
-
-		floatEClass = createEClass(FLOAT);
-
-		realEClass = createEClass(REAL);
-
-		doubleEClass = createEClass(DOUBLE);
-
-		bitEClass = createEClass(BIT);
-		createEAttribute(bitEClass, BIT__SIZE);
-
-		dateEClass = createEClass(DATE);
-
-		dateTimeEClass = createEClass(DATE_TIME);
-
-		timeStampEClass = createEClass(TIME_STAMP);
-
-		timeEClass = createEClass(TIME);
-
-		yearEClass = createEClass(YEAR);
-		createEAttribute(yearEClass, YEAR__SIZE);
-
-		charEClass = createEClass(CHAR);
-		createEAttribute(charEClass, CHAR__SIZE);
-
-		varcharEClass = createEClass(VARCHAR);
-		createEAttribute(varcharEClass, VARCHAR__SIZE);
-
-		binaryEClass = createEClass(BINARY);
-		createEAttribute(binaryEClass, BINARY__SIZE);
-
-		varBinaryEClass = createEClass(VAR_BINARY);
-		createEAttribute(varBinaryEClass, VAR_BINARY__SIZE);
-
-		blobEClass = createEClass(BLOB);
-
-		tinyBlobEClass = createEClass(TINY_BLOB);
-
-		mediumBlobEClass = createEClass(MEDIUM_BLOB);
-
-		longBlobEClass = createEClass(LONG_BLOB);
-
-		tinyTextEClass = createEClass(TINY_TEXT);
-
-		textEClass = createEClass(TEXT);
-
-		mediumTextEClass = createEClass(MEDIUM_TEXT);
-
-		longTextEClass = createEClass(LONG_TEXT);
-
 		// Create enums
 		behaviorEEnum = createEEnum(BEHAVIOR);
 		charsetEEnum = createEEnum(CHARSET);
-		yearSizeEEnum = createEEnum(YEAR_SIZE);
+		columnTypeEEnum = createEEnum(COLUMN_TYPE);
 	}
 
 	/**
@@ -1659,35 +1025,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		numericEClass.getESuperTypes().add(this.getNotIntBitNumericType());
-		decimalEClass.getESuperTypes().add(this.getNotIntBitNumericType());
-		intEClass.getESuperTypes().add(this.getColumnType());
-		integerEClass.getESuperTypes().add(this.getInt());
-		smallIntEClass.getESuperTypes().add(this.getInt());
-		tinyIntEClass.getESuperTypes().add(this.getInt());
-		mediumIntEClass.getESuperTypes().add(this.getInt());
-		bigIntEClass.getESuperTypes().add(this.getInt());
-		notIntBitNumericTypeEClass.getESuperTypes().add(this.getColumnType());
-		floatEClass.getESuperTypes().add(this.getNotIntBitNumericType());
-		realEClass.getESuperTypes().add(this.getNotIntBitNumericType());
-		doubleEClass.getESuperTypes().add(this.getNotIntBitNumericType());
-		bitEClass.getESuperTypes().add(this.getColumnType());
-		dateEClass.getESuperTypes().add(this.getColumnType());
-		dateTimeEClass.getESuperTypes().add(this.getColumnType());
-		timeStampEClass.getESuperTypes().add(this.getColumnType());
-		yearEClass.getESuperTypes().add(this.getColumnType());
-		charEClass.getESuperTypes().add(this.getColumnType());
-		varcharEClass.getESuperTypes().add(this.getColumnType());
-		binaryEClass.getESuperTypes().add(this.getColumnType());
-		varBinaryEClass.getESuperTypes().add(this.getColumnType());
-		blobEClass.getESuperTypes().add(this.getColumnType());
-		tinyBlobEClass.getESuperTypes().add(this.getColumnType());
-		mediumBlobEClass.getESuperTypes().add(this.getColumnType());
-		longBlobEClass.getESuperTypes().add(this.getColumnType());
-		tinyTextEClass.getESuperTypes().add(this.getColumnType());
-		textEClass.getESuperTypes().add(this.getColumnType());
-		mediumTextEClass.getESuperTypes().add(this.getColumnType());
-		longTextEClass.getESuperTypes().add(this.getColumnType());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(webAppEClass, WebApp.class, "WebApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1714,7 +1051,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getModel_DatabaseName(), ecorePackage.getEString(), "databaseName", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModel_Url(), ecorePackage.getEString(), "url", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModel_UserName(), ecorePackage.getEString(), "userName", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModel_Password(), ecorePackage.getEString(), "password", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModel_Password(), ecorePackage.getEString(), "password", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1737,9 +1074,12 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 
 		initEClass(columnEClass, Column.class, "Column", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getColumn_Name(), ecorePackage.getEString(), "name", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getColumn_IsNotNull(), ecorePackage.getEBoolean(), "isNotNull", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColumn_IsNotNull(), ecorePackage.getEBoolean(), "isNotNull", "false", 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColumn_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColumn_UseZeroFill(), ecorePackage.getEBoolean(), "useZeroFill", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getColumn_Detail(), this.getDetail(), null, "detail", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColumn_Type(), this.getColumnType(), "type", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getColumn_Type(), this.getColumnType(), null, "type", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraint_PrimaryKey(), this.getPrimaryKey(), null, "primaryKey", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1767,80 +1107,9 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEClass(onUpdateEClass, OnUpdate.class, "OnUpdate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getOnUpdate_Behavior(), this.getBehavior(), "behavior", null, 1, 1, OnUpdate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(columnTypeEClass, ColumnType.class, "ColumnType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(numericEClass, Numeric.class, "Numeric", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(detailEClass, Detail.class, "Detail", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDetail_Precision(), ecorePackage.getEInt(), "precision", null, 1, 1, Detail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getDetail_Scale(), ecorePackage.getEInt(), "scale", null, 0, 1, Detail.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(decimalEClass, Decimal.class, "Decimal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(intEClass, Int.class, "Int", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getInt_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Int.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getInt_UseZeroFill(), ecorePackage.getEBoolean(), "useZeroFill", null, 1, 1, Int.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(integerEClass, webapp.Integer.class, "Integer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(smallIntEClass, SmallInt.class, "SmallInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tinyIntEClass, TinyInt.class, "TinyInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(mediumIntEClass, MediumInt.class, "MediumInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(bigIntEClass, BigInt.class, "BigInt", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(notIntBitNumericTypeEClass, NotIntBitNumericType.class, "NotIntBitNumericType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getNotIntBitNumericType_Detail(), this.getDetail(), null, "detail", null, 0, 1, NotIntBitNumericType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(floatEClass, webapp.Float.class, "Float", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(realEClass, Real.class, "Real", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(doubleEClass, webapp.Double.class, "Double", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(bitEClass, Bit.class, "Bit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBit_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Bit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(dateEClass, Date.class, "Date", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(dateTimeEClass, DateTime.class, "DateTime", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(timeStampEClass, TimeStamp.class, "TimeStamp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(timeEClass, Time.class, "Time", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(yearEClass, Year.class, "Year", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getYear_Size(), this.getYearSize(), "size", null, 0, 1, Year.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(charEClass, Char.class, "Char", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getChar_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Char.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(varcharEClass, Varchar.class, "Varchar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVarchar_Size(), ecorePackage.getEInt(), "size", null, 1, 1, Varchar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(binaryEClass, Binary.class, "Binary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBinary_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Binary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(varBinaryEClass, VarBinary.class, "VarBinary", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getVarBinary_Size(), ecorePackage.getEInt(), "size", null, 1, 1, VarBinary.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(blobEClass, Blob.class, "Blob", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tinyBlobEClass, TinyBlob.class, "TinyBlob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(mediumBlobEClass, MediumBlob.class, "MediumBlob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(longBlobEClass, LongBlob.class, "LongBlob", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(tinyTextEClass, TinyText.class, "TinyText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(textEClass, Text.class, "Text", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(mediumTextEClass, MediumText.class, "MediumText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(longTextEClass, LongText.class, "LongText", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(behaviorEEnum, Behavior.class, "Behavior");
@@ -1885,12 +1154,116 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		addEEnumLiteral(charsetEEnum, Charset.UJIS);
 		addEEnumLiteral(charsetEEnum, Charset.UTF8);
 
-		initEEnum(yearSizeEEnum, YearSize.class, "YearSize");
-		addEEnumLiteral(yearSizeEEnum, YearSize.TWO);
-		addEEnumLiteral(yearSizeEEnum, YearSize.FOUR);
+		initEEnum(columnTypeEEnum, ColumnType.class, "ColumnType");
+		addEEnumLiteral(columnTypeEEnum, ColumnType.BIGINT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.TINYINT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.MEDIUMINT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.SMALLINT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.INTEGER);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.NUMERIC);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.REAL);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.DOUBLE);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.DECIMAL);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.FLOAT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.BIT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.TINYBLOB);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.BLOB);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.MEDIUMBLOB);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.LONGBLOB);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.CHAR);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.VARCHAR);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.BINARY);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.VARBINARY);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.TEXT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.TINYTEXT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.MEDIUMTEXT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.LONGTEXT);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.DATE);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.DATETIME);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.TIME);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.TIMESTAMP);
+		addEEnumLiteral(columnTypeEEnum, ColumnType.YEAR);
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/OCL/Import
+		createImportAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/OCL/Import</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createImportAnnotations() {
+		String source = "http://www.eclipse.org/OCL/Import";		
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "ecore", "http://www.eclipse.org/emf/2002/Ecore#/"
+		   });					
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";			
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });		
+		addAnnotation
+		  (columnEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "detailC useZeroFillC sizeC"
+		   });			
+		addAnnotation
+		  (detailEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "precisionBiggerThanScale"
+		   });	
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";					
+		addAnnotation
+		  (columnEClass, 
+		   source, 
+		   new String[] {
+			 "detailC", "\n\t\t(self.type <> ColumnType::NUMERIC \n\t\t\tand self.type <> ColumnType::DECIMAL \n\t\t\tand self.type <> ColumnType::FLOAT\n\t\t\tand self.type <> ColumnType::DOUBLE\n\t\t\tand self.type <> ColumnType::REAL\n\t\t) implies self.detail->isEmpty()",
+			 "useZeroFillC", "\n\t\t((self.type <> ColumnType::INTEGER\n\t\t\tand self.type <> ColumnType::BIGINT \n\t\t\tand self.type <> ColumnType::SMALLINT\n\t\t\tand self.type <> ColumnType::MEDIUMINT\n\t\t\tand self.type <> ColumnType::TINYINT\n\t\t) implies self.useZeroFill->isEmpty()) \n\t\tand\n\t\t((self.type = ColumnType::INTEGER\n\t\t\tor self.type = ColumnType::BIGINT \n\t\t\tor self.type = ColumnType::SMALLINT\n\t\t\tor self.type = ColumnType::MEDIUMINT\n\t\t\tor self.type = ColumnType::TINYINT\n\t\t) implies self.useZeroFill->notEmpty())",
+			 "sizeC", "\n\t\t((self.type <> ColumnType::INTEGER\n\t\t\tand self.type <> ColumnType::BIGINT \n\t\t\tand self.type <> ColumnType::SMALLINT\n\t\t\tand self.type <> ColumnType::MEDIUMINT\n\t\t\tand self.type <> ColumnType::TINYINT\n\t\t\tand self.type <> ColumnType::CHAR\n\t\t\tand self.type <> ColumnType::VARCHAR\n\t\t\tand self.type <> ColumnType::BINARY\n\t\t\tand self.type <> ColumnType::VARBINARY\n\t\t\tand self.type <> ColumnType::BIT\n\t\t\tand self.type <> ColumnType::YEAR\n\t\t) implies (self.size->isEmpty() or self.size = 0))\n\t\tand\n\t\t(self.type = ColumnType::BIT implies (self.size >= 1 and self.size <= 64))\n\t\tand\n\t\t((self.type = ColumnType::CHAR or self.type = ColumnType::VARCHAR) implies (self.size >= 0 and self.size <= 255))\n\t\tand\n\t\t(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))"
+		   });			
+		addAnnotation
+		  (detailEClass, 
+		   source, 
+		   new String[] {
+			 "precisionBiggerThanScale", "\n\t\tself.precision >= self.scale"
+		   });
 	}
 
 } //WebappPackageImpl

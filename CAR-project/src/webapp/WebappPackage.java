@@ -22,6 +22,8 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see webapp.WebappFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/OCL/Import ecore='http://www.eclipse.org/emf/2002/Ecore#/'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface WebappPackage extends EPackage {
@@ -611,22 +613,49 @@ public interface WebappPackage extends EPackage {
 	int COLUMN__IS_NOT_NULL = 1;
 
 	/**
+	 * The feature id for the '<em><b>Size</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__SIZE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Use Zero Fill</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__USE_ZERO_FILL = 3;
+
+	/**
+	 * The feature id for the '<em><b>Detail</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__DETAIL = 4;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COLUMN__TYPE = 5;
+
+	/**
 	 * The feature id for the '<em><b>Default Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN__DEFAULT_VALUE = 2;
-
-	/**
-	 * The feature id for the '<em><b>Type</b></em>' containment reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLUMN__TYPE = 3;
+	int COLUMN__DEFAULT_VALUE = 6;
 
 	/**
 	 * The number of structural features of the '<em>Column</em>' class.
@@ -635,7 +664,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COLUMN_FEATURE_COUNT = 4;
+	int COLUMN_FEATURE_COUNT = 7;
 
 	/**
 	 * The number of operations of the '<em>Column</em>' class.
@@ -951,108 +980,6 @@ public interface WebappPackage extends EPackage {
 	int ON_UPDATE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link webapp.impl.ColumnTypeImpl <em>Column Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.ColumnTypeImpl
-	 * @see webapp.impl.WebappPackageImpl#getColumnType()
-	 * @generated
-	 */
-	int COLUMN_TYPE = 20;
-
-	/**
-	 * The number of structural features of the '<em>Column Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLUMN_TYPE_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Column Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COLUMN_TYPE_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.NotIntBitNumericTypeImpl <em>Not Int Bit Numeric Type</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.NotIntBitNumericTypeImpl
-	 * @see webapp.impl.WebappPackageImpl#getNotIntBitNumericType()
-	 * @generated
-	 */
-	int NOT_INT_BIT_NUMERIC_TYPE = 30;
-
-	/**
-	 * The feature id for the '<em><b>Detail</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT_INT_BIT_NUMERIC_TYPE__DETAIL = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Not Int Bit Numeric Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT_INT_BIT_NUMERIC_TYPE_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Not Int Bit Numeric Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NOT_INT_BIT_NUMERIC_TYPE_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.NumericImpl <em>Numeric</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.NumericImpl
-	 * @see webapp.impl.WebappPackageImpl#getNumeric()
-	 * @generated
-	 */
-	int NUMERIC = 21;
-
-	/**
-	 * The feature id for the '<em><b>Detail</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC__DETAIL = NOT_INT_BIT_NUMERIC_TYPE__DETAIL;
-
-	/**
-	 * The number of structural features of the '<em>Numeric</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_FEATURE_COUNT = NOT_INT_BIT_NUMERIC_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Numeric</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_OPERATION_COUNT = NOT_INT_BIT_NUMERIC_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link webapp.impl.DetailImpl <em>Detail</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1060,7 +987,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getDetail()
 	 * @generated
 	 */
-	int DETAIL = 22;
+	int DETAIL = 20;
 
 	/**
 	 * The feature id for the '<em><b>Precision</b></em>' attribute.
@@ -1099,988 +1026,6 @@ public interface WebappPackage extends EPackage {
 	int DETAIL_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link webapp.impl.DecimalImpl <em>Decimal</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.DecimalImpl
-	 * @see webapp.impl.WebappPackageImpl#getDecimal()
-	 * @generated
-	 */
-	int DECIMAL = 23;
-
-	/**
-	 * The feature id for the '<em><b>Detail</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DECIMAL__DETAIL = NOT_INT_BIT_NUMERIC_TYPE__DETAIL;
-
-	/**
-	 * The number of structural features of the '<em>Decimal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DECIMAL_FEATURE_COUNT = NOT_INT_BIT_NUMERIC_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Decimal</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DECIMAL_OPERATION_COUNT = NOT_INT_BIT_NUMERIC_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.IntImpl <em>Int</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.IntImpl
-	 * @see webapp.impl.WebappPackageImpl#getInt()
-	 * @generated
-	 */
-	int INT = 24;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT__SIZE = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Use Zero Fill</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT__USE_ZERO_FILL = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of structural features of the '<em>Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INT_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.IntegerImpl <em>Integer</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.IntegerImpl
-	 * @see webapp.impl.WebappPackageImpl#getInteger()
-	 * @generated
-	 */
-	int INTEGER = 25;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER__SIZE = INT__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Use Zero Fill</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER__USE_ZERO_FILL = INT__USE_ZERO_FILL;
-
-	/**
-	 * The number of structural features of the '<em>Integer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_FEATURE_COUNT = INT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Integer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_OPERATION_COUNT = INT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.SmallIntImpl <em>Small Int</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.SmallIntImpl
-	 * @see webapp.impl.WebappPackageImpl#getSmallInt()
-	 * @generated
-	 */
-	int SMALL_INT = 26;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SMALL_INT__SIZE = INT__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Use Zero Fill</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SMALL_INT__USE_ZERO_FILL = INT__USE_ZERO_FILL;
-
-	/**
-	 * The number of structural features of the '<em>Small Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SMALL_INT_FEATURE_COUNT = INT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Small Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SMALL_INT_OPERATION_COUNT = INT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.TinyIntImpl <em>Tiny Int</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.TinyIntImpl
-	 * @see webapp.impl.WebappPackageImpl#getTinyInt()
-	 * @generated
-	 */
-	int TINY_INT = 27;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_INT__SIZE = INT__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Use Zero Fill</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_INT__USE_ZERO_FILL = INT__USE_ZERO_FILL;
-
-	/**
-	 * The number of structural features of the '<em>Tiny Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_INT_FEATURE_COUNT = INT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Tiny Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_INT_OPERATION_COUNT = INT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.MediumIntImpl <em>Medium Int</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.MediumIntImpl
-	 * @see webapp.impl.WebappPackageImpl#getMediumInt()
-	 * @generated
-	 */
-	int MEDIUM_INT = 28;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_INT__SIZE = INT__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Use Zero Fill</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_INT__USE_ZERO_FILL = INT__USE_ZERO_FILL;
-
-	/**
-	 * The number of structural features of the '<em>Medium Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_INT_FEATURE_COUNT = INT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Medium Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_INT_OPERATION_COUNT = INT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.BigIntImpl <em>Big Int</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.BigIntImpl
-	 * @see webapp.impl.WebappPackageImpl#getBigInt()
-	 * @generated
-	 */
-	int BIG_INT = 29;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIG_INT__SIZE = INT__SIZE;
-
-	/**
-	 * The feature id for the '<em><b>Use Zero Fill</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIG_INT__USE_ZERO_FILL = INT__USE_ZERO_FILL;
-
-	/**
-	 * The number of structural features of the '<em>Big Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIG_INT_FEATURE_COUNT = INT_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Big Int</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIG_INT_OPERATION_COUNT = INT_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.FloatImpl <em>Float</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.FloatImpl
-	 * @see webapp.impl.WebappPackageImpl#getFloat()
-	 * @generated
-	 */
-	int FLOAT = 31;
-
-	/**
-	 * The feature id for the '<em><b>Detail</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT__DETAIL = NOT_INT_BIT_NUMERIC_TYPE__DETAIL;
-
-	/**
-	 * The number of structural features of the '<em>Float</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_FEATURE_COUNT = NOT_INT_BIT_NUMERIC_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Float</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FLOAT_OPERATION_COUNT = NOT_INT_BIT_NUMERIC_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.RealImpl <em>Real</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.RealImpl
-	 * @see webapp.impl.WebappPackageImpl#getReal()
-	 * @generated
-	 */
-	int REAL = 32;
-
-	/**
-	 * The feature id for the '<em><b>Detail</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REAL__DETAIL = NOT_INT_BIT_NUMERIC_TYPE__DETAIL;
-
-	/**
-	 * The number of structural features of the '<em>Real</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REAL_FEATURE_COUNT = NOT_INT_BIT_NUMERIC_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Real</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int REAL_OPERATION_COUNT = NOT_INT_BIT_NUMERIC_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.DoubleImpl <em>Double</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.DoubleImpl
-	 * @see webapp.impl.WebappPackageImpl#getDouble()
-	 * @generated
-	 */
-	int DOUBLE = 33;
-
-	/**
-	 * The feature id for the '<em><b>Detail</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE__DETAIL = NOT_INT_BIT_NUMERIC_TYPE__DETAIL;
-
-	/**
-	 * The number of structural features of the '<em>Double</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE_FEATURE_COUNT = NOT_INT_BIT_NUMERIC_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Double</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE_OPERATION_COUNT = NOT_INT_BIT_NUMERIC_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.BitImpl <em>Bit</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.BitImpl
-	 * @see webapp.impl.WebappPackageImpl#getBit()
-	 * @generated
-	 */
-	int BIT = 34;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIT__SIZE = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Bit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIT_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Bit</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BIT_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.DateImpl <em>Date</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.DateImpl
-	 * @see webapp.impl.WebappPackageImpl#getDate()
-	 * @generated
-	 */
-	int DATE = 35;
-
-	/**
-	 * The number of structural features of the '<em>Date</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Date</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.DateTimeImpl <em>Date Time</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.DateTimeImpl
-	 * @see webapp.impl.WebappPackageImpl#getDateTime()
-	 * @generated
-	 */
-	int DATE_TIME = 36;
-
-	/**
-	 * The number of structural features of the '<em>Date Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_TIME_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Date Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATE_TIME_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.TimeStampImpl <em>Time Stamp</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.TimeStampImpl
-	 * @see webapp.impl.WebappPackageImpl#getTimeStamp()
-	 * @generated
-	 */
-	int TIME_STAMP = 37;
-
-	/**
-	 * The number of structural features of the '<em>Time Stamp</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_STAMP_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Time Stamp</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_STAMP_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.TimeImpl <em>Time</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.TimeImpl
-	 * @see webapp.impl.WebappPackageImpl#getTime()
-	 * @generated
-	 */
-	int TIME = 38;
-
-	/**
-	 * The number of structural features of the '<em>Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Time</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TIME_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.YearImpl <em>Year</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.YearImpl
-	 * @see webapp.impl.WebappPackageImpl#getYear()
-	 * @generated
-	 */
-	int YEAR = 39;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR__SIZE = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Year</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Year</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int YEAR_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.CharImpl <em>Char</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.CharImpl
-	 * @see webapp.impl.WebappPackageImpl#getChar()
-	 * @generated
-	 */
-	int CHAR = 40;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHAR__SIZE = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Char</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHAR_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Char</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHAR_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.VarcharImpl <em>Varchar</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.VarcharImpl
-	 * @see webapp.impl.WebappPackageImpl#getVarchar()
-	 * @generated
-	 */
-	int VARCHAR = 41;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARCHAR__SIZE = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Varchar</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARCHAR_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Varchar</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARCHAR_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.BinaryImpl <em>Binary</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.BinaryImpl
-	 * @see webapp.impl.WebappPackageImpl#getBinary()
-	 * @generated
-	 */
-	int BINARY = 42;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY__SIZE = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Binary</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Binary</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BINARY_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.VarBinaryImpl <em>Var Binary</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.VarBinaryImpl
-	 * @see webapp.impl.WebappPackageImpl#getVarBinary()
-	 * @generated
-	 */
-	int VAR_BINARY = 43;
-
-	/**
-	 * The feature id for the '<em><b>Size</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_BINARY__SIZE = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Var Binary</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_BINARY_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Var Binary</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VAR_BINARY_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.BlobImpl <em>Blob</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.BlobImpl
-	 * @see webapp.impl.WebappPackageImpl#getBlob()
-	 * @generated
-	 */
-	int BLOB = 44;
-
-	/**
-	 * The number of structural features of the '<em>Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOB_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BLOB_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.TinyBlobImpl <em>Tiny Blob</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.TinyBlobImpl
-	 * @see webapp.impl.WebappPackageImpl#getTinyBlob()
-	 * @generated
-	 */
-	int TINY_BLOB = 45;
-
-	/**
-	 * The number of structural features of the '<em>Tiny Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_BLOB_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Tiny Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_BLOB_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.MediumBlobImpl <em>Medium Blob</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.MediumBlobImpl
-	 * @see webapp.impl.WebappPackageImpl#getMediumBlob()
-	 * @generated
-	 */
-	int MEDIUM_BLOB = 46;
-
-	/**
-	 * The number of structural features of the '<em>Medium Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_BLOB_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Medium Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_BLOB_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.LongBlobImpl <em>Long Blob</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.LongBlobImpl
-	 * @see webapp.impl.WebappPackageImpl#getLongBlob()
-	 * @generated
-	 */
-	int LONG_BLOB = 47;
-
-	/**
-	 * The number of structural features of the '<em>Long Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LONG_BLOB_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Long Blob</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LONG_BLOB_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.TinyTextImpl <em>Tiny Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.TinyTextImpl
-	 * @see webapp.impl.WebappPackageImpl#getTinyText()
-	 * @generated
-	 */
-	int TINY_TEXT = 48;
-
-	/**
-	 * The number of structural features of the '<em>Tiny Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_TEXT_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Tiny Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TINY_TEXT_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.TextImpl <em>Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.TextImpl
-	 * @see webapp.impl.WebappPackageImpl#getText()
-	 * @generated
-	 */
-	int TEXT = 49;
-
-	/**
-	 * The number of structural features of the '<em>Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TEXT_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.MediumTextImpl <em>Medium Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.MediumTextImpl
-	 * @see webapp.impl.WebappPackageImpl#getMediumText()
-	 * @generated
-	 */
-	int MEDIUM_TEXT = 50;
-
-	/**
-	 * The number of structural features of the '<em>Medium Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_TEXT_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Medium Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MEDIUM_TEXT_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
-	 * The meta object id for the '{@link webapp.impl.LongTextImpl <em>Long Text</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.LongTextImpl
-	 * @see webapp.impl.WebappPackageImpl#getLongText()
-	 * @generated
-	 */
-	int LONG_TEXT = 51;
-
-	/**
-	 * The number of structural features of the '<em>Long Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LONG_TEXT_FEATURE_COUNT = COLUMN_TYPE_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Long Text</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LONG_TEXT_OPERATION_COUNT = COLUMN_TYPE_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2088,7 +1033,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 52;
+	int BEHAVIOR = 21;
 
 	/**
 	 * The meta object id for the '{@link webapp.Charset <em>Charset</em>}' enum.
@@ -2098,17 +1043,17 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getCharset()
 	 * @generated
 	 */
-	int CHARSET = 53;
+	int CHARSET = 22;
 
 	/**
-	 * The meta object id for the '{@link webapp.YearSize <em>Year Size</em>}' enum.
+	 * The meta object id for the '{@link webapp.ColumnType <em>Column Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see webapp.YearSize
-	 * @see webapp.impl.WebappPackageImpl#getYearSize()
+	 * @see webapp.ColumnType
+	 * @see webapp.impl.WebappPackageImpl#getColumnType()
 	 * @generated
 	 */
-	int YEAR_SIZE = 54;
+	int COLUMN_TYPE = 23;
 
 
 	/**
@@ -2495,6 +1440,50 @@ public interface WebappPackage extends EPackage {
 	EAttribute getColumn_IsNotNull();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webapp.Column#getSize <em>Size</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Size</em>'.
+	 * @see webapp.Column#getSize()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_Size();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Column#isUseZeroFill <em>Use Zero Fill</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Use Zero Fill</em>'.
+	 * @see webapp.Column#isUseZeroFill()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_UseZeroFill();
+
+	/**
+	 * Returns the meta object for the containment reference '{@link webapp.Column#getDetail <em>Detail</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Detail</em>'.
+	 * @see webapp.Column#getDetail()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EReference getColumn_Detail();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Column#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see webapp.Column#getType()
+	 * @see #getColumn()
+	 * @generated
+	 */
+	EAttribute getColumn_Type();
+
+	/**
 	 * Returns the meta object for the attribute '{@link webapp.Column#getDefaultValue <em>Default Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2504,17 +1493,6 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getColumn_DefaultValue();
-
-	/**
-	 * Returns the meta object for the containment reference '{@link webapp.Column#getType <em>Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Type</em>'.
-	 * @see webapp.Column#getType()
-	 * @see #getColumn()
-	 * @generated
-	 */
-	EReference getColumn_Type();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Constraint <em>Constraint</em>}'.
@@ -2719,26 +1697,6 @@ public interface WebappPackage extends EPackage {
 	EAttribute getOnUpdate_Behavior();
 
 	/**
-	 * Returns the meta object for class '{@link webapp.ColumnType <em>Column Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Column Type</em>'.
-	 * @see webapp.ColumnType
-	 * @generated
-	 */
-	EClass getColumnType();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Numeric <em>Numeric</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Numeric</em>'.
-	 * @see webapp.Numeric
-	 * @generated
-	 */
-	EClass getNumeric();
-
-	/**
 	 * Returns the meta object for class '{@link webapp.Detail <em>Detail</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2771,395 +1729,6 @@ public interface WebappPackage extends EPackage {
 	EAttribute getDetail_Scale();
 
 	/**
-	 * Returns the meta object for class '{@link webapp.Decimal <em>Decimal</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Decimal</em>'.
-	 * @see webapp.Decimal
-	 * @generated
-	 */
-	EClass getDecimal();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Int <em>Int</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Int</em>'.
-	 * @see webapp.Int
-	 * @generated
-	 */
-	EClass getInt();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Int#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see webapp.Int#getSize()
-	 * @see #getInt()
-	 * @generated
-	 */
-	EAttribute getInt_Size();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Int#isUseZeroFill <em>Use Zero Fill</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Use Zero Fill</em>'.
-	 * @see webapp.Int#isUseZeroFill()
-	 * @see #getInt()
-	 * @generated
-	 */
-	EAttribute getInt_UseZeroFill();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Integer <em>Integer</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Integer</em>'.
-	 * @see webapp.Integer
-	 * @generated
-	 */
-	EClass getInteger();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.SmallInt <em>Small Int</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Small Int</em>'.
-	 * @see webapp.SmallInt
-	 * @generated
-	 */
-	EClass getSmallInt();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.TinyInt <em>Tiny Int</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tiny Int</em>'.
-	 * @see webapp.TinyInt
-	 * @generated
-	 */
-	EClass getTinyInt();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.MediumInt <em>Medium Int</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Medium Int</em>'.
-	 * @see webapp.MediumInt
-	 * @generated
-	 */
-	EClass getMediumInt();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.BigInt <em>Big Int</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Big Int</em>'.
-	 * @see webapp.BigInt
-	 * @generated
-	 */
-	EClass getBigInt();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.NotIntBitNumericType <em>Not Int Bit Numeric Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Not Int Bit Numeric Type</em>'.
-	 * @see webapp.NotIntBitNumericType
-	 * @generated
-	 */
-	EClass getNotIntBitNumericType();
-
-	/**
-	 * Returns the meta object for the reference '{@link webapp.NotIntBitNumericType#getDetail <em>Detail</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Detail</em>'.
-	 * @see webapp.NotIntBitNumericType#getDetail()
-	 * @see #getNotIntBitNumericType()
-	 * @generated
-	 */
-	EReference getNotIntBitNumericType_Detail();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Float <em>Float</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Float</em>'.
-	 * @see webapp.Float
-	 * @generated
-	 */
-	EClass getFloat();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Real <em>Real</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Real</em>'.
-	 * @see webapp.Real
-	 * @generated
-	 */
-	EClass getReal();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Double <em>Double</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Double</em>'.
-	 * @see webapp.Double
-	 * @generated
-	 */
-	EClass getDouble();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Bit <em>Bit</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Bit</em>'.
-	 * @see webapp.Bit
-	 * @generated
-	 */
-	EClass getBit();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Bit#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see webapp.Bit#getSize()
-	 * @see #getBit()
-	 * @generated
-	 */
-	EAttribute getBit_Size();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Date <em>Date</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Date</em>'.
-	 * @see webapp.Date
-	 * @generated
-	 */
-	EClass getDate();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.DateTime <em>Date Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Date Time</em>'.
-	 * @see webapp.DateTime
-	 * @generated
-	 */
-	EClass getDateTime();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.TimeStamp <em>Time Stamp</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Time Stamp</em>'.
-	 * @see webapp.TimeStamp
-	 * @generated
-	 */
-	EClass getTimeStamp();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Time <em>Time</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Time</em>'.
-	 * @see webapp.Time
-	 * @generated
-	 */
-	EClass getTime();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Year <em>Year</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Year</em>'.
-	 * @see webapp.Year
-	 * @generated
-	 */
-	EClass getYear();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Year#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see webapp.Year#getSize()
-	 * @see #getYear()
-	 * @generated
-	 */
-	EAttribute getYear_Size();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Char <em>Char</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Char</em>'.
-	 * @see webapp.Char
-	 * @generated
-	 */
-	EClass getChar();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Char#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see webapp.Char#getSize()
-	 * @see #getChar()
-	 * @generated
-	 */
-	EAttribute getChar_Size();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Varchar <em>Varchar</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Varchar</em>'.
-	 * @see webapp.Varchar
-	 * @generated
-	 */
-	EClass getVarchar();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Varchar#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see webapp.Varchar#getSize()
-	 * @see #getVarchar()
-	 * @generated
-	 */
-	EAttribute getVarchar_Size();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Binary <em>Binary</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Binary</em>'.
-	 * @see webapp.Binary
-	 * @generated
-	 */
-	EClass getBinary();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Binary#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see webapp.Binary#getSize()
-	 * @see #getBinary()
-	 * @generated
-	 */
-	EAttribute getBinary_Size();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.VarBinary <em>Var Binary</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Var Binary</em>'.
-	 * @see webapp.VarBinary
-	 * @generated
-	 */
-	EClass getVarBinary();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.VarBinary#getSize <em>Size</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Size</em>'.
-	 * @see webapp.VarBinary#getSize()
-	 * @see #getVarBinary()
-	 * @generated
-	 */
-	EAttribute getVarBinary_Size();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Blob <em>Blob</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Blob</em>'.
-	 * @see webapp.Blob
-	 * @generated
-	 */
-	EClass getBlob();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.TinyBlob <em>Tiny Blob</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tiny Blob</em>'.
-	 * @see webapp.TinyBlob
-	 * @generated
-	 */
-	EClass getTinyBlob();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.MediumBlob <em>Medium Blob</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Medium Blob</em>'.
-	 * @see webapp.MediumBlob
-	 * @generated
-	 */
-	EClass getMediumBlob();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.LongBlob <em>Long Blob</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Long Blob</em>'.
-	 * @see webapp.LongBlob
-	 * @generated
-	 */
-	EClass getLongBlob();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.TinyText <em>Tiny Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tiny Text</em>'.
-	 * @see webapp.TinyText
-	 * @generated
-	 */
-	EClass getTinyText();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.Text <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Text</em>'.
-	 * @see webapp.Text
-	 * @generated
-	 */
-	EClass getText();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.MediumText <em>Medium Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Medium Text</em>'.
-	 * @see webapp.MediumText
-	 * @generated
-	 */
-	EClass getMediumText();
-
-	/**
-	 * Returns the meta object for class '{@link webapp.LongText <em>Long Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Long Text</em>'.
-	 * @see webapp.LongText
-	 * @generated
-	 */
-	EClass getLongText();
-
-	/**
 	 * Returns the meta object for enum '{@link webapp.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3180,14 +1749,14 @@ public interface WebappPackage extends EPackage {
 	EEnum getCharset();
 
 	/**
-	 * Returns the meta object for enum '{@link webapp.YearSize <em>Year Size</em>}'.
+	 * Returns the meta object for enum '{@link webapp.ColumnType <em>Column Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Year Size</em>'.
-	 * @see webapp.YearSize
+	 * @return the meta object for enum '<em>Column Type</em>'.
+	 * @see webapp.ColumnType
 	 * @generated
 	 */
-	EEnum getYearSize();
+	EEnum getColumnType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -3527,20 +2096,44 @@ public interface WebappPackage extends EPackage {
 		EAttribute COLUMN__IS_NOT_NULL = eINSTANCE.getColumn_IsNotNull();
 
 		/**
+		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLUMN__SIZE = eINSTANCE.getColumn_Size();
+
+		/**
+		 * The meta object literal for the '<em><b>Use Zero Fill</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLUMN__USE_ZERO_FILL = eINSTANCE.getColumn_UseZeroFill();
+
+		/**
+		 * The meta object literal for the '<em><b>Detail</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COLUMN__DETAIL = eINSTANCE.getColumn_Detail();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COLUMN__TYPE = eINSTANCE.getColumn_Type();
+
+		/**
 		 * The meta object literal for the '<em><b>Default Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute COLUMN__DEFAULT_VALUE = eINSTANCE.getColumn_DefaultValue();
-
-		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' containment reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COLUMN__TYPE = eINSTANCE.getColumn_Type();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -3709,26 +2302,6 @@ public interface WebappPackage extends EPackage {
 		EAttribute ON_UPDATE__BEHAVIOR = eINSTANCE.getOnUpdate_Behavior();
 
 		/**
-		 * The meta object literal for the '{@link webapp.impl.ColumnTypeImpl <em>Column Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.ColumnTypeImpl
-		 * @see webapp.impl.WebappPackageImpl#getColumnType()
-		 * @generated
-		 */
-		EClass COLUMN_TYPE = eINSTANCE.getColumnType();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.NumericImpl <em>Numeric</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.NumericImpl
-		 * @see webapp.impl.WebappPackageImpl#getNumeric()
-		 * @generated
-		 */
-		EClass NUMERIC = eINSTANCE.getNumeric();
-
-		/**
 		 * The meta object literal for the '{@link webapp.impl.DetailImpl <em>Detail</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3755,368 +2328,6 @@ public interface WebappPackage extends EPackage {
 		EAttribute DETAIL__SCALE = eINSTANCE.getDetail_Scale();
 
 		/**
-		 * The meta object literal for the '{@link webapp.impl.DecimalImpl <em>Decimal</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.DecimalImpl
-		 * @see webapp.impl.WebappPackageImpl#getDecimal()
-		 * @generated
-		 */
-		EClass DECIMAL = eINSTANCE.getDecimal();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.IntImpl <em>Int</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.IntImpl
-		 * @see webapp.impl.WebappPackageImpl#getInt()
-		 * @generated
-		 */
-		EClass INT = eINSTANCE.getInt();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INT__SIZE = eINSTANCE.getInt_Size();
-
-		/**
-		 * The meta object literal for the '<em><b>Use Zero Fill</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute INT__USE_ZERO_FILL = eINSTANCE.getInt_UseZeroFill();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.IntegerImpl <em>Integer</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.IntegerImpl
-		 * @see webapp.impl.WebappPackageImpl#getInteger()
-		 * @generated
-		 */
-		EClass INTEGER = eINSTANCE.getInteger();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.SmallIntImpl <em>Small Int</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.SmallIntImpl
-		 * @see webapp.impl.WebappPackageImpl#getSmallInt()
-		 * @generated
-		 */
-		EClass SMALL_INT = eINSTANCE.getSmallInt();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.TinyIntImpl <em>Tiny Int</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.TinyIntImpl
-		 * @see webapp.impl.WebappPackageImpl#getTinyInt()
-		 * @generated
-		 */
-		EClass TINY_INT = eINSTANCE.getTinyInt();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.MediumIntImpl <em>Medium Int</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.MediumIntImpl
-		 * @see webapp.impl.WebappPackageImpl#getMediumInt()
-		 * @generated
-		 */
-		EClass MEDIUM_INT = eINSTANCE.getMediumInt();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.BigIntImpl <em>Big Int</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.BigIntImpl
-		 * @see webapp.impl.WebappPackageImpl#getBigInt()
-		 * @generated
-		 */
-		EClass BIG_INT = eINSTANCE.getBigInt();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.NotIntBitNumericTypeImpl <em>Not Int Bit Numeric Type</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.NotIntBitNumericTypeImpl
-		 * @see webapp.impl.WebappPackageImpl#getNotIntBitNumericType()
-		 * @generated
-		 */
-		EClass NOT_INT_BIT_NUMERIC_TYPE = eINSTANCE.getNotIntBitNumericType();
-
-		/**
-		 * The meta object literal for the '<em><b>Detail</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference NOT_INT_BIT_NUMERIC_TYPE__DETAIL = eINSTANCE.getNotIntBitNumericType_Detail();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.FloatImpl <em>Float</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.FloatImpl
-		 * @see webapp.impl.WebappPackageImpl#getFloat()
-		 * @generated
-		 */
-		EClass FLOAT = eINSTANCE.getFloat();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.RealImpl <em>Real</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.RealImpl
-		 * @see webapp.impl.WebappPackageImpl#getReal()
-		 * @generated
-		 */
-		EClass REAL = eINSTANCE.getReal();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.DoubleImpl <em>Double</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.DoubleImpl
-		 * @see webapp.impl.WebappPackageImpl#getDouble()
-		 * @generated
-		 */
-		EClass DOUBLE = eINSTANCE.getDouble();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.BitImpl <em>Bit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.BitImpl
-		 * @see webapp.impl.WebappPackageImpl#getBit()
-		 * @generated
-		 */
-		EClass BIT = eINSTANCE.getBit();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BIT__SIZE = eINSTANCE.getBit_Size();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.DateImpl <em>Date</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.DateImpl
-		 * @see webapp.impl.WebappPackageImpl#getDate()
-		 * @generated
-		 */
-		EClass DATE = eINSTANCE.getDate();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.DateTimeImpl <em>Date Time</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.DateTimeImpl
-		 * @see webapp.impl.WebappPackageImpl#getDateTime()
-		 * @generated
-		 */
-		EClass DATE_TIME = eINSTANCE.getDateTime();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.TimeStampImpl <em>Time Stamp</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.TimeStampImpl
-		 * @see webapp.impl.WebappPackageImpl#getTimeStamp()
-		 * @generated
-		 */
-		EClass TIME_STAMP = eINSTANCE.getTimeStamp();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.TimeImpl <em>Time</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.TimeImpl
-		 * @see webapp.impl.WebappPackageImpl#getTime()
-		 * @generated
-		 */
-		EClass TIME = eINSTANCE.getTime();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.YearImpl <em>Year</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.YearImpl
-		 * @see webapp.impl.WebappPackageImpl#getYear()
-		 * @generated
-		 */
-		EClass YEAR = eINSTANCE.getYear();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute YEAR__SIZE = eINSTANCE.getYear_Size();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.CharImpl <em>Char</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.CharImpl
-		 * @see webapp.impl.WebappPackageImpl#getChar()
-		 * @generated
-		 */
-		EClass CHAR = eINSTANCE.getChar();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CHAR__SIZE = eINSTANCE.getChar_Size();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.VarcharImpl <em>Varchar</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.VarcharImpl
-		 * @see webapp.impl.WebappPackageImpl#getVarchar()
-		 * @generated
-		 */
-		EClass VARCHAR = eINSTANCE.getVarchar();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VARCHAR__SIZE = eINSTANCE.getVarchar_Size();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.BinaryImpl <em>Binary</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.BinaryImpl
-		 * @see webapp.impl.WebappPackageImpl#getBinary()
-		 * @generated
-		 */
-		EClass BINARY = eINSTANCE.getBinary();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BINARY__SIZE = eINSTANCE.getBinary_Size();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.VarBinaryImpl <em>Var Binary</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.VarBinaryImpl
-		 * @see webapp.impl.WebappPackageImpl#getVarBinary()
-		 * @generated
-		 */
-		EClass VAR_BINARY = eINSTANCE.getVarBinary();
-
-		/**
-		 * The meta object literal for the '<em><b>Size</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VAR_BINARY__SIZE = eINSTANCE.getVarBinary_Size();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.BlobImpl <em>Blob</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.BlobImpl
-		 * @see webapp.impl.WebappPackageImpl#getBlob()
-		 * @generated
-		 */
-		EClass BLOB = eINSTANCE.getBlob();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.TinyBlobImpl <em>Tiny Blob</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.TinyBlobImpl
-		 * @see webapp.impl.WebappPackageImpl#getTinyBlob()
-		 * @generated
-		 */
-		EClass TINY_BLOB = eINSTANCE.getTinyBlob();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.MediumBlobImpl <em>Medium Blob</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.MediumBlobImpl
-		 * @see webapp.impl.WebappPackageImpl#getMediumBlob()
-		 * @generated
-		 */
-		EClass MEDIUM_BLOB = eINSTANCE.getMediumBlob();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.LongBlobImpl <em>Long Blob</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.LongBlobImpl
-		 * @see webapp.impl.WebappPackageImpl#getLongBlob()
-		 * @generated
-		 */
-		EClass LONG_BLOB = eINSTANCE.getLongBlob();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.TinyTextImpl <em>Tiny Text</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.TinyTextImpl
-		 * @see webapp.impl.WebappPackageImpl#getTinyText()
-		 * @generated
-		 */
-		EClass TINY_TEXT = eINSTANCE.getTinyText();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.TextImpl <em>Text</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.TextImpl
-		 * @see webapp.impl.WebappPackageImpl#getText()
-		 * @generated
-		 */
-		EClass TEXT = eINSTANCE.getText();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.MediumTextImpl <em>Medium Text</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.MediumTextImpl
-		 * @see webapp.impl.WebappPackageImpl#getMediumText()
-		 * @generated
-		 */
-		EClass MEDIUM_TEXT = eINSTANCE.getMediumText();
-
-		/**
-		 * The meta object literal for the '{@link webapp.impl.LongTextImpl <em>Long Text</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.LongTextImpl
-		 * @see webapp.impl.WebappPackageImpl#getLongText()
-		 * @generated
-		 */
-		EClass LONG_TEXT = eINSTANCE.getLongText();
-
-		/**
 		 * The meta object literal for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4137,14 +2348,14 @@ public interface WebappPackage extends EPackage {
 		EEnum CHARSET = eINSTANCE.getCharset();
 
 		/**
-		 * The meta object literal for the '{@link webapp.YearSize <em>Year Size</em>}' enum.
+		 * The meta object literal for the '{@link webapp.ColumnType <em>Column Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see webapp.YearSize
-		 * @see webapp.impl.WebappPackageImpl#getYearSize()
+		 * @see webapp.ColumnType
+		 * @see webapp.impl.WebappPackageImpl#getColumnType()
 		 * @generated
 		 */
-		EEnum YEAR_SIZE = eINSTANCE.getYearSize();
+		EEnum COLUMN_TYPE = eINSTANCE.getColumnType();
 
 	}
 

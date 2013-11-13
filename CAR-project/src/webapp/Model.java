@@ -132,7 +132,7 @@ public interface Model extends EObject {
 	 * @return the value of the '<em>Password</em>' attribute.
 	 * @see #setPassword(String)
 	 * @see webapp.WebappPackage#getModel_Password()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getPassword();

@@ -17,7 +17,7 @@
       <column
           name="id"
           defaultValue=""
-          useZeroFill="false"
+          useZeroFill="true"
           type="INTEGER"/>
       <column
           name="money"

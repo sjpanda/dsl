@@ -47,9 +47,35 @@
       <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/UJIS"/>
       <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//Charset/UTF8"/>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebApp.ecore#//YearSize">
-      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//YearSize/TWO"/>
-      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//YearSize/FOUR"/>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebApp.ecore#//ColumnType">
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/BIGINT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/TINYINT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/MEDIUMINT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/SMALLINT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/INTEGER"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/NUMERIC"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/REAL"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/DOUBLE"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/DECIMAL"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/FLOAT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/BIT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/TINYBLOB"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/BLOB"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/MEDIUMBLOB"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/LONGBLOB"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/CHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/VARCHAR"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/BINARY"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/VARBINARY"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/TEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/TINYTEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/MEDIUMTEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/LONGTEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/DATE"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/DATETIME"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/TIME"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/TIMESTAMP"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/YEAR"/>
     </genEnums>
     <genClasses ecoreClass="WebApp.ecore#//WebApp">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//WebApp/name"/>
@@ -91,8 +117,11 @@
     <genClasses ecoreClass="WebApp.ecore#//Column">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/isNotNull"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/size"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/useZeroFill"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Column/detail"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Column/defaultValue"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Column/type"/>
     </genClasses>
     <genClasses image="false" ecoreClass="WebApp.ecore#//Constraint">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Constraint/primaryKey"/>
@@ -120,57 +149,9 @@
     <genClasses ecoreClass="WebApp.ecore#//OnUpdate">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//OnUpdate/behavior"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="WebApp.ecore#//ColumnType"/>
-    <genClasses ecoreClass="WebApp.ecore#//Numeric"/>
     <genClasses ecoreClass="WebApp.ecore#//Detail">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/scale"/>
     </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Decimal"/>
-    <genClasses image="false" ecoreClass="WebApp.ecore#//Int">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Int/size"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Int/useZeroFill"/>
-    </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Integer"/>
-    <genClasses ecoreClass="WebApp.ecore#//SmallInt"/>
-    <genClasses ecoreClass="WebApp.ecore#//TinyInt"/>
-    <genClasses ecoreClass="WebApp.ecore#//MediumInt"/>
-    <genClasses ecoreClass="WebApp.ecore#//BigInt"/>
-    <genClasses image="false" ecoreClass="WebApp.ecore#//NotIntBitNumericType">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//NotIntBitNumericType/detail"/>
-    </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Float"/>
-    <genClasses ecoreClass="WebApp.ecore#//Real"/>
-    <genClasses ecoreClass="WebApp.ecore#//Double"/>
-    <genClasses ecoreClass="WebApp.ecore#//Bit">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Bit/size"/>
-    </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Date"/>
-    <genClasses ecoreClass="WebApp.ecore#//DateTime"/>
-    <genClasses ecoreClass="WebApp.ecore#//TimeStamp"/>
-    <genClasses ecoreClass="WebApp.ecore#//Time"/>
-    <genClasses ecoreClass="WebApp.ecore#//Year">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Year/size"/>
-    </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Char">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Char/size"/>
-    </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Varchar">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Varchar/size"/>
-    </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Binary">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Binary/size"/>
-    </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//VarBinary">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//VarBinary/size"/>
-    </genClasses>
-    <genClasses image="false" ecoreClass="WebApp.ecore#//Blob"/>
-    <genClasses ecoreClass="WebApp.ecore#//TinyBlob"/>
-    <genClasses ecoreClass="WebApp.ecore#//MediumBlob"/>
-    <genClasses ecoreClass="WebApp.ecore#//LongBlob"/>
-    <genClasses ecoreClass="WebApp.ecore#//TinyText"/>
-    <genClasses ecoreClass="WebApp.ecore#//Text"/>
-    <genClasses ecoreClass="WebApp.ecore#//MediumText"/>
-    <genClasses ecoreClass="WebApp.ecore#//LongText"/>
   </genPackages>
 </genmodel:GenModel>

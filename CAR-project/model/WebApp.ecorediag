@@ -231,13 +231,13 @@
         <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Column/type"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_IjyiMUt2EeOmcpIIvkCrfA"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_uEJawExeEeOKpv2uE4uZlg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Column/defaultValue"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_uEJawUxeEeOKpv2uE4uZlg"/>
+      </children>
       <children xmi:type="notation:Node" xmi:id="_L10fEEgSEeOeyYdB5-9y4w" type="2001">
         <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Column/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_L10fEUgSEeOeyYdB5-9y4w"/>
-      </children>
-      <children xmi:type="notation:Node" xmi:id="_TrLQYEpEEeOivLNWU32zzA" type="2001">
-        <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Column/defaultValue"/>
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_TrLQYUpEEeOivLNWU32zzA"/>
       </children>
       <children xmi:type="notation:Node" xmi:id="_c2xIIEpCEeOivLNWU32zzA" type="2001">
         <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Column/isNotNull"/>
