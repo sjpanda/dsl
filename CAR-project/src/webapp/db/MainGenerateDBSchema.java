@@ -7,7 +7,6 @@ import java.io.IOException;
 
 import webapp.WebApp;
 
-
 public class MainGenerateDBSchema {
 	public static void main(String[] args) {
 		FileWriter output;

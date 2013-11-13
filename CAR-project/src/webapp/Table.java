@@ -63,7 +63,7 @@ public interface Table extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Column</em>' containment reference list.
 	 * @see webapp.WebappPackage#getTable_Column()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<Column> getColumn();

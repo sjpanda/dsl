@@ -5,14 +5,10 @@ package webapp.provider;
 
 import java.util.Collection;
 import java.util.List;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -20,10 +16,8 @@ import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-
 import webapp.ForeignKey;
 import webapp.WebappFactory;
 import webapp.WebappPackage;
@@ -63,26 +57,27 @@ public class ForeignKeyItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addColumnPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
+			addExternalColumnPropertyDescriptor(object);
+			addExternalTablePropertyDescriptor(object);
+			addInternalColumnPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Column feature.
+	 * This adds a property descriptor for the External Column feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addColumnPropertyDescriptor(Object object) {
+	protected void addExternalColumnPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForeignKey_column_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_column_feature", "_UI_ForeignKey_type"),
-				 WebappPackage.Literals.FOREIGN_KEY__COLUMN,
+				 getString("_UI_ForeignKey_externalColumn_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_externalColumn_feature", "_UI_ForeignKey_type"),
+				 WebappPackage.Literals.FOREIGN_KEY__EXTERNAL_COLUMN,
 				 true,
 				 false,
 				 true,
@@ -92,23 +87,45 @@ public class ForeignKeyItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the External Table feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addExternalTablePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ForeignKey_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_name_feature", "_UI_ForeignKey_type"),
-				 WebappPackage.Literals.FOREIGN_KEY__NAME,
+				 getString("_UI_ForeignKey_externalTable_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_externalTable_feature", "_UI_ForeignKey_type"),
+				 WebappPackage.Literals.FOREIGN_KEY__EXTERNAL_TABLE,
 				 true,
 				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Internal Column feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addInternalColumnPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ForeignKey_internalColumn_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ForeignKey_internalColumn_feature", "_UI_ForeignKey_type"),
+				 WebappPackage.Literals.FOREIGN_KEY__INTERNAL_COLUMN,
+				 true,
 				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 true,
+				 null,
 				 null,
 				 null));
 	}
@@ -163,10 +180,7 @@ public class ForeignKeyItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((ForeignKey)object).getName();
-		return label == null || label.length() == 0 ?
-			getString("_UI_ForeignKey_type") :
-			getString("_UI_ForeignKey_type") + " " + label;
+		return getString("_UI_ForeignKey_type");
 	}
 
 	/**
@@ -181,9 +195,6 @@ public class ForeignKeyItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(ForeignKey.class)) {
-			case WebappPackage.FOREIGN_KEY__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
 			case WebappPackage.FOREIGN_KEY__ON_DELETE:
 			case WebappPackage.FOREIGN_KEY__ON_UPDATE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));

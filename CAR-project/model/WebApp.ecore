@@ -56,8 +56,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Properties"/>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="column" upperBound="-1"
-        eType="#//Column" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
+        upperBound="-1" eType="#//Column" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//Constraint"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="charset" eType="#//Charset"/>
@@ -79,7 +79,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="detail" eType="#//Detail"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ColumnType"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//ColumnType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
@@ -97,13 +97,16 @@
         upperBound="-1" eType="#//Column"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ForeignKey">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalColumn" lowerBound="1"
         eType="#//Column"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="onDelete" eType="#//OnDelete"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="onUpdate" eType="#//OnUpdate"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="externalTable" lowerBound="1"
+        eType="#//Table"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="internalColumn" lowerBound="1"
+        eType="#//Column"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Unique">
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"

@@ -172,7 +172,7 @@ public interface Column extends EObject {
 	 * @see webapp.ColumnType
 	 * @see #setType(ColumnType)
 	 * @see webapp.WebappPackage#getColumn_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	ColumnType getType();

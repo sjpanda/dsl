@@ -12,10 +12,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link webapp.ForeignKey#getColumn <em>Column</em>}</li>
+ *   <li>{@link webapp.ForeignKey#getExternalColumn <em>External Column</em>}</li>
  *   <li>{@link webapp.ForeignKey#getOnDelete <em>On Delete</em>}</li>
  *   <li>{@link webapp.ForeignKey#getOnUpdate <em>On Update</em>}</li>
- *   <li>{@link webapp.ForeignKey#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.ForeignKey#getExternalTable <em>External Table</em>}</li>
+ *   <li>{@link webapp.ForeignKey#getInternalColumn <em>Internal Column</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,30 +26,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface ForeignKey extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Column</b></em>' reference.
+	 * Returns the value of the '<em><b>External Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Column</em>' reference isn't clear,
+	 * If the meaning of the '<em>External Column</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Column</em>' reference.
-	 * @see #setColumn(Column)
-	 * @see webapp.WebappPackage#getForeignKey_Column()
+	 * @return the value of the '<em>External Column</em>' reference.
+	 * @see #setExternalColumn(Column)
+	 * @see webapp.WebappPackage#getForeignKey_ExternalColumn()
 	 * @model required="true"
 	 * @generated
 	 */
-	Column getColumn();
+	Column getExternalColumn();
 
 	/**
-	 * Sets the value of the '{@link webapp.ForeignKey#getColumn <em>Column</em>}' reference.
+	 * Sets the value of the '{@link webapp.ForeignKey#getExternalColumn <em>External Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Column</em>' reference.
-	 * @see #getColumn()
+	 * @param value the new value of the '<em>External Column</em>' reference.
+	 * @see #getExternalColumn()
 	 * @generated
 	 */
-	void setColumn(Column value);
+	void setExternalColumn(Column value);
 
 	/**
 	 * Returns the value of the '<em><b>On Delete</b></em>' containment reference.
@@ -103,29 +104,55 @@ public interface ForeignKey extends EObject {
 	void setOnUpdate(OnUpdate value);
 
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>External Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>External Table</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see webapp.WebappPackage#getForeignKey_Name()
-	 * @model
+	 * @return the value of the '<em>External Table</em>' reference.
+	 * @see #setExternalTable(Table)
+	 * @see webapp.WebappPackage#getForeignKey_ExternalTable()
+	 * @model required="true"
 	 * @generated
 	 */
-	String getName();
+	Table getExternalTable();
 
 	/**
-	 * Sets the value of the '{@link webapp.ForeignKey#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link webapp.ForeignKey#getExternalTable <em>External Table</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>External Table</em>' reference.
+	 * @see #getExternalTable()
 	 * @generated
 	 */
-	void setName(String value);
+	void setExternalTable(Table value);
+
+	/**
+	 * Returns the value of the '<em><b>Internal Column</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Internal Column</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Internal Column</em>' reference.
+	 * @see #setInternalColumn(Column)
+	 * @see webapp.WebappPackage#getForeignKey_InternalColumn()
+	 * @model required="true"
+	 * @generated
+	 */
+	Column getInternalColumn();
+
+	/**
+	 * Sets the value of the '{@link webapp.ForeignKey#getInternalColumn <em>Internal Column</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Internal Column</em>' reference.
+	 * @see #getInternalColumn()
+	 * @generated
+	 */
+	void setInternalColumn(Column value);
 
 } // ForeignKey

@@ -15,6 +15,7 @@ import webapp.Column;
 import webapp.ForeignKey;
 import webapp.OnDelete;
 import webapp.OnUpdate;
+import webapp.Table;
 import webapp.WebappPackage;
 
 /**
@@ -24,10 +25,11 @@ import webapp.WebappPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link webapp.impl.ForeignKeyImpl#getColumn <em>Column</em>}</li>
+ *   <li>{@link webapp.impl.ForeignKeyImpl#getExternalColumn <em>External Column</em>}</li>
  *   <li>{@link webapp.impl.ForeignKeyImpl#getOnDelete <em>On Delete</em>}</li>
  *   <li>{@link webapp.impl.ForeignKeyImpl#getOnUpdate <em>On Update</em>}</li>
- *   <li>{@link webapp.impl.ForeignKeyImpl#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.impl.ForeignKeyImpl#getExternalTable <em>External Table</em>}</li>
+ *   <li>{@link webapp.impl.ForeignKeyImpl#getInternalColumn <em>Internal Column</em>}</li>
  * </ul>
  * </p>
  *
@@ -35,14 +37,14 @@ import webapp.WebappPackage;
  */
 public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements ForeignKey {
 	/**
-	 * The cached value of the '{@link #getColumn() <em>Column</em>}' reference.
+	 * The cached value of the '{@link #getExternalColumn() <em>External Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getColumn()
+	 * @see #getExternalColumn()
 	 * @generated
 	 * @ordered
 	 */
-	protected Column column;
+	protected Column externalColumn;
 
 	/**
 	 * The cached value of the '{@link #getOnDelete() <em>On Delete</em>}' containment reference.
@@ -65,24 +67,24 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	protected OnUpdate onUpdate;
 
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getExternalTable() <em>External Table</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getExternalTable()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected Table externalTable;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getInternalColumn() <em>Internal Column</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getInternalColumn()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected Column internalColumn;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -108,16 +110,16 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Column getColumn() {
-		if (column != null && column.eIsProxy()) {
-			InternalEObject oldColumn = (InternalEObject)column;
-			column = (Column)eResolveProxy(oldColumn);
-			if (column != oldColumn) {
+	public Column getExternalColumn() {
+		if (externalColumn != null && externalColumn.eIsProxy()) {
+			InternalEObject oldExternalColumn = (InternalEObject)externalColumn;
+			externalColumn = (Column)eResolveProxy(oldExternalColumn);
+			if (externalColumn != oldExternalColumn) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.FOREIGN_KEY__COLUMN, oldColumn, column));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.FOREIGN_KEY__EXTERNAL_COLUMN, oldExternalColumn, externalColumn));
 			}
 		}
-		return column;
+		return externalColumn;
 	}
 
 	/**
@@ -125,8 +127,8 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Column basicGetColumn() {
-		return column;
+	public Column basicGetExternalColumn() {
+		return externalColumn;
 	}
 
 	/**
@@ -134,11 +136,11 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setColumn(Column newColumn) {
-		Column oldColumn = column;
-		column = newColumn;
+	public void setExternalColumn(Column newExternalColumn) {
+		Column oldExternalColumn = externalColumn;
+		externalColumn = newExternalColumn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.FOREIGN_KEY__COLUMN, oldColumn, column));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.FOREIGN_KEY__EXTERNAL_COLUMN, oldExternalColumn, externalColumn));
 	}
 
 	/**
@@ -232,8 +234,16 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public Table getExternalTable() {
+		if (externalTable != null && externalTable.eIsProxy()) {
+			InternalEObject oldExternalTable = (InternalEObject)externalTable;
+			externalTable = (Table)eResolveProxy(oldExternalTable);
+			if (externalTable != oldExternalTable) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.FOREIGN_KEY__EXTERNAL_TABLE, oldExternalTable, externalTable));
+			}
+		}
+		return externalTable;
 	}
 
 	/**
@@ -241,11 +251,58 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public Table basicGetExternalTable() {
+		return externalTable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setExternalTable(Table newExternalTable) {
+		Table oldExternalTable = externalTable;
+		externalTable = newExternalTable;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.FOREIGN_KEY__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.FOREIGN_KEY__EXTERNAL_TABLE, oldExternalTable, externalTable));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Column getInternalColumn() {
+		if (internalColumn != null && internalColumn.eIsProxy()) {
+			InternalEObject oldInternalColumn = (InternalEObject)internalColumn;
+			internalColumn = (Column)eResolveProxy(oldInternalColumn);
+			if (internalColumn != oldInternalColumn) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.FOREIGN_KEY__INTERNAL_COLUMN, oldInternalColumn, internalColumn));
+			}
+		}
+		return internalColumn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Column basicGetInternalColumn() {
+		return internalColumn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setInternalColumn(Column newInternalColumn) {
+		Column oldInternalColumn = internalColumn;
+		internalColumn = newInternalColumn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.FOREIGN_KEY__INTERNAL_COLUMN, oldInternalColumn, internalColumn));
 	}
 
 	/**
@@ -272,15 +329,19 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebappPackage.FOREIGN_KEY__COLUMN:
-				if (resolve) return getColumn();
-				return basicGetColumn();
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_COLUMN:
+				if (resolve) return getExternalColumn();
+				return basicGetExternalColumn();
 			case WebappPackage.FOREIGN_KEY__ON_DELETE:
 				return getOnDelete();
 			case WebappPackage.FOREIGN_KEY__ON_UPDATE:
 				return getOnUpdate();
-			case WebappPackage.FOREIGN_KEY__NAME:
-				return getName();
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_TABLE:
+				if (resolve) return getExternalTable();
+				return basicGetExternalTable();
+			case WebappPackage.FOREIGN_KEY__INTERNAL_COLUMN:
+				if (resolve) return getInternalColumn();
+				return basicGetInternalColumn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -293,8 +354,8 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebappPackage.FOREIGN_KEY__COLUMN:
-				setColumn((Column)newValue);
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_COLUMN:
+				setExternalColumn((Column)newValue);
 				return;
 			case WebappPackage.FOREIGN_KEY__ON_DELETE:
 				setOnDelete((OnDelete)newValue);
@@ -302,8 +363,11 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 			case WebappPackage.FOREIGN_KEY__ON_UPDATE:
 				setOnUpdate((OnUpdate)newValue);
 				return;
-			case WebappPackage.FOREIGN_KEY__NAME:
-				setName((String)newValue);
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_TABLE:
+				setExternalTable((Table)newValue);
+				return;
+			case WebappPackage.FOREIGN_KEY__INTERNAL_COLUMN:
+				setInternalColumn((Column)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -317,8 +381,8 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebappPackage.FOREIGN_KEY__COLUMN:
-				setColumn((Column)null);
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_COLUMN:
+				setExternalColumn((Column)null);
 				return;
 			case WebappPackage.FOREIGN_KEY__ON_DELETE:
 				setOnDelete((OnDelete)null);
@@ -326,8 +390,11 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 			case WebappPackage.FOREIGN_KEY__ON_UPDATE:
 				setOnUpdate((OnUpdate)null);
 				return;
-			case WebappPackage.FOREIGN_KEY__NAME:
-				setName(NAME_EDEFAULT);
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_TABLE:
+				setExternalTable((Table)null);
+				return;
+			case WebappPackage.FOREIGN_KEY__INTERNAL_COLUMN:
+				setInternalColumn((Column)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -341,32 +408,18 @@ public class ForeignKeyImpl extends MinimalEObjectImpl.Container implements Fore
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebappPackage.FOREIGN_KEY__COLUMN:
-				return column != null;
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_COLUMN:
+				return externalColumn != null;
 			case WebappPackage.FOREIGN_KEY__ON_DELETE:
 				return onDelete != null;
 			case WebappPackage.FOREIGN_KEY__ON_UPDATE:
 				return onUpdate != null;
-			case WebappPackage.FOREIGN_KEY__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case WebappPackage.FOREIGN_KEY__EXTERNAL_TABLE:
+				return externalTable != null;
+			case WebappPackage.FOREIGN_KEY__INTERNAL_COLUMN:
+				return internalColumn != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
 	}
 
 } //ForeignKeyImpl

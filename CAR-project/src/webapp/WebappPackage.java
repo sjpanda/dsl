@@ -787,13 +787,13 @@ public interface WebappPackage extends EPackage {
 	int FOREIGN_KEY = 15;
 
 	/**
-	 * The feature id for the '<em><b>Column</b></em>' reference.
+	 * The feature id for the '<em><b>External Column</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY__COLUMN = 0;
+	int FOREIGN_KEY__EXTERNAL_COLUMN = 0;
 
 	/**
 	 * The feature id for the '<em><b>On Delete</b></em>' containment reference.
@@ -814,13 +814,22 @@ public interface WebappPackage extends EPackage {
 	int FOREIGN_KEY__ON_UPDATE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>External Table</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY__NAME = 3;
+	int FOREIGN_KEY__EXTERNAL_TABLE = 3;
+
+	/**
+	 * The feature id for the '<em><b>Internal Column</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOREIGN_KEY__INTERNAL_COLUMN = 4;
 
 	/**
 	 * The number of structural features of the '<em>Foreign Key</em>' class.
@@ -829,7 +838,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY_FEATURE_COUNT = 4;
+	int FOREIGN_KEY_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Foreign Key</em>' class.
@@ -1589,15 +1598,15 @@ public interface WebappPackage extends EPackage {
 	EClass getForeignKey();
 
 	/**
-	 * Returns the meta object for the reference '{@link webapp.ForeignKey#getColumn <em>Column</em>}'.
+	 * Returns the meta object for the reference '{@link webapp.ForeignKey#getExternalColumn <em>External Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Column</em>'.
-	 * @see webapp.ForeignKey#getColumn()
+	 * @return the meta object for the reference '<em>External Column</em>'.
+	 * @see webapp.ForeignKey#getExternalColumn()
 	 * @see #getForeignKey()
 	 * @generated
 	 */
-	EReference getForeignKey_Column();
+	EReference getForeignKey_ExternalColumn();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link webapp.ForeignKey#getOnDelete <em>On Delete</em>}'.
@@ -1622,15 +1631,26 @@ public interface WebappPackage extends EPackage {
 	EReference getForeignKey_OnUpdate();
 
 	/**
-	 * Returns the meta object for the attribute '{@link webapp.ForeignKey#getName <em>Name</em>}'.
+	 * Returns the meta object for the reference '{@link webapp.ForeignKey#getExternalTable <em>External Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see webapp.ForeignKey#getName()
+	 * @return the meta object for the reference '<em>External Table</em>'.
+	 * @see webapp.ForeignKey#getExternalTable()
 	 * @see #getForeignKey()
 	 * @generated
 	 */
-	EAttribute getForeignKey_Name();
+	EReference getForeignKey_ExternalTable();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.ForeignKey#getInternalColumn <em>Internal Column</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Internal Column</em>'.
+	 * @see webapp.ForeignKey#getInternalColumn()
+	 * @see #getForeignKey()
+	 * @generated
+	 */
+	EReference getForeignKey_InternalColumn();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Unique <em>Unique</em>}'.
@@ -2226,12 +2246,12 @@ public interface WebappPackage extends EPackage {
 		EClass FOREIGN_KEY = eINSTANCE.getForeignKey();
 
 		/**
-		 * The meta object literal for the '<em><b>Column</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>External Column</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FOREIGN_KEY__COLUMN = eINSTANCE.getForeignKey_Column();
+		EReference FOREIGN_KEY__EXTERNAL_COLUMN = eINSTANCE.getForeignKey_ExternalColumn();
 
 		/**
 		 * The meta object literal for the '<em><b>On Delete</b></em>' containment reference feature.
@@ -2250,12 +2270,20 @@ public interface WebappPackage extends EPackage {
 		EReference FOREIGN_KEY__ON_UPDATE = eINSTANCE.getForeignKey_OnUpdate();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>External Table</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FOREIGN_KEY__NAME = eINSTANCE.getForeignKey_Name();
+		EReference FOREIGN_KEY__EXTERNAL_TABLE = eINSTANCE.getForeignKey_ExternalTable();
+
+		/**
+		 * The meta object literal for the '<em><b>Internal Column</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FOREIGN_KEY__INTERNAL_COLUMN = eINSTANCE.getForeignKey_InternalColumn();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.UniqueImpl <em>Unique</em>}' class.

@@ -1,9 +1,81 @@
-<%@ jet package="webapp.db" class="GenerateDBSchema" imports ="webapp.*;"%>
+<%@ jet package="webapp.db" class="GenerateDBSchema" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
 <%  WebApp app = (WebApp)argument;
-	if(app == null) {
+	if(app == null){
 		return "Null Web App";
-	} 
+	}
+	 
+	Model model = app.getModel();
+	if(model == null){
+		return "Null Model";
+	}
 	
-	
+	EList<Table> tables = model.getTable();
+	if((tables == null) || (tables.size() == 0)){
+		return "Null table";
+	}
+	boolean hasTableToCreate = false;
+	for(Table table : tables){
+		EList<Column> columns = table.getColumn();
+		if(columns == null){
+			continue;
+		}
+		hasTableToCreate = true;
+		%>
+		create table <%= table.getName() %> (
+		<%
+		
+		for(int i=0; i<columns.size(); i++){
+			Column column = columns.get(i);
+			%>
+			<%= column.getName() %> <%= column.getType() %>
+			<%
+			if(column.getSize() > 0){ %> 
+				(<%= column.getSize() %>) 
+			<%}
+			if(column.getDetail() != null){ %> 
+				(<%if(column.getDetail().getPrecision() > 0){%><%= column.getDetail().getPrecision() %><%if(column.getDetail().getScale() > 0){%>, <%= column.getDetail().getScale() %><%}}%>) <%
+			}
+			if(column.isUseZeroFill() == true){ %> 
+				zerofill 
+			<%}
+			if(column.isUseZeroFill() == true){ %> 
+				not null 
+			<%}
+			if((column.getDefaultValue() != null) && (! column.getDefaultValue().equals(""))){ %> 
+				default <%= column.getDefaultValue() %> 
+			<%}
+			if(i < (columns.size() - 1)){
+				%>,<%	
+			}
+		}
+		Constraint constraint = table.getConstraint();
+		if(constraint != null){
+			PrimaryKey primarykey = constraint.getPrimaryKey();
+			if(primarykey != null){
+				%>, primary key (<%
+					EList<Column> pkColumns = primarykey.getColumn();
+					for(int i=0; i<pkColumns.size(); i++){
+						%><%= pkColumns.get(i).getName() %><%
+						if(i < (pkColumns.size() - 1)){
+							%>, <%
+						}
+					}
+				%>)<%
+			}
+			EList<ForeignKey> foreignkeys = constraint.getForeignKey();
+			if(foreignkeys != null){
+				for(ForeignKey foreignkey : foreignkeys){%>
+					, foreign key (<%= foreignkey.getInternalColumn().getName() %>) references <%= foreignkey.getExternalTable().getName() %> (<%= foreignkey.getExternalColumn().getName() %>)<%
+				}
+			}
+		}
+		%>) <% if(table.getCharset() == null){%>charset=utf8<%}else{%>charset=<%= table.getCharset() %><%} %>;<%
+		%>
+		
+		<%
+	}
+	if(! hasTableToCreate){
+		return "No table has columns";
+	}
 	%>
-create table toto(id int);

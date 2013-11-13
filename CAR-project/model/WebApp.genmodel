@@ -133,10 +133,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//PrimaryKey/column"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//ForeignKey">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/column"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/externalColumn"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/onDelete"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/onUpdate"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//ForeignKey/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/externalTable"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//ForeignKey/internalColumn"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Unique">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Unique/column"/>
