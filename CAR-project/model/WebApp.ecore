@@ -40,8 +40,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="userName" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller"/>
   <eClassifiers xsi:type="ecore:EClass" name="Resource">
@@ -68,7 +67,7 @@
       <details key="constraints" value="detailC"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="detailC" value="&#xA;&#x9;&#x9;self.type &lt;> ColumnType::NUMERIC implies self.detail->isEmpty()"/>
+      <details key="detailC" value="&#xA;&#x9;&#x9;(self.type &lt;> ColumnType::NUMERIC &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DECIMAL &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::FLOAT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DOUBLE&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::REAL&#xA;&#x9;&#x9;) implies self.detail->isEmpty()"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNotNull" lowerBound="1"
@@ -160,13 +159,17 @@
     <eLiterals name="UJIS" value="9"/>
     <eLiterals name="UTF8" value="21"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Numeric" eSuperTypes="#//NotIntBitNumericType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Detail">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="precisionBiggerThanScale"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="precisionBiggerThanScale" value="&#xA;&#x9;&#x9;self.precision >= self.scale"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Decimal" eSuperTypes="#//NotIntBitNumericType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Int" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="useZeroFill" lowerBound="1"
@@ -177,12 +180,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="TinyInt" eSuperTypes="#//Int"/>
   <eClassifiers xsi:type="ecore:EClass" name="MediumInt" eSuperTypes="#//Int"/>
   <eClassifiers xsi:type="ecore:EClass" name="BigInt" eSuperTypes="#//Int"/>
-  <eClassifiers xsi:type="ecore:EClass" name="NotIntBitNumericType" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="detail" eType="#//Detail"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Float" eSuperTypes="#//NotIntBitNumericType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Real" eSuperTypes="#//NotIntBitNumericType"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Double" eSuperTypes="#//NotIntBitNumericType"/>
   <eClassifiers xsi:type="ecore:EClass" name="Bit">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>

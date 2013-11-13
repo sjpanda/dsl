@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webapp:WebApp
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:webapp="http://webapp/1.0"
+    xsi:schemaLocation="http://webapp/1.0 ../model/WebApp.ecore"
+    name="site"
+    framework="struts">
+  <appConfig/>
+  <webConfig/>
+  <model databaseName="jee"
+      url="localhost:3306"
+      userName="toto">
+    <table name="contact"
+        charset="UTF8">
+      <column
+          name="id"
+          defaultValue=""
+          type="INTEGER"/>
+      <column
+          name="money"
+          type="FLOAT">
+        <detail
+            precision="7"
+            scale="2"/>
+      </column>
+    </table>
+  </model>
+</webapp:WebApp>
