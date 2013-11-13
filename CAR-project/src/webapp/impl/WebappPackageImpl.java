@@ -758,6 +758,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getForeignKey_Name() {
+		return (EAttribute)foreignKeyEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getUnique() {
 		return uniqueEClass;
 	}
@@ -974,6 +983,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEReference(foreignKeyEClass, FOREIGN_KEY__COLUMN);
 		createEReference(foreignKeyEClass, FOREIGN_KEY__ON_DELETE);
 		createEReference(foreignKeyEClass, FOREIGN_KEY__ON_UPDATE);
+		createEAttribute(foreignKeyEClass, FOREIGN_KEY__NAME);
 
 		uniqueEClass = createEClass(UNIQUE);
 		createEReference(uniqueEClass, UNIQUE__COLUMN);
@@ -1076,12 +1086,12 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getColumn_Name(), ecorePackage.getEString(), "name", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_IsNotNull(), ecorePackage.getEBoolean(), "isNotNull", "false", 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_Size(), ecorePackage.getEInt(), "size", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getColumn_UseZeroFill(), ecorePackage.getEBoolean(), "useZeroFill", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getColumn_UseZeroFill(), ecorePackage.getEBoolean(), "useZeroFill", null, 1, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getColumn_Detail(), this.getDetail(), null, "detail", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_Type(), this.getColumnType(), "type", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getColumn_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Column.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(constraintEClass, Constraint.class, "Constraint", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConstraint_PrimaryKey(), this.getPrimaryKey(), null, "primaryKey", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConstraint_Unique(), this.getUnique(), null, "unique", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConstraint_Check(), this.getCheck(), null, "check", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1094,6 +1104,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEReference(getForeignKey_Column(), this.getColumn(), null, "column", null, 1, 1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getForeignKey_OnDelete(), this.getOnDelete(), null, "onDelete", null, 0, 1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getForeignKey_OnUpdate(), this.getOnUpdate(), null, "onUpdate", null, 0, 1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getForeignKey_Name(), ecorePackage.getEString(), "name", null, 0, 1, ForeignKey.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(uniqueEClass, Unique.class, "Unique", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getUnique_Column(), this.getColumn(), null, "column", null, 1, -1, Unique.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1255,14 +1266,14 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		   source, 
 		   new String[] {
 			 "detailC", "\n\t\t(self.type <> ColumnType::NUMERIC \n\t\t\tand self.type <> ColumnType::DECIMAL \n\t\t\tand self.type <> ColumnType::FLOAT\n\t\t\tand self.type <> ColumnType::DOUBLE\n\t\t\tand self.type <> ColumnType::REAL\n\t\t) implies self.detail->isEmpty()",
-			 "useZeroFillC", "\n\t\t((self.type <> ColumnType::INTEGER\n\t\t\tand self.type <> ColumnType::BIGINT \n\t\t\tand self.type <> ColumnType::SMALLINT\n\t\t\tand self.type <> ColumnType::MEDIUMINT\n\t\t\tand self.type <> ColumnType::TINYINT\n\t\t) implies self.useZeroFill->isEmpty()) \n\t\tand\n\t\t((self.type = ColumnType::INTEGER\n\t\t\tor self.type = ColumnType::BIGINT \n\t\t\tor self.type = ColumnType::SMALLINT\n\t\t\tor self.type = ColumnType::MEDIUMINT\n\t\t\tor self.type = ColumnType::TINYINT\n\t\t) implies self.useZeroFill->notEmpty())",
-			 "sizeC", "\n\t\t((self.type <> ColumnType::INTEGER\n\t\t\tand self.type <> ColumnType::BIGINT \n\t\t\tand self.type <> ColumnType::SMALLINT\n\t\t\tand self.type <> ColumnType::MEDIUMINT\n\t\t\tand self.type <> ColumnType::TINYINT\n\t\t\tand self.type <> ColumnType::CHAR\n\t\t\tand self.type <> ColumnType::VARCHAR\n\t\t\tand self.type <> ColumnType::BINARY\n\t\t\tand self.type <> ColumnType::VARBINARY\n\t\t\tand self.type <> ColumnType::BIT\n\t\t\tand self.type <> ColumnType::YEAR\n\t\t) implies (self.size->isEmpty() or self.size = 0))\n\t\tand\n\t\t(self.type = ColumnType::BIT implies (self.size >= 1 and self.size <= 64))\n\t\tand\n\t\t((self.type = ColumnType::CHAR or self.type = ColumnType::VARCHAR) implies (self.size >= 0 and self.size <= 255))\n\t\tand\n\t\t(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))"
+			 "useZeroFillC", "\n\t\t((self.type <> ColumnType::INTEGER\n\t\t\tand self.type <> ColumnType::BIGINT \n\t\t\tand self.type <> ColumnType::SMALLINT\n\t\t\tand self.type <> ColumnType::MEDIUMINT\n\t\t\tand self.type <> ColumnType::TINYINT\n\t\t) implies self.useZeroFill=false)",
+			 "sizeC", "\n\t\t((self.type <> ColumnType::INTEGER\n\t\t\tand self.type <> ColumnType::BIGINT \n\t\t\tand self.type <> ColumnType::SMALLINT\n\t\t\tand self.type <> ColumnType::MEDIUMINT\n\t\t\tand self.type <> ColumnType::TINYINT\n\t\t\tand self.type <> ColumnType::CHAR\n\t\t\tand self.type <> ColumnType::VARCHAR\n\t\t\tand self.type <> ColumnType::BINARY\n\t\t\tand self.type <> ColumnType::VARBINARY\n\t\t\tand self.type <> ColumnType::BIT\n\t\t\tand self.type <> ColumnType::YEAR\n\t\t) implies (self.size->isEmpty() or self.size = 0))\n\t\tand\n\t\t(self.type = ColumnType::BIT implies (self.size >= 1 and self.size <= 64))\n\t\tand\n\t\t((self.type = ColumnType::CHAR or self.type = ColumnType::VARCHAR) implies (self.size >= 0 and self.size <= 255))\n\t\tand\n\t\t(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))\n\t\tand\n\t\t(self.size->notEmpty() implies self.size >= 0)"
 		   });			
 		addAnnotation
 		  (detailEClass, 
 		   source, 
 		   new String[] {
-			 "precisionBiggerThanScale", "\n\t\tself.precision >= self.scale"
+			 "precisionBiggerThanScale", "\n\t\tself.precision >= self.scale and self.precision >= 0 and self.scale >= 0"
 		   });
 	}
 

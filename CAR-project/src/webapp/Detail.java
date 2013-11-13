@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see webapp.WebappPackage#getDetail()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='precisionBiggerThanScale'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot precisionBiggerThanScale='\n\t\tself.precision >= self.scale'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot precisionBiggerThanScale='\n\t\tself.precision >= self.scale and self.precision >= 0 and self.scale >= 0'"
  * @generated
  */
 public interface Detail extends EObject {

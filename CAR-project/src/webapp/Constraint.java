@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  *
  * @see webapp.WebappPackage#getConstraint()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Constraint extends EObject {

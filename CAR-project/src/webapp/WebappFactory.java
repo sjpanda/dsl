@@ -139,6 +139,15 @@ public interface WebappFactory extends EFactory {
 	Column createColumn();
 
 	/**
+	 * Returns a new object of class '<em>Constraint</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Constraint</em>'.
+	 * @generated
+	 */
+	Constraint createConstraint();
+
+	/**
 	 * Returns a new object of class '<em>Primary Key</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

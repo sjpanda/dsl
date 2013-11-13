@@ -315,14 +315,7 @@ public class WebappValidator extends EObjectValidator {
 		"\t\t\tand self.type <> ColumnType::SMALLINT\n" +
 		"\t\t\tand self.type <> ColumnType::MEDIUMINT\n" +
 		"\t\t\tand self.type <> ColumnType::TINYINT\n" +
-		"\t\t) implies self.useZeroFill->isEmpty()) \n" +
-		"\t\tand\n" +
-		"\t\t((self.type = ColumnType::INTEGER\n" +
-		"\t\t\tor self.type = ColumnType::BIGINT \n" +
-		"\t\t\tor self.type = ColumnType::SMALLINT\n" +
-		"\t\t\tor self.type = ColumnType::MEDIUMINT\n" +
-		"\t\t\tor self.type = ColumnType::TINYINT\n" +
-		"\t\t) implies self.useZeroFill->notEmpty())";
+		"\t\t) implies self.useZeroFill=false)";
 
 	/**
 	 * Validates the useZeroFillC constraint of '<em>Column</em>'.
@@ -369,7 +362,9 @@ public class WebappValidator extends EObjectValidator {
 		"\t\tand\n" +
 		"\t\t((self.type = ColumnType::CHAR or self.type = ColumnType::VARCHAR) implies (self.size >= 0 and self.size <= 255))\n" +
 		"\t\tand\n" +
-		"\t\t(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))";
+		"\t\t(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))\n" +
+		"\t\tand\n" +
+		"\t\t(self.size->notEmpty() implies self.size >= 0)";
 
 	/**
 	 * Validates the sizeC constraint of '<em>Column</em>'.
@@ -481,7 +476,7 @@ public class WebappValidator extends EObjectValidator {
 	 * @generated
 	 */
 	protected static final String DETAIL__PRECISION_BIGGER_THAN_SCALE__EEXPRESSION = "\n" +
-		"\t\tself.precision >= self.scale";
+		"\t\tself.precision >= self.scale and self.precision >= 0 and self.scale >= 0";
 
 	/**
 	 * Validates the precisionBiggerThanScale constraint of '<em>Detail</em>'.

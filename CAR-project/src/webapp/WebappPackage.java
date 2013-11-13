@@ -814,13 +814,22 @@ public interface WebappPackage extends EPackage {
 	int FOREIGN_KEY__ON_UPDATE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FOREIGN_KEY__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Foreign Key</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FOREIGN_KEY_FEATURE_COUNT = 3;
+	int FOREIGN_KEY_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Foreign Key</em>' class.
@@ -1613,6 +1622,17 @@ public interface WebappPackage extends EPackage {
 	EReference getForeignKey_OnUpdate();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webapp.ForeignKey#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see webapp.ForeignKey#getName()
+	 * @see #getForeignKey()
+	 * @generated
+	 */
+	EAttribute getForeignKey_Name();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Unique <em>Unique</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2228,6 +2248,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference FOREIGN_KEY__ON_UPDATE = eINSTANCE.getForeignKey_OnUpdate();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FOREIGN_KEY__NAME = eINSTANCE.getForeignKey_Name();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.UniqueImpl <em>Unique</em>}' class.

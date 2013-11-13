@@ -371,6 +371,29 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Constraint} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConstraintItemProvider constraintItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Constraint}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConstraintAdapter() {
+		if (constraintItemProvider == null) {
+			constraintItemProvider = new ConstraintItemProvider(this);
+		}
+
+		return constraintItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link webapp.PrimaryKey} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -643,6 +666,7 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (propertiesItemProvider != null) propertiesItemProvider.dispose();
 		if (tableItemProvider != null) tableItemProvider.dispose();
 		if (columnItemProvider != null) columnItemProvider.dispose();
+		if (constraintItemProvider != null) constraintItemProvider.dispose();
 		if (primaryKeyItemProvider != null) primaryKeyItemProvider.dispose();
 		if (foreignKeyItemProvider != null) foreignKeyItemProvider.dispose();
 		if (uniqueItemProvider != null) uniqueItemProvider.dispose();

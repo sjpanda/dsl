@@ -208,6 +208,11 @@ public class TableItemProvider
 			(createChildParameter
 				(WebappPackage.Literals.TABLE__COLUMN,
 				 WebappFactory.eINSTANCE.createColumn()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.TABLE__CONSTRAINT,
+				 WebappFactory.eINSTANCE.createConstraint()));
 	}
 
 	/**

@@ -70,6 +70,7 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 			case WebappPackage.PROPERTIES: return createProperties();
 			case WebappPackage.TABLE: return createTable();
 			case WebappPackage.COLUMN: return createColumn();
+			case WebappPackage.CONSTRAINT: return createConstraint();
 			case WebappPackage.PRIMARY_KEY: return createPrimaryKey();
 			case WebappPackage.FOREIGN_KEY: return createForeignKey();
 			case WebappPackage.UNIQUE: return createUnique();
@@ -248,6 +249,16 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 	public Column createColumn() {
 		ColumnImpl column = new ColumnImpl();
 		return column;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Constraint createConstraint() {
+		ConstraintImpl constraint = new ConstraintImpl();
+		return constraint;
 	}
 
 	/**

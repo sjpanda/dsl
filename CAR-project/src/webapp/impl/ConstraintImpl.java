@@ -41,7 +41,7 @@ import webapp.WebappPackage;
  *
  * @generated
  */
-public abstract class ConstraintImpl extends MinimalEObjectImpl.Container implements Constraint {
+public class ConstraintImpl extends MinimalEObjectImpl.Container implements Constraint {
 	/**
 	 * The cached value of the '{@link #getPrimaryKey() <em>Primary Key</em>}' containment reference.
 	 * <!-- begin-user-doc -->
