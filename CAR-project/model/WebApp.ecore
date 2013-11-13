@@ -68,20 +68,21 @@
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="detailC" value="&#xA;&#x9;&#x9;(self.type &lt;> ColumnType::NUMERIC &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DECIMAL &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::FLOAT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DOUBLE&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::REAL&#xA;&#x9;&#x9;) implies self.detail->isEmpty()"/>
-      <details key="useZeroFillC" value="&#xA;&#x9;&#x9;((self.type &lt;> ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::TINYINT&#xA;&#x9;&#x9;) implies self.useZeroFill->isEmpty()) &#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;((self.type = ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::TINYINT&#xA;&#x9;&#x9;) implies self.useZeroFill->notEmpty())"/>
-      <details key="sizeC" value="&#xA;&#x9;&#x9;((self.type &lt;> ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::TINYINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::CHAR&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::VARCHAR&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BINARY&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::VARBINARY&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::YEAR&#xA;&#x9;&#x9;) implies (self.size->isEmpty() or self.size = 0))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;(self.type = ColumnType::BIT implies (self.size >= 1 and self.size &lt;= 64))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;((self.type = ColumnType::CHAR or self.type = ColumnType::VARCHAR) implies (self.size >= 0 and self.size &lt;= 255))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))"/>
+      <details key="useZeroFillC" value="&#xA;&#x9;&#x9;((self.type &lt;> ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::TINYINT&#xA;&#x9;&#x9;) implies self.useZeroFill=false)"/>
+      <details key="sizeC" value="&#xA;&#x9;&#x9;((self.type &lt;> ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::TINYINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::CHAR&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::VARCHAR&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BINARY&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::VARBINARY&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::YEAR&#xA;&#x9;&#x9;) implies (self.size->isEmpty() or self.size = 0))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;(self.type = ColumnType::BIT implies (self.size >= 1 and self.size &lt;= 64))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;((self.type = ColumnType::CHAR or self.type = ColumnType::VARCHAR) implies (self.size >= 0 and self.size &lt;= 255))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;(self.size->notEmpty() implies self.size >= 0)"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNotNull" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="false"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useZeroFill" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useZeroFill" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="detail" eType="#//Detail"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ColumnType"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Constraint" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EReference" name="primaryKey" eType="#//PrimaryKey"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="unique" upperBound="-1"
@@ -102,6 +103,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="onUpdate" eType="#//OnUpdate"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Unique">
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
@@ -165,7 +167,7 @@
       <details key="constraints" value="precisionBiggerThanScale"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="precisionBiggerThanScale" value="&#xA;&#x9;&#x9;self.precision >= self.scale"/>
+      <details key="precisionBiggerThanScale" value="&#xA;&#x9;&#x9;self.precision >= self.scale and self.precision >= 0 and self.scale >= 0"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="precision" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

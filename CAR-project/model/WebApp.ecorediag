@@ -299,6 +299,10 @@
   <children xmi:type="notation:Node" xmi:id="_DwOtEEo4EeOivLNWU32zzA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_DwPUIEo4EeOivLNWU32zzA" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_DwPUIUo4EeOivLNWU32zzA" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_Tlg3oEyREeO6OenXcuqsKg" type="2001">
+        <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//ForeignKey/name"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_Tlg3oUyREeO6OenXcuqsKg"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_DwPUIko4EeOivLNWU32zzA"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_DwPUI0o4EeOivLNWU32zzA"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_DwPUJEo4EeOivLNWU32zzA"/>

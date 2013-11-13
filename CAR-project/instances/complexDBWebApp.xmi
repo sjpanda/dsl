@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webapp:WebApp
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:webapp="http://webapp/1.0"
+    xsi:schemaLocation="http://webapp/1.0 ../model/WebApp.ecore"
+    name="My first web app"
+    framework="Struts">
+  <appConfig/>
+  <webConfig/>
+  <library/>
+  <view/>
+  <model databaseName="jee"
+      url="localhost:3306"
+      userName="toto">
+    <table name="contact"
+        charset="UTF8">
+      <column
+          name="id"
+          isNotNull="true"
+          size="10"
+          useZeroFill="true"
+          type="INTEGER"/>
+      <column
+          name="firstname"
+          size="255"
+          type="VARCHAR"/>
+      <column
+          name="lastname"
+          isNotNull="true"
+          size="255"
+          type="VARCHAR"/>
+      <column
+          name="age"
+          type="INTEGER"/>
+      <column
+          name="email"
+          size="255"
+          type="VARCHAR"/>
+      <constraint>
+        <primaryKey
+            column="//@model/@table.0/@column.0"/>
+        <unique
+            column="//@model/@table.0/@column.4 //@model/@table.0/@column.2"/>
+        <foreignKey
+            column="//@model/@table.1/@column.0"
+            name="groupid">
+          <onDelete/>
+          <onUpdate
+              behavior="RESTRICT"/>
+        </foreignKey>
+      </constraint>
+    </table>
+    <table name="group"
+        charset="UTF8">
+      <column
+          name="gid"/>
+      <column
+          name="name"
+          size="255"
+          type="VARCHAR"/>
+      <column
+          name="budget"
+          type="DECIMAL">
+        <detail
+            precision="7"
+            scale="2"/>
+      </column>
+      <constraint>
+        <primaryKey
+            column="//@model/@table.1/@column.0"/>
+        <check
+            expr="gid > 5"/>
+      </constraint>
+    </table>
+  </model>
+  <controller/>
+  <resource>
+    <image/>
+    <file/>
+    <propertie/>
+  </resource>
+</webapp:WebApp>
