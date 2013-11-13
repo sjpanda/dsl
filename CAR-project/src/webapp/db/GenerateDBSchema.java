@@ -14,17 +14,19 @@ public class GenerateDBSchema
   }
 
   public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-  protected final String TEXT_1 = "\tcreate table toto(id int);";
-  protected final String TEXT_2 = NL + "\tcreate table titi(name varchar(255));";
+  protected final String TEXT_1 = "create table toto(id int);";
 
   public String generate(Object argument)
   {
     final StringBuffer stringBuffer = new StringBuffer();
-      WebApp arg = (WebApp)argument;
-	if(arg != null) 
+      WebApp app = (WebApp)argument;
+	if(app == null) {
+		return "Null Web App";
+	} 
+	
+	
+	
     stringBuffer.append(TEXT_1);
-     else 
-    stringBuffer.append(TEXT_2);
     return stringBuffer.toString();
   }
 }

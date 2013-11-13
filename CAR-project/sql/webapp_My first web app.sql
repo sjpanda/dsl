@@ -1,0 +1,1 @@
+create table toto(id int);

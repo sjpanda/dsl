@@ -1,6 +1,9 @@
 <%@ jet package="webapp.db" class="GenerateDBSchema" imports ="webapp.*;"%>
-<%  WebApp arg = (WebApp)argument;
-	if(arg != null) %>
-	create table toto(id int);
-<% else %>
-	create table titi(name varchar(255));
+<%  WebApp app = (WebApp)argument;
+	if(app == null) {
+		return "Null Web App";
+	} 
+	
+	
+	%>
+create table toto(id int);
