@@ -15,33 +15,7 @@ public class GenerateDBSchema
   }
 
   public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
-  protected final String TEXT_1 = "\t\tcreate table ";
-  protected final String TEXT_2 = " (" + NL + "\t\t";
-  protected final String TEXT_3 = NL + "\t\t\t";
-  protected final String TEXT_4 = " ";
-  protected final String TEXT_5 = NL + "\t\t\t";
-  protected final String TEXT_6 = " " + NL + "\t\t\t\t(";
-  protected final String TEXT_7 = ") " + NL + "\t\t\t";
-  protected final String TEXT_8 = " " + NL + "\t\t\t\t(";
-  protected final String TEXT_9 = ", ";
-  protected final String TEXT_10 = ") ";
-  protected final String TEXT_11 = " " + NL + "\t\t\t\tzerofill " + NL + "\t\t\t";
-  protected final String TEXT_12 = " " + NL + "\t\t\t\tnot null " + NL + "\t\t\t";
-  protected final String TEXT_13 = " " + NL + "\t\t\t\tdefault ";
-  protected final String TEXT_14 = " " + NL + "\t\t\t";
-  protected final String TEXT_15 = ",";
-  protected final String TEXT_16 = ", primary key (";
-  protected final String TEXT_17 = ", ";
-  protected final String TEXT_18 = ")";
-  protected final String TEXT_19 = NL + "\t\t\t\t\t, foreign key (";
-  protected final String TEXT_20 = ") references ";
-  protected final String TEXT_21 = " (";
-  protected final String TEXT_22 = ")";
-  protected final String TEXT_23 = ") ";
-  protected final String TEXT_24 = "charset=utf8";
-  protected final String TEXT_25 = "charset=";
-  protected final String TEXT_26 = ";";
-  protected final String TEXT_27 = NL + "\t\t" + NL + "\t\t";
+  protected final String TEXT_1 = "";
 
   public String generate(Object argument)
   {
@@ -61,114 +35,123 @@ public class GenerateDBSchema
 		return "Null table";
 	}
 	boolean hasTableToCreate = false;
+	boolean withFKey = false;
+	StringBuffer tablesWithoutFKey = new StringBuffer();
+	StringBuffer tablesWithFKey = new StringBuffer();
+	StringBuffer tableTmp;
 	for(Table table : tables){
+		withFKey = false;
 		EList<Column> columns = table.getColumn();
 		if(columns == null){
 			continue;
 		}
 		hasTableToCreate = true;
-		
-    stringBuffer.append(TEXT_1);
-    stringBuffer.append( table.getName() );
-    stringBuffer.append(TEXT_2);
-    
-		
-		for(int i=0; i<columns.size(); i++){
-			Column column = columns.get(i);
-			
-    stringBuffer.append(TEXT_3);
-    stringBuffer.append( column.getName() );
-    stringBuffer.append(TEXT_4);
-    stringBuffer.append( column.getType() );
-    stringBuffer.append(TEXT_5);
-    
-			if(column.getSize() > 0){ 
-    stringBuffer.append(TEXT_6);
-    stringBuffer.append( column.getSize() );
-    stringBuffer.append(TEXT_7);
-    }
-			if(column.getDetail() != null){ 
-    stringBuffer.append(TEXT_8);
-    if(column.getDetail().getPrecision() > 0){
-    stringBuffer.append( column.getDetail().getPrecision() );
-    if(column.getDetail().getScale() > 0){
-    stringBuffer.append(TEXT_9);
-    stringBuffer.append( column.getDetail().getScale() );
-    }}
-    stringBuffer.append(TEXT_10);
-    
-			}
-			if(column.isUseZeroFill() == true){ 
-    stringBuffer.append(TEXT_11);
-    }
-			if(column.isUseZeroFill() == true){ 
-    stringBuffer.append(TEXT_12);
-    }
-			if((column.getDefaultValue() != null) && (! column.getDefaultValue().equals(""))){ 
-    stringBuffer.append(TEXT_13);
-    stringBuffer.append( column.getDefaultValue() );
-    stringBuffer.append(TEXT_14);
-    }
-			if(i < (columns.size() - 1)){
-				
-    stringBuffer.append(TEXT_15);
-    	
+		Constraint constraint = table.getConstraint();
+		if(constraint != null){
+			EList<ForeignKey> foreignkeys = constraint.getForeignKey();
+			if((foreignkeys != null) && (foreignkeys.size() > 0)){
+				withFKey = true;
 			}
 		}
-		Constraint constraint = table.getConstraint();
+		tableTmp = new StringBuffer();
+		tableTmp.append("create table " + table.getName() + " (\n");		
+		for(int i=0; i<columns.size(); i++){
+			Column column = columns.get(i);
+			tableTmp.append("\t" + column.getName() + " " + column.getType());
+			if(column.getSize() > 0){ 
+				tableTmp.append("(" + column.getSize() +")");
+				}
+			if(column.getDetail() != null){ 
+				tableTmp.append("(");
+				if(column.getDetail().getPrecision() > 0){
+					tableTmp.append(column.getDetail().getPrecision());
+				}
+				if(column.getDetail().getScale() > 0){
+					tableTmp.append(", " + column.getDetail().getScale());
+				}
+				tableTmp.append(")");
+			}
+			if(column.isUseZeroFill() == true){ 
+				tableTmp.append(" zerofill");
+			}
+			if(column.isUseZeroFill() == true){ 
+				tableTmp.append(" not null");
+			}
+			if((column.getDefaultValue() != null) && (! column.getDefaultValue().equals(""))){ 
+				tableTmp.append(" default " + column.getDefaultValue());
+			}
+			if(i < (columns.size() - 1)){
+				tableTmp.append(",\n");	
+			}			
+		}
+		
 		if(constraint != null){
 			PrimaryKey primarykey = constraint.getPrimaryKey();
 			if(primarykey != null){
-				
-    stringBuffer.append(TEXT_16);
-    
-					EList<Column> pkColumns = primarykey.getColumn();
-					for(int i=0; i<pkColumns.size(); i++){
-						
-    stringBuffer.append( pkColumns.get(i).getName() );
-    
-						if(i < (pkColumns.size() - 1)){
-							
-    stringBuffer.append(TEXT_17);
-    
-						}
+				EList<Column> pkColumns = primarykey.getColumn();
+				tableTmp.append(",\n\tprimary key (");
+				for(int j=0; j<pkColumns.size(); j++){
+					tableTmp.append(pkColumns.get(j).getName());
+					if(j < (pkColumns.size() - 1)){
+						tableTmp.append(", ");
 					}
-				
-    stringBuffer.append(TEXT_18);
-    
+				}
+				tableTmp.append(")");		
 			}
 			EList<ForeignKey> foreignkeys = constraint.getForeignKey();
 			if(foreignkeys != null){
 				for(ForeignKey foreignkey : foreignkeys){
-    stringBuffer.append(TEXT_19);
-    stringBuffer.append( foreignkey.getInternalColumn().getName() );
-    stringBuffer.append(TEXT_20);
-    stringBuffer.append( foreignkey.getExternalTable().getName() );
-    stringBuffer.append(TEXT_21);
-    stringBuffer.append( foreignkey.getExternalColumn().getName() );
-    stringBuffer.append(TEXT_22);
-    
+					tableTmp.append(",\n\tforeign key (" + 
+											foreignkey.getInternalColumn().getName() + 
+											") references " + foreignkey.getExternalTable().getName() + 
+											"(" + foreignkey.getExternalColumn().getName() + ")");
+					if(foreignkey.getOnDelete() != null){
+						tableTmp.append(" on delete " + foreignkey.getOnDelete().getBehavior());
+					}
+					if(foreignkey.getOnUpdate() != null){
+						tableTmp.append(" on update " + foreignkey.getOnUpdate().getBehavior());
+					}
+				}
+			}
+			EList<Unique> uniques = constraint.getUnique();
+			if((uniques != null) && (uniques.size() > 0)){
+				for(int p=0; p<uniques.size(); p++){
+					tableTmp.append(",\n\tunique (");
+					EList<Column> uColumns = uniques.get(p).getColumn();
+					for(int l=0; l<uColumns.size(); l++){
+						tableTmp.append(uColumns.get(l).getName());
+						if(l < (uColumns.size() -1)){
+							tableTmp.append(", ");
+						}
+					}
+					tableTmp.append(")");
+				}
+			}
+			EList<Check> checks = constraint.getCheck();
+			if(checks != null){
+				for(Check check : checks){
+					tableTmp.append(",\n\tcheck (" + check.getExpr() + ")");
 				}
 			}
 		}
-		
-    stringBuffer.append(TEXT_23);
-     if(table.getCharset() == null){
-    stringBuffer.append(TEXT_24);
-    }else{
-    stringBuffer.append(TEXT_25);
-    stringBuffer.append( table.getCharset() );
-    } 
-    stringBuffer.append(TEXT_26);
-    
-		
-    stringBuffer.append(TEXT_27);
-    
+		if(table.getCharset() == null){
+			tableTmp.append("\n) charset=utf8;\n\n");
+		} else{
+			tableTmp.append("\n) charset=" + table.getCharset() + ";\n\n");
+		}
+		if(withFKey){
+			tablesWithFKey.append(tableTmp.toString());
+		} else {
+			tablesWithoutFKey.append(tableTmp.toString());
+		}
 	}
 	if(! hasTableToCreate){
 		return "No table has columns";
 	}
 	
+    stringBuffer.append(TEXT_1);
+    stringBuffer.append(tablesWithoutFKey.toString());
+    stringBuffer.append(tablesWithFKey.toString());
     return stringBuffer.toString();
   }
 }
