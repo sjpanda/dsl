@@ -64,10 +64,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Column">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="detailC"/>
+      <details key="constraints" value="detailC useZeroFillC"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="detailC" value="&#xA;&#x9;&#x9;(self.type &lt;> ColumnType::NUMERIC &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DECIMAL &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::FLOAT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DOUBLE&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::REAL&#xA;&#x9;&#x9;) implies self.detail->isEmpty()"/>
+      <details key="useZeroFillC" value="&#xA;&#x9;&#x9;((self.type &lt;> ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::TINYINT&#xA;&#x9;&#x9;) implies self.useZeroFill->isEmpty()) &#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;((self.type = ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::TINYINT&#xA;&#x9;&#x9;) implies self.useZeroFill->notEmpty())"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNotNull" lowerBound="1"
@@ -75,7 +76,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="useZeroFill" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
-        defaultValueLiteral="false"/>
+        defaultValueLiteral=""/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="detail" eType="#//Detail"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//ColumnType"/>

@@ -708,7 +708,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_j44swUpSEeOivLNWU32zzA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="WebApp.ecore#//Bit"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j44swkpSEeOivLNWU32zzA" x="1356" y="256"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_j44swkpSEeOivLNWU32zzA" x="1344" y="400"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_tQK6UEpUEeOivLNWU32zzA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_tQNWkEpUEeOivLNWU32zzA" type="4001"/>
@@ -923,7 +923,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="__2wosUpZEeOivLNWU32zzA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="WebApp.ecore#//TinyBlob"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2woskpZEeOivLNWU32zzA" x="1464" y="248"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="__2woskpZEeOivLNWU32zzA" x="1472" y="384"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_EMVh0EpaEeOivLNWU32zzA" type="1001">
     <children xmi:type="notation:Node" xmi:id="_EMYlIEpaEeOivLNWU32zzA" type="4001"/>
