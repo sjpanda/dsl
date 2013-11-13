@@ -11,5 +11,6 @@ Export-Package: webapp,
  webapp.impl,
  webapp.util
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore
+ org.eclipse.emf.ecore,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.9.1"
 Bundle-ActivationPolicy: lazy

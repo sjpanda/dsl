@@ -1,5 +1,7 @@
 package webapp.db;
 
+import webapp.*;;
+
 public class GenerateDBSchema
 {
   protected static String nl;
@@ -18,8 +20,8 @@ public class GenerateDBSchema
   public String generate(Object argument)
   {
     final StringBuffer stringBuffer = new StringBuffer();
-      int arg = (int)argument;
-	if(arg == 1) 
+      WebApp arg = (WebApp)argument;
+	if(arg != null) 
     stringBuffer.append(TEXT_1);
      else 
     stringBuffer.append(TEXT_2);
