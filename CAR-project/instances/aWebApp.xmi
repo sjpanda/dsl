@@ -17,6 +17,7 @@
       <column
           name="id"
           defaultValue=""
+          useZeroFill="false"
           type="INTEGER"/>
       <column
           name="money"
@@ -25,6 +26,10 @@
             precision="7"
             scale="2"/>
       </column>
+      <column
+          name="year"
+          size="4"
+          type="YEAR"/>
     </table>
   </model>
 </webapp:WebApp>
