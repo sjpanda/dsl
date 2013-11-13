@@ -64,11 +64,12 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Column">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="detailC useZeroFillC"/>
+      <details key="constraints" value="detailC useZeroFillC sizeC"/>
     </eAnnotations>
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="detailC" value="&#xA;&#x9;&#x9;(self.type &lt;> ColumnType::NUMERIC &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DECIMAL &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::FLOAT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::DOUBLE&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::REAL&#xA;&#x9;&#x9;) implies self.detail->isEmpty()"/>
       <details key="useZeroFillC" value="&#xA;&#x9;&#x9;((self.type &lt;> ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::TINYINT&#xA;&#x9;&#x9;) implies self.useZeroFill->isEmpty()) &#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;((self.type = ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;or self.type = ColumnType::TINYINT&#xA;&#x9;&#x9;) implies self.useZeroFill->notEmpty())"/>
+      <details key="sizeC" value="&#xA;&#x9;&#x9;((self.type &lt;> ColumnType::INTEGER&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIGINT &#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::SMALLINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::MEDIUMINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::TINYINT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::CHAR&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::VARCHAR&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BINARY&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::VARBINARY&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::BIT&#xA;&#x9;&#x9;&#x9;and self.type &lt;> ColumnType::YEAR&#xA;&#x9;&#x9;) implies self.size->isEmpty())&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;(self.type = ColumnType::BIT implies (self.size >= 1 and self.size &lt;= 64))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;((self.type = ColumnType::CHAR or self.type = ColumnType::VARCHAR) implies (self.size >= 0 and self.size &lt;= 255))&#xA;&#x9;&#x9;and&#xA;&#x9;&#x9;(self.type = ColumnType::YEAR implies (self.size = 2 or self.size = 4))"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isNotNull" lowerBound="1"
@@ -171,50 +172,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="scale" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Int" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="useZeroFill" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Integer" eSuperTypes="#//Int"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SmallInt" eSuperTypes="#//Int"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TinyInt" eSuperTypes="#//Int"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MediumInt" eSuperTypes="#//Int"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BigInt" eSuperTypes="#//Int"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Bit">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Date"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DateTime"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TimeStamp"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Time"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Year">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="#//YearSize"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="YearSize">
-    <eLiterals name="TWO"/>
-    <eLiterals name="FOUR" value="1"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Char">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Varchar">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Binary">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="VarBinary">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="size" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Blob" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TinyBlob"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MediumBlob"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LongBlob"/>
-  <eClassifiers xsi:type="ecore:EClass" name="TinyText"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Text"/>
-  <eClassifiers xsi:type="ecore:EClass" name="MediumText"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LongText"/>
   <eClassifiers xsi:type="ecore:EEnum" name="ColumnType">
     <eLiterals name="BIGINT"/>
     <eLiterals name="TINYINT" value="1"/>
