@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="view" nsURI="http://view/1.0" nsPrefix="view">
+  <eSubpackages name="View">
+    <eClassifiers xsi:type="ecore:EClass" name="Td" eSuperTypes="#//View/TagElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Tr" eSuperTypes="#//View/TagElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="td" upperBound="-1" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Table" eSuperTypes="#//View/TagElement">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="tr" upperBound="-1" eType="#//View/Tr"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//View/TagElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//View/TagElement">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="method"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="input" upperBound="-1"
+          eType="#//View/Input" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="action"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Title" eSuperTypes="#//View/TagElement"/>
+    <eClassifiers xsi:type="ecore:EClass" name="Attribut">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="TagElement" abstract="true">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attriubuts" upperBound="-1"
+          eType="#//View/Attribut" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="nom" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="valeur" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Body">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="elementsBody" upperBound="-1"
+          eType="#//View/TagElement" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Head">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//View/Title"
+          containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="HTML">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="body" eType="#//View/Body"
+          containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//View/Head"
+          containment="true"/>
+    </eClassifiers>
+  </eSubpackages>
+</ecore:EPackage>
