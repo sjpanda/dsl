@@ -42,7 +42,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Controller"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Controller">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerForm" eType="#//ControllerForm"
+        containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="image" upperBound="-1"
         eType="#//Image" containment="true"/>
@@ -206,4 +209,5 @@
     <eLiterals name="TIMESTAMP" value="26"/>
     <eLiterals name="YEAR" value="27"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ControllerForm"/>
 </ecore:EPackage>
