@@ -33,6 +33,7 @@ import webapp.WebappPackage;
  *   <li>{@link webapp.impl.PageImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getText <em>Text</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getTag <em>Tag</em>}</li>
+ *   <li>{@link webapp.impl.PageImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -78,6 +79,26 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected EList<Tag> tag;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -148,6 +169,27 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.PAGE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -173,6 +215,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return getText();
 			case WebappPackage.PAGE__TAG:
 				return getTag();
+			case WebappPackage.PAGE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,6 +241,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				getTag().clear();
 				getTag().addAll((Collection<? extends Tag>)newValue);
 				return;
+			case WebappPackage.PAGE__NAME:
+				setName((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -218,6 +265,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case WebappPackage.PAGE__TAG:
 				getTag().clear();
 				return;
+			case WebappPackage.PAGE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -236,6 +286,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return text != null && !text.isEmpty();
 			case WebappPackage.PAGE__TAG:
 				return tag != null && !tag.isEmpty();
+			case WebappPackage.PAGE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -252,6 +304,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (title: ");
 		result.append(title);
+		result.append(", name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}

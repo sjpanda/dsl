@@ -168,11 +168,14 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/scale"/>
     </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Validator"/>
+    <genClasses ecoreClass="WebApp.ecore#//Validator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Validator/name"/>
+    </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Page">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Page/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/tag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Page/name"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Form">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Form/method"/>
@@ -184,6 +187,7 @@
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Action/validator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Action/name"/>
     </genClasses>
     <genClasses image="false" ecoreClass="WebApp.ecore#//Tag">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Tag/name"/>

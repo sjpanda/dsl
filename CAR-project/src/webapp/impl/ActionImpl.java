@@ -22,6 +22,7 @@ import webapp.WebappPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link webapp.impl.ActionImpl#getValidator <em>Validator</em>}</li>
+ *   <li>{@link webapp.impl.ActionImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +38,25 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected Validator validator;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,12 +120,35 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.ACTION__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebappPackage.ACTION__VALIDATOR:
 				if (resolve) return getValidator();
 				return basicGetValidator();
+			case WebappPackage.ACTION__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,6 +163,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case WebappPackage.ACTION__VALIDATOR:
 				setValidator((Validator)newValue);
+				return;
+			case WebappPackage.ACTION__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,6 +182,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case WebappPackage.ACTION__VALIDATOR:
 				setValidator((Validator)null);
 				return;
+			case WebappPackage.ACTION__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,8 +199,26 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		switch (featureID) {
 			case WebappPackage.ACTION__VALIDATOR:
 				return validator != null;
+			case WebappPackage.ACTION__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ActionImpl

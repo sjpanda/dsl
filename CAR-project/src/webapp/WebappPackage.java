@@ -1081,13 +1081,22 @@ public interface WebappPackage extends EPackage {
 	int VALIDATOR = 21;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATOR__NAME = 0;
+
+	/**
 	 * The number of structural features of the '<em>Validator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALIDATOR_FEATURE_COUNT = 0;
+	int VALIDATOR_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Validator</em>' class.
@@ -1136,13 +1145,22 @@ public interface WebappPackage extends EPackage {
 	int PAGE__TAG = 2;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__NAME = 3;
+
+	/**
 	 * The number of structural features of the '<em>Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = 3;
+	int PAGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -1347,13 +1365,22 @@ public interface WebappPackage extends EPackage {
 	int ACTION__VALIDATOR = 0;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__NAME = 1;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 1;
+	int ACTION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -2474,6 +2501,17 @@ public interface WebappPackage extends EPackage {
 	EClass getValidator();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webapp.Validator#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see webapp.Validator#getName()
+	 * @see #getValidator()
+	 * @generated
+	 */
+	EAttribute getValidator_Name();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Page <em>Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2515,6 +2553,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPage_Tag();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Page#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see webapp.Page#getName()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EAttribute getPage_Name();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Form <em>Form</em>}'.
@@ -2600,6 +2649,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getAction_Validator();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Action#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see webapp.Action#getName()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EAttribute getAction_Name();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Tag <em>Tag</em>}'.
@@ -3419,6 +3479,14 @@ public interface WebappPackage extends EPackage {
 		EClass VALIDATOR = eINSTANCE.getValidator();
 
 		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALIDATOR__NAME = eINSTANCE.getValidator_Name();
+
+		/**
 		 * The meta object literal for the '{@link webapp.impl.PageImpl <em>Page</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3451,6 +3519,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PAGE__TAG = eINSTANCE.getPage_Tag();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAGE__NAME = eINSTANCE.getPage_Name();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.FormImpl <em>Form</em>}' class.
@@ -3521,6 +3597,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ACTION__VALIDATOR = eINSTANCE.getAction_Validator();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ACTION__NAME = eINSTANCE.getAction_Name();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.TagImpl <em>Tag</em>}' class.

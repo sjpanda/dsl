@@ -34,7 +34,7 @@ public interface Tag extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see webapp.WebappPackage#getTag_Name()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
 	String getName();
