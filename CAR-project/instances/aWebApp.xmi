@@ -9,6 +9,9 @@
     framework="struts">
   <appConfig/>
   <webConfig/>
+  <view>
+    <page name="MyPage"/>
+  </view>
   <model databaseName="jee"
       url="localhost:3306"
       userName="toto">
@@ -16,9 +19,9 @@
         charset="UTF8">
       <column
           name="id"
-          defaultValue=""
           useZeroFill="true"
-          type="INTEGER"/>
+          type="INTEGER"
+          defaultValue=""/>
       <column
           name="money"
           type="FLOAT">
@@ -32,4 +35,11 @@
           type="YEAR"/>
     </table>
   </model>
+  <controller>
+    <validator
+        name="anActionValidator"/>
+    <action
+        validator="//@controller/@validator.0"
+        name="anAction"/>
+  </controller>
 </webapp:WebApp>

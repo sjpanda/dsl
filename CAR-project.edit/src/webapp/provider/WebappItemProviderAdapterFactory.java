@@ -555,6 +555,236 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Validator} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ValidatorItemProvider validatorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Validator}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createValidatorAdapter() {
+		if (validatorItemProvider == null) {
+			validatorItemProvider = new ValidatorItemProvider(this);
+		}
+
+		return validatorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Page} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PageItemProvider pageItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Page}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPageAdapter() {
+		if (pageItemProvider == null) {
+			pageItemProvider = new PageItemProvider(this);
+		}
+
+		return pageItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Form} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FormItemProvider formItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Form}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFormAdapter() {
+		if (formItemProvider == null) {
+			formItemProvider = new FormItemProvider(this);
+		}
+
+		return formItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Text} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TextItemProvider textItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Text}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTextAdapter() {
+		if (textItemProvider == null) {
+			textItemProvider = new TextItemProvider(this);
+		}
+
+		return textItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Action} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ActionItemProvider actionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Action}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createActionAdapter() {
+		if (actionItemProvider == null) {
+			actionItemProvider = new ActionItemProvider(this);
+		}
+
+		return actionItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Input} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InputItemProvider inputItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Input}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInputAdapter() {
+		if (inputItemProvider == null) {
+			inputItemProvider = new InputItemProvider(this);
+		}
+
+		return inputItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.TableHTML} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TableHTMLItemProvider tableHTMLItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.TableHTML}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTableHTMLAdapter() {
+		if (tableHTMLItemProvider == null) {
+			tableHTMLItemProvider = new TableHTMLItemProvider(this);
+		}
+
+		return tableHTMLItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Tr} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TrItemProvider trItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Tr}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTrAdapter() {
+		if (trItemProvider == null) {
+			trItemProvider = new TrItemProvider(this);
+		}
+
+		return trItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Td} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TdItemProvider tdItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Td}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTdAdapter() {
+		if (tdItemProvider == null) {
+			tdItemProvider = new TdItemProvider(this);
+		}
+
+		return tdItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Th} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ThItemProvider thItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Th}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createThAdapter() {
+		if (thItemProvider == null) {
+			thItemProvider = new ThItemProvider(this);
+		}
+
+		return thItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -674,6 +904,16 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (onDeleteItemProvider != null) onDeleteItemProvider.dispose();
 		if (onUpdateItemProvider != null) onUpdateItemProvider.dispose();
 		if (detailItemProvider != null) detailItemProvider.dispose();
+		if (validatorItemProvider != null) validatorItemProvider.dispose();
+		if (pageItemProvider != null) pageItemProvider.dispose();
+		if (formItemProvider != null) formItemProvider.dispose();
+		if (textItemProvider != null) textItemProvider.dispose();
+		if (actionItemProvider != null) actionItemProvider.dispose();
+		if (inputItemProvider != null) inputItemProvider.dispose();
+		if (tableHTMLItemProvider != null) tableHTMLItemProvider.dispose();
+		if (trItemProvider != null) trItemProvider.dispose();
+		if (tdItemProvider != null) tdItemProvider.dispose();
+		if (thItemProvider != null) thItemProvider.dispose();
 	}
 
 }

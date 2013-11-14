@@ -78,6 +78,16 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 			case WebappPackage.ON_DELETE: return createOnDelete();
 			case WebappPackage.ON_UPDATE: return createOnUpdate();
 			case WebappPackage.DETAIL: return createDetail();
+			case WebappPackage.VALIDATOR: return createValidator();
+			case WebappPackage.PAGE: return createPage();
+			case WebappPackage.FORM: return createForm();
+			case WebappPackage.TEXT: return createText();
+			case WebappPackage.ACTION: return createAction();
+			case WebappPackage.INPUT: return createInput();
+			case WebappPackage.TABLE_HTML: return createTableHTML();
+			case WebappPackage.TR: return createTr();
+			case WebappPackage.TD: return createTd();
+			case WebappPackage.TH: return createTh();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -97,6 +107,10 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 				return createCharsetFromString(eDataType, initialValue);
 			case WebappPackage.COLUMN_TYPE:
 				return createColumnTypeFromString(eDataType, initialValue);
+			case WebappPackage.FORM_METHOD:
+				return createFormMethodFromString(eDataType, initialValue);
+			case WebappPackage.INPUT_TYPE:
+				return createInputTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -116,6 +130,10 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 				return convertCharsetToString(eDataType, instanceValue);
 			case WebappPackage.COLUMN_TYPE:
 				return convertColumnTypeToString(eDataType, instanceValue);
+			case WebappPackage.FORM_METHOD:
+				return convertFormMethodToString(eDataType, instanceValue);
+			case WebappPackage.INPUT_TYPE:
+				return convertInputTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -336,6 +354,106 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Validator createValidator() {
+		ValidatorImpl validator = new ValidatorImpl();
+		return validator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Page createPage() {
+		PageImpl page = new PageImpl();
+		return page;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Form createForm() {
+		FormImpl form = new FormImpl();
+		return form;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Text createText() {
+		TextImpl text = new TextImpl();
+		return text;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Action createAction() {
+		ActionImpl action = new ActionImpl();
+		return action;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Input createInput() {
+		InputImpl input = new InputImpl();
+		return input;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TableHTML createTableHTML() {
+		TableHTMLImpl tableHTML = new TableHTMLImpl();
+		return tableHTML;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Tr createTr() {
+		TrImpl tr = new TrImpl();
+		return tr;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Td createTd() {
+		TdImpl td = new TdImpl();
+		return td;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Th createTh() {
+		ThImpl th = new ThImpl();
+		return th;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Behavior createBehaviorFromString(EDataType eDataType, String initialValue) {
 		Behavior result = Behavior.get(initialValue);
 		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
@@ -388,6 +506,46 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 	 * @generated
 	 */
 	public String convertColumnTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FormMethod createFormMethodFromString(EDataType eDataType, String initialValue) {
+		FormMethod result = FormMethod.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertFormMethodToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public InputType createInputTypeFromString(EDataType eDataType, String initialValue) {
+		InputType result = InputType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertInputTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

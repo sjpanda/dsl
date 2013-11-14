@@ -106,7 +106,7 @@ public interface WebappPackage extends EPackage {
 	int WEB_APP__LIBRARY = 3;
 
 	/**
-	 * The feature id for the '<em><b>View</b></em>' containment reference list.
+	 * The feature id for the '<em><b>View</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -124,7 +124,7 @@ public interface WebappPackage extends EPackage {
 	int WEB_APP__MODEL = 5;
 
 	/**
-	 * The feature id for the '<em><b>Controller</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Controller</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -207,13 +207,22 @@ public interface WebappPackage extends EPackage {
 	int VIEW = 2;
 
 	/**
+	 * The feature id for the '<em><b>Page</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__PAGE = 0;
+
+	/**
 	 * The number of structural features of the '<em>View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FEATURE_COUNT = 0;
+	int VIEW_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>View</em>' class.
@@ -364,13 +373,31 @@ public interface WebappPackage extends EPackage {
 	int CONTROLLER = 6;
 
 	/**
+	 * The feature id for the '<em><b>Validator</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__VALIDATOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONTROLLER__ACTION = 1;
+
+	/**
 	 * The number of structural features of the '<em>Controller</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONTROLLER_FEATURE_COUNT = 0;
+	int CONTROLLER_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Controller</em>' class.
@@ -531,22 +558,13 @@ public interface WebappPackage extends EPackage {
 	int TABLE = 11;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Column</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__COLUMN = 1;
+	int TABLE__COLUMN = 0;
 
 	/**
 	 * The feature id for the '<em><b>Constraint</b></em>' containment reference.
@@ -555,7 +573,16 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TABLE__CONSTRAINT = 2;
+	int TABLE__CONSTRAINT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE__NAME = 2;
 
 	/**
 	 * The feature id for the '<em><b>Charset</b></em>' attribute.
@@ -1044,6 +1071,620 @@ public interface WebappPackage extends EPackage {
 	int DETAIL_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link webapp.impl.ValidatorImpl <em>Validator</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.ValidatorImpl
+	 * @see webapp.impl.WebappPackageImpl#getValidator()
+	 * @generated
+	 */
+	int VALIDATOR = 21;
+
+	/**
+	 * The number of structural features of the '<em>Validator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATOR_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Validator</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATOR_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.PageImpl <em>Page</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.PageImpl
+	 * @see webapp.impl.WebappPackageImpl#getPage()
+	 * @generated
+	 */
+	int PAGE = 22;
+
+	/**
+	 * The feature id for the '<em><b>Title</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__TITLE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__TEXT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__TAG = 2;
+
+	/**
+	 * The number of structural features of the '<em>Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Page</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.TagImpl <em>Tag</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.TagImpl
+	 * @see webapp.impl.WebappPackageImpl#getTag()
+	 * @generated
+	 */
+	int TAG = 26;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__VALUE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__TEXT = 2;
+
+	/**
+	 * The number of structural features of the '<em>Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Tag</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.FormImpl <em>Form</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.FormImpl
+	 * @see webapp.impl.WebappPackageImpl#getForm()
+	 * @generated
+	 */
+	int FORM = 23;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM__NAME = TAG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM__VALUE = TAG__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM__TEXT = TAG__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Method</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM__METHOD = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Action</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM__ACTION = TAG_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM__TAG = TAG_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Form</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_FEATURE_COUNT = TAG_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Form</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.TextImpl <em>Text</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.TextImpl
+	 * @see webapp.impl.WebappPackageImpl#getText()
+	 * @generated
+	 */
+	int TEXT = 24;
+
+	/**
+	 * The feature id for the '<em><b>Content</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT__CONTENT = 0;
+
+	/**
+	 * The number of structural features of the '<em>Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Text</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TEXT_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.ActionImpl <em>Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.ActionImpl
+	 * @see webapp.impl.WebappPackageImpl#getAction()
+	 * @generated
+	 */
+	int ACTION = 25;
+
+	/**
+	 * The feature id for the '<em><b>Validator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__VALIDATOR = 0;
+
+	/**
+	 * The number of structural features of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.InputImpl <em>Input</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.InputImpl
+	 * @see webapp.impl.WebappPackageImpl#getInput()
+	 * @generated
+	 */
+	int INPUT = 27;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__NAME = TAG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__VALUE = TAG__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__TEXT = TAG__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__TYPE = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Input</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_FEATURE_COUNT = TAG_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Input</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.TableHTMLImpl <em>Table HTML</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.TableHTMLImpl
+	 * @see webapp.impl.WebappPackageImpl#getTableHTML()
+	 * @generated
+	 */
+	int TABLE_HTML = 28;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HTML__NAME = TAG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HTML__VALUE = TAG__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HTML__TEXT = TAG__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Tr</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HTML__TR = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Table HTML</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HTML_FEATURE_COUNT = TAG_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Table HTML</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HTML_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.TrImpl <em>Tr</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.TrImpl
+	 * @see webapp.impl.WebappPackageImpl#getTr()
+	 * @generated
+	 */
+	int TR = 29;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR__NAME = TAG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR__VALUE = TAG__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR__TEXT = TAG__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Th</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR__TH = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Td</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR__TD = TAG_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Tr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR_FEATURE_COUNT = TAG_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Tr</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.TdImpl <em>Td</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.TdImpl
+	 * @see webapp.impl.WebappPackageImpl#getTd()
+	 * @generated
+	 */
+	int TD = 30;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TD__NAME = TAG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TD__VALUE = TAG__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TD__TEXT = TAG__TEXT;
+
+	/**
+	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TD__TAG = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Td</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TD_FEATURE_COUNT = TAG_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Td</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TD_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.ThImpl <em>Th</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.ThImpl
+	 * @see webapp.impl.WebappPackageImpl#getTh()
+	 * @generated
+	 */
+	int TH = 31;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TH__NAME = TAG__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TH__VALUE = TAG__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Text</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TH__TEXT = TAG__TEXT;
+
+	/**
+	 * The number of structural features of the '<em>Th</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TH_FEATURE_COUNT = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Th</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TH_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1051,7 +1692,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 21;
+	int BEHAVIOR = 32;
 
 	/**
 	 * The meta object id for the '{@link webapp.Charset <em>Charset</em>}' enum.
@@ -1061,7 +1702,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getCharset()
 	 * @generated
 	 */
-	int CHARSET = 22;
+	int CHARSET = 33;
 
 	/**
 	 * The meta object id for the '{@link webapp.ColumnType <em>Column Type</em>}' enum.
@@ -1071,7 +1712,28 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getColumnType()
 	 * @generated
 	 */
-	int COLUMN_TYPE = 23;
+	int COLUMN_TYPE = 34;
+
+
+	/**
+	 * The meta object id for the '{@link webapp.FormMethod <em>Form Method</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.FormMethod
+	 * @see webapp.impl.WebappPackageImpl#getFormMethod()
+	 * @generated
+	 */
+	int FORM_METHOD = 35;
+
+	/**
+	 * The meta object id for the '{@link webapp.InputType <em>Input Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.InputType
+	 * @see webapp.impl.WebappPackageImpl#getInputType()
+	 * @generated
+	 */
+	int INPUT_TYPE = 36;
 
 
 	/**
@@ -1129,10 +1791,10 @@ public interface WebappPackage extends EPackage {
 	EReference getWebApp_Library();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webapp.WebApp#getView <em>View</em>}'.
+	 * Returns the meta object for the containment reference '{@link webapp.WebApp#getView <em>View</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>View</em>'.
+	 * @return the meta object for the containment reference '<em>View</em>'.
 	 * @see webapp.WebApp#getView()
 	 * @see #getWebApp()
 	 * @generated
@@ -1151,10 +1813,10 @@ public interface WebappPackage extends EPackage {
 	EReference getWebApp_Model();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webapp.WebApp#getController <em>Controller</em>}'.
+	 * Returns the meta object for the containment reference '{@link webapp.WebApp#getController <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Controller</em>'.
+	 * @return the meta object for the containment reference '<em>Controller</em>'.
 	 * @see webapp.WebApp#getController()
 	 * @see #getWebApp()
 	 * @generated
@@ -1202,6 +1864,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getView();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.View#getPage <em>Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Page</em>'.
+	 * @see webapp.View#getPage()
+	 * @see #getView()
+	 * @generated
+	 */
+	EReference getView_Page();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Library <em>Library</em>}'.
@@ -1297,6 +1970,28 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getController();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Controller#getValidator <em>Validator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Validator</em>'.
+	 * @see webapp.Controller#getValidator()
+	 * @see #getController()
+	 * @generated
+	 */
+	EReference getController_Validator();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Controller#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Action</em>'.
+	 * @see webapp.Controller#getAction()
+	 * @see #getController()
+	 * @generated
+	 */
+	EReference getController_Action();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Resource <em>Resource</em>}'.
@@ -1769,6 +2464,292 @@ public interface WebappPackage extends EPackage {
 	EAttribute getDetail_Scale();
 
 	/**
+	 * Returns the meta object for class '{@link webapp.Validator <em>Validator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Validator</em>'.
+	 * @see webapp.Validator
+	 * @generated
+	 */
+	EClass getValidator();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Page <em>Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Page</em>'.
+	 * @see webapp.Page
+	 * @generated
+	 */
+	EClass getPage();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Page#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Title</em>'.
+	 * @see webapp.Page#getTitle()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EAttribute getPage_Title();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Page#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Text</em>'.
+	 * @see webapp.Page#getText()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EReference getPage_Text();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Page#getTag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tag</em>'.
+	 * @see webapp.Page#getTag()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EReference getPage_Tag();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Form <em>Form</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Form</em>'.
+	 * @see webapp.Form
+	 * @generated
+	 */
+	EClass getForm();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Form#getMethod <em>Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Method</em>'.
+	 * @see webapp.Form#getMethod()
+	 * @see #getForm()
+	 * @generated
+	 */
+	EAttribute getForm_Method();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.Form#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Action</em>'.
+	 * @see webapp.Form#getAction()
+	 * @see #getForm()
+	 * @generated
+	 */
+	EReference getForm_Action();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Form#getTag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tag</em>'.
+	 * @see webapp.Form#getTag()
+	 * @see #getForm()
+	 * @generated
+	 */
+	EReference getForm_Tag();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Text <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Text</em>'.
+	 * @see webapp.Text
+	 * @generated
+	 */
+	EClass getText();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Text#getContent <em>Content</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Content</em>'.
+	 * @see webapp.Text#getContent()
+	 * @see #getText()
+	 * @generated
+	 */
+	EAttribute getText_Content();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Action <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Action</em>'.
+	 * @see webapp.Action
+	 * @generated
+	 */
+	EClass getAction();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.Action#getValidator <em>Validator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Validator</em>'.
+	 * @see webapp.Action#getValidator()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_Validator();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Tag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tag</em>'.
+	 * @see webapp.Tag
+	 * @generated
+	 */
+	EClass getTag();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Tag#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see webapp.Tag#getName()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EAttribute getTag_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Tag#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see webapp.Tag#getValue()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EAttribute getTag_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.Tag#getText <em>Text</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Text</em>'.
+	 * @see webapp.Tag#getText()
+	 * @see #getTag()
+	 * @generated
+	 */
+	EReference getTag_Text();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Input <em>Input</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Input</em>'.
+	 * @see webapp.Input
+	 * @generated
+	 */
+	EClass getInput();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Input#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Type</em>'.
+	 * @see webapp.Input#getType()
+	 * @see #getInput()
+	 * @generated
+	 */
+	EAttribute getInput_Type();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.TableHTML <em>Table HTML</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Table HTML</em>'.
+	 * @see webapp.TableHTML
+	 * @generated
+	 */
+	EClass getTableHTML();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.TableHTML#getTr <em>Tr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tr</em>'.
+	 * @see webapp.TableHTML#getTr()
+	 * @see #getTableHTML()
+	 * @generated
+	 */
+	EReference getTableHTML_Tr();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Tr <em>Tr</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Tr</em>'.
+	 * @see webapp.Tr
+	 * @generated
+	 */
+	EClass getTr();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Tr#getTh <em>Th</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Th</em>'.
+	 * @see webapp.Tr#getTh()
+	 * @see #getTr()
+	 * @generated
+	 */
+	EReference getTr_Th();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Tr#getTd <em>Td</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Td</em>'.
+	 * @see webapp.Tr#getTd()
+	 * @see #getTr()
+	 * @generated
+	 */
+	EReference getTr_Td();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Td <em>Td</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Td</em>'.
+	 * @see webapp.Td
+	 * @generated
+	 */
+	EClass getTd();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Td#getTag <em>Tag</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Tag</em>'.
+	 * @see webapp.Td#getTag()
+	 * @see #getTd()
+	 * @generated
+	 */
+	EReference getTd_Tag();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Th <em>Th</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Th</em>'.
+	 * @see webapp.Th
+	 * @generated
+	 */
+	EClass getTh();
+
+	/**
 	 * Returns the meta object for enum '{@link webapp.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1797,6 +2778,26 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getColumnType();
+
+	/**
+	 * Returns the meta object for enum '{@link webapp.FormMethod <em>Form Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Form Method</em>'.
+	 * @see webapp.FormMethod
+	 * @generated
+	 */
+	EEnum getFormMethod();
+
+	/**
+	 * Returns the meta object for enum '{@link webapp.InputType <em>Input Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Input Type</em>'.
+	 * @see webapp.InputType
+	 * @generated
+	 */
+	EEnum getInputType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1864,7 +2865,7 @@ public interface WebappPackage extends EPackage {
 		EReference WEB_APP__LIBRARY = eINSTANCE.getWebApp_Library();
 
 		/**
-		 * The meta object literal for the '<em><b>View</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>View</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1880,7 +2881,7 @@ public interface WebappPackage extends EPackage {
 		EReference WEB_APP__MODEL = eINSTANCE.getWebApp_Model();
 
 		/**
-		 * The meta object literal for the '<em><b>Controller</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Controller</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -1922,6 +2923,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EClass VIEW = eINSTANCE.getView();
+
+		/**
+		 * The meta object literal for the '<em><b>Page</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIEW__PAGE = eINSTANCE.getView_Page();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.LibraryImpl <em>Library</em>}' class.
@@ -2002,6 +3011,22 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CONTROLLER = eINSTANCE.getController();
+
+		/**
+		 * The meta object literal for the '<em><b>Validator</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLER__VALIDATOR = eINSTANCE.getController_Validator();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONTROLLER__ACTION = eINSTANCE.getController_Action();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.ResourceImpl <em>Resource</em>}' class.
@@ -2384,6 +3409,244 @@ public interface WebappPackage extends EPackage {
 		EAttribute DETAIL__SCALE = eINSTANCE.getDetail_Scale();
 
 		/**
+		 * The meta object literal for the '{@link webapp.impl.ValidatorImpl <em>Validator</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.ValidatorImpl
+		 * @see webapp.impl.WebappPackageImpl#getValidator()
+		 * @generated
+		 */
+		EClass VALIDATOR = eINSTANCE.getValidator();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.PageImpl <em>Page</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.PageImpl
+		 * @see webapp.impl.WebappPackageImpl#getPage()
+		 * @generated
+		 */
+		EClass PAGE = eINSTANCE.getPage();
+
+		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAGE__TITLE = eINSTANCE.getPage_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE__TEXT = eINSTANCE.getPage_Text();
+
+		/**
+		 * The meta object literal for the '<em><b>Tag</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE__TAG = eINSTANCE.getPage_Tag();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.FormImpl <em>Form</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.FormImpl
+		 * @see webapp.impl.WebappPackageImpl#getForm()
+		 * @generated
+		 */
+		EClass FORM = eINSTANCE.getForm();
+
+		/**
+		 * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM__METHOD = eINSTANCE.getForm_Method();
+
+		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORM__ACTION = eINSTANCE.getForm_Action();
+
+		/**
+		 * The meta object literal for the '<em><b>Tag</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FORM__TAG = eINSTANCE.getForm_Tag();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.TextImpl <em>Text</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.TextImpl
+		 * @see webapp.impl.WebappPackageImpl#getText()
+		 * @generated
+		 */
+		EClass TEXT = eINSTANCE.getText();
+
+		/**
+		 * The meta object literal for the '<em><b>Content</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TEXT__CONTENT = eINSTANCE.getText_Content();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.ActionImpl <em>Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.ActionImpl
+		 * @see webapp.impl.WebappPackageImpl#getAction()
+		 * @generated
+		 */
+		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Validator</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__VALIDATOR = eINSTANCE.getAction_Validator();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.TagImpl <em>Tag</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.TagImpl
+		 * @see webapp.impl.WebappPackageImpl#getTag()
+		 * @generated
+		 */
+		EClass TAG = eINSTANCE.getTag();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TAG__NAME = eINSTANCE.getTag_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TAG__VALUE = eINSTANCE.getTag_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Text</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TAG__TEXT = eINSTANCE.getTag_Text();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.InputImpl <em>Input</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.InputImpl
+		 * @see webapp.impl.WebappPackageImpl#getInput()
+		 * @generated
+		 */
+		EClass INPUT = eINSTANCE.getInput();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute INPUT__TYPE = eINSTANCE.getInput_Type();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.TableHTMLImpl <em>Table HTML</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.TableHTMLImpl
+		 * @see webapp.impl.WebappPackageImpl#getTableHTML()
+		 * @generated
+		 */
+		EClass TABLE_HTML = eINSTANCE.getTableHTML();
+
+		/**
+		 * The meta object literal for the '<em><b>Tr</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TABLE_HTML__TR = eINSTANCE.getTableHTML_Tr();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.TrImpl <em>Tr</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.TrImpl
+		 * @see webapp.impl.WebappPackageImpl#getTr()
+		 * @generated
+		 */
+		EClass TR = eINSTANCE.getTr();
+
+		/**
+		 * The meta object literal for the '<em><b>Th</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TR__TH = eINSTANCE.getTr_Th();
+
+		/**
+		 * The meta object literal for the '<em><b>Td</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TR__TD = eINSTANCE.getTr_Td();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.TdImpl <em>Td</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.TdImpl
+		 * @see webapp.impl.WebappPackageImpl#getTd()
+		 * @generated
+		 */
+		EClass TD = eINSTANCE.getTd();
+
+		/**
+		 * The meta object literal for the '<em><b>Tag</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TD__TAG = eINSTANCE.getTd_Tag();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.ThImpl <em>Th</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.ThImpl
+		 * @see webapp.impl.WebappPackageImpl#getTh()
+		 * @generated
+		 */
+		EClass TH = eINSTANCE.getTh();
+
+		/**
 		 * The meta object literal for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2412,6 +3675,26 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum COLUMN_TYPE = eINSTANCE.getColumnType();
+
+		/**
+		 * The meta object literal for the '{@link webapp.FormMethod <em>Form Method</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.FormMethod
+		 * @see webapp.impl.WebappPackageImpl#getFormMethod()
+		 * @generated
+		 */
+		EEnum FORM_METHOD = eINSTANCE.getFormMethod();
+
+		/**
+		 * The meta object literal for the '{@link webapp.InputType <em>Input Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.InputType
+		 * @see webapp.impl.WebappPackageImpl#getInputType()
+		 * @generated
+		 */
+		EEnum INPUT_TYPE = eINSTANCE.getInputType();
 
 	}
 

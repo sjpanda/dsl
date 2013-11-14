@@ -77,6 +77,14 @@
       <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/TIMESTAMP"/>
       <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//ColumnType/YEAR"/>
     </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebApp.ecore#//FormMethod">
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//FormMethod/GET"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//FormMethod/POST"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="WebApp.ecore#//InputType">
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//InputType/TEXT"/>
+      <genEnumLiterals ecoreEnumLiteral="WebApp.ecore#//InputType/BUTTON"/>
+    </genEnums>
     <genClasses ecoreClass="WebApp.ecore#//WebApp">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//WebApp/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//WebApp/appConfig"/>
@@ -89,7 +97,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//WebApp/framework"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//AppConfig"/>
-    <genClasses ecoreClass="WebApp.ecore#//View"/>
+    <genClasses ecoreClass="WebApp.ecore#//View">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//View/page"/>
+    </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Library"/>
     <genClasses ecoreClass="WebApp.ecore#//WebConfig"/>
     <genClasses ecoreClass="WebApp.ecore#//Model">
@@ -99,7 +109,10 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/userName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/password"/>
     </genClasses>
-    <genClasses ecoreClass="WebApp.ecore#//Controller"/>
+    <genClasses ecoreClass="WebApp.ecore#//Controller">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Controller/validator"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Controller/action"/>
+    </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Resource">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Resource/image"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Resource/file"/>
@@ -109,9 +122,9 @@
     <genClasses ecoreClass="WebApp.ecore#//File"/>
     <genClasses ecoreClass="WebApp.ecore#//Properties"/>
     <genClasses ecoreClass="WebApp.ecore#//Table">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Table/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Table/column"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Table/constraint"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Table/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Table/charset"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Column">
@@ -155,5 +168,41 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/precision"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Detail/scale"/>
     </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Validator"/>
+    <genClasses ecoreClass="WebApp.ecore#//Page">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Page/title"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/text"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/tag"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Form">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Form/method"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Form/action"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Form/tag"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Text">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Text/content"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Action">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Action/validator"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="WebApp.ecore#//Tag">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Tag/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Tag/value"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Tag/text"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Input">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Input/type"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//TableHTML">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//TableHTML/tr"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Tr">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Tr/th"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Tr/td"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Td">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Td/tag"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Th"/>
   </genPackages>
 </genmodel:GenModel>
