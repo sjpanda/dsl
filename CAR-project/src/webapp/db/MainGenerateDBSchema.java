@@ -6,6 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import webapp.WebApp;
+import webapp.serializer.WebAppSerializer;
 
 public class MainGenerateDBSchema {
 	public static void main(String[] args) {

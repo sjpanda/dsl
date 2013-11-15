@@ -40,6 +40,13 @@
         </tag>
       </tag>
     </page>
+    <page title="Success !!!"
+        name="success">
+      <text
+          content="You've succeeded !"/>
+    </page>
+    <page title="Error !"
+        name="error"/>
   </view>
   <model databaseName="jee"
       url="localhost:3306"
