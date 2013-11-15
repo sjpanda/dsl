@@ -126,20 +126,30 @@ public interface WebApp extends EObject {
 	EList<Library> getLibrary();
 
 	/**
-	 * Returns the value of the '<em><b>View</b></em>' containment reference list.
-	 * The list contents are of type {@link webapp.View}.
+	 * Returns the value of the '<em><b>View</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>View</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>View</em>' containment reference list.
+	 * @return the value of the '<em>View</em>' containment reference.
+	 * @see #setView(View)
 	 * @see webapp.WebappPackage#getWebApp_View()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<View> getView();
+	View getView();
+
+	/**
+	 * Sets the value of the '{@link webapp.WebApp#getView <em>View</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>View</em>' containment reference.
+	 * @see #getView()
+	 * @generated
+	 */
+	void setView(View value);
 
 	/**
 	 * Returns the value of the '<em><b>Model</b></em>' containment reference.
@@ -168,20 +178,30 @@ public interface WebApp extends EObject {
 	void setModel(Model value);
 
 	/**
-	 * Returns the value of the '<em><b>Controller</b></em>' containment reference list.
-	 * The list contents are of type {@link webapp.Controller}.
+	 * Returns the value of the '<em><b>Controller</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Controller</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Controller</em>' containment reference list.
+	 * @return the value of the '<em>Controller</em>' containment reference.
+	 * @see #setController(Controller)
 	 * @see webapp.WebappPackage#getWebApp_Controller()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	EList<Controller> getController();
+	Controller getController();
+
+	/**
+	 * Sets the value of the '{@link webapp.WebApp#getController <em>Controller</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Controller</em>' containment reference.
+	 * @see #getController()
+	 * @generated
+	 */
+	void setController(Controller value);
 
 	/**
 	 * Returns the value of the '<em><b>Resource</b></em>' containment reference.

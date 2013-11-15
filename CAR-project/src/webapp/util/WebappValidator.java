@@ -128,12 +128,38 @@ public class WebappValidator extends EObjectValidator {
 				return validateOnUpdate((OnUpdate)value, diagnostics, context);
 			case WebappPackage.DETAIL:
 				return validateDetail((Detail)value, diagnostics, context);
+			case WebappPackage.VALIDATOR:
+				return validateValidator((Validator)value, diagnostics, context);
+			case WebappPackage.PAGE:
+				return validatePage((Page)value, diagnostics, context);
+			case WebappPackage.FORM:
+				return validateForm((Form)value, diagnostics, context);
+			case WebappPackage.TEXT:
+				return validateText((Text)value, diagnostics, context);
+			case WebappPackage.ACTION:
+				return validateAction((Action)value, diagnostics, context);
+			case WebappPackage.TAG:
+				return validateTag((Tag)value, diagnostics, context);
+			case WebappPackage.INPUT:
+				return validateInput((Input)value, diagnostics, context);
+			case WebappPackage.TABLE_HTML:
+				return validateTableHTML((TableHTML)value, diagnostics, context);
+			case WebappPackage.TR:
+				return validateTr((Tr)value, diagnostics, context);
+			case WebappPackage.TD:
+				return validateTd((Td)value, diagnostics, context);
+			case WebappPackage.TH:
+				return validateTh((Th)value, diagnostics, context);
 			case WebappPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case WebappPackage.CHARSET:
 				return validateCharset((Charset)value, diagnostics, context);
 			case WebappPackage.COLUMN_TYPE:
 				return validateColumnType((ColumnType)value, diagnostics, context);
+			case WebappPackage.FORM_METHOD:
+				return validateFormMethod((FormMethod)value, diagnostics, context);
+			case WebappPackage.INPUT_TYPE:
+				return validateInputType((InputType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -504,6 +530,105 @@ public class WebappValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean validateValidator(Validator validator, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(validator, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePage(Page page, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(page, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateForm(Form form, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(form, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateText(Text text, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(text, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAction(Action action, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(action, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTag(Tag tag, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(tag, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInput(Input input, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(input, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTableHTML(TableHTML tableHTML, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(tableHTML, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTr(Tr tr, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(tr, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTd(Td td, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(td, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateTh(Th th, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(th, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean validateBehavior(Behavior behavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
@@ -523,6 +648,24 @@ public class WebappValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateColumnType(ColumnType columnType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateFormMethod(FormMethod formMethod, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInputType(InputType inputType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

@@ -10,7 +10,44 @@
   <appConfig/>
   <webConfig/>
   <library/>
-  <view/>
+  <view>
+    <page title="Create a contact"
+        name="creationContact">
+      <tag xsi:type="webapp:Form"
+          name=""
+          method="POST"
+          action="//@controller/@action.0">
+        <tag
+            xsi:type="webapp:TableHTML">
+          <tr>
+            <td>
+              <tag
+                  xsi:type="webapp:Input"
+                  name="Id"
+                  value="0"/>
+              <tag
+                  xsi:type="webapp:Input"
+                  name="name"/>
+              <tag
+                  xsi:type="webapp:Input"
+                  name="email"/>
+              <tag
+                  xsi:type="webapp:Input"
+                  value="Create"
+                  type="BUTTON"/>
+            </td>
+          </tr>
+        </tag>
+      </tag>
+    </page>
+    <page title="Success !!!"
+        name="success">
+      <text
+          content="You've succeeded !"/>
+    </page>
+    <page title="Error !"
+        name="error"/>
+  </view>
   <model databaseName="jee"
       url="localhost:3306"
       userName="toto">
@@ -78,7 +115,13 @@
       </constraint>
     </table>
   </model>
-  <controller/>
+  <controller>
+    <validator
+        name="AddContactValidationForm"/>
+    <action
+        validator="//@controller/@validator.0"
+        name="AddContactAction"/>
+  </controller>
   <resource>
     <image/>
     <file/>

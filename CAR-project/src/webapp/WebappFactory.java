@@ -211,6 +211,96 @@ public interface WebappFactory extends EFactory {
 	Detail createDetail();
 
 	/**
+	 * Returns a new object of class '<em>Validator</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Validator</em>'.
+	 * @generated
+	 */
+	Validator createValidator();
+
+	/**
+	 * Returns a new object of class '<em>Page</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Page</em>'.
+	 * @generated
+	 */
+	Page createPage();
+
+	/**
+	 * Returns a new object of class '<em>Form</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Form</em>'.
+	 * @generated
+	 */
+	Form createForm();
+
+	/**
+	 * Returns a new object of class '<em>Text</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Text</em>'.
+	 * @generated
+	 */
+	Text createText();
+
+	/**
+	 * Returns a new object of class '<em>Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Action</em>'.
+	 * @generated
+	 */
+	Action createAction();
+
+	/**
+	 * Returns a new object of class '<em>Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Input</em>'.
+	 * @generated
+	 */
+	Input createInput();
+
+	/**
+	 * Returns a new object of class '<em>Table HTML</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Table HTML</em>'.
+	 * @generated
+	 */
+	TableHTML createTableHTML();
+
+	/**
+	 * Returns a new object of class '<em>Tr</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Tr</em>'.
+	 * @generated
+	 */
+	Tr createTr();
+
+	/**
+	 * Returns a new object of class '<em>Td</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Td</em>'.
+	 * @generated
+	 */
+	Td createTd();
+
+	/**
+	 * Returns a new object of class '<em>Th</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Th</em>'.
+	 * @generated
+	 */
+	Th createTh();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

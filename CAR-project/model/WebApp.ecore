@@ -17,11 +17,11 @@
         eType="#//WebConfig" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="library" upperBound="-1"
         eType="#//Library" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="view" upperBound="-1" eType="#//View"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="view" lowerBound="1" eType="#//View"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
         eType="#//Controller" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="resource" eType="#//Resource"
         containment="true"/>
@@ -29,7 +29,10 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AppConfig"/>
-  <eClassifiers xsi:type="ecore:EClass" name="View"/>
+  <eClassifiers xsi:type="ecore:EClass" name="View">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="page" lowerBound="1" upperBound="-1"
+        eType="#//Page" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Library"/>
   <eClassifiers xsi:type="ecore:EClass" name="WebConfig"/>
   <eClassifiers xsi:type="ecore:EClass" name="Model">
@@ -43,8 +46,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="controllerForm" eType="#//ControllerForm"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validator" lowerBound="1"
+        upperBound="-1" eType="#//Validator" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" lowerBound="1"
+        upperBound="-1" eType="#//Action" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Resource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="image" upperBound="-1"
@@ -58,11 +63,11 @@
   <eClassifiers xsi:type="ecore:EClass" name="File"/>
   <eClassifiers xsi:type="ecore:EClass" name="Properties"/>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
         upperBound="-1" eType="#//Column" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="constraint" eType="#//Constraint"
         containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="charset" eType="#//Charset"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Column">
@@ -209,5 +214,60 @@
     <eLiterals name="TIMESTAMP" value="26"/>
     <eLiterals name="YEAR" value="27"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ControllerForm"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Validator">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Page">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="title" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" upperBound="-1" eType="#//Text"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" upperBound="-1" eType="#//Tag"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Tag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//FormMethod"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="action" eType="#//Action"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" lowerBound="1" upperBound="-1"
+        eType="#//Tag" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Text">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" lowerBound="1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validator" eType="#//Validator"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="FormMethod">
+    <eLiterals name="GET"/>
+    <eLiterals name="POST" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tag" abstract="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="text" eType="#//Text"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Input" eSuperTypes="#//Tag">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="#//InputType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="TableHTML" eSuperTypes="#//Tag">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tr" upperBound="-1" eType="#//Tr"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Tr" eSuperTypes="#//Tag">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="th" upperBound="-1" eType="#//Th"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="td" upperBound="-1" eType="#//Td"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Td" eSuperTypes="#//Tag">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" upperBound="-1" eType="#//Tag"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Th" eSuperTypes="#//Tag"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="InputType">
+    <eLiterals name="TEXT"/>
+    <eLiterals name="BUTTON" value="1"/>
+  </eClassifiers>
 </ecore:EPackage>

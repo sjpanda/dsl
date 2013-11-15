@@ -101,14 +101,14 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 	protected EList<Library> library;
 
 	/**
-	 * The cached value of the '{@link #getView() <em>View</em>}' containment reference list.
+	 * The cached value of the '{@link #getView() <em>View</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getView()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<View> view;
+	protected View view;
 
 	/**
 	 * The cached value of the '{@link #getModel() <em>Model</em>}' containment reference.
@@ -121,14 +121,14 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 	protected Model model;
 
 	/**
-	 * The cached value of the '{@link #getController() <em>Controller</em>}' containment reference list.
+	 * The cached value of the '{@link #getController() <em>Controller</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getController()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Controller> controller;
+	protected Controller controller;
 
 	/**
 	 * The cached value of the '{@link #getResource() <em>Resource</em>}' containment reference.
@@ -303,11 +303,42 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<View> getView() {
-		if (view == null) {
-			view = new EObjectContainmentEList<View>(View.class, this, WebappPackage.WEB_APP__VIEW);
-		}
+	public View getView() {
 		return view;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetView(View newView, NotificationChain msgs) {
+		View oldView = view;
+		view = newView;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebappPackage.WEB_APP__VIEW, oldView, newView);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setView(View newView) {
+		if (newView != view) {
+			NotificationChain msgs = null;
+			if (view != null)
+				msgs = ((InternalEObject)view).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebappPackage.WEB_APP__VIEW, null, msgs);
+			if (newView != null)
+				msgs = ((InternalEObject)newView).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebappPackage.WEB_APP__VIEW, null, msgs);
+			msgs = basicSetView(newView, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.WEB_APP__VIEW, newView, newView));
 	}
 
 	/**
@@ -358,11 +389,42 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Controller> getController() {
-		if (controller == null) {
-			controller = new EObjectContainmentEList<Controller>(Controller.class, this, WebappPackage.WEB_APP__CONTROLLER);
-		}
+	public Controller getController() {
 		return controller;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetController(Controller newController, NotificationChain msgs) {
+		Controller oldController = controller;
+		controller = newController;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, WebappPackage.WEB_APP__CONTROLLER, oldController, newController);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setController(Controller newController) {
+		if (newController != controller) {
+			NotificationChain msgs = null;
+			if (controller != null)
+				msgs = ((InternalEObject)controller).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - WebappPackage.WEB_APP__CONTROLLER, null, msgs);
+			if (newController != null)
+				msgs = ((InternalEObject)newController).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - WebappPackage.WEB_APP__CONTROLLER, null, msgs);
+			msgs = basicSetController(newController, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.WEB_APP__CONTROLLER, newController, newController));
 	}
 
 	/**
@@ -444,11 +506,11 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 			case WebappPackage.WEB_APP__LIBRARY:
 				return ((InternalEList<?>)getLibrary()).basicRemove(otherEnd, msgs);
 			case WebappPackage.WEB_APP__VIEW:
-				return ((InternalEList<?>)getView()).basicRemove(otherEnd, msgs);
+				return basicSetView(null, msgs);
 			case WebappPackage.WEB_APP__MODEL:
 				return basicSetModel(null, msgs);
 			case WebappPackage.WEB_APP__CONTROLLER:
-				return ((InternalEList<?>)getController()).basicRemove(otherEnd, msgs);
+				return basicSetController(null, msgs);
 			case WebappPackage.WEB_APP__RESOURCE:
 				return basicSetResource(null, msgs);
 		}
@@ -508,15 +570,13 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 				getLibrary().addAll((Collection<? extends Library>)newValue);
 				return;
 			case WebappPackage.WEB_APP__VIEW:
-				getView().clear();
-				getView().addAll((Collection<? extends View>)newValue);
+				setView((View)newValue);
 				return;
 			case WebappPackage.WEB_APP__MODEL:
 				setModel((Model)newValue);
 				return;
 			case WebappPackage.WEB_APP__CONTROLLER:
-				getController().clear();
-				getController().addAll((Collection<? extends Controller>)newValue);
+				setController((Controller)newValue);
 				return;
 			case WebappPackage.WEB_APP__RESOURCE:
 				setResource((Resource)newValue);
@@ -549,13 +609,13 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 				getLibrary().clear();
 				return;
 			case WebappPackage.WEB_APP__VIEW:
-				getView().clear();
+				setView((View)null);
 				return;
 			case WebappPackage.WEB_APP__MODEL:
 				setModel((Model)null);
 				return;
 			case WebappPackage.WEB_APP__CONTROLLER:
-				getController().clear();
+				setController((Controller)null);
 				return;
 			case WebappPackage.WEB_APP__RESOURCE:
 				setResource((Resource)null);
@@ -584,11 +644,11 @@ public class WebAppImpl extends MinimalEObjectImpl.Container implements WebApp {
 			case WebappPackage.WEB_APP__LIBRARY:
 				return library != null && !library.isEmpty();
 			case WebappPackage.WEB_APP__VIEW:
-				return view != null && !view.isEmpty();
+				return view != null;
 			case WebappPackage.WEB_APP__MODEL:
 				return model != null;
 			case WebappPackage.WEB_APP__CONTROLLER:
-				return controller != null && !controller.isEmpty();
+				return controller != null;
 			case WebappPackage.WEB_APP__RESOURCE:
 				return resource != null;
 			case WebappPackage.WEB_APP__FRAMEWORK:
