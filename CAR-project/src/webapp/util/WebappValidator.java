@@ -160,6 +160,8 @@ public class WebappValidator extends EObjectValidator {
 				return validateDAOBusinessObject((DAOBusinessObject)value, diagnostics, context);
 			case WebappPackage.MESSAGES:
 				return validateMessages((Messages)value, diagnostics, context);
+			case WebappPackage.ATTRIBUTE:
+				return validateAttribute((Attribute)value, diagnostics, context);
 			case WebappPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case WebappPackage.CHARSET:
@@ -721,6 +723,15 @@ public class WebappValidator extends EObjectValidator {
 	 */
 	public boolean validateMessages(Messages messages, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(messages, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAttribute(Attribute attribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(attribute, diagnostics, context);
 	}
 
 	/**

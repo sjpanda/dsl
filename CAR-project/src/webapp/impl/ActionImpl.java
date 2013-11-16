@@ -20,6 +20,7 @@ import webapp.WebappPackage;
  * <ul>
  *   <li>{@link webapp.impl.ActionImpl#getName <em>Name</em>}</li>
  *   <li>{@link webapp.impl.ActionImpl#getBusinessObject <em>Business Object</em>}</li>
+ *   <li>{@link webapp.impl.ActionImpl#getReturnType <em>Return Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -54,6 +55,25 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected BusinessObject businessObject;
+
+	/**
+	 * The default value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String RETURN_TYPE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getReturnType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String returnType = RETURN_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,6 +158,27 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getReturnType() {
+		return returnType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setReturnType(String newReturnType) {
+		String oldReturnType = returnType;
+		returnType = newReturnType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.ACTION__RETURN_TYPE, oldReturnType, returnType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -146,6 +187,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case WebappPackage.ACTION__BUSINESS_OBJECT:
 				if (resolve) return getBusinessObject();
 				return basicGetBusinessObject();
+			case WebappPackage.ACTION__RETURN_TYPE:
+				return getReturnType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -163,6 +206,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return;
 			case WebappPackage.ACTION__BUSINESS_OBJECT:
 				setBusinessObject((BusinessObject)newValue);
+				return;
+			case WebappPackage.ACTION__RETURN_TYPE:
+				setReturnType((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -182,6 +228,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case WebappPackage.ACTION__BUSINESS_OBJECT:
 				setBusinessObject((BusinessObject)null);
 				return;
+			case WebappPackage.ACTION__RETURN_TYPE:
+				setReturnType(RETURN_TYPE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -198,6 +247,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case WebappPackage.ACTION__BUSINESS_OBJECT:
 				return businessObject != null;
+			case WebappPackage.ACTION__RETURN_TYPE:
+				return RETURN_TYPE_EDEFAULT == null ? returnType != null : !RETURN_TYPE_EDEFAULT.equals(returnType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -214,6 +265,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", returnType: ");
+		result.append(returnType);
 		result.append(')');
 		return result.toString();
 	}

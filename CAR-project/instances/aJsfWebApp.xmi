@@ -90,7 +90,9 @@
       </constraint>
     </table>
     <businessObject
-        name="User">
+        name="User"
+        action="//@controller/@action.0"
+        package="de.vogella.jsf.starter.model">
       <field
           name="name"
           type="String"
@@ -101,7 +103,9 @@
           businessObject="//@model/@businessObject.0"/>
     </businessObject>
     <businessObject
-        name="Card">
+        name="Card"
+        action="//@controller/@action.1 //@controller/@action.2"
+        package="de.vogella.jsf.starter.model">
       <field
           name="left"
           type="int"
@@ -124,13 +128,16 @@
         name="de.vogella.jsf.starter.validator.LoginValidator"/>
     <action
         name="login"
-        businessObject="//@model/@businessObject.0"/>
+        businessObject="//@model/@businessObject.0"
+        returnType="String"/>
     <action
         name="show"
-        businessObject="//@model/@businessObject.1"/>
+        businessObject="//@model/@businessObject.1"
+        returnType="String"/>
     <action
         name="clear"
-        businessObject="//@model/@businessObject.1"/>
+        businessObject="//@model/@businessObject.1"
+        returnType="String"/>
   </controller>
   <resource>
     <propertie

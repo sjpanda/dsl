@@ -16,6 +16,8 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link webapp.BusinessObject#getField <em>Field</em>}</li>
  *   <li>{@link webapp.BusinessObject#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.BusinessObject#getAction <em>Action</em>}</li>
+ *   <li>{@link webapp.BusinessObject#getPackage <em>Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,5 +67,47 @@ public interface BusinessObject extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Action</b></em>' reference list.
+	 * The list contents are of type {@link webapp.Action}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Action</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Action</em>' reference list.
+	 * @see webapp.WebappPackage#getBusinessObject_Action()
+	 * @model
+	 * @generated
+	 */
+	EList<Action> getAction();
+
+	/**
+	 * Returns the value of the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Package</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Package</em>' attribute.
+	 * @see #setPackage(String)
+	 * @see webapp.WebappPackage#getBusinessObject_Package()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getPackage();
+
+	/**
+	 * Sets the value of the '{@link webapp.BusinessObject#getPackage <em>Package</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Package</em>' attribute.
+	 * @see #getPackage()
+	 * @generated
+	 */
+	void setPackage(String value);
 
 } // BusinessObject

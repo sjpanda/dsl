@@ -20,18 +20,18 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import webapp.DAOBusinessObject;
+
+import webapp.Attribute;
 import webapp.WebappPackage;
 
 /**
- * This is the item provider adapter for a {@link webapp.DAOBusinessObject} object.
+ * This is the item provider adapter for a {@link webapp.Attribute} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class DAOBusinessObjectItemProvider
+public class AttributeItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class DAOBusinessObjectItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DAOBusinessObjectItemProvider(AdapterFactory adapterFactory) {
+	public AttributeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -60,48 +60,26 @@ public class DAOBusinessObjectItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addBusinessObjectPropertyDescriptor(object);
-			addPackagePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Business Object feature.
+	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addBusinessObjectPropertyDescriptor(Object object) {
+	protected void addNamePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_DAOBusinessObject_businessObject_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DAOBusinessObject_businessObject_feature", "_UI_DAOBusinessObject_type"),
-				 WebappPackage.Literals.DAO_BUSINESS_OBJECT__BUSINESS_OBJECT,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Package feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPackagePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_DAOBusinessObject_package_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_DAOBusinessObject_package_feature", "_UI_DAOBusinessObject_type"),
-				 WebappPackage.Literals.DAO_BUSINESS_OBJECT__PACKAGE,
+				 getString("_UI_Attribute_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_name_feature", "_UI_Attribute_type"),
+				 WebappPackage.Literals.ATTRIBUTE__NAME,
 				 true,
 				 false,
 				 false,
@@ -111,14 +89,36 @@ public class DAOBusinessObjectItemProvider
 	}
 
 	/**
-	 * This returns DAOBusinessObject.gif.
+	 * This adds a property descriptor for the Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Attribute_value_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Attribute_value_feature", "_UI_Attribute_type"),
+				 WebappPackage.Literals.ATTRIBUTE__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Attribute.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/DAOBusinessObject"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Attribute"));
 	}
 
 	/**
@@ -129,10 +129,10 @@ public class DAOBusinessObjectItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((DAOBusinessObject)object).getPackage();
+		String label = ((Attribute)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_DAOBusinessObject_type") :
-			getString("_UI_DAOBusinessObject_type") + " " + label;
+			getString("_UI_Attribute_type") :
+			getString("_UI_Attribute_type") + " " + label;
 	}
 
 	/**
@@ -146,8 +146,9 @@ public class DAOBusinessObjectItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(DAOBusinessObject.class)) {
-			case WebappPackage.DAO_BUSINESS_OBJECT__PACKAGE:
+		switch (notification.getFeatureID(Attribute.class)) {
+			case WebappPackage.ATTRIBUTE__NAME:
+			case WebappPackage.ATTRIBUTE__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

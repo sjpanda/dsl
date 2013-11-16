@@ -193,9 +193,11 @@
     <genClasses ecoreClass="WebApp.ecore#//Action">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Action/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Action/businessObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Action/returnType"/>
     </genClasses>
     <genClasses image="false" ecoreClass="WebApp.ecore#//Tag">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Tag/property"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Tag/attribute"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Input">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Input/type"/>
@@ -223,6 +225,8 @@
     <genClasses ecoreClass="WebApp.ecore#//BusinessObject">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//BusinessObject/field"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//BusinessObject/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//BusinessObject/action"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//BusinessObject/package"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Field">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/name"/>
@@ -232,7 +236,12 @@
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//DAOBusinessObject">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//DAOBusinessObject/businessObject"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//DAOBusinessObject/package"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Messages"/>
+    <genClasses ecoreClass="WebApp.ecore#//Attribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Attribute/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Attribute/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

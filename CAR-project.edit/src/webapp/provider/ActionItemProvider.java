@@ -62,6 +62,7 @@ public class ActionItemProvider
 
 			addNamePropertyDescriptor(object);
 			addBusinessObjectPropertyDescriptor(object);
+			addReturnTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -111,6 +112,28 @@ public class ActionItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Return Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addReturnTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Action_returnType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Action_returnType_feature", "_UI_Action_type"),
+				 WebappPackage.Literals.ACTION__RETURN_TYPE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Action.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -148,6 +171,7 @@ public class ActionItemProvider
 
 		switch (notification.getFeatureID(Action.class)) {
 			case WebappPackage.ACTION__NAME:
+			case WebappPackage.ACTION__RETURN_TYPE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

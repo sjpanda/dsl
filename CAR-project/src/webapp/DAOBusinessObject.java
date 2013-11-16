@@ -13,6 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link webapp.DAOBusinessObject#getBusinessObject <em>Business Object</em>}</li>
+ *   <li>{@link webapp.DAOBusinessObject#getPackage <em>Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,5 +47,31 @@ public interface DAOBusinessObject extends EObject {
 	 * @generated
 	 */
 	void setBusinessObject(BusinessObject value);
+
+	/**
+	 * Returns the value of the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Package</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Package</em>' attribute.
+	 * @see #setPackage(String)
+	 * @see webapp.WebappPackage#getDAOBusinessObject_Package()
+	 * @model required="true"
+	 * @generated
+	 */
+	String getPackage();
+
+	/**
+	 * Sets the value of the '{@link webapp.DAOBusinessObject#getPackage <em>Package</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Package</em>' attribute.
+	 * @see #getPackage()
+	 * @generated
+	 */
+	void setPackage(String value);
 
 } // DAOBusinessObject

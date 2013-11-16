@@ -64,6 +64,7 @@ public class BusinessObjectItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addPackagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -91,6 +92,28 @@ public class BusinessObjectItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Package feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPackagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_BusinessObject_package_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessObject_package_feature", "_UI_BusinessObject_type"),
+				 WebappPackage.Literals.BUSINESS_OBJECT__PACKAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -103,6 +126,7 @@ public class BusinessObjectItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebappPackage.Literals.BUSINESS_OBJECT__FIELD);
+			childrenFeatures.add(WebappPackage.Literals.BUSINESS_OBJECT__ACTION);
 		}
 		return childrenFeatures;
 	}
@@ -158,9 +182,11 @@ public class BusinessObjectItemProvider
 
 		switch (notification.getFeatureID(BusinessObject.class)) {
 			case WebappPackage.BUSINESS_OBJECT__NAME:
+			case WebappPackage.BUSINESS_OBJECT__PACKAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebappPackage.BUSINESS_OBJECT__FIELD:
+			case WebappPackage.BUSINESS_OBJECT__ACTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -182,6 +208,11 @@ public class BusinessObjectItemProvider
 			(createChildParameter
 				(WebappPackage.Literals.BUSINESS_OBJECT__FIELD,
 				 WebappFactory.eINSTANCE.createField()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.BUSINESS_OBJECT__ACTION,
+				 WebappFactory.eINSTANCE.createAction()));
 	}
 
 	/**

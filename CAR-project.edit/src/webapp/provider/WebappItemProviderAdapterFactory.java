@@ -900,6 +900,29 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Attribute} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AttributeItemProvider attributeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Attribute}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAttributeAdapter() {
+		if (attributeItemProvider == null) {
+			attributeItemProvider = new AttributeItemProvider(this);
+		}
+
+		return attributeItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1034,6 +1057,7 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (fieldItemProvider != null) fieldItemProvider.dispose();
 		if (daoBusinessObjectItemProvider != null) daoBusinessObjectItemProvider.dispose();
 		if (messagesItemProvider != null) messagesItemProvider.dispose();
+		if (attributeItemProvider != null) attributeItemProvider.dispose();
 	}
 
 }

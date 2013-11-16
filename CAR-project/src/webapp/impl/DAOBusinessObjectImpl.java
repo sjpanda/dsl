@@ -22,6 +22,7 @@ import webapp.WebappPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link webapp.impl.DAOBusinessObjectImpl#getBusinessObject <em>Business Object</em>}</li>
+ *   <li>{@link webapp.impl.DAOBusinessObjectImpl#getPackage <em>Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +38,25 @@ public class DAOBusinessObjectImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected BusinessObject businessObject;
+
+	/**
+	 * The default value of the '{@link #getPackage() <em>Package</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PACKAGE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getPackage() <em>Package</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPackage()
+	 * @generated
+	 * @ordered
+	 */
+	protected String package_ = PACKAGE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -100,12 +120,35 @@ public class DAOBusinessObjectImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPackage() {
+		return package_;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPackage(String newPackage) {
+		String oldPackage = package_;
+		package_ = newPackage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.DAO_BUSINESS_OBJECT__PACKAGE, oldPackage, package_));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case WebappPackage.DAO_BUSINESS_OBJECT__BUSINESS_OBJECT:
 				if (resolve) return getBusinessObject();
 				return basicGetBusinessObject();
+			case WebappPackage.DAO_BUSINESS_OBJECT__PACKAGE:
+				return getPackage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -120,6 +163,9 @@ public class DAOBusinessObjectImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case WebappPackage.DAO_BUSINESS_OBJECT__BUSINESS_OBJECT:
 				setBusinessObject((BusinessObject)newValue);
+				return;
+			case WebappPackage.DAO_BUSINESS_OBJECT__PACKAGE:
+				setPackage((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -136,6 +182,9 @@ public class DAOBusinessObjectImpl extends MinimalEObjectImpl.Container implemen
 			case WebappPackage.DAO_BUSINESS_OBJECT__BUSINESS_OBJECT:
 				setBusinessObject((BusinessObject)null);
 				return;
+			case WebappPackage.DAO_BUSINESS_OBJECT__PACKAGE:
+				setPackage(PACKAGE_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -150,8 +199,26 @@ public class DAOBusinessObjectImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case WebappPackage.DAO_BUSINESS_OBJECT__BUSINESS_OBJECT:
 				return businessObject != null;
+			case WebappPackage.DAO_BUSINESS_OBJECT__PACKAGE:
+				return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (package: ");
+		result.append(package_);
+		result.append(')');
+		return result.toString();
 	}
 
 } //DAOBusinessObjectImpl
