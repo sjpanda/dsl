@@ -142,7 +142,8 @@
   </controller>
   <resource>
     <propertie
-        name="de.vogella.jsf.starter.messages">
+        name="messages"
+        package="de.vogella.jsf.starter">
       <mapping
           left="user"
           right="User"/>

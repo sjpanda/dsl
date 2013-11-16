@@ -125,6 +125,7 @@
     <genClasses ecoreClass="WebApp.ecore#//Properties">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Properties/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Properties/mapping"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Properties/package"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Table">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Table/column"/>

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link webapp.Properties#getName <em>Name</em>}</li>
  *   <li>{@link webapp.Properties#getMapping <em>Mapping</em>}</li>
+ *   <li>{@link webapp.Properties#getPackage <em>Package</em>}</li>
  * </ul>
  * </p>
  *
@@ -65,4 +66,30 @@ public interface Properties extends EObject {
 	 * @generated
 	 */
 	EList<Mapping> getMapping();
+
+	/**
+	 * Returns the value of the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Package</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Package</em>' attribute.
+	 * @see #setPackage(String)
+	 * @see webapp.WebappPackage#getProperties_Package()
+	 * @model
+	 * @generated
+	 */
+	String getPackage();
+
+	/**
+	 * Sets the value of the '{@link webapp.Properties#getPackage <em>Package</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Package</em>' attribute.
+	 * @see #getPackage()
+	 * @generated
+	 */
+	void setPackage(String value);
 } // Properties

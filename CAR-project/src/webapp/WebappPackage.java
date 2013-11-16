@@ -566,13 +566,22 @@ public interface WebappPackage extends EPackage {
 	int PROPERTIES__MAPPING = 1;
 
 	/**
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTIES__PACKAGE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES_FEATURE_COUNT = 2;
+	int PROPERTIES_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Properties</em>' class.
@@ -2486,6 +2495,17 @@ public interface WebappPackage extends EPackage {
 	EReference getProperties_Mapping();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webapp.Properties#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see webapp.Properties#getPackage()
+	 * @see #getProperties()
+	 * @generated
+	 */
+	EAttribute getProperties_Package();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Table <em>Table</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3855,6 +3875,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference PROPERTIES__MAPPING = eINSTANCE.getProperties_Mapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTIES__PACKAGE = eINSTANCE.getProperties_Package();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.TableImpl <em>Table</em>}' class.

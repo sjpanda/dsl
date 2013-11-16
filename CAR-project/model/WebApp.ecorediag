@@ -191,6 +191,10 @@
         <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Properties/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_v4hncU6YEeOeZ7B3PHLasg"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_bVVtEE7hEeOlBNMDZ0G53Q" type="2001">
+        <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Properties/package"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_bVVtEU7hEeOlBNMDZ0G53Q"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_bE7jAkgREeOeyYdB5-9y4w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_bE7jA0gREeOeyYdB5-9y4w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_bE7jBEgREeOeyYdB5-9y4w"/>

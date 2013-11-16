@@ -757,6 +757,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getProperties_Package() {
+		return (EAttribute)propertiesEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getTable() {
 		return tableEClass;
 	}
@@ -1707,6 +1716,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		propertiesEClass = createEClass(PROPERTIES);
 		createEAttribute(propertiesEClass, PROPERTIES__NAME);
 		createEReference(propertiesEClass, PROPERTIES__MAPPING);
+		createEAttribute(propertiesEClass, PROPERTIES__PACKAGE);
 
 		tableEClass = createEClass(TABLE);
 		createEReference(tableEClass, TABLE__COLUMN);
@@ -1918,6 +1928,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEClass(propertiesEClass, Properties.class, "Properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getProperties_Name(), ecorePackage.getEString(), "name", null, 1, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getProperties_Mapping(), this.getMapping(), null, "mapping", null, 0, -1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getProperties_Package(), ecorePackage.getEString(), "package", null, 0, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTable_Column(), this.getColumn(), null, "column", null, 1, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

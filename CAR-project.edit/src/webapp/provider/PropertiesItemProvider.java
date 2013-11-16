@@ -62,6 +62,7 @@ public class PropertiesItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addPackagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -80,6 +81,28 @@ public class PropertiesItemProvider
 				 getString("_UI_Properties_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Properties_name_feature", "_UI_Properties_type"),
 				 WebappPackage.Literals.PROPERTIES__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Package feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPackagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Properties_package_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Properties_package_feature", "_UI_Properties_type"),
+				 WebappPackage.Literals.PROPERTIES__PACKAGE,
 				 true,
 				 false,
 				 false,
@@ -156,6 +179,7 @@ public class PropertiesItemProvider
 
 		switch (notification.getFeatureID(Properties.class)) {
 			case WebappPackage.PROPERTIES__NAME:
+			case WebappPackage.PROPERTIES__PACKAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebappPackage.PROPERTIES__MAPPING:
