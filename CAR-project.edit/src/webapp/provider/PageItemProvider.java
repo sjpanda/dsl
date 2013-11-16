@@ -261,6 +261,11 @@ public class PageItemProvider
 			(createChildParameter
 				(WebappPackage.Literals.PAGE__TAG,
 				 WebappFactory.eINSTANCE.createTh()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.PAGE__TAG,
+				 WebappFactory.eINSTANCE.createMessages()));
 	}
 
 	/**

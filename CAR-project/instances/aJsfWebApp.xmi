@@ -18,7 +18,8 @@
             xsi:type="webapp:Input"
             property=""
             label="//@resource/@propertie.0/@mapping.0"
-            textValue="//@model/@businessObject.0/@field.0"/>
+            textValue="//@model/@businessObject.0/@field.0"
+            validator="//@controller/@validator.0"/>
         <tag
             xsi:type="webapp:Input"
             label="//@resource/@propertie.0/@mapping.1"
@@ -28,6 +29,8 @@
             type="BUTTON"
             action="//@controller/@action.0"
             buttonValue="//@resource/@propertie.0/@mapping.2"/>
+        <tag
+            xsi:type="webapp:Messages"/>
       </tag>
     </page>
     <page name="Trainer"
@@ -51,8 +54,11 @@
             type="BUTTON"
             action="//@controller/@action.2"
             buttonValue="//@resource/@propertie.0/@mapping.8"/>
+        <tag
+            xsi:type="webapp:Messages"/>
       </tag>
       <tag xsi:type="webapp:Input"
+          property=""
           label="//@resource/@propertie.0/@mapping.9"
           textValue="//@model/@businessObject.1/@field.2"/>
     </page>
@@ -87,31 +93,36 @@
         name="User">
       <field
           name="name"
-          type="String"/>
+          type="String"
+          businessObject="//@model/@businessObject.0"/>
       <field
           name="password"
-          type="String"/>
+          type="String"
+          businessObject="//@model/@businessObject.0"/>
     </businessObject>
     <businessObject
         name="Card">
       <field
           name="left"
-          type="int"/>
+          type="int"
+          defaultValue=""
+          businessObject="//@model/@businessObject.1"/>
       <field
           name="right"
           type="int"
-          defaultValue=""/>
+          defaultValue=""
+          businessObject="//@model/@businessObject.0"/>
       <field
           name="result"
           type="int"
-          defaultValue="0"/>
+          defaultValue="0"
+          businessObject="//@model/@businessObject.1"/>
     </businessObject>
   </model>
   <controller>
     <validator
-        name="LoginValidator"/>
+        name="de.vogella.jsf.starter.validator.LoginValidator"/>
     <action
-        validator="//@controller/@validator.0"
         name="login"
         businessObject="//@model/@businessObject.0"/>
     <action
@@ -123,7 +134,7 @@
   </controller>
   <resource>
     <propertie
-        name="messages">
+        name="de.vogella.jsf.starter.messages">
       <mapping
           left="user"
           right="User"/>

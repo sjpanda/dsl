@@ -1,7 +1,6 @@
 <%@ jet package="webapp.jsp" class="GenerateJsfJspPage" 
 	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
 <%  Page page = (Page)argument;
-	StringBuffer content = new StringBuffer();
 	%>
 <%= "<%@ page language=\"java\" contentType=\"text/html; charset=ISO-8859-1\" pageEncoding=\"ISO-8859-1\"%\\>" %>
 <%= "<%@ taglib prefix=\"f\" uri=\"http://java.sun.com/jsf/core\"%\\>" %>
@@ -10,27 +9,119 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title><%= page.getTitle() %></title>
+<% if (page.getTitle() != null) { %>
+<title><%= page.getTitle().getRight() %></title>
+<% } else { %>
+<title><%= page.getName() %></title>
+<% } %>
 </head>
 <body>
 <f:view>
-
-  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="msg" />
+<%  String[] propName = {};
+	for(Properties p : page.getProperties()){ 
+	propName = p.getName().split("\\."); %>
+  <f:loadBundle basename="<%= p.getName() %>" var="<%= propName[propName.length - 1] %>" />
+ <% } %>
+<% for(Tag tag : page.getTag()){ 
+	if(tag instanceof Form){ %>
   <h:form>
-    <h:panelGrid columns="2">
-      <h:outputLabel value="#{msg.user}"></h:outputLabel>
-      <h:inputText value="#{user.name}">
-      <f:validator
-          validatorId="de.vogella.jsf.starter.validator.LoginValidator" />
-      </h:inputText>
-      <h:outputLabel value="#{msg.password}"></h:outputLabel>
-      <h:inputSecret value="#{user.password}">
-      </h:inputSecret>
+  	<% EList<Tag> formTags = ((Form)tag).getTag();
+  	   int nbInputText = 0;
+  	   StringBuffer contentInputText = new StringBuffer();
+  	   StringBuffer contentInputButton = new StringBuffer();
+  	   StringBuffer messages = new StringBuffer();
+  	   for(Tag formTag : formTags){
+  	   	  if(formTag instanceof Input){
+  	   	  	Input input = ((Input)formTag);
+  	   	  	if(input.getType() == InputType.TEXT){
+  	   	  	 	nbInputText++;
+  	   	  	 	Mapping label = input.getLabel();
+  	   	  	 	if(label != null) {
+  	   	  	 		contentInputText.append("<h:outputLabel value=\"#{" + propName[propName.length - 1] + "." + label.getLeft() + "}\"></h:outputLabel>\n");
+  	   	  	 	}
+  	   	  	 	Field textValue = input.getTextValue();
+  	   	  	 	if(textValue != null){
+  	   	  	 		if(textValue.getName().equalsIgnoreCase("password")) {
+  	   	  	 			contentInputText.append("<h:inputSecret value=\"#{" + textValue.getBusinessObject().getName() + "." + textValue.getName() + "}\">\n");
+  	   	  	 		} else {
+  	   	  	 			contentInputText.append("<h:inputText value=\"#{" + textValue.getBusinessObject().getName() + "." + textValue.getName() + "}\">\n");
+  	   	  	 		}
+  	   	  	 		Validator validator = input.getValidator();
+  	   	  	 		if(validator != null){
+  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getName() + "\" />\n");
+  	   	  	 		}
+  	   	  	 		if(textValue.getName().equalsIgnoreCase("password")) {
+  	   	  	 			contentInputText.append("</h:inputSecret>\n");
+  	   	  	 		} else {
+  	   	  	 			contentInputText.append("</h:inputText>\n");
+  	   	  	 		}
+  	   	  	 	}
+  	   	  	 }
+  	   	  	 if(input.getType() == InputType.BUTTON){
+  	   	  	 	contentInputButton.append("<h:commandButton action=\"#{");
+  	   	  	 	contentInputButton.append(input.getAction().getBusinessObject().getName() + "." + input.getAction().getName());
+  	   	  	 	contentInputButton.append("}\" value=\"#{" + propName[propName.length - 1] + "." + input.getButtonValue().getLeft() + "}\"></h:commandButton>\n");
+  	   	  	 }
+  	   	  }
+  	   	  if(formTag instanceof Messages){
+  	   	  	messages.append("<h:messages layout=\"table\"></h:messages>\n");
+  	   	  }
+  	   }
+  	   if(nbInputText > 0){ %>
+    <h:panelGrid columns="<%= nbInputText %>">
+      <%= contentInputText.toString() %>
     </h:panelGrid>
-    <h:commandButton action="#{user.login}" value="#{msg.login}"></h:commandButton>
-    <h:messages layout="table"></h:messages>
+       <% } %>
+    <%= contentInputButton.toString() %>
+    <%= messages.toString() %>
   </h:form>
-  
+<% }
+	if(tag instanceof Input) {
+		int nbInputText = 0;
+  	    StringBuffer contentInputText = new StringBuffer();
+  	    StringBuffer contentInputButton = new StringBuffer();
+		Input input = ((Input)tag);
+  	   	  	if(input.getType() == InputType.TEXT){
+  	   	  	 	nbInputText++;
+  	   	  	 	Mapping label = input.getLabel();
+  	   	  	 	if(label != null) {
+  	   	  	 		contentInputText.append("<h:outputLabel value=\"#{" + propName[propName.length - 1] + "." + label.getLeft() + "}\"></h:outputLabel>\n");
+  	   	  	 	}
+  	   	  	 	Field textValue = input.getTextValue();
+  	   	  	 	if(textValue != null){
+  	   	  	 		if(textValue.getName().equalsIgnoreCase("password")) {
+  	   	  	 			contentInputText.append("<h:inputSecret value=\"#{" + textValue.getBusinessObject().getName() + "." + textValue.getName() + "}\">\n");
+  	   	  	 		} else {
+  	   	  	 			contentInputText.append("<h:inputText value=\"#{" + textValue.getBusinessObject().getName() + "." + textValue.getName() + "}\">\n");
+  	   	  	 		}
+  	   	  	 		Validator validator = input.getValidator();
+  	   	  	 		if(validator != null){
+  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getName() + "\" />\n");
+  	   	  	 		}
+  	   	  	 		if(textValue.getName().equalsIgnoreCase("password")) {
+  	   	  	 			contentInputText.append("</h:inputSecret>\n");
+  	   	  	 		} else {
+  	   	  	 			contentInputText.append("</h:inputText>\n");
+  	   	  	 		}
+  	   	  	 	}
+  	   	  	 }
+  	   	  	 if(input.getType() == InputType.BUTTON){
+  	   	  	 	contentInputButton.append("<h:commandButton action=\"#{");
+  	   	  	 	contentInputButton.append(input.getAction().getBusinessObject().getName() + "." + input.getAction().getName());
+  	   	  	 	contentInputButton.append("}\" value=\"#{" + propName[propName.length - 1] + "." + input.getButtonValue().getLeft() + "}\"></h:commandButton>\n");
+  	   	  	 }
+  	  if(nbInputText > 0){ %>
+    <h:panelGrid columns="<%= nbInputText %>">
+      <%= contentInputText.toString() %>
+    </h:panelGrid>
+    <%}%>
+    <%= contentInputButton.toString() %>
+	<%}	
+} 
+if(page.getText() != null) { 
+	for(Text text : page.getText()){%>
+	<%= text.getContent() %>	
+<%}}%>
 </f:view>
 </body>
 </html>

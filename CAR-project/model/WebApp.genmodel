@@ -191,7 +191,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Text/content"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Action">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Action/validator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Action/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Action/businessObject"/>
     </genClasses>
@@ -204,6 +203,7 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/label"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/buttonValue"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/textValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/validator"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//TableHTML">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//TableHTML/tr"/>
@@ -228,9 +228,11 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/defaultValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Field/businessObject"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//DAOBusinessObject">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//DAOBusinessObject/businessObject"/>
     </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Messages"/>
   </genPackages>
 </genmodel:GenModel>

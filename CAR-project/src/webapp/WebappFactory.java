@@ -337,6 +337,15 @@ public interface WebappFactory extends EFactory {
 	DAOBusinessObject createDAOBusinessObject();
 
 	/**
+	 * Returns a new object of class '<em>Messages</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Messages</em>'.
+	 * @generated
+	 */
+	Messages createMessages();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

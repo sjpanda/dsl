@@ -245,7 +245,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Action">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="validator" eType="#//Validator"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="businessObject" lowerBound="1"
         eType="#//BusinessObject"/>
@@ -269,6 +268,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="label" eType="#//Mapping"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="buttonValue" eType="#//Mapping"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="textValue" eType="#//Field"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="validator" eType="#//Validator"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TableHTML" eSuperTypes="#//Tag">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tr" upperBound="-1" eType="#//Tr"
@@ -302,9 +302,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessObject" lowerBound="1"
+        eType="#//BusinessObject"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DAOBusinessObject">
     <eStructuralFeatures xsi:type="ecore:EReference" name="businessObject" lowerBound="1"
         eType="#//BusinessObject"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Messages" eSuperTypes="#//Tag"/>
 </ecore:EPackage>

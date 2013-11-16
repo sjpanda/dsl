@@ -33,6 +33,7 @@ import webapp.Input;
 import webapp.InputType;
 import webapp.Library;
 import webapp.Mapping;
+import webapp.Messages;
 import webapp.Model;
 import webapp.OnDelete;
 import webapp.OnUpdate;
@@ -315,6 +316,13 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	private EClass daoBusinessObjectEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass messagesEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -1200,17 +1208,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAction_Validator() {
-		return (EReference)actionEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getAction_Name() {
-		return (EAttribute)actionEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)actionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1219,7 +1218,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EReference getAction_BusinessObject() {
-		return (EReference)actionEClass.getEStructuralFeatures().get(2);
+		return (EReference)actionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1292,6 +1291,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 */
 	public EReference getInput_TextValue() {
 		return (EReference)inputEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getInput_Validator() {
+		return (EReference)inputEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -1461,6 +1469,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getField_BusinessObject() {
+		return (EReference)fieldEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getDAOBusinessObject() {
 		return daoBusinessObjectEClass;
 	}
@@ -1472,6 +1489,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 */
 	public EReference getDAOBusinessObject_BusinessObject() {
 		return (EReference)daoBusinessObjectEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getMessages() {
+		return messagesEClass;
 	}
 
 	/**
@@ -1658,7 +1684,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(textEClass, TEXT__CONTENT);
 
 		actionEClass = createEClass(ACTION);
-		createEReference(actionEClass, ACTION__VALIDATOR);
 		createEAttribute(actionEClass, ACTION__NAME);
 		createEReference(actionEClass, ACTION__BUSINESS_OBJECT);
 
@@ -1671,6 +1696,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEReference(inputEClass, INPUT__LABEL);
 		createEReference(inputEClass, INPUT__BUTTON_VALUE);
 		createEReference(inputEClass, INPUT__TEXT_VALUE);
+		createEReference(inputEClass, INPUT__VALIDATOR);
 
 		tableHTMLEClass = createEClass(TABLE_HTML);
 		createEReference(tableHTMLEClass, TABLE_HTML__TR);
@@ -1696,9 +1722,12 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(fieldEClass, FIELD__NAME);
 		createEAttribute(fieldEClass, FIELD__TYPE);
 		createEAttribute(fieldEClass, FIELD__DEFAULT_VALUE);
+		createEReference(fieldEClass, FIELD__BUSINESS_OBJECT);
 
 		daoBusinessObjectEClass = createEClass(DAO_BUSINESS_OBJECT);
 		createEReference(daoBusinessObjectEClass, DAO_BUSINESS_OBJECT__BUSINESS_OBJECT);
+
+		messagesEClass = createEClass(MESSAGES);
 
 		// Create enums
 		behaviorEEnum = createEEnum(BEHAVIOR);
@@ -1742,6 +1771,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		trEClass.getESuperTypes().add(this.getTag());
 		tdEClass.getESuperTypes().add(this.getTag());
 		thEClass.getESuperTypes().add(this.getTag());
+		messagesEClass.getESuperTypes().add(this.getTag());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(webAppEClass, WebApp.class, "WebApp", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1855,7 +1885,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getText_Content(), ecorePackage.getEString(), "content", null, 1, 1, Text.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAction_Validator(), this.getValidator(), null, "validator", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAction_Name(), ecorePackage.getEString(), "name", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getAction_BusinessObject(), this.getBusinessObject(), null, "businessObject", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1868,6 +1897,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEReference(getInput_Label(), this.getMapping(), null, "label", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInput_ButtonValue(), this.getMapping(), null, "buttonValue", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getInput_TextValue(), this.getField(), null, "textValue", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getInput_Validator(), this.getValidator(), null, "validator", null, 0, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableHTMLEClass, TableHTML.class, "TableHTML", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTableHTML_Tr(), this.getTr(), null, "tr", null, 0, -1, TableHTML.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1893,9 +1923,12 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getField_Name(), ecorePackage.getEString(), "name", null, 1, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getField_Type(), ecorePackage.getEString(), "type", null, 1, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getField_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getField_BusinessObject(), this.getBusinessObject(), null, "businessObject", null, 1, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(daoBusinessObjectEClass, DAOBusinessObject.class, "DAOBusinessObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDAOBusinessObject_BusinessObject(), this.getBusinessObject(), null, "businessObject", null, 1, 1, DAOBusinessObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messagesEClass, Messages.class, "Messages", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(behaviorEEnum, Behavior.class, "Behavior");

@@ -5,27 +5,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Failed Login</title>
+<title>FailedLogin</title>
 </head>
 <body>
 <f:view>
-
-  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="msg" />
-  <h:form>
-    <h:panelGrid columns="2">
-      <h:outputLabel value="#{msg.user}"></h:outputLabel>
-      <h:inputText value="#{user.name}">
-      <f:validator
-          validatorId="de.vogella.jsf.starter.validator.LoginValidator" />
-      </h:inputText>
-      <h:outputLabel value="#{msg.password}"></h:outputLabel>
-      <h:inputSecret value="#{user.password}">
-      </h:inputSecret>
-    </h:panelGrid>
-    <h:commandButton action="#{user.login}" value="#{msg.login}"></h:commandButton>
-    <h:messages layout="table"></h:messages>
-  </h:form>
-  
+	Failed Login	
 </f:view>
 </body>
 </html>

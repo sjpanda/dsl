@@ -63,6 +63,7 @@ public class FieldItemProvider
 			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 			addDefaultValuePropertyDescriptor(object);
+			addBusinessObjectPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -129,6 +130,28 @@ public class FieldItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Business Object feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBusinessObjectPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Field_businessObject_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Field_businessObject_feature", "_UI_Field_type"),
+				 WebappPackage.Literals.FIELD__BUSINESS_OBJECT,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

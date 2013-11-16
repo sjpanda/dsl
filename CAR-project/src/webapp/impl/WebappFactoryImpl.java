@@ -92,6 +92,7 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 			case WebappPackage.BUSINESS_OBJECT: return createBusinessObject();
 			case WebappPackage.FIELD: return createField();
 			case WebappPackage.DAO_BUSINESS_OBJECT: return createDAOBusinessObject();
+			case WebappPackage.MESSAGES: return createMessages();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -491,6 +492,16 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 	public DAOBusinessObject createDAOBusinessObject() {
 		DAOBusinessObjectImpl daoBusinessObject = new DAOBusinessObjectImpl();
 		return daoBusinessObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Messages createMessages() {
+		MessagesImpl messages = new MessagesImpl();
+		return messages;
 	}
 
 	/**

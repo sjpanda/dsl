@@ -877,6 +877,29 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Messages} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MessagesItemProvider messagesItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Messages}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMessagesAdapter() {
+		if (messagesItemProvider == null) {
+			messagesItemProvider = new MessagesItemProvider(this);
+		}
+
+		return messagesItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1010,6 +1033,7 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (businessObjectItemProvider != null) businessObjectItemProvider.dispose();
 		if (fieldItemProvider != null) fieldItemProvider.dispose();
 		if (daoBusinessObjectItemProvider != null) daoBusinessObjectItemProvider.dispose();
+		if (messagesItemProvider != null) messagesItemProvider.dispose();
 	}
 
 }

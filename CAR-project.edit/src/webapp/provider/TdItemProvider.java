@@ -176,6 +176,11 @@ public class TdItemProvider
 			(createChildParameter
 				(WebappPackage.Literals.TD__TAG,
 				 WebappFactory.eINSTANCE.createTh()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.TD__TAG,
+				 WebappFactory.eINSTANCE.createMessages()));
 	}
 
 }

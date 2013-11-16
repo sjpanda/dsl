@@ -5,27 +5,28 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Login</title>
+<title>LoginView</title>
 </head>
 <body>
 <f:view>
-
-  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="msg" />
+  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="messages" />
   <h:form>
+  	
     <h:panelGrid columns="2">
-      <h:outputLabel value="#{msg.user}"></h:outputLabel>
-      <h:inputText value="#{user.name}">
-      <f:validator
-          validatorId="de.vogella.jsf.starter.validator.LoginValidator" />
-      </h:inputText>
-      <h:outputLabel value="#{msg.password}"></h:outputLabel>
-      <h:inputSecret value="#{user.password}">
-      </h:inputSecret>
+      <h:outputLabel value="#{messages.user}"></h:outputLabel>
+<h:inputText value="#{User.name}">
+<f:validator validatorId="de.vogella.jsf.starter.validator.LoginValidator" />
+</h:inputText>
+<h:outputLabel value="#{messages.password}"></h:outputLabel>
+<h:inputSecret value="#{User.password}">
+</h:inputSecret>
+
     </h:panelGrid>
-    <h:commandButton action="#{user.login}" value="#{msg.login}"></h:commandButton>
+    <h:commandButton action="#{User.login}" value="#{messages.login}"></h:commandButton>
+
     <h:messages layout="table"></h:messages>
+
   </h:form>
-  
 </f:view>
 </body>
 </html>

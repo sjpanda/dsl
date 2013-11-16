@@ -62,6 +62,7 @@ public class InputItemProvider
 			addLabelPropertyDescriptor(object);
 			addButtonValuePropertyDescriptor(object);
 			addTextValuePropertyDescriptor(object);
+			addValidatorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -168,6 +169,28 @@ public class InputItemProvider
 				 getString("_UI_Input_textValue_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Input_textValue_feature", "_UI_Input_type"),
 				 WebappPackage.Literals.INPUT__TEXT_VALUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Validator feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addValidatorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Input_validator_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Input_validator_feature", "_UI_Input_type"),
+				 WebappPackage.Literals.INPUT__VALIDATOR,
 				 true,
 				 false,
 				 true,

@@ -1356,22 +1356,13 @@ public interface WebappPackage extends EPackage {
 	int ACTION = 25;
 
 	/**
-	 * The feature id for the '<em><b>Validator</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__VALIDATOR = 0;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__NAME = 1;
+	int ACTION__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Business Object</b></em>' reference.
@@ -1380,7 +1371,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION__BUSINESS_OBJECT = 2;
+	int ACTION__BUSINESS_OBJECT = 1;
 
 	/**
 	 * The number of structural features of the '<em>Action</em>' class.
@@ -1389,7 +1380,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 3;
+	int ACTION_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -1465,13 +1456,22 @@ public interface WebappPackage extends EPackage {
 	int INPUT__TEXT_VALUE = TAG_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Validator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__VALIDATOR = TAG_FEATURE_COUNT + 5;
+
+	/**
 	 * The number of structural features of the '<em>Input</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int INPUT_FEATURE_COUNT = TAG_FEATURE_COUNT + 5;
+	int INPUT_FEATURE_COUNT = TAG_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Input</em>' class.
@@ -1796,13 +1796,22 @@ public interface WebappPackage extends EPackage {
 	int FIELD__DEFAULT_VALUE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Business Object</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIELD__BUSINESS_OBJECT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Field</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIELD_FEATURE_COUNT = 3;
+	int FIELD_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Field</em>' class.
@@ -1851,6 +1860,43 @@ public interface WebappPackage extends EPackage {
 	int DAO_BUSINESS_OBJECT_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link webapp.impl.MessagesImpl <em>Messages</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.MessagesImpl
+	 * @see webapp.impl.WebappPackageImpl#getMessages()
+	 * @generated
+	 */
+	int MESSAGES = 36;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES__PROPERTY = TAG__PROPERTY;
+
+	/**
+	 * The number of structural features of the '<em>Messages</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES_FEATURE_COUNT = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Messages</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1858,7 +1904,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 36;
+	int BEHAVIOR = 37;
 
 	/**
 	 * The meta object id for the '{@link webapp.Charset <em>Charset</em>}' enum.
@@ -1868,7 +1914,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getCharset()
 	 * @generated
 	 */
-	int CHARSET = 37;
+	int CHARSET = 38;
 
 	/**
 	 * The meta object id for the '{@link webapp.ColumnType <em>Column Type</em>}' enum.
@@ -1878,7 +1924,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getColumnType()
 	 * @generated
 	 */
-	int COLUMN_TYPE = 38;
+	int COLUMN_TYPE = 39;
 
 
 	/**
@@ -1889,7 +1935,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getFormMethod()
 	 * @generated
 	 */
-	int FORM_METHOD = 39;
+	int FORM_METHOD = 40;
 
 	/**
 	 * The meta object id for the '{@link webapp.InputType <em>Input Type</em>}' enum.
@@ -1899,7 +1945,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getInputType()
 	 * @generated
 	 */
-	int INPUT_TYPE = 40;
+	int INPUT_TYPE = 41;
 
 
 	/**
@@ -2823,17 +2869,6 @@ public interface WebappPackage extends EPackage {
 	EClass getAction();
 
 	/**
-	 * Returns the meta object for the reference '{@link webapp.Action#getValidator <em>Validator</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Validator</em>'.
-	 * @see webapp.Action#getValidator()
-	 * @see #getAction()
-	 * @generated
-	 */
-	EReference getAction_Validator();
-
-	/**
 	 * Returns the meta object for the attribute '{@link webapp.Action#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2940,6 +2975,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getInput_TextValue();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.Input#getValidator <em>Validator</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Validator</em>'.
+	 * @see webapp.Input#getValidator()
+	 * @see #getInput()
+	 * @generated
+	 */
+	EReference getInput_Validator();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.TableHTML <em>Table HTML</em>}'.
@@ -3133,6 +3179,17 @@ public interface WebappPackage extends EPackage {
 	EAttribute getField_DefaultValue();
 
 	/**
+	 * Returns the meta object for the reference '{@link webapp.Field#getBusinessObject <em>Business Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Business Object</em>'.
+	 * @see webapp.Field#getBusinessObject()
+	 * @see #getField()
+	 * @generated
+	 */
+	EReference getField_BusinessObject();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.DAOBusinessObject <em>DAO Business Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3152,6 +3209,16 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDAOBusinessObject_BusinessObject();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Messages <em>Messages</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Messages</em>'.
+	 * @see webapp.Messages
+	 * @generated
+	 */
+	EClass getMessages();
 
 	/**
 	 * Returns the meta object for enum '{@link webapp.Behavior <em>Behavior</em>}'.
@@ -3967,14 +4034,6 @@ public interface WebappPackage extends EPackage {
 		EClass ACTION = eINSTANCE.getAction();
 
 		/**
-		 * The meta object literal for the '<em><b>Validator</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ACTION__VALIDATOR = eINSTANCE.getAction_Validator();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4057,6 +4116,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference INPUT__TEXT_VALUE = eINSTANCE.getInput_TextValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Validator</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INPUT__VALIDATOR = eINSTANCE.getInput_Validator();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.TableHTMLImpl <em>Table HTML</em>}' class.
@@ -4217,6 +4284,14 @@ public interface WebappPackage extends EPackage {
 		EAttribute FIELD__DEFAULT_VALUE = eINSTANCE.getField_DefaultValue();
 
 		/**
+		 * The meta object literal for the '<em><b>Business Object</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FIELD__BUSINESS_OBJECT = eINSTANCE.getField_BusinessObject();
+
+		/**
 		 * The meta object literal for the '{@link webapp.impl.DAOBusinessObjectImpl <em>DAO Business Object</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4233,6 +4308,16 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference DAO_BUSINESS_OBJECT__BUSINESS_OBJECT = eINSTANCE.getDAOBusinessObject_BusinessObject();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.MessagesImpl <em>Messages</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.MessagesImpl
+		 * @see webapp.impl.WebappPackageImpl#getMessages()
+		 * @generated
+		 */
+		EClass MESSAGES = eINSTANCE.getMessages();
 
 		/**
 		 * The meta object literal for the '{@link webapp.Behavior <em>Behavior</em>}' enum.

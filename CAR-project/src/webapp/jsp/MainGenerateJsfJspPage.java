@@ -43,6 +43,7 @@ public class MainGenerateJsfJspPage {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		System.out.println("Terminated");
 	}
 
 }

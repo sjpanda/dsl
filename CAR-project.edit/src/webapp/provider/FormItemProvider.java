@@ -204,6 +204,11 @@ public class FormItemProvider
 			(createChildParameter
 				(WebappPackage.Literals.FORM__TAG,
 				 WebappFactory.eINSTANCE.createTh()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.FORM__TAG,
+				 WebappFactory.eINSTANCE.createMessages()));
 	}
 
 }

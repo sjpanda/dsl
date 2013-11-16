@@ -9,23 +9,32 @@
 </head>
 <body>
 <f:view>
-
-  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="msg" />
+  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="messages" />
   <h:form>
+  	
     <h:panelGrid columns="2">
-      <h:outputLabel value="#{msg.user}"></h:outputLabel>
-      <h:inputText value="#{user.name}">
-      <f:validator
-          validatorId="de.vogella.jsf.starter.validator.LoginValidator" />
-      </h:inputText>
-      <h:outputLabel value="#{msg.password}"></h:outputLabel>
-      <h:inputSecret value="#{user.password}">
-      </h:inputSecret>
+      <h:outputLabel value="#{messages.left}"></h:outputLabel>
+<h:inputText value="#{Card.left}">
+</h:inputText>
+<h:outputLabel value="#{messages.right}"></h:outputLabel>
+<h:inputText value="#{User.right}">
+</h:inputText>
+
     </h:panelGrid>
-    <h:commandButton action="#{user.login}" value="#{msg.login}"></h:commandButton>
+    <h:commandButton action="#{Card.clear}" value="#{messages.reset}"></h:commandButton>
+<h:commandButton action="#{Card.clear}" value="#{messages.reset}"></h:commandButton>
+
     <h:messages layout="table"></h:messages>
+
   </h:form>
-  
+    <h:panelGrid columns="1">
+      <h:outputLabel value="#{messages.result}"></h:outputLabel>
+<h:inputText value="#{Card.result}">
+</h:inputText>
+
+    </h:panelGrid>
+    
+	
 </f:view>
 </body>
 </html>

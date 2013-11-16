@@ -16,6 +16,7 @@ package webapp;
  *   <li>{@link webapp.Input#getLabel <em>Label</em>}</li>
  *   <li>{@link webapp.Input#getButtonValue <em>Button Value</em>}</li>
  *   <li>{@link webapp.Input#getTextValue <em>Text Value</em>}</li>
+ *   <li>{@link webapp.Input#getValidator <em>Validator</em>}</li>
  * </ul>
  * </p>
  *
@@ -157,5 +158,31 @@ public interface Input extends Tag {
 	 * @generated
 	 */
 	void setTextValue(Field value);
+
+	/**
+	 * Returns the value of the '<em><b>Validator</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Validator</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Validator</em>' reference.
+	 * @see #setValidator(Validator)
+	 * @see webapp.WebappPackage#getInput_Validator()
+	 * @model
+	 * @generated
+	 */
+	Validator getValidator();
+
+	/**
+	 * Sets the value of the '{@link webapp.Input#getValidator <em>Validator</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Validator</em>' reference.
+	 * @see #getValidator()
+	 * @generated
+	 */
+	void setValidator(Validator value);
 
 } // Input

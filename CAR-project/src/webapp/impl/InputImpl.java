@@ -14,6 +14,7 @@ import webapp.Field;
 import webapp.Input;
 import webapp.InputType;
 import webapp.Mapping;
+import webapp.Validator;
 import webapp.WebappPackage;
 
 /**
@@ -28,6 +29,7 @@ import webapp.WebappPackage;
  *   <li>{@link webapp.impl.InputImpl#getLabel <em>Label</em>}</li>
  *   <li>{@link webapp.impl.InputImpl#getButtonValue <em>Button Value</em>}</li>
  *   <li>{@link webapp.impl.InputImpl#getTextValue <em>Text Value</em>}</li>
+ *   <li>{@link webapp.impl.InputImpl#getValidator <em>Validator</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,6 +95,16 @@ public class InputImpl extends TagImpl implements Input {
 	 * @ordered
 	 */
 	protected Field textValue;
+
+	/**
+	 * The cached value of the '{@link #getValidator() <em>Validator</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValidator()
+	 * @generated
+	 * @ordered
+	 */
+	protected Validator validator;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -291,6 +303,44 @@ public class InputImpl extends TagImpl implements Input {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Validator getValidator() {
+		if (validator != null && validator.eIsProxy()) {
+			InternalEObject oldValidator = (InternalEObject)validator;
+			validator = (Validator)eResolveProxy(oldValidator);
+			if (validator != oldValidator) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.INPUT__VALIDATOR, oldValidator, validator));
+			}
+		}
+		return validator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Validator basicGetValidator() {
+		return validator;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setValidator(Validator newValidator) {
+		Validator oldValidator = validator;
+		validator = newValidator;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.INPUT__VALIDATOR, oldValidator, validator));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -308,6 +358,9 @@ public class InputImpl extends TagImpl implements Input {
 			case WebappPackage.INPUT__TEXT_VALUE:
 				if (resolve) return getTextValue();
 				return basicGetTextValue();
+			case WebappPackage.INPUT__VALIDATOR:
+				if (resolve) return getValidator();
+				return basicGetValidator();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -334,6 +387,9 @@ public class InputImpl extends TagImpl implements Input {
 				return;
 			case WebappPackage.INPUT__TEXT_VALUE:
 				setTextValue((Field)newValue);
+				return;
+			case WebappPackage.INPUT__VALIDATOR:
+				setValidator((Validator)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -362,6 +418,9 @@ public class InputImpl extends TagImpl implements Input {
 			case WebappPackage.INPUT__TEXT_VALUE:
 				setTextValue((Field)null);
 				return;
+			case WebappPackage.INPUT__VALIDATOR:
+				setValidator((Validator)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -384,6 +443,8 @@ public class InputImpl extends TagImpl implements Input {
 				return buttonValue != null;
 			case WebappPackage.INPUT__TEXT_VALUE:
 				return textValue != null;
+			case WebappPackage.INPUT__VALIDATOR:
+				return validator != null;
 		}
 		return super.eIsSet(featureID);
 	}
