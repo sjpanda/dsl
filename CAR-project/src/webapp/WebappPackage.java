@@ -530,13 +530,31 @@ public interface WebappPackage extends EPackage {
 	int PROPERTIES = 10;
 
 	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTIES__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Mapping</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PROPERTIES__MAPPING = 1;
+
+	/**
 	 * The number of structural features of the '<em>Properties</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PROPERTIES_FEATURE_COUNT = 0;
+	int PROPERTIES_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Properties</em>' class.
@@ -1154,13 +1172,22 @@ public interface WebappPackage extends EPackage {
 	int PAGE__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Properties</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__PROPERTIES = 4;
+
+	/**
 	 * The number of structural features of the '<em>Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = 4;
+	int PAGE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -1712,6 +1739,52 @@ public interface WebappPackage extends EPackage {
 	int TH_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link webapp.impl.MappingImpl <em>Mapping</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.MappingImpl
+	 * @see webapp.impl.WebappPackageImpl#getMapping()
+	 * @generated
+	 */
+	int MAPPING = 32;
+
+	/**
+	 * The feature id for the '<em><b>Left</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__LEFT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Right</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING__RIGHT = 1;
+
+	/**
+	 * The number of structural features of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Mapping</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MAPPING_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1719,7 +1792,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 32;
+	int BEHAVIOR = 33;
 
 	/**
 	 * The meta object id for the '{@link webapp.Charset <em>Charset</em>}' enum.
@@ -1729,7 +1802,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getCharset()
 	 * @generated
 	 */
-	int CHARSET = 33;
+	int CHARSET = 34;
 
 	/**
 	 * The meta object id for the '{@link webapp.ColumnType <em>Column Type</em>}' enum.
@@ -1739,7 +1812,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getColumnType()
 	 * @generated
 	 */
-	int COLUMN_TYPE = 34;
+	int COLUMN_TYPE = 35;
 
 
 	/**
@@ -1750,7 +1823,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getFormMethod()
 	 * @generated
 	 */
-	int FORM_METHOD = 35;
+	int FORM_METHOD = 36;
 
 	/**
 	 * The meta object id for the '{@link webapp.InputType <em>Input Type</em>}' enum.
@@ -1760,7 +1833,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getInputType()
 	 * @generated
 	 */
-	int INPUT_TYPE = 36;
+	int INPUT_TYPE = 37;
 
 
 	/**
@@ -2092,6 +2165,28 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getProperties();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Properties#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see webapp.Properties#getName()
+	 * @see #getProperties()
+	 * @generated
+	 */
+	EAttribute getProperties_Name();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Properties#getMapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Mapping</em>'.
+	 * @see webapp.Properties#getMapping()
+	 * @see #getProperties()
+	 * @generated
+	 */
+	EReference getProperties_Mapping();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Table <em>Table</em>}'.
@@ -2566,6 +2661,17 @@ public interface WebappPackage extends EPackage {
 	EAttribute getPage_Name();
 
 	/**
+	 * Returns the meta object for the reference list '{@link webapp.Page#getProperties <em>Properties</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Properties</em>'.
+	 * @see webapp.Page#getProperties()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EReference getPage_Properties();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Form <em>Form</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2808,6 +2914,38 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getTh();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Mapping <em>Mapping</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Mapping</em>'.
+	 * @see webapp.Mapping
+	 * @generated
+	 */
+	EClass getMapping();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Mapping#getLeft <em>Left</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Left</em>'.
+	 * @see webapp.Mapping#getLeft()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EAttribute getMapping_Left();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Mapping#getRight <em>Right</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Right</em>'.
+	 * @see webapp.Mapping#getRight()
+	 * @see #getMapping()
+	 * @generated
+	 */
+	EAttribute getMapping_Right();
 
 	/**
 	 * Returns the meta object for enum '{@link webapp.Behavior <em>Behavior</em>}'.
@@ -3151,6 +3289,22 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EClass PROPERTIES = eINSTANCE.getProperties();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PROPERTIES__NAME = eINSTANCE.getProperties_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Mapping</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PROPERTIES__MAPPING = eINSTANCE.getProperties_Mapping();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.TableImpl <em>Table</em>}' class.
@@ -3529,6 +3683,14 @@ public interface WebappPackage extends EPackage {
 		EAttribute PAGE__NAME = eINSTANCE.getPage_Name();
 
 		/**
+		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE__PROPERTIES = eINSTANCE.getPage_Properties();
+
+		/**
 		 * The meta object literal for the '{@link webapp.impl.FormImpl <em>Form</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3729,6 +3891,32 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EClass TH = eINSTANCE.getTh();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.MappingImpl <em>Mapping</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.MappingImpl
+		 * @see webapp.impl.WebappPackageImpl#getMapping()
+		 * @generated
+		 */
+		EClass MAPPING = eINSTANCE.getMapping();
+
+		/**
+		 * The meta object literal for the '<em><b>Left</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAPPING__LEFT = eINSTANCE.getMapping_Left();
+
+		/**
+		 * The meta object literal for the '<em><b>Right</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MAPPING__RIGHT = eINSTANCE.getMapping_Right();
 
 		/**
 		 * The meta object literal for the '{@link webapp.Behavior <em>Behavior</em>}' enum.

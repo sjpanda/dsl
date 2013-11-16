@@ -150,6 +150,8 @@ public class WebappValidator extends EObjectValidator {
 				return validateTd((Td)value, diagnostics, context);
 			case WebappPackage.TH:
 				return validateTh((Th)value, diagnostics, context);
+			case WebappPackage.MAPPING:
+				return validateMapping((Mapping)value, diagnostics, context);
 			case WebappPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case WebappPackage.CHARSET:
@@ -622,6 +624,15 @@ public class WebappValidator extends EObjectValidator {
 	 */
 	public boolean validateTh(Th th, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(th, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateMapping(Mapping mapping, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(mapping, diagnostics, context);
 	}
 
 	/**

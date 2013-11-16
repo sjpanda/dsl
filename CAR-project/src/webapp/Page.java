@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link webapp.Page#getText <em>Text</em>}</li>
  *   <li>{@link webapp.Page#getTag <em>Tag</em>}</li>
  *   <li>{@link webapp.Page#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.Page#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,5 +110,21 @@ public interface Page extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Properties</b></em>' reference list.
+	 * The list contents are of type {@link webapp.Properties}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Properties</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Properties</em>' reference list.
+	 * @see webapp.WebappPackage#getPage_Properties()
+	 * @model
+	 * @generated
+	 */
+	EList<Properties> getProperties();
 
 } // Page

@@ -12,7 +12,7 @@ import webapp.View;
 import webapp.WebApp;
 import webapp.serializer.WebAppSerializer;
 
-public class MainGenerateJSPPage {
+public class MainGenerateJsfJspPage {
 	public static void main(String[] args) {
 		FileWriter output;
 		BufferedWriter writer;
@@ -31,11 +31,11 @@ public class MainGenerateJSPPage {
 			System.err.println("Null Pages");
 		}
 
-		GenerateJSPPage generator = GenerateJSPPage.create(null);
+		GenerateJsfJspPage generator = GenerateJsfJspPage.create(null);
 
 		try {
 			for(Page page : pages){
-				output = new FileWriter("jsp/" + page.getName() + ".jsp");
+				output = new FileWriter("generated_jsf/pages/" + page.getName() + ".jsp");
 				writer = new BufferedWriter(output);
 				writer.write(generator.generate(page));
 				writer.close();

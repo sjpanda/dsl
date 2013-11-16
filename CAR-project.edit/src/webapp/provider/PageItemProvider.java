@@ -65,6 +65,7 @@ public class PageItemProvider
 
 			addTitlePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addPropertiesPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -109,6 +110,28 @@ public class PageItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Properties feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPropertiesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_properties_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_properties_feature", "_UI_Page_type"),
+				 WebappPackage.Literals.PAGE__PROPERTIES,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

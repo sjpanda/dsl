@@ -61,7 +61,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Image"/>
   <eClassifiers xsi:type="ecore:EClass" name="File"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Properties"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Properties">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="mapping" upperBound="-1"
+        eType="#//Mapping" containment="true"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Table">
     <eStructuralFeatures xsi:type="ecore:EReference" name="column" lowerBound="1"
         upperBound="-1" eType="#//Column" containment="true"/>
@@ -224,6 +228,8 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="tag" upperBound="-1" eType="#//Tag"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
+        eType="#//Properties"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Tag">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//FormMethod"/>
@@ -269,5 +275,9 @@
   <eClassifiers xsi:type="ecore:EEnum" name="InputType">
     <eLiterals name="TEXT"/>
     <eLiterals name="BUTTON" value="1"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Mapping">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="left" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="right" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
 </ecore:EPackage>

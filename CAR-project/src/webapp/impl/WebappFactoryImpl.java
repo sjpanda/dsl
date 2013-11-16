@@ -88,6 +88,7 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 			case WebappPackage.TR: return createTr();
 			case WebappPackage.TD: return createTd();
 			case WebappPackage.TH: return createTh();
+			case WebappPackage.MAPPING: return createMapping();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -447,6 +448,16 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 	public Th createTh() {
 		ThImpl th = new ThImpl();
 		return th;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Mapping createMapping() {
+		MappingImpl mapping = new MappingImpl();
+		return mapping;
 	}
 
 	/**

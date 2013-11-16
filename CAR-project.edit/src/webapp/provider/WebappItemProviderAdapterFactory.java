@@ -785,6 +785,29 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Mapping} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected MappingItemProvider mappingItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Mapping}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createMappingAdapter() {
+		if (mappingItemProvider == null) {
+			mappingItemProvider = new MappingItemProvider(this);
+		}
+
+		return mappingItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -914,6 +937,7 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (trItemProvider != null) trItemProvider.dispose();
 		if (tdItemProvider != null) tdItemProvider.dispose();
 		if (thItemProvider != null) thItemProvider.dispose();
+		if (mappingItemProvider != null) mappingItemProvider.dispose();
 	}
 
 }

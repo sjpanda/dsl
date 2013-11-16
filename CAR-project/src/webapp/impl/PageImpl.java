@@ -16,9 +16,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import webapp.Page;
+import webapp.Properties;
 import webapp.Tag;
 import webapp.Text;
 import webapp.WebappPackage;
@@ -34,6 +36,7 @@ import webapp.WebappPackage;
  *   <li>{@link webapp.impl.PageImpl#getText <em>Text</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getTag <em>Tag</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.impl.PageImpl#getProperties <em>Properties</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,6 +102,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getProperties()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Properties> properties;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -190,6 +203,18 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Properties> getProperties() {
+		if (properties == null) {
+			properties = new EObjectResolvingEList<Properties>(Properties.class, this, WebappPackage.PAGE__PROPERTIES);
+		}
+		return properties;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -217,6 +242,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return getTag();
 			case WebappPackage.PAGE__NAME:
 				return getName();
+			case WebappPackage.PAGE__PROPERTIES:
+				return getProperties();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -244,6 +271,10 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case WebappPackage.PAGE__NAME:
 				setName((String)newValue);
 				return;
+			case WebappPackage.PAGE__PROPERTIES:
+				getProperties().clear();
+				getProperties().addAll((Collection<? extends Properties>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -268,6 +299,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case WebappPackage.PAGE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case WebappPackage.PAGE__PROPERTIES:
+				getProperties().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -288,6 +322,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return tag != null && !tag.isEmpty();
 			case WebappPackage.PAGE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case WebappPackage.PAGE__PROPERTIES:
+				return properties != null && !properties.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -29,6 +29,7 @@ import webapp.Image;
 import webapp.Input;
 import webapp.InputType;
 import webapp.Library;
+import webapp.Mapping;
 import webapp.Model;
 import webapp.OnDelete;
 import webapp.OnUpdate;
@@ -283,6 +284,13 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	private EClass thEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass mappingEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -666,6 +674,24 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 */
 	public EClass getProperties() {
 		return propertiesEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getProperties_Name() {
+		return (EAttribute)propertiesEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getProperties_Mapping() {
+		return (EReference)propertiesEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1069,6 +1095,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPage_Properties() {
+		return (EReference)pageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getForm() {
 		return formEClass;
 	}
@@ -1276,6 +1311,33 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getMapping() {
+		return mappingEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMapping_Left() {
+		return (EAttribute)mappingEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getMapping_Right() {
+		return (EAttribute)mappingEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBehavior() {
 		return behaviorEEnum;
 	}
@@ -1385,6 +1447,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		fileEClass = createEClass(FILE);
 
 		propertiesEClass = createEClass(PROPERTIES);
+		createEAttribute(propertiesEClass, PROPERTIES__NAME);
+		createEReference(propertiesEClass, PROPERTIES__MAPPING);
 
 		tableEClass = createEClass(TABLE);
 		createEReference(tableEClass, TABLE__COLUMN);
@@ -1441,6 +1505,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEReference(pageEClass, PAGE__TEXT);
 		createEReference(pageEClass, PAGE__TAG);
 		createEAttribute(pageEClass, PAGE__NAME);
+		createEReference(pageEClass, PAGE__PROPERTIES);
 
 		formEClass = createEClass(FORM);
 		createEAttribute(formEClass, FORM__METHOD);
@@ -1473,6 +1538,10 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEReference(tdEClass, TD__TAG);
 
 		thEClass = createEClass(TH);
+
+		mappingEClass = createEClass(MAPPING);
+		createEAttribute(mappingEClass, MAPPING__LEFT);
+		createEAttribute(mappingEClass, MAPPING__RIGHT);
 
 		// Create enums
 		behaviorEEnum = createEEnum(BEHAVIOR);
@@ -1559,6 +1628,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEClass(fileEClass, File.class, "File", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(propertiesEClass, Properties.class, "Properties", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getProperties_Name(), ecorePackage.getEString(), "name", null, 1, 1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getProperties_Mapping(), this.getMapping(), null, "mapping", null, 0, -1, Properties.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tableEClass, Table.class, "Table", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getTable_Column(), this.getColumn(), null, "column", null, 1, -1, Table.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1615,6 +1686,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEReference(getPage_Text(), this.getText(), null, "text", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Tag(), this.getTag(), null, "tag", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPage_Properties(), this.getProperties(), null, "properties", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getForm_Method(), this.getFormMethod(), "method", null, 0, 1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1647,6 +1719,10 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEReference(getTd_Tag(), this.getTag(), null, "tag", null, 0, -1, Td.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(thEClass, Th.class, "Th", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(mappingEClass, Mapping.class, "Mapping", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getMapping_Left(), ecorePackage.getEString(), "left", null, 1, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMapping_Right(), ecorePackage.getEString(), "right", null, 1, 1, Mapping.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(behaviorEEnum, Behavior.class, "Behavior");
