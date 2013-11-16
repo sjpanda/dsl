@@ -172,6 +172,8 @@ public class ModelItemProvider
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(WebappPackage.Literals.MODEL__TABLE);
+			childrenFeatures.add(WebappPackage.Literals.MODEL__BUSINESS_OBJECT);
+			childrenFeatures.add(WebappPackage.Literals.MODEL__DAO);
 		}
 		return childrenFeatures;
 	}
@@ -233,6 +235,8 @@ public class ModelItemProvider
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebappPackage.MODEL__TABLE:
+			case WebappPackage.MODEL__BUSINESS_OBJECT:
+			case WebappPackage.MODEL__DAO:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -254,6 +258,16 @@ public class ModelItemProvider
 			(createChildParameter
 				(WebappPackage.Literals.MODEL__TABLE,
 				 WebappFactory.eINSTANCE.createTable()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.MODEL__BUSINESS_OBJECT,
+				 WebappFactory.eINSTANCE.createBusinessObject()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.MODEL__DAO,
+				 WebappFactory.eINSTANCE.createDAOBusinessObject()));
 	}
 
 	/**

@@ -152,6 +152,12 @@ public class WebappValidator extends EObjectValidator {
 				return validateTh((Th)value, diagnostics, context);
 			case WebappPackage.MAPPING:
 				return validateMapping((Mapping)value, diagnostics, context);
+			case WebappPackage.BUSINESS_OBJECT:
+				return validateBusinessObject((BusinessObject)value, diagnostics, context);
+			case WebappPackage.FIELD:
+				return validateField((Field)value, diagnostics, context);
+			case WebappPackage.DAO_BUSINESS_OBJECT:
+				return validateDAOBusinessObject((DAOBusinessObject)value, diagnostics, context);
 			case WebappPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case WebappPackage.CHARSET:
@@ -587,7 +593,51 @@ public class WebappValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateInput(Input input, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(input, diagnostics, context);
+		if (!validate_NoCircularContainment(input, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(input, diagnostics, context);
+		if (result || diagnostics != null) result &= validateInput_typeC(input, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the typeC constraint of '<em>Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String INPUT__TYPE_C__EEXPRESSION = "\n" +
+		"\t\t(self.type <> InputType::BUTTON implies self.action->isEmpty())\n" +
+		"\t\tand\n" +
+		"\t\t(self.type <> InputType::BUTTON implies self.buttonValue->isEmpty())\n" +
+		"\t\tand \n" +
+		"\t\t(self.type <> InputType::TEXT implies self.textValue->isEmpty())";
+
+	/**
+	 * Validates the typeC constraint of '<em>Input</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInput_typeC(Input input, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(WebappPackage.Literals.INPUT,
+				 input,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "typeC",
+				 INPUT__TYPE_C__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
 	}
 
 	/**
@@ -633,6 +683,33 @@ public class WebappValidator extends EObjectValidator {
 	 */
 	public boolean validateMapping(Mapping mapping, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(mapping, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateBusinessObject(BusinessObject businessObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(businessObject, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateField(Field field, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(field, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateDAOBusinessObject(DAOBusinessObject daoBusinessObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(daoBusinessObject, diagnostics, context);
 	}
 
 	/**

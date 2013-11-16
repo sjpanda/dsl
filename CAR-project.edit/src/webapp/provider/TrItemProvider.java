@@ -112,7 +112,7 @@ public class TrItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Tr)object).getName();
+		String label = ((Tr)object).getProperty();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Tr_type") :
 			getString("_UI_Tr_type") + " " + label;

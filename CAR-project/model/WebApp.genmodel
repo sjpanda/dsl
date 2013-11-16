@@ -108,6 +108,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/url"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/userName"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Model/password"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Model/businessObject"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Model/dao"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Controller">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Controller/validator"/>
@@ -175,16 +177,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Validator/name"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Page">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Page/title"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/text"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/tag"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Page/name"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/properties"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EReference WebApp.ecore#//Page/title"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Form">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Form/method"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Form/action"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Form/tag"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Form/method"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Text">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Text/content"/>
@@ -192,14 +193,17 @@
     <genClasses ecoreClass="WebApp.ecore#//Action">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Action/validator"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Action/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Action/businessObject"/>
     </genClasses>
     <genClasses image="false" ecoreClass="WebApp.ecore#//Tag">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Tag/name"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Tag/value"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Tag/text"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Tag/property"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Input">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Input/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/label"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/buttonValue"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//Input/textValue"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//TableHTML">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//TableHTML/tr"/>
@@ -215,6 +219,18 @@
     <genClasses ecoreClass="WebApp.ecore#//Mapping">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Mapping/left"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Mapping/right"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//BusinessObject">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//BusinessObject/field"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//BusinessObject/name"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//Field">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/defaultValue"/>
+    </genClasses>
+    <genClasses ecoreClass="WebApp.ecore#//DAOBusinessObject">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//DAOBusinessObject/businessObject"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

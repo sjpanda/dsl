@@ -18,7 +18,7 @@ public class MainGenerateJsfJspPage {
 		BufferedWriter writer;
 
 		WebAppSerializer serializer = new WebAppSerializer();
-		WebApp webApp = serializer.load(new File("instances/complexDBWebApp.xmi"));
+		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
 		if(webApp == null){
 			System.out.println("Null Web App");
 		}

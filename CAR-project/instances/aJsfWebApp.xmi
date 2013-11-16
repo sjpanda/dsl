@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webapp:WebApp
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:webapp="http://webapp/1.0"
+    xsi:schemaLocation="http://webapp/1.0 ../model/WebApp.ecore"
+    name="Multiplication Calculator"
+    framework="jsf">
+  <appConfig/>
+  <webConfig/>
+  <library/>
+  <view>
+    <page name="LoginView"
+        properties="//@resource/@propertie.0">
+      <tag xsi:type="webapp:Form">
+        <tag
+            xsi:type="webapp:Input"
+            property=""
+            label="//@resource/@propertie.0/@mapping.0"
+            textValue="//@model/@businessObject.0/@field.0"/>
+        <tag
+            xsi:type="webapp:Input"
+            label="//@resource/@propertie.0/@mapping.1"
+            textValue="//@model/@businessObject.0/@field.1"/>
+        <tag
+            xsi:type="webapp:Input"
+            type="BUTTON"
+            action="//@controller/@action.0"
+            buttonValue="//@resource/@propertie.0/@mapping.2"/>
+      </tag>
+    </page>
+    <page name="Trainer"
+        properties="//@resource/@propertie.0">
+      <tag xsi:type="webapp:Form">
+        <tag
+            xsi:type="webapp:Input"
+            label="//@resource/@propertie.0/@mapping.4"
+            textValue="//@model/@businessObject.1/@field.0"/>
+        <tag
+            xsi:type="webapp:Input"
+            label="//@resource/@propertie.0/@mapping.5"
+            textValue="//@model/@businessObject.1/@field.1"/>
+        <tag
+            xsi:type="webapp:Input"
+            type="BUTTON"
+            action="//@controller/@action.2"
+            buttonValue="//@resource/@propertie.0/@mapping.8"/>
+        <tag
+            xsi:type="webapp:Input"
+            type="BUTTON"
+            action="//@controller/@action.2"
+            buttonValue="//@resource/@propertie.0/@mapping.8"/>
+      </tag>
+      <tag xsi:type="webapp:Input"
+          label="//@resource/@propertie.0/@mapping.9"
+          textValue="//@model/@businessObject.1/@field.2"/>
+    </page>
+    <page name="FailedLogin">
+      <text
+          content="Failed Login"/>
+    </page>
+  </view>
+  <model databaseName="jee"
+      url="localhost:3306"
+      userName="root">
+    <table name="users"
+        charset="UTF8">
+      <column
+          name="id"/>
+      <column
+          name="login"
+          size="255"
+          type="VARCHAR"/>
+      <column
+          name="password"
+          size="255"
+          type="VARCHAR"/>
+      <constraint>
+        <primaryKey
+            column="//@model/@table.0/@column.0"/>
+        <unique
+            column="//@model/@table.0/@column.1"/>
+      </constraint>
+    </table>
+    <businessObject
+        name="User">
+      <field
+          name="name"
+          type="String"/>
+      <field
+          name="password"
+          type="String"/>
+    </businessObject>
+    <businessObject
+        name="Card">
+      <field
+          name="left"
+          type="int"/>
+      <field
+          name="right"
+          type="int"
+          defaultValue=""/>
+      <field
+          name="result"
+          type="int"
+          defaultValue="0"/>
+    </businessObject>
+  </model>
+  <controller>
+    <validator
+        name="LoginValidator"/>
+    <action
+        validator="//@controller/@validator.0"
+        name="login"
+        businessObject="//@model/@businessObject.0"/>
+    <action
+        name="show"
+        businessObject="//@model/@businessObject.1"/>
+    <action
+        name="clear"
+        businessObject="//@model/@businessObject.1"/>
+  </controller>
+  <resource>
+    <propertie
+        name="messages">
+      <mapping
+          left="user"
+          right="User"/>
+      <mapping
+          left="password"
+          right="Password"/>
+      <mapping
+          left="login"
+          right="Login"/>
+      <mapping
+          left="hello"
+          right="Moin"/>
+      <mapping
+          left="left"
+          right="Left Side"/>
+      <mapping
+          left="right"
+          right="Right Side"/>
+      <mapping
+          left="show"
+          right="Show Result"/>
+      <mapping
+          left="next"
+          right="New Test"/>
+      <mapping
+          left="reset"
+          right="Reset"/>
+      <mapping
+          left="result"
+          right="Result"/>
+    </propertie>
+  </resource>
+</webapp:WebApp>

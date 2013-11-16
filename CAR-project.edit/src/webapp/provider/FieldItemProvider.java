@@ -11,8 +11,6 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -24,17 +22,16 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import webapp.Page;
-import webapp.WebappFactory;
+import webapp.Field;
 import webapp.WebappPackage;
 
 /**
- * This is the item provider adapter for a {@link webapp.Page} object.
+ * This is the item provider adapter for a {@link webapp.Field} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PageItemProvider
+public class FieldItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +45,7 @@ public class PageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PageItemProvider(AdapterFactory adapterFactory) {
+	public FieldItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,32 +61,10 @@ public class PageItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addPropertiesPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
+			addTypePropertyDescriptor(object);
+			addDefaultValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_title_feature", "_UI_Page_type"),
-				 WebappPackage.Literals.PAGE__TITLE,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -103,9 +78,9 @@ public class PageItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_name_feature", "_UI_Page_type"),
-				 WebappPackage.Literals.PAGE__NAME,
+				 getString("_UI_Field_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Field_name_feature", "_UI_Field_type"),
+				 WebappPackage.Literals.FIELD__NAME,
 				 true,
 				 false,
 				 false,
@@ -115,67 +90,58 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Properties feature.
+	 * This adds a property descriptor for the Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPropertiesPropertyDescriptor(Object object) {
+	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_properties_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_properties_feature", "_UI_Page_type"),
-				 WebappPackage.Literals.PAGE__PROPERTIES,
+				 getString("_UI_Field_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Field_type_feature", "_UI_Field_type"),
+				 WebappPackage.Literals.FIELD__TYPE,
 				 true,
 				 false,
-				 true,
-				 null,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
 				 null,
 				 null));
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Default Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebappPackage.Literals.PAGE__TEXT);
-			childrenFeatures.add(WebappPackage.Literals.PAGE__TAG);
-		}
-		return childrenFeatures;
+	protected void addDefaultValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Field_defaultValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Field_defaultValue_feature", "_UI_Field_type"),
+				 WebappPackage.Literals.FIELD__DEFAULT_VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
-	}
-
-	/**
-	 * This returns Page.gif.
+	 * This returns Field.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Page"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Field"));
 	}
 
 	/**
@@ -186,10 +152,10 @@ public class PageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Page)object).getName();
+		String label = ((Field)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Page_type") :
-			getString("_UI_Page_type") + " " + label;
+			getString("_UI_Field_type") :
+			getString("_UI_Field_type") + " " + label;
 	}
 
 	/**
@@ -203,14 +169,11 @@ public class PageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Page.class)) {
-			case WebappPackage.PAGE__NAME:
-			case WebappPackage.PAGE__TITLE:
+		switch (notification.getFeatureID(Field.class)) {
+			case WebappPackage.FIELD__NAME:
+			case WebappPackage.FIELD__TYPE:
+			case WebappPackage.FIELD__DEFAULT_VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-			case WebappPackage.PAGE__TEXT:
-			case WebappPackage.PAGE__TAG:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -226,41 +189,6 @@ public class PageItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TEXT,
-				 WebappFactory.eINSTANCE.createText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createForm()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createInput()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTableHTML()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTd()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTh()));
 	}
 
 	/**

@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import webapp.Mapping;
 import webapp.Page;
 import webapp.Properties;
 import webapp.Tag;
@@ -32,37 +33,17 @@ import webapp.WebappPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link webapp.impl.PageImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getText <em>Text</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getTag <em>Tag</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getName <em>Name</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getProperties <em>Properties</em>}</li>
+ *   <li>{@link webapp.impl.PageImpl#getTitle <em>Title</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class PageImpl extends MinimalEObjectImpl.Container implements Page {
-	/**
-	 * The default value of the '{@link #getTitle() <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TITLE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getTitle() <em>Title</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTitle()
-	 * @generated
-	 * @ordered
-	 */
-	protected String title = TITLE_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -114,6 +95,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	protected EList<Properties> properties;
 
 	/**
+	 * The cached value of the '{@link #getTitle() <em>Title</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTitle()
+	 * @generated
+	 * @ordered
+	 */
+	protected Mapping title;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -137,7 +128,15 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getTitle() {
+	public Mapping getTitle() {
+		if (title != null && title.eIsProxy()) {
+			InternalEObject oldTitle = (InternalEObject)title;
+			title = (Mapping)eResolveProxy(oldTitle);
+			if (title != oldTitle) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.PAGE__TITLE, oldTitle, title));
+			}
+		}
 		return title;
 	}
 
@@ -146,8 +145,17 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTitle(String newTitle) {
-		String oldTitle = title;
+	public Mapping basicGetTitle() {
+		return title;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTitle(Mapping newTitle) {
+		Mapping oldTitle = title;
 		title = newTitle;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.PAGE__TITLE, oldTitle, title));
@@ -234,8 +242,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TITLE:
-				return getTitle();
 			case WebappPackage.PAGE__TEXT:
 				return getText();
 			case WebappPackage.PAGE__TAG:
@@ -244,6 +250,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return getName();
 			case WebappPackage.PAGE__PROPERTIES:
 				return getProperties();
+			case WebappPackage.PAGE__TITLE:
+				if (resolve) return getTitle();
+				return basicGetTitle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -257,9 +266,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TITLE:
-				setTitle((String)newValue);
-				return;
 			case WebappPackage.PAGE__TEXT:
 				getText().clear();
 				getText().addAll((Collection<? extends Text>)newValue);
@@ -275,6 +281,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Properties>)newValue);
 				return;
+			case WebappPackage.PAGE__TITLE:
+				setTitle((Mapping)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -287,9 +296,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TITLE:
-				setTitle(TITLE_EDEFAULT);
-				return;
 			case WebappPackage.PAGE__TEXT:
 				getText().clear();
 				return;
@@ -301,6 +307,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return;
 			case WebappPackage.PAGE__PROPERTIES:
 				getProperties().clear();
+				return;
+			case WebappPackage.PAGE__TITLE:
+				setTitle((Mapping)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -314,8 +323,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TITLE:
-				return TITLE_EDEFAULT == null ? title != null : !TITLE_EDEFAULT.equals(title);
 			case WebappPackage.PAGE__TEXT:
 				return text != null && !text.isEmpty();
 			case WebappPackage.PAGE__TAG:
@@ -324,6 +331,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case WebappPackage.PAGE__PROPERTIES:
 				return properties != null && !properties.isEmpty();
+			case WebappPackage.PAGE__TITLE:
+				return title != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -338,9 +347,7 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (title: ");
-		result.append(title);
-		result.append(", name: ");
+		result.append(" (name: ");
 		result.append(name);
 		result.append(')');
 		return result.toString();

@@ -14,11 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link webapp.Page#getTitle <em>Title</em>}</li>
  *   <li>{@link webapp.Page#getText <em>Text</em>}</li>
  *   <li>{@link webapp.Page#getTag <em>Tag</em>}</li>
  *   <li>{@link webapp.Page#getName <em>Name</em>}</li>
  *   <li>{@link webapp.Page#getProperties <em>Properties</em>}</li>
+ *   <li>{@link webapp.Page#getTitle <em>Title</em>}</li>
  * </ul>
  * </p>
  *
@@ -28,30 +28,30 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Page extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Title</b></em>' attribute.
+	 * Returns the value of the '<em><b>Title</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Title</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Title</em>' attribute.
-	 * @see #setTitle(String)
+	 * @return the value of the '<em>Title</em>' reference.
+	 * @see #setTitle(Mapping)
 	 * @see webapp.WebappPackage#getPage_Title()
 	 * @model
 	 * @generated
 	 */
-	String getTitle();
+	Mapping getTitle();
 
 	/**
-	 * Sets the value of the '{@link webapp.Page#getTitle <em>Title</em>}' attribute.
+	 * Sets the value of the '{@link webapp.Page#getTitle <em>Title</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Title</em>' attribute.
+	 * @param value the new value of the '<em>Title</em>' reference.
 	 * @see #getTitle()
 	 * @generated
 	 */
-	void setTitle(String value);
+	void setTitle(Mapping value);
 
 	/**
 	 * Returns the value of the '<em><b>Text</b></em>' containment reference list.

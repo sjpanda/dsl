@@ -76,7 +76,7 @@ public class ThItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Th)object).getName();
+		String label = ((Th)object).getProperty();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Th_type") :
 			getString("_UI_Th_type") + " " + label;

@@ -60,75 +60,29 @@ public class TagItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
-			addValuePropertyDescriptor(object);
-			addTextPropertyDescriptor(object);
+			addPropertyPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Name feature.
+	 * This adds a property descriptor for the Property feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addNamePropertyDescriptor(Object object) {
+	protected void addPropertyPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Tag_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_name_feature", "_UI_Tag_type"),
-				 WebappPackage.Literals.TAG__NAME,
+				 getString("_UI_Tag_property_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_property_feature", "_UI_Tag_type"),
+				 WebappPackage.Literals.TAG__PROPERTY,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Tag_value_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_value_feature", "_UI_Tag_type"),
-				 WebappPackage.Literals.TAG__VALUE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Text feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTextPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Tag_text_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Tag_text_feature", "_UI_Tag_type"),
-				 WebappPackage.Literals.TAG__TEXT,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -141,7 +95,7 @@ public class TagItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Tag)object).getName();
+		String label = ((Tag)object).getProperty();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Tag_type") :
 			getString("_UI_Tag_type") + " " + label;
@@ -159,8 +113,7 @@ public class TagItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Tag.class)) {
-			case WebappPackage.TAG__NAME:
-			case WebappPackage.TAG__VALUE:
+			case WebappPackage.TAG__PROPERTY:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

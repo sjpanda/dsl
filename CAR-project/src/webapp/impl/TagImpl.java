@@ -3,15 +3,10 @@
 package webapp.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import webapp.Tag;
-import webapp.Text;
 import webapp.WebappPackage;
 
 /**
@@ -21,9 +16,7 @@ import webapp.WebappPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link webapp.impl.TagImpl#getName <em>Name</em>}</li>
- *   <li>{@link webapp.impl.TagImpl#getValue <em>Value</em>}</li>
- *   <li>{@link webapp.impl.TagImpl#getText <em>Text</em>}</li>
+ *   <li>{@link webapp.impl.TagImpl#getProperty <em>Property</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,54 +24,24 @@ import webapp.WebappPackage;
  */
 public abstract class TagImpl extends MinimalEObjectImpl.Container implements Tag {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getProperty() <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getProperty()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String PROPERTY_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getProperty() <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getProperty()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected Text text;
+	protected String property = PROPERTY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,8 +67,8 @@ public abstract class TagImpl extends MinimalEObjectImpl.Container implements Ta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public String getProperty() {
+		return property;
 	}
 
 	/**
@@ -113,70 +76,11 @@ public abstract class TagImpl extends MinimalEObjectImpl.Container implements Ta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setProperty(String newProperty) {
+		String oldProperty = property;
+		property = newProperty;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.TAG__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.TAG__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Text getText() {
-		if (text != null && text.eIsProxy()) {
-			InternalEObject oldText = (InternalEObject)text;
-			text = (Text)eResolveProxy(oldText);
-			if (text != oldText) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.TAG__TEXT, oldText, text));
-			}
-		}
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Text basicGetText() {
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setText(Text newText) {
-		Text oldText = text;
-		text = newText;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.TAG__TEXT, oldText, text));
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.TAG__PROPERTY, oldProperty, property));
 	}
 
 	/**
@@ -187,13 +91,8 @@ public abstract class TagImpl extends MinimalEObjectImpl.Container implements Ta
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebappPackage.TAG__NAME:
-				return getName();
-			case WebappPackage.TAG__VALUE:
-				return getValue();
-			case WebappPackage.TAG__TEXT:
-				if (resolve) return getText();
-				return basicGetText();
+			case WebappPackage.TAG__PROPERTY:
+				return getProperty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,14 +105,8 @@ public abstract class TagImpl extends MinimalEObjectImpl.Container implements Ta
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebappPackage.TAG__NAME:
-				setName((String)newValue);
-				return;
-			case WebappPackage.TAG__VALUE:
-				setValue((String)newValue);
-				return;
-			case WebappPackage.TAG__TEXT:
-				setText((Text)newValue);
+			case WebappPackage.TAG__PROPERTY:
+				setProperty((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -227,14 +120,8 @@ public abstract class TagImpl extends MinimalEObjectImpl.Container implements Ta
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebappPackage.TAG__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case WebappPackage.TAG__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
-			case WebappPackage.TAG__TEXT:
-				setText((Text)null);
+			case WebappPackage.TAG__PROPERTY:
+				setProperty(PROPERTY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -248,12 +135,8 @@ public abstract class TagImpl extends MinimalEObjectImpl.Container implements Ta
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebappPackage.TAG__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case WebappPackage.TAG__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case WebappPackage.TAG__TEXT:
-				return text != null;
+			case WebappPackage.TAG__PROPERTY:
+				return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -268,10 +151,8 @@ public abstract class TagImpl extends MinimalEObjectImpl.Container implements Ta
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
-		result.append(", value: ");
-		result.append(value);
+		result.append(" (property: ");
+		result.append(property);
 		result.append(')');
 		return result.toString();
 	}

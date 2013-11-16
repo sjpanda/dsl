@@ -3,70 +3,76 @@
 package webapp.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-import webapp.Form;
-import webapp.FormMethod;
-import webapp.Tag;
+
+import webapp.BusinessObject;
+import webapp.Field;
 import webapp.WebappPackage;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Form</b></em>'.
+ * An implementation of the model object '<em><b>Business Object</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link webapp.impl.FormImpl#getTag <em>Tag</em>}</li>
- *   <li>{@link webapp.impl.FormImpl#getMethod <em>Method</em>}</li>
+ *   <li>{@link webapp.impl.BusinessObjectImpl#getField <em>Field</em>}</li>
+ *   <li>{@link webapp.impl.BusinessObjectImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class FormImpl extends TagImpl implements Form {
+public class BusinessObjectImpl extends MinimalEObjectImpl.Container implements BusinessObject {
 	/**
-	 * The cached value of the '{@link #getTag() <em>Tag</em>}' containment reference list.
+	 * The cached value of the '{@link #getField() <em>Field</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTag()
+	 * @see #getField()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Tag> tag;
+	protected EList<Field> field;
 
 	/**
-	 * The default value of the '{@link #getMethod() <em>Method</em>}' attribute.
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMethod()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final FormMethod METHOD_EDEFAULT = FormMethod.GET;
+	protected static final String NAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getMethod() <em>Method</em>}' attribute.
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getMethod()
+	 * @see #getName()
 	 * @generated
 	 * @ordered
 	 */
-	protected FormMethod method = METHOD_EDEFAULT;
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected FormImpl() {
+	protected BusinessObjectImpl() {
 		super();
 	}
 
@@ -77,7 +83,7 @@ public class FormImpl extends TagImpl implements Form {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return WebappPackage.Literals.FORM;
+		return WebappPackage.Literals.BUSINESS_OBJECT;
 	}
 
 	/**
@@ -85,32 +91,32 @@ public class FormImpl extends TagImpl implements Form {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FormMethod getMethod() {
-		return method;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setMethod(FormMethod newMethod) {
-		FormMethod oldMethod = method;
-		method = newMethod == null ? METHOD_EDEFAULT : newMethod;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.FORM__METHOD, oldMethod, method));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Tag> getTag() {
-		if (tag == null) {
-			tag = new EObjectContainmentEList<Tag>(Tag.class, this, WebappPackage.FORM__TAG);
+	public EList<Field> getField() {
+		if (field == null) {
+			field = new EObjectContainmentEList<Field>(Field.class, this, WebappPackage.BUSINESS_OBJECT__FIELD);
 		}
-		return tag;
+		return field;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.BUSINESS_OBJECT__NAME, oldName, name));
 	}
 
 	/**
@@ -121,8 +127,8 @@ public class FormImpl extends TagImpl implements Form {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebappPackage.FORM__TAG:
-				return ((InternalEList<?>)getTag()).basicRemove(otherEnd, msgs);
+			case WebappPackage.BUSINESS_OBJECT__FIELD:
+				return ((InternalEList<?>)getField()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -135,10 +141,10 @@ public class FormImpl extends TagImpl implements Form {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebappPackage.FORM__TAG:
-				return getTag();
-			case WebappPackage.FORM__METHOD:
-				return getMethod();
+			case WebappPackage.BUSINESS_OBJECT__FIELD:
+				return getField();
+			case WebappPackage.BUSINESS_OBJECT__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -152,12 +158,12 @@ public class FormImpl extends TagImpl implements Form {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebappPackage.FORM__TAG:
-				getTag().clear();
-				getTag().addAll((Collection<? extends Tag>)newValue);
+			case WebappPackage.BUSINESS_OBJECT__FIELD:
+				getField().clear();
+				getField().addAll((Collection<? extends Field>)newValue);
 				return;
-			case WebappPackage.FORM__METHOD:
-				setMethod((FormMethod)newValue);
+			case WebappPackage.BUSINESS_OBJECT__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -171,11 +177,11 @@ public class FormImpl extends TagImpl implements Form {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebappPackage.FORM__TAG:
-				getTag().clear();
+			case WebappPackage.BUSINESS_OBJECT__FIELD:
+				getField().clear();
 				return;
-			case WebappPackage.FORM__METHOD:
-				setMethod(METHOD_EDEFAULT);
+			case WebappPackage.BUSINESS_OBJECT__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -189,10 +195,10 @@ public class FormImpl extends TagImpl implements Form {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebappPackage.FORM__TAG:
-				return tag != null && !tag.isEmpty();
-			case WebappPackage.FORM__METHOD:
-				return method != METHOD_EDEFAULT;
+			case WebappPackage.BUSINESS_OBJECT__FIELD:
+				return field != null && !field.isEmpty();
+			case WebappPackage.BUSINESS_OBJECT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -207,10 +213,10 @@ public class FormImpl extends TagImpl implements Form {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (method: ");
-		result.append(method);
+		result.append(" (name: ");
+		result.append(name);
 		result.append(')');
 		return result.toString();
 	}
 
-} //FormImpl
+} //BusinessObjectImpl

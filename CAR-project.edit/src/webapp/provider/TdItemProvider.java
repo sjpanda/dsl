@@ -111,7 +111,7 @@ public class TdItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Td)object).getName();
+		String label = ((Td)object).getProperty();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Td_type") :
 			getString("_UI_Td_type") + " " + label;

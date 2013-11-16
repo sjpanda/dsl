@@ -58,6 +58,10 @@ public class InputItemProvider
 			super.getPropertyDescriptors(object);
 
 			addTypePropertyDescriptor(object);
+			addActionPropertyDescriptor(object);
+			addLabelPropertyDescriptor(object);
+			addButtonValuePropertyDescriptor(object);
+			addTextValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -85,6 +89,94 @@ public class InputItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Action feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addActionPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Input_action_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Input_action_feature", "_UI_Input_type"),
+				 WebappPackage.Literals.INPUT__ACTION,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Label feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addLabelPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Input_label_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Input_label_feature", "_UI_Input_type"),
+				 WebappPackage.Literals.INPUT__LABEL,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Button Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addButtonValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Input_buttonValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Input_buttonValue_feature", "_UI_Input_type"),
+				 WebappPackage.Literals.INPUT__BUTTON_VALUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Text Value feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTextValuePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Input_textValue_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Input_textValue_feature", "_UI_Input_type"),
+				 WebappPackage.Literals.INPUT__TEXT_VALUE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This returns Input.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -103,7 +195,7 @@ public class InputItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Input)object).getName();
+		String label = ((Input)object).getProperty();
 		return label == null || label.length() == 0 ?
 			getString("_UI_Input_type") :
 			getString("_UI_Input_type") + " " + label;

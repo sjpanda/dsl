@@ -808,6 +808,75 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link webapp.BusinessObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected BusinessObjectItemProvider businessObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.BusinessObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createBusinessObjectAdapter() {
+		if (businessObjectItemProvider == null) {
+			businessObjectItemProvider = new BusinessObjectItemProvider(this);
+		}
+
+		return businessObjectItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Field} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected FieldItemProvider fieldItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Field}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createFieldAdapter() {
+		if (fieldItemProvider == null) {
+			fieldItemProvider = new FieldItemProvider(this);
+		}
+
+		return fieldItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.DAOBusinessObject} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected DAOBusinessObjectItemProvider daoBusinessObjectItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.DAOBusinessObject}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createDAOBusinessObjectAdapter() {
+		if (daoBusinessObjectItemProvider == null) {
+			daoBusinessObjectItemProvider = new DAOBusinessObjectItemProvider(this);
+		}
+
+		return daoBusinessObjectItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -938,6 +1007,9 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (tdItemProvider != null) tdItemProvider.dispose();
 		if (thItemProvider != null) thItemProvider.dispose();
 		if (mappingItemProvider != null) mappingItemProvider.dispose();
+		if (businessObjectItemProvider != null) businessObjectItemProvider.dispose();
+		if (fieldItemProvider != null) fieldItemProvider.dispose();
+		if (daoBusinessObjectItemProvider != null) daoBusinessObjectItemProvider.dispose();
 	}
 
 }

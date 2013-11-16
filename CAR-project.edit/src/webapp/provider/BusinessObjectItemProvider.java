@@ -24,17 +24,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import webapp.Page;
+import webapp.BusinessObject;
 import webapp.WebappFactory;
 import webapp.WebappPackage;
 
 /**
- * This is the item provider adapter for a {@link webapp.Page} object.
+ * This is the item provider adapter for a {@link webapp.BusinessObject} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PageItemProvider
+public class BusinessObjectItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -48,7 +48,7 @@ public class PageItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PageItemProvider(AdapterFactory adapterFactory) {
+	public BusinessObjectItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -64,32 +64,8 @@ public class PageItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
-			addPropertiesPropertyDescriptor(object);
-			addTitlePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_title_feature", "_UI_Page_type"),
-				 WebappPackage.Literals.PAGE__TITLE,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
 	}
 
 	/**
@@ -103,35 +79,13 @@ public class PageItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Page_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_name_feature", "_UI_Page_type"),
-				 WebappPackage.Literals.PAGE__NAME,
+				 getString("_UI_BusinessObject_name_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_BusinessObject_name_feature", "_UI_BusinessObject_type"),
+				 WebappPackage.Literals.BUSINESS_OBJECT__NAME,
 				 true,
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Properties feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addPropertiesPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_properties_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_properties_feature", "_UI_Page_type"),
-				 WebappPackage.Literals.PAGE__PROPERTIES,
-				 true,
-				 false,
-				 true,
-				 null,
 				 null,
 				 null));
 	}
@@ -148,8 +102,7 @@ public class PageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebappPackage.Literals.PAGE__TEXT);
-			childrenFeatures.add(WebappPackage.Literals.PAGE__TAG);
+			childrenFeatures.add(WebappPackage.Literals.BUSINESS_OBJECT__FIELD);
 		}
 		return childrenFeatures;
 	}
@@ -168,14 +121,14 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This returns Page.gif.
+	 * This returns BusinessObject.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Page"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/BusinessObject"));
 	}
 
 	/**
@@ -186,10 +139,10 @@ public class PageItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Page)object).getName();
+		String label = ((BusinessObject)object).getName();
 		return label == null || label.length() == 0 ?
-			getString("_UI_Page_type") :
-			getString("_UI_Page_type") + " " + label;
+			getString("_UI_BusinessObject_type") :
+			getString("_UI_BusinessObject_type") + " " + label;
 	}
 
 	/**
@@ -203,13 +156,11 @@ public class PageItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Page.class)) {
-			case WebappPackage.PAGE__NAME:
-			case WebappPackage.PAGE__TITLE:
+		switch (notification.getFeatureID(BusinessObject.class)) {
+			case WebappPackage.BUSINESS_OBJECT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebappPackage.PAGE__TEXT:
-			case WebappPackage.PAGE__TAG:
+			case WebappPackage.BUSINESS_OBJECT__FIELD:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -229,38 +180,8 @@ public class PageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TEXT,
-				 WebappFactory.eINSTANCE.createText()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createForm()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createInput()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTableHTML()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTr()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTd()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
-				 WebappFactory.eINSTANCE.createTh()));
+				(WebappPackage.Literals.BUSINESS_OBJECT__FIELD,
+				 WebappFactory.eINSTANCE.createField()));
 	}
 
 	/**

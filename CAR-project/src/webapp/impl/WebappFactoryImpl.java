@@ -89,6 +89,9 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 			case WebappPackage.TD: return createTd();
 			case WebappPackage.TH: return createTh();
 			case WebappPackage.MAPPING: return createMapping();
+			case WebappPackage.BUSINESS_OBJECT: return createBusinessObject();
+			case WebappPackage.FIELD: return createField();
+			case WebappPackage.DAO_BUSINESS_OBJECT: return createDAOBusinessObject();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -458,6 +461,36 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 	public Mapping createMapping() {
 		MappingImpl mapping = new MappingImpl();
 		return mapping;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BusinessObject createBusinessObject() {
+		BusinessObjectImpl businessObject = new BusinessObjectImpl();
+		return businessObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Field createField() {
+		FieldImpl field = new FieldImpl();
+		return field;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DAOBusinessObject createDAOBusinessObject() {
+		DAOBusinessObjectImpl daoBusinessObject = new DAOBusinessObjectImpl();
+		return daoBusinessObject;
 	}
 
 	/**

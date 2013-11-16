@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import webapp.Action;
+import webapp.BusinessObject;
 import webapp.Validator;
 import webapp.WebappPackage;
 
@@ -23,6 +24,7 @@ import webapp.WebappPackage;
  * <ul>
  *   <li>{@link webapp.impl.ActionImpl#getValidator <em>Validator</em>}</li>
  *   <li>{@link webapp.impl.ActionImpl#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.impl.ActionImpl#getBusinessObject <em>Business Object</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,6 +59,16 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBusinessObject() <em>Business Object</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBusinessObject()
+	 * @generated
+	 * @ordered
+	 */
+	protected BusinessObject businessObject;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -141,6 +153,44 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BusinessObject getBusinessObject() {
+		if (businessObject != null && businessObject.eIsProxy()) {
+			InternalEObject oldBusinessObject = (InternalEObject)businessObject;
+			businessObject = (BusinessObject)eResolveProxy(oldBusinessObject);
+			if (businessObject != oldBusinessObject) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.ACTION__BUSINESS_OBJECT, oldBusinessObject, businessObject));
+			}
+		}
+		return businessObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BusinessObject basicGetBusinessObject() {
+		return businessObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBusinessObject(BusinessObject newBusinessObject) {
+		BusinessObject oldBusinessObject = businessObject;
+		businessObject = newBusinessObject;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.ACTION__BUSINESS_OBJECT, oldBusinessObject, businessObject));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -149,6 +199,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return basicGetValidator();
 			case WebappPackage.ACTION__NAME:
 				return getName();
+			case WebappPackage.ACTION__BUSINESS_OBJECT:
+				if (resolve) return getBusinessObject();
+				return basicGetBusinessObject();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -166,6 +219,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return;
 			case WebappPackage.ACTION__NAME:
 				setName((String)newValue);
+				return;
+			case WebappPackage.ACTION__BUSINESS_OBJECT:
+				setBusinessObject((BusinessObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -185,6 +241,9 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 			case WebappPackage.ACTION__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case WebappPackage.ACTION__BUSINESS_OBJECT:
+				setBusinessObject((BusinessObject)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -201,6 +260,8 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 				return validator != null;
 			case WebappPackage.ACTION__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case WebappPackage.ACTION__BUSINESS_OBJECT:
+				return businessObject != null;
 		}
 		return super.eIsSet(featureID);
 	}
