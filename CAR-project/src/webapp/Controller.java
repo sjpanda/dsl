@@ -3,6 +3,7 @@
 package webapp;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -23,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Controller extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Validator</b></em>' containment reference list.
 	 * The list contents are of type {@link webapp.Validator}.
@@ -55,4 +55,5 @@ public interface Controller extends EObject {
 	 * @generated
 	 */
 	EList<Action> getAction();
+
 } // Controller

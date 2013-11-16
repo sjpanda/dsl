@@ -2,8 +2,6 @@
  */
 package webapp.tests;
 
-import junit.framework.TestCase;
-
 import webapp.Tag;
 
 /**
@@ -12,15 +10,7 @@ import webapp.Tag;
  * <!-- end-user-doc -->
  * @generated
  */
-public abstract class TagTest extends TestCase {
-
-	/**
-	 * The fixture for this Tag test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Tag fixture = null;
+public abstract class TagTest extends InstructionTest {
 
 	/**
 	 * Constructs a new Tag test case with the given name.
@@ -33,23 +23,14 @@ public abstract class TagTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Tag test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Tag fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Tag test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Tag getFixture() {
-		return fixture;
+		return (Tag)fixture;
 	}
 
 } //TagTest

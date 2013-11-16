@@ -46,8 +46,6 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="businessObject" upperBound="-1"
         eType="#//BusinessObject" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="dao" upperBound="-1" eType="#//DAOBusinessObject"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Controller">
     <eStructuralFeatures xsi:type="ecore:EReference" name="validator" lowerBound="1"
@@ -229,21 +227,19 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Page">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="text" upperBound="-1" eType="#//Text"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="tag" upperBound="-1" eType="#//Tag"
-        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="properties" upperBound="-1"
         eType="#//Properties"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="title" eType="#//Mapping"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" upperBound="-1"
+        eType="#//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Form" eSuperTypes="#//Tag">
     <eStructuralFeatures xsi:type="ecore:EReference" name="tag" lowerBound="1" upperBound="-1"
         eType="#//Tag" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="method" eType="#//FormMethod"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Text">
+  <eClassifiers xsi:type="ecore:EClass" name="Text" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="content" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -256,7 +252,7 @@
     <eLiterals name="GET"/>
     <eLiterals name="POST" value="1"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Tag" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="Tag" abstract="true" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="property" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" upperBound="-1"
         eType="#//Attribute" containment="true"/>
@@ -314,15 +310,10 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="businessObject" lowerBound="1"
         eType="#//BusinessObject"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DAOBusinessObject">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="businessObject" lowerBound="1"
-        eType="#//BusinessObject"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Messages" eSuperTypes="#//Tag"/>
   <eClassifiers xsi:type="ecore:EClass" name="Attribute">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Instruction"/>
 </ecore:EPackage>

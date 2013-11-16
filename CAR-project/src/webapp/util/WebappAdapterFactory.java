@@ -208,16 +208,16 @@ public class WebappAdapterFactory extends AdapterFactoryImpl {
 				return createFieldAdapter();
 			}
 			@Override
-			public Adapter caseDAOBusinessObject(DAOBusinessObject object) {
-				return createDAOBusinessObjectAdapter();
-			}
-			@Override
 			public Adapter caseMessages(Messages object) {
 				return createMessagesAdapter();
 			}
 			@Override
 			public Adapter caseAttribute(Attribute object) {
 				return createAttributeAdapter();
+			}
+			@Override
+			public Adapter caseInstruction(Instruction object) {
+				return createInstructionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -730,20 +730,6 @@ public class WebappAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link webapp.DAOBusinessObject <em>DAO Business Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see webapp.DAOBusinessObject
-	 * @generated
-	 */
-	public Adapter createDAOBusinessObjectAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link webapp.Messages <em>Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -768,6 +754,20 @@ public class WebappAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAttributeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link webapp.Instruction <em>Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see webapp.Instruction
+	 * @generated
+	 */
+	public Adapter createInstructionAdapter() {
 		return null;
 	}
 

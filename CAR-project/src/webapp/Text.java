@@ -2,7 +2,6 @@
  */
 package webapp;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Text extends EObject {
+public interface Text extends Instruction {
 	/**
 	 * Returns the value of the '<em><b>Content</b></em>' attribute.
 	 * <!-- begin-user-doc -->

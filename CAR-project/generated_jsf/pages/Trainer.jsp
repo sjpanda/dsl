@@ -9,7 +9,7 @@
 </head>
 <body>
 <f:view>
-  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="messages" />
+  <f:loadBundle basename="messages" var="messages" />
   <h:form>
   	
     <h:panelGrid columns="2">
@@ -21,7 +21,7 @@
 </h:inputText>
 
     </h:panelGrid>
-    <h:commandButton action="#{Card.clear}" value="#{messages.reset}"></h:commandButton>
+    <h:commandButton action="#{Card.show}" value="#{messages.show}"></h:commandButton>
 <h:commandButton action="#{Card.clear}" value="#{messages.reset}"></h:commandButton>
 
     <h:messages layout="table"></h:messages>

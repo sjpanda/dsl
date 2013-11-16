@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link webapp.Model#getUserName <em>User Name</em>}</li>
  *   <li>{@link webapp.Model#getPassword <em>Password</em>}</li>
  *   <li>{@link webapp.Model#getBusinessObject <em>Business Object</em>}</li>
- *   <li>{@link webapp.Model#getDao <em>Dao</em>}</li>
  * </ul>
  * </p>
  *
@@ -164,21 +163,5 @@ public interface Model extends EObject {
 	 * @generated
 	 */
 	EList<BusinessObject> getBusinessObject();
-
-	/**
-	 * Returns the value of the '<em><b>Dao</b></em>' containment reference list.
-	 * The list contents are of type {@link webapp.DAOBusinessObject}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Dao</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Dao</em>' containment reference list.
-	 * @see webapp.WebappPackage#getModel_Dao()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<DAOBusinessObject> getDao();
 
 } // Model

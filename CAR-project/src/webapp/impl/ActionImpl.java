@@ -3,10 +3,13 @@
 package webapp.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import webapp.Action;
 import webapp.BusinessObject;
 import webapp.WebappPackage;
@@ -36,6 +39,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -65,6 +69,7 @@ public class ActionImpl extends MinimalEObjectImpl.Container implements Action {
 	 * @ordered
 	 */
 	protected static final String RETURN_TYPE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getReturnType() <em>Return Type</em>}' attribute.
 	 * <!-- begin-user-doc -->

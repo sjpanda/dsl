@@ -156,12 +156,12 @@ public class WebappValidator extends EObjectValidator {
 				return validateBusinessObject((BusinessObject)value, diagnostics, context);
 			case WebappPackage.FIELD:
 				return validateField((Field)value, diagnostics, context);
-			case WebappPackage.DAO_BUSINESS_OBJECT:
-				return validateDAOBusinessObject((DAOBusinessObject)value, diagnostics, context);
 			case WebappPackage.MESSAGES:
 				return validateMessages((Messages)value, diagnostics, context);
 			case WebappPackage.ATTRIBUTE:
 				return validateAttribute((Attribute)value, diagnostics, context);
+			case WebappPackage.INSTRUCTION:
+				return validateInstruction((Instruction)value, diagnostics, context);
 			case WebappPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case WebappPackage.CHARSET:
@@ -712,15 +712,6 @@ public class WebappValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateDAOBusinessObject(DAOBusinessObject daoBusinessObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(daoBusinessObject, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public boolean validateMessages(Messages messages, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(messages, diagnostics, context);
 	}
@@ -732,6 +723,15 @@ public class WebappValidator extends EObjectValidator {
 	 */
 	public boolean validateAttribute(Attribute attribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(attribute, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateInstruction(Instruction instruction, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(instruction, diagnostics, context);
 	}
 
 	/**

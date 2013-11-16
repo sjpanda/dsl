@@ -3,15 +3,20 @@
 package webapp.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import webapp.Attribute;
 import webapp.Tag;
 import webapp.WebappPackage;
@@ -30,7 +35,7 @@ import webapp.WebappPackage;
  *
  * @generated
  */
-public abstract class TagImpl extends MinimalEObjectImpl.Container implements Tag {
+public abstract class TagImpl extends InstructionImpl implements Tag {
 	/**
 	 * The default value of the '{@link #getProperty() <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->

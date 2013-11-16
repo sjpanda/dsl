@@ -3,17 +3,21 @@
 package webapp.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import webapp.Mapping;
 import webapp.Properties;
 import webapp.WebappPackage;
@@ -43,6 +47,7 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -52,6 +57,7 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
+
 	/**
 	 * The cached value of the '{@link #getMapping() <em>Mapping</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
@@ -71,6 +77,7 @@ public class PropertiesImpl extends MinimalEObjectImpl.Container implements Prop
 	 * @ordered
 	 */
 	protected static final String PACKAGE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getPackage() <em>Package</em>}' attribute.
 	 * <!-- begin-user-doc -->

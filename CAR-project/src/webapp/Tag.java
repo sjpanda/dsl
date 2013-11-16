@@ -3,7 +3,6 @@
 package webapp;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model abstract="true"
  * @generated
  */
-public interface Tag extends EObject {
+public interface Tag extends Instruction {
 	/**
 	 * Returns the value of the '<em><b>Property</b></em>' attribute.
 	 * <!-- begin-user-doc -->

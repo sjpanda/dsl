@@ -208,12 +208,14 @@ public class WebappSwitch<T> extends Switch<T> {
 				Form form = (Form)theEObject;
 				T result = caseForm(form);
 				if (result == null) result = caseTag(form);
+				if (result == null) result = caseInstruction(form);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WebappPackage.TEXT: {
 				Text text = (Text)theEObject;
 				T result = caseText(text);
+				if (result == null) result = caseInstruction(text);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -226,6 +228,7 @@ public class WebappSwitch<T> extends Switch<T> {
 			case WebappPackage.TAG: {
 				Tag tag = (Tag)theEObject;
 				T result = caseTag(tag);
+				if (result == null) result = caseInstruction(tag);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -233,6 +236,7 @@ public class WebappSwitch<T> extends Switch<T> {
 				Input input = (Input)theEObject;
 				T result = caseInput(input);
 				if (result == null) result = caseTag(input);
+				if (result == null) result = caseInstruction(input);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -240,6 +244,7 @@ public class WebappSwitch<T> extends Switch<T> {
 				TableHTML tableHTML = (TableHTML)theEObject;
 				T result = caseTableHTML(tableHTML);
 				if (result == null) result = caseTag(tableHTML);
+				if (result == null) result = caseInstruction(tableHTML);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -247,6 +252,7 @@ public class WebappSwitch<T> extends Switch<T> {
 				Tr tr = (Tr)theEObject;
 				T result = caseTr(tr);
 				if (result == null) result = caseTag(tr);
+				if (result == null) result = caseInstruction(tr);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -254,6 +260,7 @@ public class WebappSwitch<T> extends Switch<T> {
 				Td td = (Td)theEObject;
 				T result = caseTd(td);
 				if (result == null) result = caseTag(td);
+				if (result == null) result = caseInstruction(td);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -261,6 +268,7 @@ public class WebappSwitch<T> extends Switch<T> {
 				Th th = (Th)theEObject;
 				T result = caseTh(th);
 				if (result == null) result = caseTag(th);
+				if (result == null) result = caseInstruction(th);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -282,22 +290,23 @@ public class WebappSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebappPackage.DAO_BUSINESS_OBJECT: {
-				DAOBusinessObject daoBusinessObject = (DAOBusinessObject)theEObject;
-				T result = caseDAOBusinessObject(daoBusinessObject);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebappPackage.MESSAGES: {
 				Messages messages = (Messages)theEObject;
 				T result = caseMessages(messages);
 				if (result == null) result = caseTag(messages);
+				if (result == null) result = caseInstruction(messages);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case WebappPackage.ATTRIBUTE: {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebappPackage.INSTRUCTION: {
+				Instruction instruction = (Instruction)theEObject;
+				T result = caseInstruction(instruction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -831,21 +840,6 @@ public class WebappSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>DAO Business Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>DAO Business Object</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDAOBusinessObject(DAOBusinessObject object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Messages</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -872,6 +866,21 @@ public class WebappSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAttribute(Attribute object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Instruction</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseInstruction(Instruction object) {
 		return null;
 	}
 

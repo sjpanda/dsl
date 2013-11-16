@@ -354,22 +354,13 @@ public interface WebappPackage extends EPackage {
 	int MODEL__BUSINESS_OBJECT = 5;
 
 	/**
-	 * The feature id for the '<em><b>Dao</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MODEL__DAO = 6;
-
-	/**
 	 * The number of structural features of the '<em>Model</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MODEL_FEATURE_COUNT = 7;
+	int MODEL_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Model</em>' class.
@@ -1172,31 +1163,13 @@ public interface WebappPackage extends EPackage {
 	int PAGE = 22;
 
 	/**
-	 * The feature id for the '<em><b>Text</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__TEXT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__TAG = 1;
-
-	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__NAME = 2;
+	int PAGE__NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Properties</b></em>' reference list.
@@ -1205,7 +1178,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__PROPERTIES = 3;
+	int PAGE__PROPERTIES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -1214,7 +1187,16 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__TITLE = 4;
+	int PAGE__TITLE = 2;
+
+	/**
+	 * The feature id for the '<em><b>Instruction</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__INSTRUCTION = 3;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -1223,7 +1205,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = 5;
+	int PAGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -1233,6 +1215,34 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int PAGE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link webapp.impl.InstructionImpl <em>Instruction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.InstructionImpl
+	 * @see webapp.impl.WebappPackageImpl#getInstruction()
+	 * @generated
+	 */
+	int INSTRUCTION = 37;
+
+	/**
+	 * The number of structural features of the '<em>Instruction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Instruction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INSTRUCTION_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link webapp.impl.TagImpl <em>Tag</em>}' class.
@@ -1251,7 +1261,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAG__PROPERTY = 0;
+	int TAG__PROPERTY = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -1260,7 +1270,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAG__ATTRIBUTE = 1;
+	int TAG__ATTRIBUTE = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
@@ -1269,7 +1279,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAG_FEATURE_COUNT = 2;
+	int TAG_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Tag</em>' class.
@@ -1278,7 +1288,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TAG_OPERATION_COUNT = 0;
+	int TAG_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link webapp.impl.FormImpl <em>Form</em>}' class.
@@ -1361,7 +1371,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT__CONTENT = 0;
+	int TEXT__CONTENT = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Text</em>' class.
@@ -1370,7 +1380,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_FEATURE_COUNT = 1;
+	int TEXT_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Text</em>' class.
@@ -1379,7 +1389,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TEXT_OPERATION_COUNT = 0;
+	int TEXT_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link webapp.impl.ActionImpl <em>Action</em>}' class.
@@ -1931,52 +1941,6 @@ public interface WebappPackage extends EPackage {
 	int FIELD_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link webapp.impl.DAOBusinessObjectImpl <em>DAO Business Object</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see webapp.impl.DAOBusinessObjectImpl
-	 * @see webapp.impl.WebappPackageImpl#getDAOBusinessObject()
-	 * @generated
-	 */
-	int DAO_BUSINESS_OBJECT = 35;
-
-	/**
-	 * The feature id for the '<em><b>Business Object</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DAO_BUSINESS_OBJECT__BUSINESS_OBJECT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Package</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DAO_BUSINESS_OBJECT__PACKAGE = 1;
-
-	/**
-	 * The number of structural features of the '<em>DAO Business Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DAO_BUSINESS_OBJECT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>DAO Business Object</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DAO_BUSINESS_OBJECT_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link webapp.impl.MessagesImpl <em>Messages</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1984,7 +1948,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getMessages()
 	 * @generated
 	 */
-	int MESSAGES = 36;
+	int MESSAGES = 35;
 
 	/**
 	 * The feature id for the '<em><b>Property</b></em>' attribute.
@@ -2030,7 +1994,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 37;
+	int ATTRIBUTE = 36;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2097,7 +2061,6 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	int COLUMN_TYPE = 40;
-
 
 	/**
 	 * The meta object id for the '{@link webapp.FormMethod <em>Form Method</em>}' enum.
@@ -2357,17 +2320,6 @@ public interface WebappPackage extends EPackage {
 	EReference getModel_BusinessObject();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link webapp.Model#getDao <em>Dao</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dao</em>'.
-	 * @see webapp.Model#getDao()
-	 * @see #getModel()
-	 * @generated
-	 */
-	EReference getModel_Dao();
-
-	/**
 	 * Returns the meta object for class '{@link webapp.Controller <em>Controller</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2516,17 +2468,6 @@ public interface WebappPackage extends EPackage {
 	EClass getTable();
 
 	/**
-	 * Returns the meta object for the attribute '{@link webapp.Table#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see webapp.Table#getName()
-	 * @see #getTable()
-	 * @generated
-	 */
-	EAttribute getTable_Name();
-
-	/**
 	 * Returns the meta object for the containment reference list '{@link webapp.Table#getColumn <em>Column</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2547,6 +2488,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getTable_Constraint();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Table#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see webapp.Table#getName()
+	 * @see #getTable()
+	 * @generated
+	 */
+	EAttribute getTable_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link webapp.Table#getCharset <em>Charset</em>}'.
@@ -2945,39 +2897,6 @@ public interface WebappPackage extends EPackage {
 	EClass getPage();
 
 	/**
-	 * Returns the meta object for the reference '{@link webapp.Page#getTitle <em>Title</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Title</em>'.
-	 * @see webapp.Page#getTitle()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EReference getPage_Title();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link webapp.Page#getText <em>Text</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Text</em>'.
-	 * @see webapp.Page#getText()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EReference getPage_Text();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link webapp.Page#getTag <em>Tag</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Tag</em>'.
-	 * @see webapp.Page#getTag()
-	 * @see #getPage()
-	 * @generated
-	 */
-	EReference getPage_Tag();
-
-	/**
 	 * Returns the meta object for the attribute '{@link webapp.Page#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3000,6 +2919,28 @@ public interface WebappPackage extends EPackage {
 	EReference getPage_Properties();
 
 	/**
+	 * Returns the meta object for the reference '{@link webapp.Page#getTitle <em>Title</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Title</em>'.
+	 * @see webapp.Page#getTitle()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EReference getPage_Title();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.Page#getInstruction <em>Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Instruction</em>'.
+	 * @see webapp.Page#getInstruction()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EReference getPage_Instruction();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Form <em>Form</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3008,17 +2949,6 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getForm();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.Form#getMethod <em>Method</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Method</em>'.
-	 * @see webapp.Form#getMethod()
-	 * @see #getForm()
-	 * @generated
-	 */
-	EAttribute getForm_Method();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link webapp.Form#getTag <em>Tag</em>}'.
@@ -3030,6 +2960,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getForm_Tag();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Form#getMethod <em>Method</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Method</em>'.
+	 * @see webapp.Form#getMethod()
+	 * @see #getForm()
+	 * @generated
+	 */
+	EAttribute getForm_Method();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Text <em>Text</em>}'.
@@ -3428,38 +3369,6 @@ public interface WebappPackage extends EPackage {
 	EReference getField_BusinessObject();
 
 	/**
-	 * Returns the meta object for class '{@link webapp.DAOBusinessObject <em>DAO Business Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>DAO Business Object</em>'.
-	 * @see webapp.DAOBusinessObject
-	 * @generated
-	 */
-	EClass getDAOBusinessObject();
-
-	/**
-	 * Returns the meta object for the reference '{@link webapp.DAOBusinessObject#getBusinessObject <em>Business Object</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Business Object</em>'.
-	 * @see webapp.DAOBusinessObject#getBusinessObject()
-	 * @see #getDAOBusinessObject()
-	 * @generated
-	 */
-	EReference getDAOBusinessObject_BusinessObject();
-
-	/**
-	 * Returns the meta object for the attribute '{@link webapp.DAOBusinessObject#getPackage <em>Package</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Package</em>'.
-	 * @see webapp.DAOBusinessObject#getPackage()
-	 * @see #getDAOBusinessObject()
-	 * @generated
-	 */
-	EAttribute getDAOBusinessObject_Package();
-
-	/**
 	 * Returns the meta object for class '{@link webapp.Messages <em>Messages</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3500,6 +3409,16 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getAttribute_Value();
+
+	/**
+	 * Returns the meta object for class '{@link webapp.Instruction <em>Instruction</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Instruction</em>'.
+	 * @see webapp.Instruction
+	 * @generated
+	 */
+	EClass getInstruction();
 
 	/**
 	 * Returns the meta object for enum '{@link webapp.Behavior <em>Behavior</em>}'.
@@ -3763,14 +3682,6 @@ public interface WebappPackage extends EPackage {
 		EReference MODEL__BUSINESS_OBJECT = eINSTANCE.getModel_BusinessObject();
 
 		/**
-		 * The meta object literal for the '<em><b>Dao</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference MODEL__DAO = eINSTANCE.getModel_Dao();
-
-		/**
 		 * The meta object literal for the '{@link webapp.impl.ControllerImpl <em>Controller</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3895,14 +3806,6 @@ public interface WebappPackage extends EPackage {
 		EClass TABLE = eINSTANCE.getTable();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TABLE__NAME = eINSTANCE.getTable_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Column</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3917,6 +3820,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference TABLE__CONSTRAINT = eINSTANCE.getTable_Constraint();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TABLE__NAME = eINSTANCE.getTable_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Charset</b></em>' attribute feature.
@@ -4237,30 +4148,6 @@ public interface WebappPackage extends EPackage {
 		EClass PAGE = eINSTANCE.getPage();
 
 		/**
-		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PAGE__TITLE = eINSTANCE.getPage_Title();
-
-		/**
-		 * The meta object literal for the '<em><b>Text</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PAGE__TEXT = eINSTANCE.getPage_Text();
-
-		/**
-		 * The meta object literal for the '<em><b>Tag</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PAGE__TAG = eINSTANCE.getPage_Tag();
-
-		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4277,6 +4164,22 @@ public interface WebappPackage extends EPackage {
 		EReference PAGE__PROPERTIES = eINSTANCE.getPage_Properties();
 
 		/**
+		 * The meta object literal for the '<em><b>Title</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE__TITLE = eINSTANCE.getPage_Title();
+
+		/**
+		 * The meta object literal for the '<em><b>Instruction</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PAGE__INSTRUCTION = eINSTANCE.getPage_Instruction();
+
+		/**
 		 * The meta object literal for the '{@link webapp.impl.FormImpl <em>Form</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4287,20 +4190,20 @@ public interface WebappPackage extends EPackage {
 		EClass FORM = eINSTANCE.getForm();
 
 		/**
-		 * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FORM__METHOD = eINSTANCE.getForm_Method();
-
-		/**
 		 * The meta object literal for the '<em><b>Tag</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference FORM__TAG = eINSTANCE.getForm_Tag();
+
+		/**
+		 * The meta object literal for the '<em><b>Method</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FORM__METHOD = eINSTANCE.getForm_Method();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.TextImpl <em>Text</em>}' class.
@@ -4621,32 +4524,6 @@ public interface WebappPackage extends EPackage {
 		EReference FIELD__BUSINESS_OBJECT = eINSTANCE.getField_BusinessObject();
 
 		/**
-		 * The meta object literal for the '{@link webapp.impl.DAOBusinessObjectImpl <em>DAO Business Object</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see webapp.impl.DAOBusinessObjectImpl
-		 * @see webapp.impl.WebappPackageImpl#getDAOBusinessObject()
-		 * @generated
-		 */
-		EClass DAO_BUSINESS_OBJECT = eINSTANCE.getDAOBusinessObject();
-
-		/**
-		 * The meta object literal for the '<em><b>Business Object</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DAO_BUSINESS_OBJECT__BUSINESS_OBJECT = eINSTANCE.getDAOBusinessObject_BusinessObject();
-
-		/**
-		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DAO_BUSINESS_OBJECT__PACKAGE = eINSTANCE.getDAOBusinessObject_Package();
-
-		/**
 		 * The meta object literal for the '{@link webapp.impl.MessagesImpl <em>Messages</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4681,6 +4558,16 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ATTRIBUTE__VALUE = eINSTANCE.getAttribute_Value();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.InstructionImpl <em>Instruction</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.InstructionImpl
+		 * @see webapp.impl.WebappPackageImpl#getInstruction()
+		 * @generated
+		 */
+		EClass INSTRUCTION = eINSTANCE.getInstruction();
 
 		/**
 		 * The meta object literal for the '{@link webapp.Behavior <em>Behavior</em>}' enum.

@@ -3,15 +3,19 @@
 package webapp.impl;
 
 import java.util.Collection;
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import webapp.Action;
 import webapp.Controller;
 import webapp.Validator;
@@ -41,6 +45,7 @@ public class ControllerImpl extends MinimalEObjectImpl.Container implements Cont
 	 * @ordered
 	 */
 	protected EList<Validator> validator;
+
 	/**
 	 * The cached value of the '{@link #getAction() <em>Action</em>}' containment reference list.
 	 * <!-- begin-user-doc -->

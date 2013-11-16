@@ -23,6 +23,22 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface Form extends Tag {
 	/**
+	 * Returns the value of the '<em><b>Tag</b></em>' containment reference list.
+	 * The list contents are of type {@link webapp.Tag}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Tag</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Tag</em>' containment reference list.
+	 * @see webapp.WebappPackage#getForm_Tag()
+	 * @model containment="true" required="true"
+	 * @generated
+	 */
+	EList<Tag> getTag();
+
+	/**
 	 * Returns the value of the '<em><b>Method</b></em>' attribute.
 	 * The literals are from the enumeration {@link webapp.FormMethod}.
 	 * <!-- begin-user-doc -->
@@ -50,21 +66,5 @@ public interface Form extends Tag {
 	 * @generated
 	 */
 	void setMethod(FormMethod value);
-
-	/**
-	 * Returns the value of the '<em><b>Tag</b></em>' containment reference list.
-	 * The list contents are of type {@link webapp.Tag}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Tag</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Tag</em>' containment reference list.
-	 * @see webapp.WebappPackage#getForm_Tag()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<Tag> getTag();
 
 } // Form

@@ -9,13 +9,13 @@
 </head>
 <body>
 <f:view>
-  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="messages" />
+  <f:loadBundle basename="messages" var="messages" />
   <h:form>
   	
     <h:panelGrid columns="2">
       <h:outputLabel value="#{messages.user}"></h:outputLabel>
 <h:inputText value="#{User.name}">
-<f:validator validatorId="de.vogella.jsf.starter.validator.LoginValidator" />
+<f:validator validatorId="LoginValidator" />
 </h:inputText>
 <h:outputLabel value="#{messages.password}"></h:outputLabel>
 <h:inputSecret value="#{User.password}">

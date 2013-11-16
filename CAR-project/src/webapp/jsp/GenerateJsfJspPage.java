@@ -76,10 +76,10 @@ public class GenerateJsfJspPage
     stringBuffer.append( propName[propName.length - 1] );
     stringBuffer.append(TEXT_12);
      } 
-     for(Tag tag : page.getTag()){ 
-	if(tag instanceof Form){ 
+     for(Instruction instr : page.getInstruction()){
+	if(instr instanceof Form){ 
     stringBuffer.append(TEXT_13);
-     EList<Tag> formTags = ((Form)tag).getTag();
+     EList<Tag> formTags = ((Form)instr).getTag();
   	   int nbInputText = 0;
   	   StringBuffer contentInputText = new StringBuffer();
   	   StringBuffer contentInputButton = new StringBuffer();
@@ -135,11 +135,11 @@ public class GenerateJsfJspPage
     stringBuffer.append( messages.toString() );
     stringBuffer.append(TEXT_20);
      }
-	if(tag instanceof Input) {
+	if(instr instanceof Input) {
 		int nbInputText = 0;
   	    StringBuffer contentInputText = new StringBuffer();
   	    StringBuffer contentInputButton = new StringBuffer();
-		Input input = ((Input)tag);
+		Input input = ((Input)instr);
   	   	  	if(input.getType() == InputType.TEXT){
   	   	  	 	nbInputText++;
   	   	  	 	Mapping label = input.getLabel();
@@ -181,11 +181,9 @@ public class GenerateJsfJspPage
     stringBuffer.append( contentInputButton.toString() );
     stringBuffer.append(TEXT_26);
     }	
-} 
-if(page.getText() != null) { 
-	for(Text text : page.getText()){
+	if(instr instanceof Text) {  
     stringBuffer.append(TEXT_27);
-    stringBuffer.append( text.getContent() );
+    stringBuffer.append( ((Text)instr).getContent() );
     stringBuffer.append(TEXT_28);
     }}
     stringBuffer.append(TEXT_29);

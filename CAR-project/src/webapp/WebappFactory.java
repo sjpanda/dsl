@@ -328,15 +328,6 @@ public interface WebappFactory extends EFactory {
 	Field createField();
 
 	/**
-	 * Returns a new object of class '<em>DAO Business Object</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>DAO Business Object</em>'.
-	 * @generated
-	 */
-	DAOBusinessObject createDAOBusinessObject();
-
-	/**
 	 * Returns a new object of class '<em>Messages</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -353,6 +344,15 @@ public interface WebappFactory extends EFactory {
 	 * @generated
 	 */
 	Attribute createAttribute();
+
+	/**
+	 * Returns a new object of class '<em>Instruction</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Instruction</em>'.
+	 * @generated
+	 */
+	Instruction createInstruction();
 
 	/**
 	 * Returns the package supported by this factory.

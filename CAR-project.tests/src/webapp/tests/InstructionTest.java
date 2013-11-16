@@ -6,24 +6,24 @@ import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
 
-import webapp.DAOBusinessObject;
+import webapp.Instruction;
 import webapp.WebappFactory;
 
 /**
  * <!-- begin-user-doc -->
- * A test case for the model object '<em><b>DAO Business Object</b></em>'.
+ * A test case for the model object '<em><b>Instruction</b></em>'.
  * <!-- end-user-doc -->
  * @generated
  */
-public class DAOBusinessObjectTest extends TestCase {
+public class InstructionTest extends TestCase {
 
 	/**
-	 * The fixture for this DAO Business Object test case.
+	 * The fixture for this Instruction test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DAOBusinessObject fixture = null;
+	protected Instruction fixture = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -31,36 +31,36 @@ public class DAOBusinessObjectTest extends TestCase {
 	 * @generated
 	 */
 	public static void main(String[] args) {
-		TestRunner.run(DAOBusinessObjectTest.class);
+		TestRunner.run(InstructionTest.class);
 	}
 
 	/**
-	 * Constructs a new DAO Business Object test case with the given name.
+	 * Constructs a new Instruction test case with the given name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DAOBusinessObjectTest(String name) {
+	public InstructionTest(String name) {
 		super(name);
 	}
 
 	/**
-	 * Sets the fixture for this DAO Business Object test case.
+	 * Sets the fixture for this Instruction test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void setFixture(DAOBusinessObject fixture) {
+	protected void setFixture(Instruction fixture) {
 		this.fixture = fixture;
 	}
 
 	/**
-	 * Returns the fixture for this DAO Business Object test case.
+	 * Returns the fixture for this Instruction test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DAOBusinessObject getFixture() {
+	protected Instruction getFixture() {
 		return fixture;
 	}
 
@@ -72,7 +72,7 @@ public class DAOBusinessObjectTest extends TestCase {
 	 */
 	@Override
 	protected void setUp() throws Exception {
-		setFixture(WebappFactory.eINSTANCE.createDAOBusinessObject());
+		setFixture(WebappFactory.eINSTANCE.createInstruction());
 	}
 
 	/**
@@ -86,4 +86,4 @@ public class DAOBusinessObjectTest extends TestCase {
 		setFixture(null);
 	}
 
-} //DAOBusinessObjectTest
+} //InstructionTest

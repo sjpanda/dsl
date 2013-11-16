@@ -125,27 +125,6 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.TABLE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Column> getColumn() {
 		if (column == null) {
 			column = new EObjectContainmentEList<Column>(Column.class, this, WebappPackage.TABLE__COLUMN);
@@ -194,6 +173,27 @@ public class TableImpl extends MinimalEObjectImpl.Container implements Table {
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.TABLE__CONSTRAINT, newConstraint, newConstraint));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.TABLE__NAME, oldName, name));
 	}
 
 	/**

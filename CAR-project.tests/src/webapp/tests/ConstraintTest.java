@@ -5,6 +5,7 @@ package webapp.tests;
 import junit.framework.TestCase;
 
 import junit.textui.TestRunner;
+
 import webapp.Constraint;
 import webapp.WebappFactory;
 

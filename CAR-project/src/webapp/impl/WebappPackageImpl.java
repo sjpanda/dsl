@@ -22,7 +22,6 @@ import webapp.Column;
 import webapp.ColumnType;
 import webapp.Constraint;
 import webapp.Controller;
-import webapp.DAOBusinessObject;
 import webapp.Detail;
 import webapp.Field;
 import webapp.File;
@@ -32,6 +31,7 @@ import webapp.FormMethod;
 import webapp.Image;
 import webapp.Input;
 import webapp.InputType;
+import webapp.Instruction;
 import webapp.Library;
 import webapp.Mapping;
 import webapp.Messages;
@@ -316,13 +316,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass daoBusinessObjectEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass messagesEClass = null;
 
 	/**
@@ -331,6 +324,13 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass instructionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -640,15 +640,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getModel_Dao() {
-		return (EReference)modelEClass.getEStructuralFeatures().get(6);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getController() {
 		return controllerEClass;
 	}
@@ -775,15 +766,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTable_Name() {
-		return (EAttribute)tableEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getTable_Column() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(0);
 	}
@@ -795,6 +777,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 */
 	public EReference getTable_Constraint() {
 		return (EReference)tableEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTable_Name() {
+		return (EAttribute)tableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1135,35 +1126,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getPage_Title() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPage_Text() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getPage_Tag() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EAttribute getPage_Name() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(2);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1172,6 +1136,24 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EReference getPage_Properties() {
+		return (EReference)pageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPage_Title() {
+		return (EReference)pageEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getPage_Instruction() {
 		return (EReference)pageEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1189,8 +1171,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getForm_Method() {
-		return (EAttribute)formEClass.getEStructuralFeatures().get(1);
+	public EReference getForm_Tag() {
+		return (EReference)formEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1198,8 +1180,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getForm_Tag() {
-		return (EReference)formEClass.getEStructuralFeatures().get(0);
+	public EAttribute getForm_Method() {
+		return (EAttribute)formEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1540,33 +1522,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDAOBusinessObject() {
-		return daoBusinessObjectEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDAOBusinessObject_BusinessObject() {
-		return (EReference)daoBusinessObjectEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDAOBusinessObject_Package() {
-		return (EAttribute)daoBusinessObjectEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMessages() {
 		return messagesEClass;
 	}
@@ -1596,6 +1551,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 */
 	public EAttribute getAttribute_Value() {
 		return (EAttribute)attributeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getInstruction() {
+		return instructionEClass;
 	}
 
 	/**
@@ -1698,7 +1662,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(modelEClass, MODEL__USER_NAME);
 		createEAttribute(modelEClass, MODEL__PASSWORD);
 		createEReference(modelEClass, MODEL__BUSINESS_OBJECT);
-		createEReference(modelEClass, MODEL__DAO);
 
 		controllerEClass = createEClass(CONTROLLER);
 		createEReference(controllerEClass, CONTROLLER__VALIDATOR);
@@ -1770,11 +1733,10 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(validatorEClass, VALIDATOR__PACKAGE);
 
 		pageEClass = createEClass(PAGE);
-		createEReference(pageEClass, PAGE__TEXT);
-		createEReference(pageEClass, PAGE__TAG);
 		createEAttribute(pageEClass, PAGE__NAME);
 		createEReference(pageEClass, PAGE__PROPERTIES);
 		createEReference(pageEClass, PAGE__TITLE);
+		createEReference(pageEClass, PAGE__INSTRUCTION);
 
 		formEClass = createEClass(FORM);
 		createEReference(formEClass, FORM__TAG);
@@ -1828,15 +1790,13 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(fieldEClass, FIELD__DEFAULT_VALUE);
 		createEReference(fieldEClass, FIELD__BUSINESS_OBJECT);
 
-		daoBusinessObjectEClass = createEClass(DAO_BUSINESS_OBJECT);
-		createEReference(daoBusinessObjectEClass, DAO_BUSINESS_OBJECT__BUSINESS_OBJECT);
-		createEAttribute(daoBusinessObjectEClass, DAO_BUSINESS_OBJECT__PACKAGE);
-
 		messagesEClass = createEClass(MESSAGES);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
 		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
+
+		instructionEClass = createEClass(INSTRUCTION);
 
 		// Create enums
 		behaviorEEnum = createEEnum(BEHAVIOR);
@@ -1875,6 +1835,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 
 		// Add supertypes to classes
 		formEClass.getESuperTypes().add(this.getTag());
+		textEClass.getESuperTypes().add(this.getInstruction());
+		tagEClass.getESuperTypes().add(this.getInstruction());
 		inputEClass.getESuperTypes().add(this.getTag());
 		tableHTMLEClass.getESuperTypes().add(this.getTag());
 		trEClass.getESuperTypes().add(this.getTag());
@@ -1910,7 +1872,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getModel_UserName(), ecorePackage.getEString(), "userName", null, 1, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getModel_Password(), ecorePackage.getEString(), "password", null, 0, 1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getModel_BusinessObject(), this.getBusinessObject(), null, "businessObject", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModel_Dao(), this.getDAOBusinessObject(), null, "dao", null, 0, -1, Model.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(controllerEClass, Controller.class, "Controller", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getController_Validator(), this.getValidator(), null, "validator", null, 1, -1, Controller.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1982,11 +1943,10 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getValidator_Package(), ecorePackage.getEString(), "package", null, 1, 1, Validator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getPage_Text(), this.getText(), null, "text", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getPage_Tag(), this.getTag(), null, "tag", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Properties(), this.getProperties(), null, "properties", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Title(), this.getMapping(), null, "title", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPage_Instruction(), this.getInstruction(), null, "instruction", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForm_Tag(), this.getTag(), null, "tag", null, 1, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2040,15 +2000,13 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getField_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getField_BusinessObject(), this.getBusinessObject(), null, "businessObject", null, 1, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(daoBusinessObjectEClass, DAOBusinessObject.class, "DAOBusinessObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getDAOBusinessObject_BusinessObject(), this.getBusinessObject(), null, "businessObject", null, 1, 1, DAOBusinessObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDAOBusinessObject_Package(), ecorePackage.getEString(), "package", null, 1, 1, DAOBusinessObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
 		initEClass(messagesEClass, Messages.class, "Messages", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(behaviorEEnum, Behavior.class, "Behavior");

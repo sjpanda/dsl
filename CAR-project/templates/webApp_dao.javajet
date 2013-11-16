@@ -1,0 +1,2 @@
+<%@ jet package="webapp.dao" class="GenerateDAO" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>

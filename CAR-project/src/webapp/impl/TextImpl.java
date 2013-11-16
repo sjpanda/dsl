@@ -7,7 +7,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import webapp.Text;
 import webapp.WebappPackage;
@@ -25,7 +24,7 @@ import webapp.WebappPackage;
  *
  * @generated
  */
-public class TextImpl extends MinimalEObjectImpl.Container implements Text {
+public class TextImpl extends InstructionImpl implements Text {
 	/**
 	 * The default value of the '{@link #getContent() <em>Content</em>}' attribute.
 	 * <!-- begin-user-doc -->

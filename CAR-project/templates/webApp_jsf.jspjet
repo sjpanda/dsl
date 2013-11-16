@@ -22,10 +22,10 @@
 	propName = p.getName().split("\\."); %>
   <f:loadBundle basename="<%= p.getName() %>" var="<%= propName[propName.length - 1] %>" />
  <% } %>
-<% for(Tag tag : page.getTag()){ 
-	if(tag instanceof Form){ %>
+<% for(Instruction instr : page.getInstruction()){
+	if(instr instanceof Form){ %>
   <h:form>
-  	<% EList<Tag> formTags = ((Form)tag).getTag();
+  	<% EList<Tag> formTags = ((Form)instr).getTag();
   	   int nbInputText = 0;
   	   StringBuffer contentInputText = new StringBuffer();
   	   StringBuffer contentInputButton = new StringBuffer();
@@ -76,11 +76,11 @@
     <%= messages.toString() %>
   </h:form>
 <% }
-	if(tag instanceof Input) {
+	if(instr instanceof Input) {
 		int nbInputText = 0;
   	    StringBuffer contentInputText = new StringBuffer();
   	    StringBuffer contentInputButton = new StringBuffer();
-		Input input = ((Input)tag);
+		Input input = ((Input)instr);
   	   	  	if(input.getType() == InputType.TEXT){
   	   	  	 	nbInputText++;
   	   	  	 	Mapping label = input.getLabel();
@@ -117,10 +117,8 @@
     <%}%>
     <%= contentInputButton.toString() %>
 	<%}	
-} 
-if(page.getText() != null) { 
-	for(Text text : page.getText()){%>
-	<%= text.getContent() %>	
+	if(instr instanceof Text) {  %>
+	<%= ((Text)instr).getContent() %>	
 <%}}%>
 </f:view>
 </body>

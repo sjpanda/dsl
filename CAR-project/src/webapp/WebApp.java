@@ -129,7 +129,7 @@ public interface WebApp extends EObject {
 	 * Returns the value of the '<em><b>View</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>View</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>View</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
@@ -181,7 +181,7 @@ public interface WebApp extends EObject {
 	 * Returns the value of the '<em><b>Controller</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Controller</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Controller</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

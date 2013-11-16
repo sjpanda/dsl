@@ -2,8 +2,6 @@
  */
 package webapp.tests;
 
-import junit.framework.TestCase;
-
 import junit.textui.TestRunner;
 
 import webapp.Text;
@@ -15,15 +13,7 @@ import webapp.WebappFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class TextTest extends TestCase {
-
-	/**
-	 * The fixture for this Text test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected Text fixture = null;
+public class TextTest extends InstructionTest {
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -45,23 +35,14 @@ public class TextTest extends TestCase {
 	}
 
 	/**
-	 * Sets the fixture for this Text test case.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void setFixture(Text fixture) {
-		this.fixture = fixture;
-	}
-
-	/**
 	 * Returns the fixture for this Text test case.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@Override
 	protected Text getFixture() {
-		return fixture;
+		return (Text)fixture;
 	}
 
 	/**

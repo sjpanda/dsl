@@ -3,6 +3,7 @@
 package webapp;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface View extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Page</b></em>' containment reference list.
 	 * The list contents are of type {@link webapp.Page}.
@@ -38,4 +38,5 @@ public interface View extends EObject {
 	 * @generated
 	 */
 	EList<Page> getPage();
+
 } // View

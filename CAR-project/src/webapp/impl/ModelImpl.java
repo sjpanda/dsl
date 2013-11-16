@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import webapp.BusinessObject;
-import webapp.DAOBusinessObject;
 import webapp.Model;
 import webapp.Table;
 import webapp.WebappPackage;
@@ -37,7 +36,6 @@ import webapp.WebappPackage;
  *   <li>{@link webapp.impl.ModelImpl#getUserName <em>User Name</em>}</li>
  *   <li>{@link webapp.impl.ModelImpl#getPassword <em>Password</em>}</li>
  *   <li>{@link webapp.impl.ModelImpl#getBusinessObject <em>Business Object</em>}</li>
- *   <li>{@link webapp.impl.ModelImpl#getDao <em>Dao</em>}</li>
  * </ul>
  * </p>
  *
@@ -143,16 +141,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * @ordered
 	 */
 	protected EList<BusinessObject> businessObject;
-
-	/**
-	 * The cached value of the '{@link #getDao() <em>Dao</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDao()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DAOBusinessObject> dao;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -286,18 +274,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<DAOBusinessObject> getDao() {
-		if (dao == null) {
-			dao = new EObjectContainmentEList<DAOBusinessObject>(DAOBusinessObject.class, this, WebappPackage.MODEL__DAO);
-		}
-		return dao;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -305,8 +281,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return ((InternalEList<?>)getTable()).basicRemove(otherEnd, msgs);
 			case WebappPackage.MODEL__BUSINESS_OBJECT:
 				return ((InternalEList<?>)getBusinessObject()).basicRemove(otherEnd, msgs);
-			case WebappPackage.MODEL__DAO:
-				return ((InternalEList<?>)getDao()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -331,8 +305,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return getPassword();
 			case WebappPackage.MODEL__BUSINESS_OBJECT:
 				return getBusinessObject();
-			case WebappPackage.MODEL__DAO:
-				return getDao();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -366,10 +338,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				getBusinessObject().clear();
 				getBusinessObject().addAll((Collection<? extends BusinessObject>)newValue);
 				return;
-			case WebappPackage.MODEL__DAO:
-				getDao().clear();
-				getDao().addAll((Collection<? extends DAOBusinessObject>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -400,9 +368,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 			case WebappPackage.MODEL__BUSINESS_OBJECT:
 				getBusinessObject().clear();
 				return;
-			case WebappPackage.MODEL__DAO:
-				getDao().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -427,8 +392,6 @@ public class ModelImpl extends MinimalEObjectImpl.Container implements Model {
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
 			case WebappPackage.MODEL__BUSINESS_OBJECT:
 				return businessObject != null && !businessObject.isEmpty();
-			case WebappPackage.MODEL__DAO:
-				return dao != null && !dao.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

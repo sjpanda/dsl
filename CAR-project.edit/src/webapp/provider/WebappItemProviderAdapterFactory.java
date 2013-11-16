@@ -854,29 +854,6 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link webapp.DAOBusinessObject} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected DAOBusinessObjectItemProvider daoBusinessObjectItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link webapp.DAOBusinessObject}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createDAOBusinessObjectAdapter() {
-		if (daoBusinessObjectItemProvider == null) {
-			daoBusinessObjectItemProvider = new DAOBusinessObjectItemProvider(this);
-		}
-
-		return daoBusinessObjectItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link webapp.Messages} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -920,6 +897,29 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		}
 
 		return attributeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Instruction} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected InstructionItemProvider instructionItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Instruction}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createInstructionAdapter() {
+		if (instructionItemProvider == null) {
+			instructionItemProvider = new InstructionItemProvider(this);
+		}
+
+		return instructionItemProvider;
 	}
 
 	/**
@@ -1055,9 +1055,9 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (mappingItemProvider != null) mappingItemProvider.dispose();
 		if (businessObjectItemProvider != null) businessObjectItemProvider.dispose();
 		if (fieldItemProvider != null) fieldItemProvider.dispose();
-		if (daoBusinessObjectItemProvider != null) daoBusinessObjectItemProvider.dispose();
 		if (messagesItemProvider != null) messagesItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
+		if (instructionItemProvider != null) instructionItemProvider.dispose();
 	}
 
 }

@@ -19,11 +19,10 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import webapp.Instruction;
 import webapp.Mapping;
 import webapp.Page;
 import webapp.Properties;
-import webapp.Tag;
-import webapp.Text;
 import webapp.WebappPackage;
 
 /**
@@ -33,37 +32,16 @@ import webapp.WebappPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link webapp.impl.PageImpl#getText <em>Text</em>}</li>
- *   <li>{@link webapp.impl.PageImpl#getTag <em>Tag</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getName <em>Name</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getTitle <em>Title</em>}</li>
+ *   <li>{@link webapp.impl.PageImpl#getInstruction <em>Instruction</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class PageImpl extends MinimalEObjectImpl.Container implements Page {
-	/**
-	 * The cached value of the '{@link #getText() <em>Text</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getText()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Text> text;
-
-	/**
-	 * The cached value of the '{@link #getTag() <em>Tag</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTag()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Tag> tag;
-
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -105,6 +83,16 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	protected Mapping title;
 
 	/**
+	 * The cached value of the '{@link #getInstruction() <em>Instruction</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getInstruction()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Instruction> instruction;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -121,6 +109,39 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	protected EClass eStaticClass() {
 		return WebappPackage.Literals.PAGE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.PAGE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Properties> getProperties() {
+		if (properties == null) {
+			properties = new EObjectResolvingEList<Properties>(Properties.class, this, WebappPackage.PAGE__PROPERTIES);
+		}
+		return properties;
 	}
 
 	/**
@@ -166,56 +187,11 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Text> getText() {
-		if (text == null) {
-			text = new EObjectContainmentEList<Text>(Text.class, this, WebappPackage.PAGE__TEXT);
+	public EList<Instruction> getInstruction() {
+		if (instruction == null) {
+			instruction = new EObjectContainmentEList<Instruction>(Instruction.class, this, WebappPackage.PAGE__INSTRUCTION);
 		}
-		return text;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Tag> getTag() {
-		if (tag == null) {
-			tag = new EObjectContainmentEList<Tag>(Tag.class, this, WebappPackage.PAGE__TAG);
-		}
-		return tag;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String getName() {
-		return name;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.PAGE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Properties> getProperties() {
-		if (properties == null) {
-			properties = new EObjectResolvingEList<Properties>(Properties.class, this, WebappPackage.PAGE__PROPERTIES);
-		}
-		return properties;
+		return instruction;
 	}
 
 	/**
@@ -226,10 +202,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TEXT:
-				return ((InternalEList<?>)getText()).basicRemove(otherEnd, msgs);
-			case WebappPackage.PAGE__TAG:
-				return ((InternalEList<?>)getTag()).basicRemove(otherEnd, msgs);
+			case WebappPackage.PAGE__INSTRUCTION:
+				return ((InternalEList<?>)getInstruction()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -242,10 +216,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TEXT:
-				return getText();
-			case WebappPackage.PAGE__TAG:
-				return getTag();
 			case WebappPackage.PAGE__NAME:
 				return getName();
 			case WebappPackage.PAGE__PROPERTIES:
@@ -253,6 +223,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case WebappPackage.PAGE__TITLE:
 				if (resolve) return getTitle();
 				return basicGetTitle();
+			case WebappPackage.PAGE__INSTRUCTION:
+				return getInstruction();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -266,14 +238,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TEXT:
-				getText().clear();
-				getText().addAll((Collection<? extends Text>)newValue);
-				return;
-			case WebappPackage.PAGE__TAG:
-				getTag().clear();
-				getTag().addAll((Collection<? extends Tag>)newValue);
-				return;
 			case WebappPackage.PAGE__NAME:
 				setName((String)newValue);
 				return;
@@ -283,6 +247,10 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return;
 			case WebappPackage.PAGE__TITLE:
 				setTitle((Mapping)newValue);
+				return;
+			case WebappPackage.PAGE__INSTRUCTION:
+				getInstruction().clear();
+				getInstruction().addAll((Collection<? extends Instruction>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -296,12 +264,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TEXT:
-				getText().clear();
-				return;
-			case WebappPackage.PAGE__TAG:
-				getTag().clear();
-				return;
 			case WebappPackage.PAGE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
@@ -310,6 +272,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return;
 			case WebappPackage.PAGE__TITLE:
 				setTitle((Mapping)null);
+				return;
+			case WebappPackage.PAGE__INSTRUCTION:
+				getInstruction().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -323,16 +288,14 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebappPackage.PAGE__TEXT:
-				return text != null && !text.isEmpty();
-			case WebappPackage.PAGE__TAG:
-				return tag != null && !tag.isEmpty();
 			case WebappPackage.PAGE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case WebappPackage.PAGE__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 			case WebappPackage.PAGE__TITLE:
 				return title != null;
+			case WebappPackage.PAGE__INSTRUCTION:
+				return instruction != null && !instruction.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

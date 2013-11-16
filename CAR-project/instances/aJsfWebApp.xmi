@@ -13,10 +13,10 @@
   <view>
     <page name="LoginView"
         properties="//@resource/@propertie.0">
-      <tag xsi:type="webapp:Form">
+      <instruction
+          xsi:type="webapp:Form">
         <tag
             xsi:type="webapp:Input"
-            property=""
             label="//@resource/@propertie.0/@mapping.0"
             textValue="//@model/@businessObject.0/@field.0"
             validator="//@controller/@validator.0"/>
@@ -31,24 +31,26 @@
             buttonValue="//@resource/@propertie.0/@mapping.2"/>
         <tag
             xsi:type="webapp:Messages"/>
-      </tag>
+      </instruction>
     </page>
     <page name="Trainer"
         properties="//@resource/@propertie.0">
-      <tag xsi:type="webapp:Form">
+      <instruction
+          xsi:type="webapp:Form">
         <tag
             xsi:type="webapp:Input"
             label="//@resource/@propertie.0/@mapping.4"
             textValue="//@model/@businessObject.1/@field.0"/>
         <tag
             xsi:type="webapp:Input"
+            property=""
             label="//@resource/@propertie.0/@mapping.5"
             textValue="//@model/@businessObject.1/@field.1"/>
         <tag
             xsi:type="webapp:Input"
             type="BUTTON"
-            action="//@controller/@action.2"
-            buttonValue="//@resource/@propertie.0/@mapping.8"/>
+            action="//@controller/@action.1"
+            buttonValue="//@resource/@propertie.0/@mapping.6"/>
         <tag
             xsi:type="webapp:Input"
             type="BUTTON"
@@ -56,14 +58,15 @@
             buttonValue="//@resource/@propertie.0/@mapping.8"/>
         <tag
             xsi:type="webapp:Messages"/>
-      </tag>
-      <tag xsi:type="webapp:Input"
-          property=""
+      </instruction>
+      <instruction
+          xsi:type="webapp:Input"
           label="//@resource/@propertie.0/@mapping.9"
           textValue="//@model/@businessObject.1/@field.2"/>
     </page>
     <page name="FailedLogin">
-      <text
+      <instruction
+          xsi:type="webapp:Text"
           content="Failed Login"/>
     </page>
   </view>

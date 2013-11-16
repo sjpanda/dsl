@@ -3,14 +3,20 @@
 package webapp.impl;
 
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import webapp.Form;
 import webapp.FormMethod;
 import webapp.Tag;
@@ -85,6 +91,18 @@ public class FormImpl extends TagImpl implements Form {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Tag> getTag() {
+		if (tag == null) {
+			tag = new EObjectContainmentEList<Tag>(Tag.class, this, WebappPackage.FORM__TAG);
+		}
+		return tag;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public FormMethod getMethod() {
 		return method;
 	}
@@ -99,18 +117,6 @@ public class FormImpl extends TagImpl implements Form {
 		method = newMethod == null ? METHOD_EDEFAULT : newMethod;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.FORM__METHOD, oldMethod, method));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Tag> getTag() {
-		if (tag == null) {
-			tag = new EObjectContainmentEList<Tag>(Tag.class, this, WebappPackage.FORM__TAG);
-		}
-		return tag;
 	}
 
 	/**

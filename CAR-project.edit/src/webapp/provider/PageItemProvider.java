@@ -71,28 +71,6 @@ public class PageItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Title feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTitlePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Page_title_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Page_title_feature", "_UI_Page_type"),
-				 WebappPackage.Literals.PAGE__TITLE,
-				 true,
-				 false,
-				 false,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Name feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -137,6 +115,28 @@ public class PageItemProvider
 	}
 
 	/**
+	 * This adds a property descriptor for the Title feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTitlePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_title_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_title_feature", "_UI_Page_type"),
+				 WebappPackage.Literals.PAGE__TITLE,
+				 true,
+				 false,
+				 false,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
@@ -148,8 +148,7 @@ public class PageItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebappPackage.Literals.PAGE__TEXT);
-			childrenFeatures.add(WebappPackage.Literals.PAGE__TAG);
+			childrenFeatures.add(WebappPackage.Literals.PAGE__INSTRUCTION);
 		}
 		return childrenFeatures;
 	}
@@ -208,8 +207,7 @@ public class PageItemProvider
 			case WebappPackage.PAGE__TITLE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case WebappPackage.PAGE__TEXT:
-			case WebappPackage.PAGE__TAG:
+			case WebappPackage.PAGE__INSTRUCTION:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -229,42 +227,47 @@ public class PageItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TEXT,
-				 WebappFactory.eINSTANCE.createText()));
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
+				 WebappFactory.eINSTANCE.createInstruction()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
 				 WebappFactory.eINSTANCE.createForm()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
+				 WebappFactory.eINSTANCE.createText()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
 				 WebappFactory.eINSTANCE.createInput()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
 				 WebappFactory.eINSTANCE.createTableHTML()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
 				 WebappFactory.eINSTANCE.createTr()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
 				 WebappFactory.eINSTANCE.createTd()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
 				 WebappFactory.eINSTANCE.createTh()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(WebappPackage.Literals.PAGE__TAG,
+				(WebappPackage.Literals.PAGE__INSTRUCTION,
 				 WebappFactory.eINSTANCE.createMessages()));
 	}
 

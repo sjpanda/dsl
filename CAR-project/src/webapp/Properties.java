@@ -3,6 +3,7 @@
 package webapp;
 
 import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -24,7 +25,6 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Properties extends EObject {
-
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -92,4 +92,5 @@ public interface Properties extends EObject {
 	 * @generated
 	 */
 	void setPackage(String value);
+
 } // Properties

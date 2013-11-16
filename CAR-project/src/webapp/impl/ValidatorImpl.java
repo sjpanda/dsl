@@ -3,6 +3,7 @@
 package webapp.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -35,6 +36,7 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 	 * @ordered
 	 */
 	protected static final String NAME_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -54,6 +56,7 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 	 * @ordered
 	 */
 	protected static final String PACKAGE_EDEFAULT = null;
+
 	/**
 	 * The cached value of the '{@link #getPackage() <em>Package</em>}' attribute.
 	 * <!-- begin-user-doc -->
