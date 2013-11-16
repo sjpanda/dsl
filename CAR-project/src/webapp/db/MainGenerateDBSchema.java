@@ -18,7 +18,7 @@ public class MainGenerateDBSchema {
 		GenerateDBSchema generator = GenerateDBSchema.create(null);
 		
 		try {
-			output = new FileWriter("sql/webapp_" + webApp.getName() + ".sql");
+			output = new FileWriter("generated_sql/webapp_" + webApp.getName() + ".sql");
 			writer = new BufferedWriter(output);
 			writer.write(generator.generate(webApp));
 			writer.close();
