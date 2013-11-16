@@ -60,6 +60,7 @@ public class ValidatorItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addPackagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,6 +79,28 @@ public class ValidatorItemProvider
 				 getString("_UI_Validator_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Validator_name_feature", "_UI_Validator_type"),
 				 WebappPackage.Literals.VALIDATOR__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Package feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPackagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Validator_package_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Validator_package_feature", "_UI_Validator_type"),
+				 WebappPackage.Literals.VALIDATOR__PACKAGE,
 				 true,
 				 false,
 				 false,
@@ -124,6 +147,7 @@ public class ValidatorItemProvider
 
 		switch (notification.getFeatureID(Validator.class)) {
 			case WebappPackage.VALIDATOR__NAME:
+			case WebappPackage.VALIDATOR__PACKAGE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}

@@ -720,6 +720,10 @@
         <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Validator/name"/>
         <layoutConstraint xmi:type="notation:Location" xmi:id="_vprRoU1wEeOp3sImoyx4Tw"/>
       </children>
+      <children xmi:type="notation:Node" xmi:id="_aHsngE7cEeOlBNMDZ0G53Q" type="2001">
+        <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//Validator/package"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_aHsngU7cEeOlBNMDZ0G53Q"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_TedPwUzFEeO6OenXcuqsKg"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_TedPwkzFEeO6OenXcuqsKg"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_TedPw0zFEeO6OenXcuqsKg"/>

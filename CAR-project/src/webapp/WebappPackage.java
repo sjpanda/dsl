@@ -1126,13 +1126,22 @@ public interface WebappPackage extends EPackage {
 	int VALIDATOR__NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Package</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATOR__PACKAGE = 1;
+
+	/**
 	 * The number of structural features of the '<em>Validator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALIDATOR_FEATURE_COUNT = 1;
+	int VALIDATOR_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Validator</em>' class.
@@ -2895,6 +2904,17 @@ public interface WebappPackage extends EPackage {
 	EAttribute getValidator_Name();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webapp.Validator#getPackage <em>Package</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Package</em>'.
+	 * @see webapp.Validator#getPackage()
+	 * @see #getValidator()
+	 * @generated
+	 */
+	EAttribute getValidator_Package();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Page <em>Page</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4169,6 +4189,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALIDATOR__NAME = eINSTANCE.getValidator_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Package</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALIDATOR__PACKAGE = eINSTANCE.getValidator_Package();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.PageImpl <em>Page</em>}' class.

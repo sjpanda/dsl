@@ -29,7 +29,7 @@ public class MainGenerateJsfManagedbean {
 		}
 		EList<BusinessObject> businessObjects = model.getBusinessObject();
 		if(businessObjects == null){
-			System.err.println("Null BusinessObjects");
+			System.err.println("Null BusinessObject");
 		}
 
 		GenerateJsfManagedbean generator = GenerateJsfManagedbean.create(null);

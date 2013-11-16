@@ -1,0 +1,18 @@
+<%@ jet package="webapp.jsf.validator" class="GenerateJsfValidator" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<% Validator validator = (Validator)argument; %>
+package <%= validator.getPackage() %>;
+
+import javax.faces.application.FacesMessage;
+import javax.faces.component.UIComponent;
+import javax.faces.context.FacesContext;
+import javax.faces.validator.Validator;
+import javax.faces.validator.ValidatorException;
+
+public class <%= validator.getName() %> implements Validator {
+	public void validate(FacesContext context, UIComponent component,
+      Object value) throws ValidatorException {
+		// TODO: implement this method
+		throw new UnsupportedOperationException();
+    }
+}

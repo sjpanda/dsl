@@ -175,6 +175,7 @@
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Validator">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Validator/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Validator/package"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Page">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//Page/text"/>

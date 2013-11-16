@@ -125,7 +125,8 @@
   </model>
   <controller>
     <validator
-        name="de.vogella.jsf.starter.validator.LoginValidator"/>
+        name="LoginValidator"
+        package="de.vogella.jsf.starter.validator"/>
     <action
         name="login"
         businessObject="//@model/@businessObject.0"

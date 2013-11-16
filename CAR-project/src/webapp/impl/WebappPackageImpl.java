@@ -1108,6 +1108,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getValidator_Package() {
+		return (EAttribute)validatorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPage() {
 		return pageEClass;
 	}
@@ -1748,6 +1757,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 
 		validatorEClass = createEClass(VALIDATOR);
 		createEAttribute(validatorEClass, VALIDATOR__NAME);
+		createEAttribute(validatorEClass, VALIDATOR__PACKAGE);
 
 		pageEClass = createEClass(PAGE);
 		createEReference(pageEClass, PAGE__TEXT);
@@ -1958,6 +1968,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 
 		initEClass(validatorEClass, Validator.class, "Validator", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getValidator_Name(), ecorePackage.getEString(), "name", null, 1, 1, Validator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getValidator_Package(), ecorePackage.getEString(), "package", null, 1, 1, Validator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getPage_Text(), this.getText(), null, "text", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
