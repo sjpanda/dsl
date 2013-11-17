@@ -43,7 +43,7 @@ public class MainGenerateStrutsProperties {
 
 		try {
 			for(Properties propertie : properties){
-				output = new FileWriter("generated_struts/src/" + propertie.getName() + ".properties");
+				output = new FileWriter(args[1] + "/src/" + propertie.getName() + ".properties");
 				writer = new BufferedWriter(output);
 				writer.write(generator.generate(propertie));
 				writer.close();

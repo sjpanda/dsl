@@ -56,7 +56,7 @@ public class MainGenerateStrutsServlet {
 								if(v != null && a != null){
 									GenerateStrutsServlet generator = GenerateStrutsServlet.create(null);
 									try {
-										output = new FileWriter("generated_struts/src/servletAction/"+a.getName()+"Action.java");
+										output = new FileWriter(args[1] + "/src/org/lip6/struts/servletAction/"+a.getName()+"Action.java");
 										writer = new BufferedWriter(output);
 										writer.write(generator.generate(input));
 										writer.close();

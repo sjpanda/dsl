@@ -16,16 +16,16 @@ public class GenerateStrutsServlet
 
   public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
   protected final String TEXT_1 = NL + "package org.lip6.struts.servletAction;" + NL + "" + NL + "import javax.servlet.http.HttpServletRequest;" + NL + "import javax.servlet.http.HttpServletResponse;" + NL + "" + NL + "import org.apache.struts.Globals;" + NL + "import org.apache.struts.action.Action;" + NL + "import org.apache.struts.action.ActionForm;" + NL + "import org.apache.struts.action.ActionForward;" + NL + "import org.apache.struts.action.ActionMapping;" + NL + "import org.apache.struts.action.ActionMessage;" + NL + "import org.apache.struts.action.ActionMessages;" + NL + "import ";
-  protected final String TEXT_2 = ".DAO";
+  protected final String TEXT_2 = ".domain.DAO";
   protected final String TEXT_3 = ";" + NL + "import ";
-  protected final String TEXT_4 = ".";
-  protected final String TEXT_5 = ";" + NL + "" + NL + "public class ";
+  protected final String TEXT_4 = ".actionForm.";
+  protected final String TEXT_5 = "ValidationForm;" + NL + "" + NL + "public class ";
   protected final String TEXT_6 = "Action {" + NL + "" + NL + "\tpublic ActionForward execute(final ActionMapping pMapping," + NL + "\t\t\tActionForm pForm, final HttpServletRequest pRequest," + NL + "\t\t\tfinal HttpServletResponse pResponse) {" + NL + "\t\t\t" + NL + "\t\tfinal ";
-  protected final String TEXT_7 = "ValidationForm pForm = (";
+  protected final String TEXT_7 = "ValidationForm lForm = (";
   protected final String TEXT_8 = "ValidationForm )pForm;" + NL + "\t\t";
-  protected final String TEXT_9 = " " + NL + "\t\tprivate ";
+  protected final String TEXT_9 = " " + NL + "\t\t";
   protected final String TEXT_10 = " ";
-  protected final String TEXT_11 = " = lform.get";
+  protected final String TEXT_11 = " = lForm.get";
   protected final String TEXT_12 = "();" + NL + "\t\t";
   protected final String TEXT_13 = NL + "\t\t";
   protected final String TEXT_14 = NL + "\t\tfinal DAO";

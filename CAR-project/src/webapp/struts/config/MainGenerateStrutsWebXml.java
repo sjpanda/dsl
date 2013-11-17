@@ -26,7 +26,7 @@ public class MainGenerateStrutsWebXml {
 		GenerateStrutsWebXml generator = GenerateStrutsWebXml.create(null);
 
 		try {
-			output = new FileWriter("generated_struts/WebContent/WEB-INF/web.xml");
+			output = new FileWriter(args[1] + "/WebContent/WEB-INF/web.xml");
 			writer = new BufferedWriter(output);
 			writer.write(generator.generate(webApp));
 			writer.close();

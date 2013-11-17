@@ -16,8 +16,8 @@ public class GenerateStrutsValidator
 
   public final String NL = nl == null ? (System.getProperties().getProperty("line.separator")) : nl;
   protected final String TEXT_1 = NL + "package ";
-  protected final String TEXT_2 = ";" + NL + "" + NL + "import javax.servlet.http.HttpServletRequest;" + NL + "import org.apache.struts.action.ActionErrors;" + NL + "import org.apache.struts.action.ActionForm;" + NL + "import org.apache.struts.action.ActionMapping;" + NL + "import org.apache.struts.action.ActionMessage;" + NL + "" + NL + "public class ";
-  protected final String TEXT_3 = " {" + NL + "" + NL + "\tprivate static final long serialVersionUID = 1L;" + NL + "\t";
+  protected final String TEXT_2 = ".actionForm;" + NL + "" + NL + "import javax.servlet.http.HttpServletRequest;" + NL + "import org.apache.struts.action.ActionErrors;" + NL + "import org.apache.struts.action.ActionForm;" + NL + "import org.apache.struts.action.ActionMapping;" + NL + "import org.apache.struts.action.ActionMessage;" + NL + "" + NL + "public class ";
+  protected final String TEXT_3 = "ValidationForm  extends ActionForm{" + NL + "" + NL + "\tprivate static final long serialVersionUID = 1L;" + NL + "\t";
   protected final String TEXT_4 = NL + "\tprivate ";
   protected final String TEXT_5 = " ";
   protected final String TEXT_6 = " = ";
@@ -84,7 +84,12 @@ public class GenerateStrutsValidator
      
 			StringBuffer reset = new StringBuffer();
 			for(Field field : fields){ 
+				if(field.getType().equals("int")){
+				reset.append("\t\tthis."+field.getName()+"=0;\n");
+				}
+				else{
 				reset.append("\t\tthis."+field.getName()+"=null;\n");
+				}
 			}
 		
     stringBuffer.append(TEXT_14);
@@ -93,9 +98,11 @@ public class GenerateStrutsValidator
      
 			StringBuffer valide = new StringBuffer();
 			for(Field field : fields){ 
+			if(!field.getType().equals("int")){
 				valide.append("\t\tif(get"+field.getName()+"() == null || get"+field.getName()+"().length() < 1){\n");
 				valide.append("\t\t\t errors.add(\""+field.getName()+"\",new ActionMessage(\""+field.getName()+".error.required\"));\n");
 				valide.append("\t\t}\n");
+			}
 			}
 		
     stringBuffer.append(TEXT_16);

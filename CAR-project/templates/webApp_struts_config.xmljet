@@ -39,10 +39,10 @@ StringBuffer actions = new StringBuffer();
 								}
 								if(v != null && a != null){
 									actions.append("<action path=\"/"+page.getName()+"\" "+
-															"type=\"org.lip6.struts.servletAction.AddContactAction\""+
-															" name=\""+v.getName()+"\" scope=\"request\"" +
+															"type=\"struts.servletAction."+a.getName()+"Action\""+
+															" name=\""+v.getName()+"ValidationForm\" scope=\"request\"" +
 															
-															" input=\"\">\n"+
+															" input=\"/pages/"+v.getPage().getName()+".jsp\">\n"+
 														"\t\t\t<forward name=\"success\" path=\"/pages/success.jsp\" />\n"+
 														"\t\t\t<forward name=\"error\" path=\"/pages/error.jsp\" />\n"+
 													"\t\t</action>\n");

@@ -54,7 +54,7 @@ public class MainGeneratorStrutsValidator {
 								if(v != null){
 									GenerateStrutsValidator generator = GenerateStrutsValidator.create(null);
 									try {
-										output = new FileWriter("generated_struts/src/actionForm/"+v.getName()+"ValidationForm.java");
+										output = new FileWriter(args[1] + "/src/org/lip6/struts/actionForm/"+v.getName()+"ValidationForm.java");
 										writer = new BufferedWriter(output);
 										writer.write(generator.generate(input));
 										writer.close();

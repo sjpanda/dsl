@@ -1,7 +1,7 @@
 <%@ jet package="webapp.struts.domain" class="GenerateStrutsClassMetier" 
 	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
 <% BusinessObject obj = (BusinessObject)argument; %>
-package <%= obj.getPackage() %>;
+package <%= obj.getPackage() %>.domain;
 
 public class <%= obj.getName() %> {
 	<%

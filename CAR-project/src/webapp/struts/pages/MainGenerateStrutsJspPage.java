@@ -35,7 +35,7 @@ public class MainGenerateStrutsJspPage {
 
 		try {
 			for(Page page : pages){
-				output = new FileWriter("generated_struts/WebContent/pages/" + page.getName() + ".jsp");
+				output = new FileWriter(args[1] + "/WebContent/pages/" + page.getName() + ".jsp");
 				writer = new BufferedWriter(output);
 				writer.write(generator.generate(page));
 				writer.close();

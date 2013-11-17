@@ -97,11 +97,11 @@
   </model>
   <controller>
     <validator
-        name="addContact"
+        name="AddContact"
         package="org.lip6.struts"
         page="//@view/@page.1"/>
     <action
-        name="addContact"
+        name="AddContact"
         businessObject="//@model/@businessObject.0"
         returnType=""/>
   </controller>

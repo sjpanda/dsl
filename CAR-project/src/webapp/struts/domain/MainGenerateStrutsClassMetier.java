@@ -39,7 +39,7 @@ public class MainGenerateStrutsClassMetier {
 
 		try {
 			for(BusinessObject businessObject : businessObjects){
-				output = new FileWriter("generated_struts/src/domain/" + businessObject.getName() + ".java");
+				output = new FileWriter(args[1] + "/src/org/lip6/struts/domain/" + businessObject.getName() + ".java");
 				writer = new BufferedWriter(output);
 				writer.write(generator.generate(businessObject));
 				writer.close();

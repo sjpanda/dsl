@@ -37,7 +37,7 @@ public class MainGenerateStrutsConfig {
 		GenerateStrutsConfig generator = GenerateStrutsConfig.create(null);
 
 		try {
-			output = new FileWriter("generated_struts/WebContent/WEB-INF/struts-config.xml");
+			output = new FileWriter(args[1] + "/WebContent/WEB-INF/struts-config.xml");
 			writer = new BufferedWriter(output);
 			writer.write(generator.generate(webApp));
 			writer.close();
