@@ -290,14 +290,6 @@ public class WebappSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case WebappPackage.MESSAGES: {
-				Messages messages = (Messages)theEObject;
-				T result = caseMessages(messages);
-				if (result == null) result = caseTag(messages);
-				if (result == null) result = caseInstruction(messages);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case WebappPackage.ATTRIBUTE: {
 				Attribute attribute = (Attribute)theEObject;
 				T result = caseAttribute(attribute);
@@ -313,6 +305,14 @@ public class WebappSwitch<T> extends Switch<T> {
 			case WebappPackage.NAVIGATION: {
 				Navigation navigation = (Navigation)theEObject;
 				T result = caseNavigation(navigation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case WebappPackage.MESSAGES: {
+				Messages messages = (Messages)theEObject;
+				T result = caseMessages(messages);
+				if (result == null) result = caseTag(messages);
+				if (result == null) result = caseInstruction(messages);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

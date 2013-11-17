@@ -1170,6 +1170,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getPage_IsMain() {
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getPage_Properties() {
 		return (EReference)pageEClass.getEStructuralFeatures().get(0);
 	}
@@ -1829,6 +1838,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEReference(pageEClass, PAGE__TITLE);
 		createEReference(pageEClass, PAGE__INSTRUCTION);
 		createEAttribute(pageEClass, PAGE__NAME);
+		createEAttribute(pageEClass, PAGE__IS_MAIN);
 
 		formEClass = createEClass(FORM);
 		createEReference(formEClass, FORM__TAG);
@@ -1884,8 +1894,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(fieldEClass, FIELD__DEFAULT_VALUE);
 		createEReference(fieldEClass, FIELD__BUSINESS_OBJECT);
 
-		messagesEClass = createEClass(MESSAGES);
-
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__NAME);
 		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
@@ -1896,6 +1904,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(navigationEClass, NAVIGATION__MESSAGE);
 		createEReference(navigationEClass, NAVIGATION__FROM);
 		createEReference(navigationEClass, NAVIGATION__TO);
+
+		messagesEClass = createEClass(MESSAGES);
 
 		// Create enums
 		behaviorEEnum = createEEnum(BEHAVIOR);
@@ -2049,6 +2059,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEReference(getPage_Title(), this.getMapping(), null, "title", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Instruction(), this.getInstruction(), null, "instruction", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_IsMain(), ecorePackage.getEBoolean(), "isMain", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForm_Tag(), this.getTag(), null, "tag", null, 1, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2104,8 +2115,6 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getField_DefaultValue(), ecorePackage.getEString(), "defaultValue", null, 0, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getField_BusinessObject(), this.getBusinessObject(), null, "businessObject", null, 1, 1, Field.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(messagesEClass, Messages.class, "Messages", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(attributeEClass, Attribute.class, "Attribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2116,6 +2125,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getNavigation_Message(), ecorePackage.getEString(), "message", null, 1, 1, Navigation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNavigation_From(), this.getPage(), null, "from", null, 0, 1, Navigation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNavigation_To(), this.getPage(), null, "to", null, 1, 1, Navigation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(messagesEClass, Messages.class, "Messages", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(behaviorEEnum, Behavior.class, "Behavior");

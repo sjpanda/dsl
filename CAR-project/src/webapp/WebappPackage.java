@@ -1226,13 +1226,22 @@ public interface WebappPackage extends EPackage {
 	int PAGE__NAME = 3;
 
 	/**
+	 * The feature id for the '<em><b>Is Main</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__IS_MAIN = 4;
+
+	/**
 	 * The number of structural features of the '<em>Page</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE_FEATURE_COUNT = 4;
+	int PAGE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Page</em>' class.
@@ -1251,7 +1260,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getInstruction()
 	 * @generated
 	 */
-	int INSTRUCTION = 37;
+	int INSTRUCTION = 36;
 
 	/**
 	 * The number of structural features of the '<em>Instruction</em>' class.
@@ -1993,43 +2002,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getMessages()
 	 * @generated
 	 */
-	int MESSAGES = 35;
-
-	/**
-	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGES__ATTRIBUTE = TAG__ATTRIBUTE;
-
-	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGES__PROPERTY = TAG__PROPERTY;
-
-	/**
-	 * The number of structural features of the '<em>Messages</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGES_FEATURE_COUNT = TAG_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Messages</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGES_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
+	int MESSAGES = 38;
 
 	/**
 	 * The meta object id for the '{@link webapp.impl.AttributeImpl <em>Attribute</em>}' class.
@@ -2039,7 +2012,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getAttribute()
 	 * @generated
 	 */
-	int ATTRIBUTE = 36;
+	int ATTRIBUTE = 35;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2085,7 +2058,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getNavigation()
 	 * @generated
 	 */
-	int NAVIGATION = 38;
+	int NAVIGATION = 37;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -2131,6 +2104,42 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int NAVIGATION_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES__PROPERTY = TAG__PROPERTY;
+
+	/**
+	 * The number of structural features of the '<em>Messages</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES_FEATURE_COUNT = TAG_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Messages</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES_OPERATION_COUNT = TAG_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
@@ -3039,6 +3048,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPage_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Page#isIsMain <em>Is Main</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Main</em>'.
+	 * @see webapp.Page#isIsMain()
+	 * @see #getPage()
+	 * @generated
+	 */
+	EAttribute getPage_IsMain();
 
 	/**
 	 * Returns the meta object for the reference list '{@link webapp.Page#getProperties <em>Properties</em>}'.
@@ -4376,6 +4396,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PAGE__NAME = eINSTANCE.getPage_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Main</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PAGE__IS_MAIN = eINSTANCE.getPage_IsMain();
 
 		/**
 		 * The meta object literal for the '<em><b>Properties</b></em>' reference list feature.

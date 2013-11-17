@@ -1078,10 +1078,10 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (mappingItemProvider != null) mappingItemProvider.dispose();
 		if (businessObjectItemProvider != null) businessObjectItemProvider.dispose();
 		if (fieldItemProvider != null) fieldItemProvider.dispose();
-		if (messagesItemProvider != null) messagesItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (instructionItemProvider != null) instructionItemProvider.dispose();
 		if (navigationItemProvider != null) navigationItemProvider.dispose();
+		if (messagesItemProvider != null) messagesItemProvider.dispose();
 	}
 
 }

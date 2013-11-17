@@ -208,10 +208,6 @@ public class WebappAdapterFactory extends AdapterFactoryImpl {
 				return createFieldAdapter();
 			}
 			@Override
-			public Adapter caseMessages(Messages object) {
-				return createMessagesAdapter();
-			}
-			@Override
 			public Adapter caseAttribute(Attribute object) {
 				return createAttributeAdapter();
 			}
@@ -222,6 +218,10 @@ public class WebappAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseNavigation(Navigation object) {
 				return createNavigationAdapter();
+			}
+			@Override
+			public Adapter caseMessages(Messages object) {
+				return createMessagesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link webapp.Page#getTitle <em>Title</em>}</li>
  *   <li>{@link webapp.Page#getInstruction <em>Instruction</em>}</li>
  *   <li>{@link webapp.Page#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.Page#isIsMain <em>Is Main</em>}</li>
  * </ul>
  * </p>
  *
@@ -51,6 +52,32 @@ public interface Page extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Main</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Main</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Main</em>' attribute.
+	 * @see #setIsMain(boolean)
+	 * @see webapp.WebappPackage#getPage_IsMain()
+	 * @model
+	 * @generated
+	 */
+	boolean isIsMain();
+
+	/**
+	 * Sets the value of the '{@link webapp.Page#isIsMain <em>Is Main</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Main</em>' attribute.
+	 * @see #isIsMain()
+	 * @generated
+	 */
+	void setIsMain(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Properties</b></em>' reference list.

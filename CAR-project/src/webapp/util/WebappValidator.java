@@ -156,14 +156,14 @@ public class WebappValidator extends EObjectValidator {
 				return validateBusinessObject((BusinessObject)value, diagnostics, context);
 			case WebappPackage.FIELD:
 				return validateField((Field)value, diagnostics, context);
-			case WebappPackage.MESSAGES:
-				return validateMessages((Messages)value, diagnostics, context);
 			case WebappPackage.ATTRIBUTE:
 				return validateAttribute((Attribute)value, diagnostics, context);
 			case WebappPackage.INSTRUCTION:
 				return validateInstruction((Instruction)value, diagnostics, context);
 			case WebappPackage.NAVIGATION:
 				return validateNavigation((Navigation)value, diagnostics, context);
+			case WebappPackage.MESSAGES:
+				return validateMessages((Messages)value, diagnostics, context);
 			case WebappPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case WebappPackage.CHARSET:

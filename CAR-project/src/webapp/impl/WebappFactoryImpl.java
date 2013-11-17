@@ -91,10 +91,10 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 			case WebappPackage.MAPPING: return createMapping();
 			case WebappPackage.BUSINESS_OBJECT: return createBusinessObject();
 			case WebappPackage.FIELD: return createField();
-			case WebappPackage.MESSAGES: return createMessages();
 			case WebappPackage.ATTRIBUTE: return createAttribute();
 			case WebappPackage.INSTRUCTION: return createInstruction();
 			case WebappPackage.NAVIGATION: return createNavigation();
+			case WebappPackage.MESSAGES: return createMessages();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

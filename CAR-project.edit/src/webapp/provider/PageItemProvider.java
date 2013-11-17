@@ -66,6 +66,7 @@ public class PageItemProvider
 			addPropertiesPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
+			addIsMainPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -88,6 +89,28 @@ public class PageItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Is Main feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addIsMainPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Page_isMain_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Page_isMain_feature", "_UI_Page_type"),
+				 WebappPackage.Literals.PAGE__IS_MAIN,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
 				 null,
 				 null));
 	}
@@ -205,6 +228,7 @@ public class PageItemProvider
 		switch (notification.getFeatureID(Page.class)) {
 			case WebappPackage.PAGE__TITLE:
 			case WebappPackage.PAGE__NAME:
+			case WebappPackage.PAGE__IS_MAIN:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebappPackage.PAGE__INSTRUCTION:

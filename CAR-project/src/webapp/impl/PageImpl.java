@@ -36,6 +36,7 @@ import webapp.WebappPackage;
  *   <li>{@link webapp.impl.PageImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getInstruction <em>Instruction</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getName <em>Name</em>}</li>
+ *   <li>{@link webapp.impl.PageImpl#isIsMain <em>Is Main</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,6 +94,26 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	protected String name = NAME_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #isIsMain() <em>Is Main</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMain()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_MAIN_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isIsMain() <em>Is Main</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isIsMain()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isMain = IS_MAIN_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -130,6 +151,27 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.PAGE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean isIsMain() {
+		return isMain;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsMain(boolean newIsMain) {
+		boolean oldIsMain = isMain;
+		isMain = newIsMain;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.PAGE__IS_MAIN, oldIsMain, isMain));
 	}
 
 	/**
@@ -225,6 +267,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return getInstruction();
 			case WebappPackage.PAGE__NAME:
 				return getName();
+			case WebappPackage.PAGE__IS_MAIN:
+				return isIsMain();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -252,6 +296,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case WebappPackage.PAGE__NAME:
 				setName((String)newValue);
 				return;
+			case WebappPackage.PAGE__IS_MAIN:
+				setIsMain((Boolean)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -276,6 +323,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case WebappPackage.PAGE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
+			case WebappPackage.PAGE__IS_MAIN:
+				setIsMain(IS_MAIN_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -296,6 +346,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return instruction != null && !instruction.isEmpty();
 			case WebappPackage.PAGE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case WebappPackage.PAGE__IS_MAIN:
+				return isMain != IS_MAIN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -312,6 +364,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
 		result.append(name);
+		result.append(", isMain: ");
+		result.append(isMain);
 		result.append(')');
 		return result.toString();
 	}
