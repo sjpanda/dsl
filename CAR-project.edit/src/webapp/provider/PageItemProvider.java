@@ -63,9 +63,9 @@ public class PageItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addNamePropertyDescriptor(object);
 			addPropertiesPropertyDescriptor(object);
 			addTitlePropertyDescriptor(object);
+			addNamePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -203,8 +203,8 @@ public class PageItemProvider
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Page.class)) {
-			case WebappPackage.PAGE__NAME:
 			case WebappPackage.PAGE__TITLE:
+			case WebappPackage.PAGE__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case WebappPackage.PAGE__INSTRUCTION:

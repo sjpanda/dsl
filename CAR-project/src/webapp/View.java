@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link webapp.View#getPage <em>Page</em>}</li>
+ *   <li>{@link webapp.View#getNavigation <em>Navigation</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,5 +39,21 @@ public interface View extends EObject {
 	 * @generated
 	 */
 	EList<Page> getPage();
+
+	/**
+	 * Returns the value of the '<em><b>Navigation</b></em>' containment reference list.
+	 * The list contents are of type {@link webapp.Navigation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Navigation</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Navigation</em>' containment reference list.
+	 * @see webapp.WebappPackage#getView_Navigation()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<Navigation> getNavigation();
 
 } // View

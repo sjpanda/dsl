@@ -35,6 +35,10 @@ public class MainGenerateJsfJspPage {
 
 		try {
 			for(Page page : pages){
+				output = new FileWriter("generated_jsf/pages/index.jsp");
+				writer = new BufferedWriter(output);
+				writer.write("Welcome");
+				writer.close();
 				output = new FileWriter("generated_jsf/pages/" + page.getName() + ".jsp");
 				writer = new BufferedWriter(output);
 				writer.write(generator.generate(page));

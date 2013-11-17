@@ -3,13 +3,14 @@ package de.vogella.jsf.starter.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class User {
+public class DAOUser {
 	private final static String RESOURCE_JDBC = "java:comp/env/jdbc/jsf";
 	
 	private Connection getConnection(){
@@ -20,7 +21,9 @@ public class User {
 			return lConnection;
 		} catch (NamingException e) {
 			return null; 
-		}
+		} catch (SQLException e) {
+			return null;
+		} 
 	}
 	
 	public String getAll(){
@@ -30,11 +33,9 @@ public class User {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("SELECT * FROM User");
-			lPreparedStatementCreation.executeQuery();
+					connect.prepareStatement("SELECT * FROM User");
+			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -49,11 +50,9 @@ public class User {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("UPDATE User SET name = " + name + " WHERE id = " + id);
+					connect.prepareStatement("UPDATE User SET name = " + name + " WHERE id = " + id);
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -68,11 +67,9 @@ public class User {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("UPDATE User SET password = " + password + " WHERE id = " + id);
+					connect.prepareStatement("UPDATE User SET password = " + password + " WHERE id = " + id);
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -86,16 +83,14 @@ public class User {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("INSERT INTO User(name, password) VALUES(?, ?)");
+					connect.prepareStatement("INSERT INTO User(name, password) VALUES(?, ?)");
 			
-			lPreparedStatementCreation.setLong(1, name); 
+			lPreparedStatementCreation.setObject(1, name); 
 			
-			lPreparedStatementCreation.setLong(2, password); 
+			lPreparedStatementCreation.setObject(2, password); 
 			
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 

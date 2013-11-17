@@ -923,6 +923,29 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link webapp.Navigation} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected NavigationItemProvider navigationItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link webapp.Navigation}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createNavigationAdapter() {
+		if (navigationItemProvider == null) {
+			navigationItemProvider = new NavigationItemProvider(this);
+		}
+
+		return navigationItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1058,6 +1081,7 @@ public class WebappItemProviderAdapterFactory extends WebappAdapterFactory imple
 		if (messagesItemProvider != null) messagesItemProvider.dispose();
 		if (attributeItemProvider != null) attributeItemProvider.dispose();
 		if (instructionItemProvider != null) instructionItemProvider.dispose();
+		if (navigationItemProvider != null) navigationItemProvider.dispose();
 	}
 
 }

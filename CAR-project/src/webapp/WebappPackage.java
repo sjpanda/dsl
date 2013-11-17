@@ -216,13 +216,22 @@ public interface WebappPackage extends EPackage {
 	int VIEW__PAGE = 0;
 
 	/**
+	 * The feature id for the '<em><b>Navigation</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW__NAVIGATION = 1;
+
+	/**
 	 * The number of structural features of the '<em>View</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VIEW_FEATURE_COUNT = 1;
+	int VIEW_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>View</em>' class.
@@ -1181,22 +1190,13 @@ public interface WebappPackage extends EPackage {
 	int PAGE = 22;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PAGE__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Properties</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__PROPERTIES = 1;
+	int PAGE__PROPERTIES = 0;
 
 	/**
 	 * The feature id for the '<em><b>Title</b></em>' reference.
@@ -1205,7 +1205,7 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__TITLE = 2;
+	int PAGE__TITLE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Instruction</b></em>' containment reference list.
@@ -1214,7 +1214,16 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PAGE__INSTRUCTION = 3;
+	int PAGE__INSTRUCTION = 2;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PAGE__NAME = 3;
 
 	/**
 	 * The number of structural features of the '<em>Page</em>' class.
@@ -1273,22 +1282,22 @@ public interface WebappPackage extends EPackage {
 	int TAG = 26;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TAG__PROPERTY = INSTRUCTION_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TAG__ATTRIBUTE = INSTRUCTION_FEATURE_COUNT + 1;
+	int TAG__ATTRIBUTE = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TAG__PROPERTY = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Tag</em>' class.
@@ -1319,15 +1328,6 @@ public interface WebappPackage extends EPackage {
 	int FORM = 23;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FORM__PROPERTY = TAG__PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1335,6 +1335,15 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORM__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORM__PROPERTY = TAG__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
@@ -1475,15 +1484,6 @@ public interface WebappPackage extends EPackage {
 	int INPUT = 27;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INPUT__PROPERTY = TAG__PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1491,6 +1491,15 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int INPUT__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INPUT__PROPERTY = TAG__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -1575,15 +1584,6 @@ public interface WebappPackage extends EPackage {
 	int TABLE_HTML = 28;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TABLE_HTML__PROPERTY = TAG__PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1591,6 +1591,15 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int TABLE_HTML__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TABLE_HTML__PROPERTY = TAG__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tr</b></em>' containment reference list.
@@ -1630,15 +1639,6 @@ public interface WebappPackage extends EPackage {
 	int TR = 29;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TR__PROPERTY = TAG__PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1646,6 +1646,15 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int TR__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TR__PROPERTY = TAG__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Th</b></em>' containment reference list.
@@ -1694,15 +1703,6 @@ public interface WebappPackage extends EPackage {
 	int TD = 30;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TD__PROPERTY = TAG__PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1710,6 +1710,15 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int TD__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TD__PROPERTY = TAG__PROPERTY;
 
 	/**
 	 * The feature id for the '<em><b>Tag</b></em>' containment reference list.
@@ -1749,15 +1758,6 @@ public interface WebappPackage extends EPackage {
 	int TH = 31;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TH__PROPERTY = TAG__PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1765,6 +1765,15 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int TH__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TH__PROPERTY = TAG__PROPERTY;
 
 	/**
 	 * The number of structural features of the '<em>Th</em>' class.
@@ -1987,15 +1996,6 @@ public interface WebappPackage extends EPackage {
 	int MESSAGES = 35;
 
 	/**
-	 * The feature id for the '<em><b>Property</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int MESSAGES__PROPERTY = TAG__PROPERTY;
-
-	/**
 	 * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2003,6 +2003,15 @@ public interface WebappPackage extends EPackage {
 	 * @ordered
 	 */
 	int MESSAGES__ATTRIBUTE = TAG__ATTRIBUTE;
+
+	/**
+	 * The feature id for the '<em><b>Property</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGES__PROPERTY = TAG__PROPERTY;
 
 	/**
 	 * The number of structural features of the '<em>Messages</em>' class.
@@ -2069,6 +2078,61 @@ public interface WebappPackage extends EPackage {
 	int ATTRIBUTE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link webapp.impl.NavigationImpl <em>Navigation</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see webapp.impl.NavigationImpl
+	 * @see webapp.impl.WebappPackageImpl#getNavigation()
+	 * @generated
+	 */
+	int NAVIGATION = 38;
+
+	/**
+	 * The feature id for the '<em><b>Message</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION__MESSAGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>From</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION__FROM = 1;
+
+	/**
+	 * The feature id for the '<em><b>To</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION__TO = 2;
+
+	/**
+	 * The number of structural features of the '<em>Navigation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Navigation</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NAVIGATION_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link webapp.Behavior <em>Behavior</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2076,7 +2140,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getBehavior()
 	 * @generated
 	 */
-	int BEHAVIOR = 38;
+	int BEHAVIOR = 39;
 
 	/**
 	 * The meta object id for the '{@link webapp.Charset <em>Charset</em>}' enum.
@@ -2086,7 +2150,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getCharset()
 	 * @generated
 	 */
-	int CHARSET = 39;
+	int CHARSET = 40;
 
 	/**
 	 * The meta object id for the '{@link webapp.ColumnType <em>Column Type</em>}' enum.
@@ -2096,7 +2160,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getColumnType()
 	 * @generated
 	 */
-	int COLUMN_TYPE = 40;
+	int COLUMN_TYPE = 41;
 
 	/**
 	 * The meta object id for the '{@link webapp.FormMethod <em>Form Method</em>}' enum.
@@ -2106,7 +2170,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getFormMethod()
 	 * @generated
 	 */
-	int FORM_METHOD = 41;
+	int FORM_METHOD = 42;
 
 	/**
 	 * The meta object id for the '{@link webapp.InputType <em>Input Type</em>}' enum.
@@ -2116,7 +2180,7 @@ public interface WebappPackage extends EPackage {
 	 * @see webapp.impl.WebappPackageImpl#getInputType()
 	 * @generated
 	 */
-	int INPUT_TYPE = 42;
+	int INPUT_TYPE = 43;
 
 
 	/**
@@ -2258,6 +2322,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getView_Page();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link webapp.View#getNavigation <em>Navigation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Navigation</em>'.
+	 * @see webapp.View#getNavigation()
+	 * @see #getView()
+	 * @generated
+	 */
+	EReference getView_Navigation();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Library <em>Library</em>}'.
@@ -3501,6 +3576,49 @@ public interface WebappPackage extends EPackage {
 	EClass getInstruction();
 
 	/**
+	 * Returns the meta object for class '{@link webapp.Navigation <em>Navigation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Navigation</em>'.
+	 * @see webapp.Navigation
+	 * @generated
+	 */
+	EClass getNavigation();
+
+	/**
+	 * Returns the meta object for the attribute '{@link webapp.Navigation#getMessage <em>Message</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message</em>'.
+	 * @see webapp.Navigation#getMessage()
+	 * @see #getNavigation()
+	 * @generated
+	 */
+	EAttribute getNavigation_Message();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.Navigation#getFrom <em>From</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>From</em>'.
+	 * @see webapp.Navigation#getFrom()
+	 * @see #getNavigation()
+	 * @generated
+	 */
+	EReference getNavigation_From();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.Navigation#getTo <em>To</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>To</em>'.
+	 * @see webapp.Navigation#getTo()
+	 * @see #getNavigation()
+	 * @generated
+	 */
+	EReference getNavigation_To();
+
+	/**
 	 * Returns the meta object for enum '{@link webapp.Behavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3682,6 +3800,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EReference VIEW__PAGE = eINSTANCE.getView_Page();
+
+		/**
+		 * The meta object literal for the '<em><b>Navigation</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VIEW__NAVIGATION = eINSTANCE.getView_Navigation();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.LibraryImpl <em>Library</em>}' class.
@@ -4680,6 +4806,40 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EClass INSTRUCTION = eINSTANCE.getInstruction();
+
+		/**
+		 * The meta object literal for the '{@link webapp.impl.NavigationImpl <em>Navigation</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see webapp.impl.NavigationImpl
+		 * @see webapp.impl.WebappPackageImpl#getNavigation()
+		 * @generated
+		 */
+		EClass NAVIGATION = eINSTANCE.getNavigation();
+
+		/**
+		 * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NAVIGATION__MESSAGE = eINSTANCE.getNavigation_Message();
+
+		/**
+		 * The meta object literal for the '<em><b>From</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NAVIGATION__FROM = eINSTANCE.getNavigation_From();
+
+		/**
+		 * The meta object literal for the '<em><b>To</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NAVIGATION__TO = eINSTANCE.getNavigation_To();
 
 		/**
 		 * The meta object literal for the '{@link webapp.Behavior <em>Behavior</em>}' enum.

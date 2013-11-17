@@ -9,7 +9,7 @@
 </head>
 <body>
 <f:view>
-  <f:loadBundle basename="messages" var="messages" />
+  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="messages" />
   <h:form>
   	
     <h:panelGrid columns="2">
@@ -17,7 +17,7 @@
 <h:inputText value="#{Card.leftside}">
 </h:inputText>
 <h:outputLabel value="#{messages.right}"></h:outputLabel>
-<h:inputText value="#{User.rightside}">
+<h:inputText value="#{Card.rightside}">
 </h:inputText>
 
     </h:panelGrid>

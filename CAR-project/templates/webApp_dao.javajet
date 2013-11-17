@@ -13,7 +13,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class <%= obj.getName() %> {
+public class DAO<%= obj.getName() %> {
 	private final static String RESOURCE_JDBC = "java:comp/env/jdbc/<%= obj.getModel().getDatabaseName() %>";
 	
 	private Connection getConnection(){
@@ -24,7 +24,9 @@ public class <%= obj.getName() %> {
 			return lConnection;
 		} catch (NamingException e) {
 			return null; 
-		}
+		} catch (SQLException e) {
+			return null;
+		} 
 	}
 	
 	public String getAll(){
@@ -34,11 +36,9 @@ public class <%= obj.getName() %> {
 				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("SELECT * FROM <%= obj.getName() %>");
-			ResultSet resultSet lPreparedStatementCreation.executeQuery();
+					connect.prepareStatement("SELECT * FROM <%= obj.getName() %>");
+			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -58,11 +58,9 @@ public class <%= obj.getName() %> {
 				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("UPDATE <%= obj.getName() %> SET <%= fields.get(i).getName() %> = " + <%= fields.get(i).getName() %> + " WHERE id = " + id);
+					connect.prepareStatement("UPDATE <%= obj.getName() %> SET <%= fields.get(i).getName() %> = " + <%= fields.get(i).getName() %> + " WHERE id = " + id);
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -85,16 +83,14 @@ public class <%= obj.getName() %> {
 				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("INSERT INTO <%= obj.getName() %>(<%= concatFields %>) VALUES(<%= queryArgs %>)");
+					connect.prepareStatement("INSERT INTO <%= obj.getName() %>(<%= concatFields %>) VALUES(<%= queryArgs %>)");
 			<%
 			for(int j=0; j<fields.size(); j++){
 			%>
-			lPreparedStatementCreation.setLong(<%= j+1 %>, <%= fields.get(j).getName() %>); 
+			lPreparedStatementCreation.setObject(<%= j+1 %>, <%= fields.get(j).getName() %>); 
 			<%}%>
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 

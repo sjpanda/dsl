@@ -1,4 +1,4 @@
-package webapp.jsp.config;
+package webapp.jsf.config;
 
 import java.io.BufferedWriter;
 import java.io.File;

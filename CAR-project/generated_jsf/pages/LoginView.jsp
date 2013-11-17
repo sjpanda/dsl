@@ -9,7 +9,7 @@
 </head>
 <body>
 <f:view>
-  <f:loadBundle basename="messages" var="messages" />
+  <f:loadBundle basename="de.vogella.jsf.starter.messages" var="messages" />
   <h:form>
   	
     <h:panelGrid columns="2">

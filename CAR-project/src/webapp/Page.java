@@ -14,10 +14,10 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link webapp.Page#getName <em>Name</em>}</li>
  *   <li>{@link webapp.Page#getProperties <em>Properties</em>}</li>
  *   <li>{@link webapp.Page#getTitle <em>Title</em>}</li>
  *   <li>{@link webapp.Page#getInstruction <em>Instruction</em>}</li>
+ *   <li>{@link webapp.Page#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *

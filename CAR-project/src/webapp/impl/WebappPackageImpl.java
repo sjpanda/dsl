@@ -36,6 +36,7 @@ import webapp.Library;
 import webapp.Mapping;
 import webapp.Messages;
 import webapp.Model;
+import webapp.Navigation;
 import webapp.OnDelete;
 import webapp.OnUpdate;
 import webapp.Page;
@@ -337,6 +338,13 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass navigationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum behaviorEEnum = null;
 
 	/**
@@ -552,6 +560,15 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 */
 	public EReference getView_Page() {
 		return (EReference)viewEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getView_Navigation() {
+		return (EReference)viewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1145,7 +1162,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EAttribute getPage_Name() {
-		return (EAttribute)pageEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)pageEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1154,7 +1171,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EReference getPage_Properties() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(1);
+		return (EReference)pageEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1163,7 +1180,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EReference getPage_Title() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(2);
+		return (EReference)pageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1172,7 +1189,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EReference getPage_Instruction() {
-		return (EReference)pageEClass.getEStructuralFeatures().get(3);
+		return (EReference)pageEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -1271,7 +1288,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EAttribute getTag_Property() {
-		return (EAttribute)tagEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)tagEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -1280,7 +1297,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * @generated
 	 */
 	public EReference getTag_Attribute() {
-		return (EReference)tagEClass.getEStructuralFeatures().get(1);
+		return (EReference)tagEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1603,6 +1620,42 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getNavigation() {
+		return navigationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNavigation_Message() {
+		return (EAttribute)navigationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNavigation_From() {
+		return (EReference)navigationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNavigation_To() {
+		return (EReference)navigationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getBehavior() {
 		return behaviorEEnum;
 	}
@@ -1686,6 +1739,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 
 		viewEClass = createEClass(VIEW);
 		createEReference(viewEClass, VIEW__PAGE);
+		createEReference(viewEClass, VIEW__NAVIGATION);
 
 		libraryEClass = createEClass(LIBRARY);
 
@@ -1771,10 +1825,10 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEReference(validatorEClass, VALIDATOR__PAGE);
 
 		pageEClass = createEClass(PAGE);
-		createEAttribute(pageEClass, PAGE__NAME);
 		createEReference(pageEClass, PAGE__PROPERTIES);
 		createEReference(pageEClass, PAGE__TITLE);
 		createEReference(pageEClass, PAGE__INSTRUCTION);
+		createEAttribute(pageEClass, PAGE__NAME);
 
 		formEClass = createEClass(FORM);
 		createEReference(formEClass, FORM__TAG);
@@ -1789,8 +1843,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(actionEClass, ACTION__RETURN_TYPE);
 
 		tagEClass = createEClass(TAG);
-		createEAttribute(tagEClass, TAG__PROPERTY);
 		createEReference(tagEClass, TAG__ATTRIBUTE);
+		createEAttribute(tagEClass, TAG__PROPERTY);
 
 		inputEClass = createEClass(INPUT);
 		createEAttribute(inputEClass, INPUT__TYPE);
@@ -1837,6 +1891,11 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
 
 		instructionEClass = createEClass(INSTRUCTION);
+
+		navigationEClass = createEClass(NAVIGATION);
+		createEAttribute(navigationEClass, NAVIGATION__MESSAGE);
+		createEReference(navigationEClass, NAVIGATION__FROM);
+		createEReference(navigationEClass, NAVIGATION__TO);
 
 		// Create enums
 		behaviorEEnum = createEEnum(BEHAVIOR);
@@ -1900,6 +1959,7 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 
 		initEClass(viewEClass, View.class, "View", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getView_Page(), this.getPage(), null, "page", null, 1, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_Navigation(), this.getNavigation(), null, "navigation", null, 0, -1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(libraryEClass, Library.class, "Library", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1985,10 +2045,10 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEReference(getValidator_Page(), this.getPage(), null, "page", null, 0, 1, Validator.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(pageEClass, Page.class, "Page", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Properties(), this.getProperties(), null, "properties", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Title(), this.getMapping(), null, "title", null, 0, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPage_Instruction(), this.getInstruction(), null, "instruction", null, 0, -1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPage_Name(), ecorePackage.getEString(), "name", null, 1, 1, Page.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(formEClass, Form.class, "Form", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getForm_Tag(), this.getTag(), null, "tag", null, 1, -1, Form.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2003,8 +2063,8 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getAction_ReturnType(), ecorePackage.getEString(), "returnType", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(tagEClass, Tag.class, "Tag", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTag_Property(), ecorePackage.getEString(), "property", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTag_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTag_Property(), ecorePackage.getEString(), "property", null, 0, 1, Tag.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(inputEClass, Input.class, "Input", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInput_Type(), this.getInputType(), "type", null, 1, 1, Input.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2051,6 +2111,11 @@ public class WebappPackageImpl extends EPackageImpl implements WebappPackage {
 		initEAttribute(getAttribute_Value(), ecorePackage.getEString(), "value", null, 1, 1, Attribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(navigationEClass, Navigation.class, "Navigation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNavigation_Message(), ecorePackage.getEString(), "message", null, 1, 1, Navigation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNavigation_From(), this.getPage(), null, "from", null, 0, 1, Navigation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNavigation_To(), this.getPage(), null, "to", null, 1, 1, Navigation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(behaviorEEnum, Behavior.class, "Behavior");

@@ -355,6 +355,15 @@ public interface WebappFactory extends EFactory {
 	Instruction createInstruction();
 
 	/**
+	 * Returns a new object of class '<em>Navigation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Navigation</em>'.
+	 * @generated
+	 */
+	Navigation createNavigation();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

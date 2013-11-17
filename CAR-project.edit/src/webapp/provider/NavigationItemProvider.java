@@ -11,28 +11,27 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.util.ResourceLocator;
 
-import org.eclipse.emf.ecore.EStructuralFeature;
-
+import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
-import webapp.View;
-import webapp.WebappFactory;
+import webapp.Navigation;
 import webapp.WebappPackage;
 
 /**
- * This is the item provider adapter for a {@link webapp.View} object.
+ * This is the item provider adapter for a {@link webapp.Navigation} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ViewItemProvider
+public class NavigationItemProvider
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -46,7 +45,7 @@ public class ViewItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ViewItemProvider(AdapterFactory adapterFactory) {
+	public NavigationItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -61,50 +60,88 @@ public class ViewItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
+			addMessagePropertyDescriptor(object);
+			addFromPropertyDescriptor(object);
+			addToPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
+	 * This adds a property descriptor for the Message feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(WebappPackage.Literals.VIEW__PAGE);
-			childrenFeatures.add(WebappPackage.Literals.VIEW__NAVIGATION);
-		}
-		return childrenFeatures;
+	protected void addMessagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Navigation_message_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Navigation_message_feature", "_UI_Navigation_type"),
+				 WebappPackage.Literals.NAVIGATION__MESSAGE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
 	}
 
 	/**
+	 * This adds a property descriptor for the From feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
-		// Check the type of the specified child object and return the proper feature to use for
-		// adding (see {@link AddCommand}) it as a child.
-
-		return super.getChildFeature(object, child);
+	protected void addFromPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Navigation_from_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Navigation_from_feature", "_UI_Navigation_type"),
+				 WebappPackage.Literals.NAVIGATION__FROM,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
-	 * This returns View.gif.
+	 * This adds a property descriptor for the To feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addToPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Navigation_to_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Navigation_to_feature", "_UI_Navigation_type"),
+				 WebappPackage.Literals.NAVIGATION__TO,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This returns Navigation.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/View"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/Navigation"));
 	}
 
 	/**
@@ -115,7 +152,10 @@ public class ViewItemProvider
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_View_type");
+		String label = ((Navigation)object).getMessage();
+		return label == null || label.length() == 0 ?
+			getString("_UI_Navigation_type") :
+			getString("_UI_Navigation_type") + " " + label;
 	}
 
 	/**
@@ -129,10 +169,9 @@ public class ViewItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(View.class)) {
-			case WebappPackage.VIEW__PAGE:
-			case WebappPackage.VIEW__NAVIGATION:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
+		switch (notification.getFeatureID(Navigation.class)) {
+			case WebappPackage.NAVIGATION__MESSAGE:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -148,16 +187,6 @@ public class ViewItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.VIEW__PAGE,
-				 WebappFactory.eINSTANCE.createPage()));
-
-		newChildDescriptors.add
-			(createChildParameter
-				(WebappPackage.Literals.VIEW__NAVIGATION,
-				 WebappFactory.eINSTANCE.createNavigation()));
 	}
 
 	/**

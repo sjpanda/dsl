@@ -28,14 +28,24 @@ import webapp.WebappPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link webapp.impl.TagImpl#getProperty <em>Property</em>}</li>
  *   <li>{@link webapp.impl.TagImpl#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link webapp.impl.TagImpl#getProperty <em>Property</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public abstract class TagImpl extends InstructionImpl implements Tag {
+	/**
+	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAttribute()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Attribute> attribute;
+
 	/**
 	 * The default value of the '{@link #getProperty() <em>Property</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -55,16 +65,6 @@ public abstract class TagImpl extends InstructionImpl implements Tag {
 	 * @ordered
 	 */
 	protected String property = PROPERTY_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getAttribute() <em>Attribute</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAttribute()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Attribute> attribute;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -140,10 +140,10 @@ public abstract class TagImpl extends InstructionImpl implements Tag {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebappPackage.TAG__PROPERTY:
-				return getProperty();
 			case WebappPackage.TAG__ATTRIBUTE:
 				return getAttribute();
+			case WebappPackage.TAG__PROPERTY:
+				return getProperty();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,12 +157,12 @@ public abstract class TagImpl extends InstructionImpl implements Tag {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebappPackage.TAG__PROPERTY:
-				setProperty((String)newValue);
-				return;
 			case WebappPackage.TAG__ATTRIBUTE:
 				getAttribute().clear();
 				getAttribute().addAll((Collection<? extends Attribute>)newValue);
+				return;
+			case WebappPackage.TAG__PROPERTY:
+				setProperty((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,11 +176,11 @@ public abstract class TagImpl extends InstructionImpl implements Tag {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebappPackage.TAG__PROPERTY:
-				setProperty(PROPERTY_EDEFAULT);
-				return;
 			case WebappPackage.TAG__ATTRIBUTE:
 				getAttribute().clear();
+				return;
+			case WebappPackage.TAG__PROPERTY:
+				setProperty(PROPERTY_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -194,10 +194,10 @@ public abstract class TagImpl extends InstructionImpl implements Tag {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebappPackage.TAG__PROPERTY:
-				return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
 			case WebappPackage.TAG__ATTRIBUTE:
 				return attribute != null && !attribute.isEmpty();
+			case WebappPackage.TAG__PROPERTY:
+				return PROPERTY_EDEFAULT == null ? property != null : !PROPERTY_EDEFAULT.equals(property);
 		}
 		return super.eIsSet(featureID);
 	}

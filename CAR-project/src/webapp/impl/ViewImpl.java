@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import webapp.Navigation;
 import webapp.Page;
 import webapp.View;
 import webapp.WebappPackage;
@@ -28,6 +29,7 @@ import webapp.WebappPackage;
  * The following features are implemented:
  * <ul>
  *   <li>{@link webapp.impl.ViewImpl#getPage <em>Page</em>}</li>
+ *   <li>{@link webapp.impl.ViewImpl#getNavigation <em>Navigation</em>}</li>
  * </ul>
  * </p>
  *
@@ -43,6 +45,16 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View {
 	 * @ordered
 	 */
 	protected EList<Page> page;
+
+	/**
+	 * The cached value of the '{@link #getNavigation() <em>Navigation</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getNavigation()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Navigation> navigation;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,11 +92,25 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Navigation> getNavigation() {
+		if (navigation == null) {
+			navigation = new EObjectContainmentEList<Navigation>(Navigation.class, this, WebappPackage.VIEW__NAVIGATION);
+		}
+		return navigation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case WebappPackage.VIEW__PAGE:
 				return ((InternalEList<?>)getPage()).basicRemove(otherEnd, msgs);
+			case WebappPackage.VIEW__NAVIGATION:
+				return ((InternalEList<?>)getNavigation()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -99,6 +125,8 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View {
 		switch (featureID) {
 			case WebappPackage.VIEW__PAGE:
 				return getPage();
+			case WebappPackage.VIEW__NAVIGATION:
+				return getNavigation();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -116,6 +144,10 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View {
 				getPage().clear();
 				getPage().addAll((Collection<? extends Page>)newValue);
 				return;
+			case WebappPackage.VIEW__NAVIGATION:
+				getNavigation().clear();
+				getNavigation().addAll((Collection<? extends Navigation>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -131,6 +163,9 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View {
 			case WebappPackage.VIEW__PAGE:
 				getPage().clear();
 				return;
+			case WebappPackage.VIEW__NAVIGATION:
+				getNavigation().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -145,6 +180,8 @@ public class ViewImpl extends MinimalEObjectImpl.Container implements View {
 		switch (featureID) {
 			case WebappPackage.VIEW__PAGE:
 				return page != null && !page.isEmpty();
+			case WebappPackage.VIEW__NAVIGATION:
+				return navigation != null && !navigation.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

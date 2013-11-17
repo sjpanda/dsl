@@ -12,8 +12,8 @@
       displayName="Multiplication Calculator"/>
   <library/>
   <view>
-    <page name="LoginView"
-        properties="//@resource/@propertie.0">
+    <page properties="//@resource/@propertie.0"
+        name="LoginView">
       <instruction
           xsi:type="webapp:Form">
         <tag
@@ -34,8 +34,8 @@
             xsi:type="webapp:Messages"/>
       </instruction>
     </page>
-    <page name="Trainer"
-        properties="//@resource/@propertie.0">
+    <page properties="//@resource/@propertie.0"
+        name="Trainer">
       <instruction
           xsi:type="webapp:Form">
         <tag
@@ -70,6 +70,14 @@
           xsi:type="webapp:Text"
           content="Failed Login"/>
     </page>
+    <navigation
+        message="success"
+        from="//@view/@page.0"
+        to="//@view/@page.1"/>
+    <navigation
+        message="failed"
+        from="//@view/@page.0"
+        to="//@view/@page.2"/>
   </view>
   <model databaseName="jsf"
       url="localhost:3306"
@@ -121,7 +129,7 @@
           name="rightside"
           type="int"
           defaultValue=""
-          businessObject="//@model/@businessObject.0"/>
+          businessObject="//@model/@businessObject.1"/>
       <field
           name="result"
           type="int"

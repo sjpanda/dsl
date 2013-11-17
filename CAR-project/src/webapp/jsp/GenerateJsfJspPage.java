@@ -25,25 +25,26 @@ public class GenerateJsfJspPage
   protected final String TEXT_8 = "</title>";
   protected final String TEXT_9 = NL + "</head>" + NL + "<body>" + NL + "<f:view>";
   protected final String TEXT_10 = NL + "  <f:loadBundle basename=\"";
-  protected final String TEXT_11 = "\" var=\"";
-  protected final String TEXT_12 = "\" />";
-  protected final String TEXT_13 = NL + "  <h:form>" + NL + "  \t";
-  protected final String TEXT_14 = NL + "    <h:panelGrid columns=\"";
-  protected final String TEXT_15 = "\">";
-  protected final String TEXT_16 = NL + "      ";
-  protected final String TEXT_17 = NL + "    </h:panelGrid>";
-  protected final String TEXT_18 = NL + "    ";
+  protected final String TEXT_11 = ".";
+  protected final String TEXT_12 = "\" var=\"";
+  protected final String TEXT_13 = "\" />";
+  protected final String TEXT_14 = NL + "  <h:form>" + NL + "  \t";
+  protected final String TEXT_15 = NL + "    <h:panelGrid columns=\"";
+  protected final String TEXT_16 = "\">";
+  protected final String TEXT_17 = NL + "      ";
+  protected final String TEXT_18 = NL + "    </h:panelGrid>";
   protected final String TEXT_19 = NL + "    ";
-  protected final String TEXT_20 = NL + "  </h:form>";
-  protected final String TEXT_21 = NL + "    <h:panelGrid columns=\"";
-  protected final String TEXT_22 = "\">";
-  protected final String TEXT_23 = NL + "      ";
-  protected final String TEXT_24 = NL + "    </h:panelGrid>";
-  protected final String TEXT_25 = NL + "    ";
-  protected final String TEXT_26 = NL + "\t";
+  protected final String TEXT_20 = NL + "    ";
+  protected final String TEXT_21 = NL + "  </h:form>";
+  protected final String TEXT_22 = NL + "    <h:panelGrid columns=\"";
+  protected final String TEXT_23 = "\">";
+  protected final String TEXT_24 = NL + "      ";
+  protected final String TEXT_25 = NL + "    </h:panelGrid>";
+  protected final String TEXT_26 = NL + "    ";
   protected final String TEXT_27 = NL + "\t";
-  protected final String TEXT_28 = "\t";
-  protected final String TEXT_29 = NL + "</f:view>" + NL + "</body>" + NL + "</html>";
+  protected final String TEXT_28 = NL + "\t";
+  protected final String TEXT_29 = "\t";
+  protected final String TEXT_30 = NL + "</f:view>" + NL + "</body>" + NL + "</html>";
 
   public String generate(Object argument)
   {
@@ -71,14 +72,16 @@ public class GenerateJsfJspPage
 	for(Properties p : page.getProperties()){ 
 	propName = p.getName().split("\\."); 
     stringBuffer.append(TEXT_10);
-    stringBuffer.append( p.getName() );
+    stringBuffer.append( p.getPackage() );
     stringBuffer.append(TEXT_11);
-    stringBuffer.append( propName[propName.length - 1] );
+    stringBuffer.append( p.getName() );
     stringBuffer.append(TEXT_12);
+    stringBuffer.append( propName[propName.length - 1] );
+    stringBuffer.append(TEXT_13);
      } 
      for(Instruction instr : page.getInstruction()){
 	if(instr instanceof Form){ 
-    stringBuffer.append(TEXT_13);
+    stringBuffer.append(TEXT_14);
      EList<Tag> formTags = ((Form)instr).getTag();
   	   int nbInputText = 0;
   	   StringBuffer contentInputText = new StringBuffer();
@@ -122,18 +125,18 @@ public class GenerateJsfJspPage
   	   	  }
   	   }
   	   if(nbInputText > 0){ 
-    stringBuffer.append(TEXT_14);
-    stringBuffer.append( nbInputText );
     stringBuffer.append(TEXT_15);
+    stringBuffer.append( nbInputText );
     stringBuffer.append(TEXT_16);
-    stringBuffer.append( contentInputText.toString() );
     stringBuffer.append(TEXT_17);
-     } 
+    stringBuffer.append( contentInputText.toString() );
     stringBuffer.append(TEXT_18);
-    stringBuffer.append( contentInputButton.toString() );
+     } 
     stringBuffer.append(TEXT_19);
-    stringBuffer.append( messages.toString() );
+    stringBuffer.append( contentInputButton.toString() );
     stringBuffer.append(TEXT_20);
+    stringBuffer.append( messages.toString() );
+    stringBuffer.append(TEXT_21);
      }
 	if(instr instanceof Input) {
 		int nbInputText = 0;
@@ -155,7 +158,7 @@ public class GenerateJsfJspPage
   	   	  	 		}
   	   	  	 		Validator validator = input.getValidator();
   	   	  	 		if(validator != null){
-  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getName() + "\" />\n");
+  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getPackage() + "." + validator.getName() + "\" />\n");
   	   	  	 		}
   	   	  	 		if(textValue.getName().equalsIgnoreCase("password")) {
   	   	  	 			contentInputText.append("</h:inputSecret>\n");
@@ -170,23 +173,23 @@ public class GenerateJsfJspPage
   	   	  	 	contentInputButton.append("}\" value=\"#{" + propName[propName.length - 1] + "." + input.getButtonValue().getLeft() + "}\"></h:commandButton>\n");
   	   	  	 }
   	  if(nbInputText > 0){ 
-    stringBuffer.append(TEXT_21);
-    stringBuffer.append( nbInputText );
     stringBuffer.append(TEXT_22);
+    stringBuffer.append( nbInputText );
     stringBuffer.append(TEXT_23);
-    stringBuffer.append( contentInputText.toString() );
     stringBuffer.append(TEXT_24);
-    }
+    stringBuffer.append( contentInputText.toString() );
     stringBuffer.append(TEXT_25);
-    stringBuffer.append( contentInputButton.toString() );
+    }
     stringBuffer.append(TEXT_26);
+    stringBuffer.append( contentInputButton.toString() );
+    stringBuffer.append(TEXT_27);
     }	
 	if(instr instanceof Text) {  
-    stringBuffer.append(TEXT_27);
-    stringBuffer.append( ((Text)instr).getContent() );
     stringBuffer.append(TEXT_28);
-    }}
+    stringBuffer.append( ((Text)instr).getContent() );
     stringBuffer.append(TEXT_29);
+    }}
+    stringBuffer.append(TEXT_30);
     return stringBuffer.toString();
   }
 }

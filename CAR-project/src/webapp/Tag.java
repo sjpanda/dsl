@@ -12,8 +12,8 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link webapp.Tag#getProperty <em>Property</em>}</li>
  *   <li>{@link webapp.Tag#getAttribute <em>Attribute</em>}</li>
+ *   <li>{@link webapp.Tag#getProperty <em>Property</em>}</li>
  * </ul>
  * </p>
  *

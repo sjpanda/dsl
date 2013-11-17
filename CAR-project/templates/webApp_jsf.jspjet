@@ -20,7 +20,7 @@
 <%  String[] propName = {};
 	for(Properties p : page.getProperties()){ 
 	propName = p.getName().split("\\."); %>
-  <f:loadBundle basename="<%= p.getName() %>" var="<%= propName[propName.length - 1] %>" />
+  <f:loadBundle basename="<%= p.getPackage() %>.<%= p.getName() %>" var="<%= propName[propName.length - 1] %>" />
  <% } %>
 <% for(Instruction instr : page.getInstruction()){
 	if(instr instanceof Form){ %>
@@ -96,7 +96,7 @@
   	   	  	 		}
   	   	  	 		Validator validator = input.getValidator();
   	   	  	 		if(validator != null){
-  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getName() + "\" />\n");
+  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getPackage() + "." + validator.getName() + "\" />\n");
   	   	  	 		}
   	   	  	 		if(textValue.getName().equalsIgnoreCase("password")) {
   	   	  	 			contentInputText.append("</h:inputSecret>\n");

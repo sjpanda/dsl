@@ -94,6 +94,7 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 			case WebappPackage.MESSAGES: return createMessages();
 			case WebappPackage.ATTRIBUTE: return createAttribute();
 			case WebappPackage.INSTRUCTION: return createInstruction();
+			case WebappPackage.NAVIGATION: return createNavigation();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -513,6 +514,16 @@ public class WebappFactoryImpl extends EFactoryImpl implements WebappFactory {
 	public Instruction createInstruction() {
 		InstructionImpl instruction = new InstructionImpl();
 		return instruction;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Navigation createNavigation() {
+		NavigationImpl navigation = new NavigationImpl();
+		return navigation;
 	}
 
 	/**

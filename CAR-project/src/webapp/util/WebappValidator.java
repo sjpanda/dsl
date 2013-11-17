@@ -162,6 +162,8 @@ public class WebappValidator extends EObjectValidator {
 				return validateAttribute((Attribute)value, diagnostics, context);
 			case WebappPackage.INSTRUCTION:
 				return validateInstruction((Instruction)value, diagnostics, context);
+			case WebappPackage.NAVIGATION:
+				return validateNavigation((Navigation)value, diagnostics, context);
 			case WebappPackage.BEHAVIOR:
 				return validateBehavior((Behavior)value, diagnostics, context);
 			case WebappPackage.CHARSET:
@@ -732,6 +734,15 @@ public class WebappValidator extends EObjectValidator {
 	 */
 	public boolean validateInstruction(Instruction instruction, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(instruction, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateNavigation(Navigation navigation, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(navigation, diagnostics, context);
 	}
 
 	/**

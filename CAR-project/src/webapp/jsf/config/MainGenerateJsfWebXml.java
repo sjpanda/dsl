@@ -23,24 +23,14 @@ public class MainGenerateJsfWebXml {
 		if(webApp == null){
 			System.out.println("Null Web App");
 		}
-		Model model = webApp.getModel();
-		if(model == null){
-			System.err.println("Null Model");
-		}
-		EList<BusinessObject> businessObjects = model.getBusinessObject();
-		if(businessObjects == null){
-			System.err.println("Null BusinessObject");
-		}
 
-		GenerateDAO generator = GenerateDAO.create(null);
+		GenerateJsfWebXml generator = GenerateJsfWebXml.create(null);
 
 		try {
-			for(BusinessObject businessObject : businessObjects){
-				output = new FileWriter("generated_daos/DAO" + businessObject.getName() + ".java");
-				writer = new BufferedWriter(output);
-				writer.write(generator.generate(businessObject));
-				writer.close();
-			}
+			output = new FileWriter("generated_jsf/web.xml");
+			writer = new BufferedWriter(output);
+			writer.write(generator.generate(webApp.getName()));
+			writer.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

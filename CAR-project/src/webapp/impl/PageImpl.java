@@ -32,36 +32,16 @@ import webapp.WebappPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link webapp.impl.PageImpl#getName <em>Name</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getProperties <em>Properties</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getTitle <em>Title</em>}</li>
  *   <li>{@link webapp.impl.PageImpl#getInstruction <em>Instruction</em>}</li>
+ *   <li>{@link webapp.impl.PageImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class PageImpl extends MinimalEObjectImpl.Container implements Page {
-	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String name = NAME_EDEFAULT;
-
 	/**
 	 * The cached value of the '{@link #getProperties() <em>Properties</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -91,6 +71,26 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	 * @ordered
 	 */
 	protected EList<Instruction> instruction;
+
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -216,8 +216,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case WebappPackage.PAGE__NAME:
-				return getName();
 			case WebappPackage.PAGE__PROPERTIES:
 				return getProperties();
 			case WebappPackage.PAGE__TITLE:
@@ -225,6 +223,8 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return basicGetTitle();
 			case WebappPackage.PAGE__INSTRUCTION:
 				return getInstruction();
+			case WebappPackage.PAGE__NAME:
+				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -238,9 +238,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case WebappPackage.PAGE__NAME:
-				setName((String)newValue);
-				return;
 			case WebappPackage.PAGE__PROPERTIES:
 				getProperties().clear();
 				getProperties().addAll((Collection<? extends Properties>)newValue);
@@ -251,6 +248,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 			case WebappPackage.PAGE__INSTRUCTION:
 				getInstruction().clear();
 				getInstruction().addAll((Collection<? extends Instruction>)newValue);
+				return;
+			case WebappPackage.PAGE__NAME:
+				setName((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,9 +264,6 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case WebappPackage.PAGE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case WebappPackage.PAGE__PROPERTIES:
 				getProperties().clear();
 				return;
@@ -275,6 +272,9 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 				return;
 			case WebappPackage.PAGE__INSTRUCTION:
 				getInstruction().clear();
+				return;
+			case WebappPackage.PAGE__NAME:
+				setName(NAME_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -288,14 +288,14 @@ public class PageImpl extends MinimalEObjectImpl.Container implements Page {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case WebappPackage.PAGE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case WebappPackage.PAGE__PROPERTIES:
 				return properties != null && !properties.isEmpty();
 			case WebappPackage.PAGE__TITLE:
 				return title != null;
 			case WebappPackage.PAGE__INSTRUCTION:
 				return instruction != null && !instruction.isEmpty();
+			case WebappPackage.PAGE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}

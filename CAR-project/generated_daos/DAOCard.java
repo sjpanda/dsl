@@ -3,13 +3,14 @@ package de.vogella.jsf.starter.model;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.ResultSet;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.sql.DataSource;
 
-public class Card {
+public class DAOCard {
 	private final static String RESOURCE_JDBC = "java:comp/env/jdbc/jsf";
 	
 	private Connection getConnection(){
@@ -20,7 +21,9 @@ public class Card {
 			return lConnection;
 		} catch (NamingException e) {
 			return null; 
-		}
+		} catch (SQLException e) {
+			return null;
+		} 
 	}
 	
 	public String getAll(){
@@ -30,11 +33,9 @@ public class Card {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("SELECT * FROM Card");
-			lPreparedStatementCreation.executeQuery();
+					connect.prepareStatement("SELECT * FROM Card");
+			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -49,11 +50,9 @@ public class Card {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("UPDATE Card SET leftside = " + leftside + " WHERE id = " + id);
+					connect.prepareStatement("UPDATE Card SET leftside = " + leftside + " WHERE id = " + id);
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -68,11 +67,9 @@ public class Card {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("UPDATE Card SET rightside = " + rightside + " WHERE id = " + id);
+					connect.prepareStatement("UPDATE Card SET rightside = " + rightside + " WHERE id = " + id);
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -87,11 +84,9 @@ public class Card {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("UPDATE Card SET result = " + result + " WHERE id = " + id);
+					connect.prepareStatement("UPDATE Card SET result = " + result + " WHERE id = " + id);
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
@@ -105,18 +100,16 @@ public class Card {
 				return "Failed to etablish a connection to datebase jsf";
 			
 			final PreparedStatement lPreparedStatementCreation =
-					lConnection.prepareStatement("INSERT INTO Card(leftside, rightside, result) VALUES(?, ?, ?)");
+					connect.prepareStatement("INSERT INTO Card(leftside, rightside, result) VALUES(?, ?, ?)");
 			
-			lPreparedStatementCreation.setLong(1, leftside); 
+			lPreparedStatementCreation.setObject(1, leftside); 
 			
-			lPreparedStatementCreation.setLong(2, rightside); 
+			lPreparedStatementCreation.setObject(2, rightside); 
 			
-			lPreparedStatementCreation.setLong(3, result); 
+			lPreparedStatementCreation.setObject(3, result); 
 			
 			lPreparedStatementCreation.executeUpdate();
 			return null;
-		} catch (NamingException e) {
-			return "NamingException : " + e.getMessage(); 
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 

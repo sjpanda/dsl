@@ -1,4 +1,4 @@
-<%@ jet package="webapp.jsp.config" class="GenerateJsfFacesConfig" 
+<%@ jet package="webapp.jsf.config" class="GenerateJsfFacesConfig" 
 	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
 <%  WebApp app = (WebApp)argument;
 	%>
@@ -18,6 +18,19 @@ if(model.getBusinessObject() != null){
 		<managed-bean-class><%= obj.getPackage() %>.<%= obj.getName() %></managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<%}
+}
+View view = app.getView();
+if(view.getNavigation() != null) {
+	for(Navigation navig : view.getNavigation()){%>
+	<navigation-rule>
+		<display-name>pages/<%= navig.getFrom().getName() %></display-name>
+		<from-view-id>/pages/<%= navig.getFrom().getName() %>.jsp</from-view-id>
+		<navigation-case>
+			<from-outcome><%= navig.getMessage() %></from-outcome>
+			<to-view-id>/pages/<%= navig.getTo().getName() %>.jsp</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 	<%}
 }
 Controller controller = app.getController();
