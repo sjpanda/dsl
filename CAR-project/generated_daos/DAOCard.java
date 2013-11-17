@@ -33,14 +33,16 @@ public class DAOCard {
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase jsf";
-			
-			if(leftside instanceof String){
-				final PreparedStatement lPreparedStatementCreation =
+			PreparedStatement lPreparedStatementCreation = null;
+			if(((Object)leftside) instanceof String){
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM Card WHERE leftside = \"" + leftside + "\"");
 			} else {
-				final PreparedStatement lPreparedStatementCreation =
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM Card WHERE leftside = " + leftside);
 			}
+			if(lPreparedStatementCreation == null)
+				return "Cannot create a preparedStatement";
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			if(resultSet.next()){
 				return null;
@@ -73,14 +75,16 @@ public class DAOCard {
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase jsf";
-			
-			if(rightside instanceof String){
-				final PreparedStatement lPreparedStatementCreation =
+			PreparedStatement lPreparedStatementCreation = null;
+			if(((Object)rightside) instanceof String){
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM Card WHERE rightside = \"" + rightside + "\"");
 			} else {
-				final PreparedStatement lPreparedStatementCreation =
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM Card WHERE rightside = " + rightside);
 			}
+			if(lPreparedStatementCreation == null)
+				return "Cannot create a preparedStatement";
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			if(resultSet.next()){
 				return null;
@@ -113,14 +117,16 @@ public class DAOCard {
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase jsf";
-			
-			if(result instanceof String){
-				final PreparedStatement lPreparedStatementCreation =
+			PreparedStatement lPreparedStatementCreation = null;
+			if(((Object)result) instanceof String){
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM Card WHERE result = \"" + result + "\"");
 			} else {
-				final PreparedStatement lPreparedStatementCreation =
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM Card WHERE result = " + result);
 			}
+			if(lPreparedStatementCreation == null)
+				return "Cannot create a preparedStatement";
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			if(resultSet.next()){
 				return null;

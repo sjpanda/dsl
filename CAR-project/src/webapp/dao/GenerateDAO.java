@@ -23,14 +23,14 @@ public class GenerateDAO
   protected final String TEXT_6 = "(";
   protected final String TEXT_7 = " ";
   protected final String TEXT_8 = "){" + NL + "\t\tConnection connect = getConnection();" + NL + "\t\ttry{" + NL + "\t\t\tif(connect == null)" + NL + "\t\t\t\treturn \"Failed to etablish a connection to datebase ";
-  protected final String TEXT_9 = "\";" + NL + "\t\t\t" + NL + "\t\t\tif(";
-  protected final String TEXT_10 = " instanceof String){" + NL + "\t\t\t\tfinal PreparedStatement lPreparedStatementCreation =" + NL + "\t\t\t\t\tconnect.prepareStatement(\"SELECT * FROM ";
+  protected final String TEXT_9 = "\";" + NL + "\t\t\tPreparedStatement lPreparedStatementCreation = null;" + NL + "\t\t\tif(((Object)";
+  protected final String TEXT_10 = ") instanceof String){" + NL + "\t\t\t\tlPreparedStatementCreation =" + NL + "\t\t\t\t\tconnect.prepareStatement(\"SELECT * FROM ";
   protected final String TEXT_11 = " WHERE ";
   protected final String TEXT_12 = " = \\\"\" + ";
-  protected final String TEXT_13 = " + \"\\\"\");" + NL + "\t\t\t} else {" + NL + "\t\t\t\tfinal PreparedStatement lPreparedStatementCreation =" + NL + "\t\t\t\t\tconnect.prepareStatement(\"SELECT * FROM ";
+  protected final String TEXT_13 = " + \"\\\"\");" + NL + "\t\t\t} else {" + NL + "\t\t\t\tlPreparedStatementCreation =" + NL + "\t\t\t\t\tconnect.prepareStatement(\"SELECT * FROM ";
   protected final String TEXT_14 = " WHERE ";
   protected final String TEXT_15 = " = \" + ";
-  protected final String TEXT_16 = ");" + NL + "\t\t\t}" + NL + "\t\t\tResultSet resultSet = lPreparedStatementCreation.executeQuery();" + NL + "\t\t\tif(resultSet.next()){" + NL + "\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t\treturn \"Not found\";" + NL + "\t\t} catch (SQLException e) {" + NL + "\t\t\treturn \"SQLException : \" + e.getMessage();" + NL + "\t\t} " + NL + "\t}" + NL + "\t" + NL + "\tpublic String update";
+  protected final String TEXT_16 = ");" + NL + "\t\t\t}" + NL + "\t\t\tif(lPreparedStatementCreation == null)" + NL + "\t\t\t\treturn \"Cannot create a preparedStatement\";" + NL + "\t\t\tResultSet resultSet = lPreparedStatementCreation.executeQuery();" + NL + "\t\t\tif(resultSet.next()){" + NL + "\t\t\t\treturn null;" + NL + "\t\t\t}" + NL + "\t\t\treturn \"Not found\";" + NL + "\t\t} catch (SQLException e) {" + NL + "\t\t\treturn \"SQLException : \" + e.getMessage();" + NL + "\t\t} " + NL + "\t}" + NL + "\t" + NL + "\tpublic String update";
   protected final String TEXT_17 = "(int id, ";
   protected final String TEXT_18 = " ";
   protected final String TEXT_19 = "){" + NL + "\t\tConnection connect = getConnection();" + NL + "\t\ttry{" + NL + "\t\t\tif(connect == null)" + NL + "\t\t\t\treturn \"Failed to etablish a connection to datebase ";

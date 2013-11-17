@@ -41,14 +41,16 @@ public class DAO<%= obj.getName() %> {
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
-			
-			if(<%= fields.get(i).getName() %> instanceof String){
-				final PreparedStatement lPreparedStatementCreation =
+			PreparedStatement lPreparedStatementCreation = null;
+			if(((Object)<%= fields.get(i).getName() %>) instanceof String){
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM <%= obj.getName() %> WHERE <%= fields.get(i).getName() %> = \"" + <%= fields.get(i).getName() %> + "\"");
 			} else {
-				final PreparedStatement lPreparedStatementCreation =
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM <%= obj.getName() %> WHERE <%= fields.get(i).getName() %> = " + <%= fields.get(i).getName() %>);
 			}
+			if(lPreparedStatementCreation == null)
+				return "Cannot create a preparedStatement";
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			if(resultSet.next()){
 				return null;

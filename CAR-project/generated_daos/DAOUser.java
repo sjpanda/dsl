@@ -33,14 +33,16 @@ public class DAOUser {
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase jsf";
-			
-			if(name instanceof String){
-				final PreparedStatement lPreparedStatementCreation =
+			PreparedStatement lPreparedStatementCreation = null;
+			if(((Object)name) instanceof String){
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM User WHERE name = \"" + name + "\"");
 			} else {
-				final PreparedStatement lPreparedStatementCreation =
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM User WHERE name = " + name);
 			}
+			if(lPreparedStatementCreation == null)
+				return "Cannot create a preparedStatement";
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			if(resultSet.next()){
 				return null;
@@ -73,14 +75,16 @@ public class DAOUser {
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase jsf";
-			
-			if(password instanceof String){
-				final PreparedStatement lPreparedStatementCreation =
+			PreparedStatement lPreparedStatementCreation = null;
+			if(((Object)password) instanceof String){
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM User WHERE password = \"" + password + "\"");
 			} else {
-				final PreparedStatement lPreparedStatementCreation =
+				lPreparedStatementCreation =
 					connect.prepareStatement("SELECT * FROM User WHERE password = " + password);
 			}
+			if(lPreparedStatementCreation == null)
+				return "Cannot create a preparedStatement";
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
 			if(resultSet.next()){
 				return null;
