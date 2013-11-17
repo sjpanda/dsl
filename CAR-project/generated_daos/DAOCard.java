@@ -26,22 +26,30 @@ public class DAOCard {
 		} 
 	}
 	
-	public String getAll(){
+	
+	
+	public String findByleftside(int leftside){
 		Connection connect = getConnection();
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase jsf";
 			
-			final PreparedStatement lPreparedStatementCreation =
-					connect.prepareStatement("SELECT * FROM Card");
+			if(leftside instanceof String){
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM Card WHERE leftside = \"" + leftside + "\"");
+			} else {
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM Card WHERE leftside = " + leftside);
+			}
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
-			return null;
+			if(resultSet.next()){
+				return null;
+			}
+			return "Not found";
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
 	}
-	
-	
 	
 	public String updateleftside(int id, int leftside){
 		Connection connect = getConnection();
@@ -60,6 +68,29 @@ public class DAOCard {
 	
 		
 	
+	public String findByrightside(int rightside){
+		Connection connect = getConnection();
+		try{
+			if(connect == null)
+				return "Failed to etablish a connection to datebase jsf";
+			
+			if(rightside instanceof String){
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM Card WHERE rightside = \"" + rightside + "\"");
+			} else {
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM Card WHERE rightside = " + rightside);
+			}
+			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
+			if(resultSet.next()){
+				return null;
+			}
+			return "Not found";
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		} 
+	}
+	
 	public String updaterightside(int id, int rightside){
 		Connection connect = getConnection();
 		try{
@@ -76,6 +107,29 @@ public class DAOCard {
 	}
 	
 		
+	
+	public String findByresult(int result){
+		Connection connect = getConnection();
+		try{
+			if(connect == null)
+				return "Failed to etablish a connection to datebase jsf";
+			
+			if(result instanceof String){
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM Card WHERE result = \"" + result + "\"");
+			} else {
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM Card WHERE result = " + result);
+			}
+			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
+			if(resultSet.next()){
+				return null;
+			}
+			return "Not found";
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		} 
+	}
 	
 	public String updateresult(int id, int result){
 		Connection connect = getConnection();

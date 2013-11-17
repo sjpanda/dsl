@@ -29,27 +29,35 @@ public class DAO<%= obj.getName() %> {
 		} 
 	}
 	
-	public String getAll(){
-		Connection connect = getConnection();
-		try{
-			if(connect == null)
-				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
-			
-			final PreparedStatement lPreparedStatementCreation =
-					connect.prepareStatement("SELECT * FROM <%= obj.getName() %>");
-			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
-			return null;
-		} catch (SQLException e) {
-			return "SQLException : " + e.getMessage();
-		} 
-	}
-	
 	<%
 	EList<Field> fields = obj.getField();
 	String methodArgs = "";
 	String concatFields = "";
 	String queryArgs = "";
 	for(int i=0; i<fields.size(); i++){%>
+	
+	public String findBy<%= fields.get(i).getName() %>(<%= fields.get(i).getType() %> <%= fields.get(i).getName() %>){
+		Connection connect = getConnection();
+		try{
+			if(connect == null)
+				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
+			
+			if(<%= fields.get(i).getName() %> instanceof String){
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM <%= obj.getName() %> WHERE <%= fields.get(i).getName() %> = \"" + <%= fields.get(i).getName() %> + "\"");
+			} else {
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM <%= obj.getName() %> WHERE <%= fields.get(i).getName() %> = " + <%= fields.get(i).getName() %>);
+			}
+			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
+			if(resultSet.next()){
+				return null;
+			}
+			return "Not found";
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		} 
+	}
 	
 	public String update<%= fields.get(i).getName() %>(int id, <%= fields.get(i).getType() %> <%= fields.get(i).getName() %>){
 		Connection connect = getConnection();

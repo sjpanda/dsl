@@ -26,22 +26,30 @@ public class DAOUser {
 		} 
 	}
 	
-	public String getAll(){
+	
+	
+	public String findByname(String name){
 		Connection connect = getConnection();
 		try{
 			if(connect == null)
 				return "Failed to etablish a connection to datebase jsf";
 			
-			final PreparedStatement lPreparedStatementCreation =
-					connect.prepareStatement("SELECT * FROM User");
+			if(name instanceof String){
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM User WHERE name = \"" + name + "\"");
+			} else {
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM User WHERE name = " + name);
+			}
 			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
-			return null;
+			if(resultSet.next()){
+				return null;
+			}
+			return "Not found";
 		} catch (SQLException e) {
 			return "SQLException : " + e.getMessage();
 		} 
 	}
-	
-	
 	
 	public String updatename(int id, String name){
 		Connection connect = getConnection();
@@ -59,6 +67,29 @@ public class DAOUser {
 	}
 	
 		
+	
+	public String findBypassword(String password){
+		Connection connect = getConnection();
+		try{
+			if(connect == null)
+				return "Failed to etablish a connection to datebase jsf";
+			
+			if(password instanceof String){
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM User WHERE password = \"" + password + "\"");
+			} else {
+				final PreparedStatement lPreparedStatementCreation =
+					connect.prepareStatement("SELECT * FROM User WHERE password = " + password);
+			}
+			ResultSet resultSet = lPreparedStatementCreation.executeQuery();
+			if(resultSet.next()){
+				return null;
+			}
+			return "Not found";
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		} 
+	}
 	
 	public String updatepassword(int id, String password){
 		Connection connect = getConnection();
