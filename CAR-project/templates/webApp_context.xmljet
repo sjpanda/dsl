@@ -1,0 +1,23 @@
+<%@ jet package="webapp.db" class="GenerateContextXml" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<% Model model = (Model)argument; 
+	String password = "";
+	if(model.getPassword() != null)
+	{
+		password = model.getPassword();
+	}%><?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Specify a JDBC datasource -->
+    <Resource 
+    	auth="Container" 
+    	driverClassName="com.mysql.jdbc.Driver" 
+    	maxActive="100" 
+    	maxIdle="30" 
+    	maxWait="10000" 
+    	name="jdbc/<%= model.getDatabaseName() %>" 
+    	username="<%= model.getUserName() %>"
+    	password="<%= password %>" 
+    	type="javax.sql.DataSource" 
+    	url="jdbc:mysql://<%= model.getUrl() %>/<%= model.getDatabaseName() %>"/>
+    <ResourceLink name="jdbc/<%= model.getDatabaseName() %>" global="jdbc/<%= model.getDatabaseName() %>" type="javax.sql.DataSource"/>
+</Context>
