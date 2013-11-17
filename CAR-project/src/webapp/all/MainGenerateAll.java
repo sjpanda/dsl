@@ -11,6 +11,8 @@ import webapp.BusinessObject;
 import webapp.Controller;
 import webapp.Model;
 import webapp.Page;
+import webapp.Properties;
+import webapp.Resource;
 import webapp.Validator;
 import webapp.View;
 import webapp.WebApp;
@@ -22,6 +24,7 @@ import webapp.jsf.config.GenerateJsfWebXml;
 import webapp.jsf.managedBean.GenerateJsfManagedbean;
 import webapp.jsf.validator.GenerateJsfValidator;
 import webapp.jsp.GenerateJsfJspPage;
+import webapp.properties.GenerateProperties;
 import webapp.serializer.WebAppSerializer;
 
 public class MainGenerateAll {
@@ -113,6 +116,21 @@ public class MainGenerateAll {
 		
 		if(! generatePage(pages, webAppFolder)){
 			System.err.println("Generation of pages is failed");
+			return;
+		}
+		
+		Resource resource = webApp.getResource();
+		if(resource == null){
+			System.err.println("Null resource");
+		}
+		
+		EList<Properties> properties = resource.getPropertie();
+		if(properties == null){
+			System.err.println("Null Properties");
+		}
+		
+		if(! generateProperties(properties, webAppFolder)){
+			System.err.println("Generation of properties is failed");
 			return;
 		}
 		
@@ -347,6 +365,34 @@ public class MainGenerateAll {
 				writer.close();
 			}
 			System.out.println("Generation of pages is terminated");
+			return true;
+		} catch (IOException e) {
+			e.printStackTrace();
+			return false;
+		}
+	}
+	
+	private static boolean generateProperties(EList<Properties> propertiess, String webAppFolder){
+		FileWriter output;
+		BufferedWriter writer;
+
+		GenerateProperties generator = GenerateProperties.create(null);
+		
+		try {
+			for(Properties properties : propertiess){
+				String propertiesFolder = webAppFolder + "/src/" + properties.getPackage().replaceAll("\\.", "/");
+				if(! (new File(propertiesFolder)).exists()){
+					if(! (new File(propertiesFolder).mkdirs())){
+						System.err.println("Cannot create the folder " + propertiesFolder);
+						return false;
+					}
+				}
+				output = new FileWriter(propertiesFolder + "/" + properties.getName() + ".properties");
+				writer = new BufferedWriter(output);
+				writer.write(generator.generate(properties));
+				writer.close();
+			}
+			System.out.println("Generation of properties is terminated");
 			return true;
 		} catch (IOException e) {
 			e.printStackTrace();

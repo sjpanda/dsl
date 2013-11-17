@@ -1,0 +1,11 @@
+<%@ jet package="webapp.properties" class="GenerateProperties" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<%  
+Properties propertie = (Properties)argument; 
+for(Mapping mapping : propertie.getMapping()){
+%>
+<%= mapping.getLeft() %>=<%= mapping.getRight() %>
+
+<%
+	}
+%>
