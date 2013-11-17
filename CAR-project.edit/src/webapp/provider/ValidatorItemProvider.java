@@ -62,6 +62,7 @@ public class ValidatorItemProvider
 
 			addNamePropertyDescriptor(object);
 			addPackagePropertyDescriptor(object);
+			addPagePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -106,6 +107,28 @@ public class ValidatorItemProvider
 				 false,
 				 false,
 				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Page feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPagePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Validator_page_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Validator_page_feature", "_UI_Validator_type"),
+				 WebappPackage.Literals.VALIDATOR__PAGE,
+				 true,
+				 false,
+				 true,
+				 null,
 				 null,
 				 null));
 	}

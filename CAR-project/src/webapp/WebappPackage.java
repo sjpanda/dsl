@@ -272,13 +272,22 @@ public interface WebappPackage extends EPackage {
 	int WEB_CONFIG = 4;
 
 	/**
+	 * The feature id for the '<em><b>Display Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int WEB_CONFIG__DISPLAY_NAME = 0;
+
+	/**
 	 * The number of structural features of the '<em>Web Config</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int WEB_CONFIG_FEATURE_COUNT = 0;
+	int WEB_CONFIG_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Web Config</em>' class.
@@ -1135,13 +1144,22 @@ public interface WebappPackage extends EPackage {
 	int VALIDATOR__PACKAGE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Page</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALIDATOR__PAGE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Validator</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALIDATOR_FEATURE_COUNT = 2;
+	int VALIDATOR_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Validator</em>' class.
@@ -2262,6 +2280,17 @@ public interface WebappPackage extends EPackage {
 	EClass getWebConfig();
 
 	/**
+	 * Returns the meta object for the attribute '{@link webapp.WebConfig#getDisplayName <em>Display Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Display Name</em>'.
+	 * @see webapp.WebConfig#getDisplayName()
+	 * @see #getWebConfig()
+	 * @generated
+	 */
+	EAttribute getWebConfig_DisplayName();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Model <em>Model</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2903,6 +2932,17 @@ public interface WebappPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getValidator_Package();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.Validator#getPage <em>Page</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Page</em>'.
+	 * @see webapp.Validator#getPage()
+	 * @see #getValidator()
+	 * @generated
+	 */
+	EReference getValidator_Page();
 
 	/**
 	 * Returns the meta object for class '{@link webapp.Page <em>Page</em>}'.
@@ -3664,6 +3704,14 @@ public interface WebappPackage extends EPackage {
 		EClass WEB_CONFIG = eINSTANCE.getWebConfig();
 
 		/**
+		 * The meta object literal for the '<em><b>Display Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute WEB_CONFIG__DISPLAY_NAME = eINSTANCE.getWebConfig_DisplayName();
+
+		/**
 		 * The meta object literal for the '{@link webapp.impl.ModelImpl <em>Model</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -4176,6 +4224,14 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALIDATOR__PACKAGE = eINSTANCE.getValidator_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Page</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALIDATOR__PAGE = eINSTANCE.getValidator_Page();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.PageImpl <em>Page</em>}' class.

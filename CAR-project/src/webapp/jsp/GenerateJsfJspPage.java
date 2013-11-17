@@ -102,7 +102,7 @@ public class GenerateJsfJspPage
   	   	  	 		}
   	   	  	 		Validator validator = input.getValidator();
   	   	  	 		if(validator != null){
-  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getName() + "\" />\n");
+  	   	  	 			contentInputText.append("<f:validator validatorId=\"" + validator.getPackage() + "." + validator.getName() + "\" />\n");
   	   	  	 		}
   	   	  	 		if(textValue.getName().equalsIgnoreCase("password")) {
   	   	  	 			contentInputText.append("</h:inputSecret>\n");

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link webapp.Validator#getName <em>Name</em>}</li>
  *   <li>{@link webapp.Validator#getPackage <em>Package</em>}</li>
+ *   <li>{@link webapp.Validator#getPage <em>Page</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +74,31 @@ public interface Validator extends EObject {
 	 * @generated
 	 */
 	void setPackage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Page</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Page</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Page</em>' reference.
+	 * @see #setPage(Page)
+	 * @see webapp.WebappPackage#getValidator_Page()
+	 * @model
+	 * @generated
+	 */
+	Page getPage();
+
+	/**
+	 * Sets the value of the '{@link webapp.Validator#getPage <em>Page</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Page</em>' reference.
+	 * @see #getPage()
+	 * @generated
+	 */
+	void setPage(Page value);
 
 } // Validator

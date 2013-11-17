@@ -6,9 +6,11 @@ import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import webapp.Page;
 import webapp.Validator;
 import webapp.WebappPackage;
 
@@ -21,6 +23,7 @@ import webapp.WebappPackage;
  * <ul>
  *   <li>{@link webapp.impl.ValidatorImpl#getName <em>Name</em>}</li>
  *   <li>{@link webapp.impl.ValidatorImpl#getPackage <em>Package</em>}</li>
+ *   <li>{@link webapp.impl.ValidatorImpl#getPage <em>Page</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +69,16 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 	 * @ordered
 	 */
 	protected String package_ = PACKAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getPage() <em>Page</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPage()
+	 * @generated
+	 * @ordered
+	 */
+	protected Page page;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +146,44 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Page getPage() {
+		if (page != null && page.eIsProxy()) {
+			InternalEObject oldPage = (InternalEObject)page;
+			page = (Page)eResolveProxy(oldPage);
+			if (page != oldPage) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.VALIDATOR__PAGE, oldPage, page));
+			}
+		}
+		return page;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Page basicGetPage() {
+		return page;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPage(Page newPage) {
+		Page oldPage = page;
+		page = newPage;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.VALIDATOR__PAGE, oldPage, page));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +191,9 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 				return getName();
 			case WebappPackage.VALIDATOR__PACKAGE:
 				return getPackage();
+			case WebappPackage.VALIDATOR__PAGE:
+				if (resolve) return getPage();
+				return basicGetPage();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +211,9 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 				return;
 			case WebappPackage.VALIDATOR__PACKAGE:
 				setPackage((String)newValue);
+				return;
+			case WebappPackage.VALIDATOR__PAGE:
+				setPage((Page)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +233,9 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 			case WebappPackage.VALIDATOR__PACKAGE:
 				setPackage(PACKAGE_EDEFAULT);
 				return;
+			case WebappPackage.VALIDATOR__PAGE:
+				setPage((Page)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +252,8 @@ public class ValidatorImpl extends MinimalEObjectImpl.Container implements Valid
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case WebappPackage.VALIDATOR__PACKAGE:
 				return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
+			case WebappPackage.VALIDATOR__PAGE:
+				return page != null;
 		}
 		return super.eIsSet(featureID);
 	}

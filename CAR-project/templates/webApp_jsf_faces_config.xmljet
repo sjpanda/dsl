@@ -1,0 +1,32 @@
+<%@ jet package="webapp.jsp.config" class="GenerateJsfFacesConfig" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<%  WebApp app = (WebApp)argument;
+	%>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_1_2.xsd"
+    version="1.2">
+<%
+Model model = app.getModel();
+if(model.getBusinessObject() != null){
+	for(BusinessObject obj : model.getBusinessObject()){ %>
+	<managed-bean>
+		<managed-bean-name><%= obj.getName() %></managed-bean-name>
+		<managed-bean-class><%= obj.getPackage() %>.<%= obj.getName() %></managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
+	<%}
+}
+Controller controller = app.getController();
+for(Validator validator : controller.getValidator()){ %>
+	<validator>
+		<display-name><%= validator.getPackage() %>.<%= validator.getName() %></display-name>
+		<validator-id><%= validator.getPackage() %>.<%= validator.getName() %></validator-id>
+		<validator-class><%= validator.getPackage() %>.<%= validator.getName() %></validator-class>
+	</validator>
+<%}
+%>
+</faces-config>

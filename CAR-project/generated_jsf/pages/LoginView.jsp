@@ -15,7 +15,7 @@
     <h:panelGrid columns="2">
       <h:outputLabel value="#{messages.user}"></h:outputLabel>
 <h:inputText value="#{User.name}">
-<f:validator validatorId="LoginValidator" />
+<f:validator validatorId="de.vogella.jsf.starter.validator.LoginValidator" />
 </h:inputText>
 <h:outputLabel value="#{messages.password}"></h:outputLabel>
 <h:inputSecret value="#{User.password}">

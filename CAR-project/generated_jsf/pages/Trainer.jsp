@@ -14,10 +14,10 @@
   	
     <h:panelGrid columns="2">
       <h:outputLabel value="#{messages.left}"></h:outputLabel>
-<h:inputText value="#{Card.left}">
+<h:inputText value="#{Card.leftside}">
 </h:inputText>
 <h:outputLabel value="#{messages.right}"></h:outputLabel>
-<h:inputText value="#{User.right}">
+<h:inputText value="#{User.rightside}">
 </h:inputText>
 
     </h:panelGrid>
