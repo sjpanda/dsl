@@ -21,14 +21,17 @@ public class MainGenerateJsfValidator {
 		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
 		if(webApp == null){
 			System.out.println("Null Web App");
+			return;
 		}
 		Controller controller = webApp.getController();
 		if(controller == null){
 			System.err.println("Null Controller");
+			return;
 		}
 		EList<Validator> validators = controller.getValidator();
 		if(validators == null){
 			System.err.println("Null Validator");
+			return;
 		}
 
 		GenerateJsfValidator generator = GenerateJsfValidator.create(null);

@@ -17,10 +17,12 @@ public class MainGenerateContextXml {
 		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
 		if(webApp == null){
 			System.out.println("Null Web App");
+			return;
 		}
 
 		if(webApp.getModel() == null){
 			System.out.println("Null Model");
+			return;
 		}
 		
 		GenerateContextXml generator = GenerateContextXml.create(null);

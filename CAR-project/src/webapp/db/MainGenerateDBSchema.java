@@ -22,14 +22,17 @@ public class MainGenerateDBSchema {
 		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
 		if(webApp == null){
 			System.out.println("Null Web App");
+			return;
 		}
 		Model model = webApp.getModel();
 		if(model == null){
 			System.err.println("Null Model");
+			return;
 		}
 		EList<BusinessObject> businessObjects = model.getBusinessObject();
 		if(businessObjects == null){
 			System.err.println("Null BusinessObject");
+			return;
 		}
 		GenerateDBSchema generator = GenerateDBSchema.create(null);
 		

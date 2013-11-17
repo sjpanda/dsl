@@ -17,6 +17,7 @@ public class MainGenerateJsfFacesConfig {
 		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
 		if(webApp == null){
 			System.out.println("Null Web App");
+			return;
 		}
 
 		GenerateJsfFacesConfig generator = GenerateJsfFacesConfig.create(null);

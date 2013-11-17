@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Specify a JDBC datasource -->
+    <Resource 
+    	auth="Container" 
+    	driverClassName="com.mysql.jdbc.Driver" 
+    	maxActive="100" 
+    	maxIdle="30" 
+    	maxWait="10000" 
+    	name="jdbc/jsf" 
+    	username="root"
+    	password="" 
+    	type="javax.sql.DataSource" 
+    	url="jdbc:mysql://localhost:3306/jsf"/>
+    <ResourceLink name="jdbc/jsf" global="jdbc/jsf" type="javax.sql.DataSource"/>
+</Context>

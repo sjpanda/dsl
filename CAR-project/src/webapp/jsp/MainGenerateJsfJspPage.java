@@ -21,14 +21,17 @@ public class MainGenerateJsfJspPage {
 		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
 		if(webApp == null){
 			System.out.println("Null Web App");
+			return;
 		}
 		View view = webApp.getView();
 		if(view == null){
 			System.err.println("Null View");
+			return;
 		}
 		EList<Page> pages = view.getPage();
 		if(pages == null){
 			System.err.println("Null Pages");
+			return;
 		}
 
 		GenerateJsfJspPage generator = GenerateJsfJspPage.create(null);

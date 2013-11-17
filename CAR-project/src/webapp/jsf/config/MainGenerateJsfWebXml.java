@@ -22,6 +22,7 @@ public class MainGenerateJsfWebXml {
 		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
 		if(webApp == null){
 			System.out.println("Null Web App");
+			return;
 		}
 
 		GenerateJsfWebXml generator = GenerateJsfWebXml.create(null);

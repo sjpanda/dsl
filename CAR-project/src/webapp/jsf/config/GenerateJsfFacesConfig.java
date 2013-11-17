@@ -20,10 +20,10 @@ public class GenerateJsfFacesConfig
   protected final String TEXT_3 = "</managed-bean-name>" + NL + "\t\t<managed-bean-class>";
   protected final String TEXT_4 = ".";
   protected final String TEXT_5 = "</managed-bean-class>" + NL + "\t\t<managed-bean-scope>session</managed-bean-scope>" + NL + "\t</managed-bean>" + NL + "\t";
-  protected final String TEXT_6 = NL + "\t<navigation-rule>" + NL + "\t\t<display-name>pages/";
-  protected final String TEXT_7 = "</display-name>" + NL + "\t\t<from-view-id>/pages/";
+  protected final String TEXT_6 = NL + "\t<navigation-rule>" + NL + "\t\t<display-name>";
+  protected final String TEXT_7 = "</display-name>" + NL + "\t\t<from-view-id>/";
   protected final String TEXT_8 = ".jsp</from-view-id>" + NL + "\t\t<navigation-case>" + NL + "\t\t\t<from-outcome>";
-  protected final String TEXT_9 = "</from-outcome>" + NL + "\t\t\t<to-view-id>/pages/";
+  protected final String TEXT_9 = "</from-outcome>" + NL + "\t\t\t<to-view-id>/";
   protected final String TEXT_10 = ".jsp</to-view-id>" + NL + "\t\t</navigation-case>" + NL + "\t</navigation-rule>" + NL + "\t";
   protected final String TEXT_11 = NL + "\t<validator>" + NL + "\t\t<display-name>";
   protected final String TEXT_12 = ".";

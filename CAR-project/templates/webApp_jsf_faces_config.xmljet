@@ -24,11 +24,11 @@ View view = app.getView();
 if(view.getNavigation() != null) {
 	for(Navigation navig : view.getNavigation()){%>
 	<navigation-rule>
-		<display-name>pages/<%= navig.getFrom().getName() %></display-name>
-		<from-view-id>/pages/<%= navig.getFrom().getName() %>.jsp</from-view-id>
+		<display-name><%= navig.getFrom().getName() %></display-name>
+		<from-view-id>/<%= navig.getFrom().getName() %>.jsp</from-view-id>
 		<navigation-case>
 			<from-outcome><%= navig.getMessage() %></from-outcome>
-			<to-view-id>/pages/<%= navig.getTo().getName() %>.jsp</to-view-id>
+			<to-view-id>/<%= navig.getTo().getName() %>.jsp</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 	<%}
