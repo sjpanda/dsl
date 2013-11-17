@@ -1,0 +1,68 @@
+<%@ jet package="webapp.struts.actionServlet" class="GenerateStrutsServlet" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<% 
+	Input input = (Input)argument;
+	Validator validator = input.getValidator();
+	Action action = input.getAction(); 
+	BusinessObject businessObject = action.getBusinessObject();
+%>
+
+package org.lip6.struts.servletAction;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.struts.Globals;
+import org.apache.struts.action.Action;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionForward;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+import org.apache.struts.action.ActionMessages;
+import <%= businessObject.getPackage() %>.DAO<%= businessObject.getName() %>;
+import <%= validator.getPackage() %>.<%= validator.getName() %>;
+
+public class <%= action.getName() %>Action {
+
+	public ActionForward execute(final ActionMapping pMapping,
+			ActionForm pForm, final HttpServletRequest pRequest,
+			final HttpServletResponse pResponse) {
+			
+		final <%= validator.getPackage() %> pForm = (<%= validator.getPackage() %>)pForm;
+		<% 
+			EList<Field> fields = businessObject.getField();
+			for(Field field : fields){
+		%> 
+				private <%= field.getType() %> <%= field.getName() %> = lform.get<%= field.getName() %>();
+		<%
+			}
+		%>
+		<%
+			StringBuffer strFields = new StringBuffer();
+			int i = 0;
+			for(Field field : fields){
+				if(i == 0){
+					strFields.append(field.getName());
+				}
+				else{
+					strFields.append(", " + field.getName());
+				}
+				i++;
+			}
+			
+		%>
+		final DAO<%= businessObject.getName() %> lDAO<%= businessObject.getName() %> = new DAO<%= businessObject.getName() %>();
+		final String lError = lDAO<%= businessObject.getName() %>.<%=action.getName() %>(<%= strFields.toString() %>); 	
+		
+		if(lError == null) {
+			// if no exception is raised,  forward "success"
+			return pMapping.findForward("success");
+		}
+		else {
+			// If any exception, return the "error" forward
+			return pMapping.findForward("error");
+		}							
+	}
+
+	
+}

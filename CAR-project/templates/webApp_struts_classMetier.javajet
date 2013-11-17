@@ -1,0 +1,35 @@
+<%@ jet package="webapp.struts.domain" class="GenerateStrutsClassMetier" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<% BusinessObject obj = (BusinessObject)argument; %>
+package <%= obj.getPackage() %>;
+
+public class <%= obj.getName() %> {
+	<%
+	EList<Field> fields = obj.getField();
+	StringBuffer getters = new StringBuffer();
+	StringBuffer setters = new StringBuffer();
+	for(Field field : fields){ 
+		String defaultValue = field.getDefaultValue();
+		if((defaultValue != null) && (! defaultValue.equals(""))){%>
+	private <%= field.getType() %> <%= field.getName() %> = <%= defaultValue %>;
+		<%} else {%>
+	private <%= field.getType() %> <%= field.getName() %>;
+	<%
+		}
+	getters.append("\tpublic " + field.getType() + " get" + field.getName() + "(){\n"); 
+	getters.append("\t\treturn " + field.getName() + ";\n");
+	getters.append("\t}\n\n");
+	setters.append("\tpublic void set" + field.getName() + "(" + field.getType() + " " + field.getName() + "){\n");
+	setters.append("\t\tthis." + field.getName() + " = " + field.getName() + ";\n");
+	setters.append("\t}\n\n");
+	}%>
+<%= getters.toString() %>
+<%= setters.toString() %>
+<% EList<Action> actions = obj.getAction();
+	for(Action action : actions){%>
+	public <%= action.getReturnType() %> <%= action.getName() %>(){
+		// TODO: implement this method
+		throw new UnsupportedOperationException();
+	}		
+	<%}%>
+}

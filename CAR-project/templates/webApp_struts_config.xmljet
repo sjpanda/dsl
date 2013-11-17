@@ -1,0 +1,80 @@
+<%@ jet package="webapp.struts.config" class="GenerateStrutsConfig" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<%
+WebApp webApp = (WebApp) argument;  
+View view = webApp.getView();
+if(view == null){
+	return "";
+}
+EList<Page> pages = view.getPage();
+if(pages == null){
+	return "";
+}
+
+StringBuffer validators = new StringBuffer();
+StringBuffer actions = new StringBuffer();
+%>	
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.1//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+	<% 
+		for(Page page : pages){
+			boolean haveForm = false;
+			for(Instruction instr : page.getInstruction()){
+				if(instr instanceof Form){
+					EList<Tag> formTags = ((Form)instr).getTag();
+					for(Tag formTag : formTags){
+						if(formTag instanceof Input){
+							Input input = ((Input)formTag);
+							if(input.getType() == InputType.BUTTON){
+								haveForm = true;
+								Validator v = input.getValidator();
+								Action a = input.getAction();
+								if(v != null){
+									validators.append("<form-bean name=\""+v.getName()+"\" type=\""+v.getPackage()+"."+v.getName()+"\"/>\n");
+								}
+								if(v != null && a != null){
+									actions.append("<action path=\"/"+page.getName()+"\" "+
+															"type=\"org.lip6.struts.servletAction.AddContactAction\""+
+															" name=\""+v.getName()+"\" scope=\"request\"" +
+															
+															" input=\"\">\n"+
+														"\t\t\t<forward name=\"success\" path=\"/pages/success.jsp\" />\n"+
+														"\t\t\t<forward name=\"error\" path=\"/pages/error.jsp\" />\n"+
+													"\t\t</action>\n");
+								}	
+							}
+						}
+					}
+				}
+			}
+			if(!haveForm){
+				actions.append("\t\t<action path=\"/"+page.getName()+"\" forward=\"/pages/"+page.getName().toLowerCase() +".jsp\" />");
+			}
+		}
+	%>
+	<form-beans>
+		<%= validators.toString() %>
+	</form-beans>
+	<action-mappings>
+		<%= actions.toString() %>
+	</action-mappings>
+
+<!-- ========== Ressources de definitions de messages =========================== -->
+	<%
+		StringBuffer message = new StringBuffer();
+		Resource resource = webApp.getResource();
+		if(resource != null){
+			EList<Properties> properties = resource.getPropertie();
+			for(Properties propertie : properties){
+				message.append("<message-resources parameter=\""+propertie.getName()+"\" />");
+			}
+		}
+	%>
+	<%= message.toString() %>
+
+</struts-config>

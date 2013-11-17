@@ -1,0 +1,68 @@
+<%@ jet package="webapp.struts.actionForm" class="GenerateStrutsValidator" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<% 
+	Input input = (Input)argument;
+	Validator validator = input.getValidator();
+	Action action = input.getAction(); 
+	BusinessObject businessObject = action.getBusinessObject();
+%>
+
+package <%= validator.getPackage() %>;
+
+import javax.servlet.http.HttpServletRequest;
+import org.apache.struts.action.ActionErrors;
+import org.apache.struts.action.ActionForm;
+import org.apache.struts.action.ActionMapping;
+import org.apache.struts.action.ActionMessage;
+
+public class <%= validator.getName() %> {
+
+	private static final long serialVersionUID = 1L;
+	<%
+	EList<Field> fields = businessObject.getField();
+	StringBuffer getters = new StringBuffer();
+	StringBuffer setters = new StringBuffer();
+	for(Field field : fields){ 
+		String defaultValue = field.getDefaultValue();
+		if((defaultValue != null) && (! defaultValue.equals(""))){%>
+	private <%= field.getType() %> <%= field.getName() %> = <%= defaultValue %>;
+		<%} else {%>
+	private <%= field.getType() %> <%= field.getName() %>;
+	<%
+		}
+	getters.append("\tpublic " + field.getType() + " get" + field.getName() + "(){\n"); 
+	getters.append("\t\treturn " + field.getName() + ";\n");
+	getters.append("\t}\n\n");
+	setters.append("\tpublic void set" + field.getName() + "(" + field.getType() + " " + field.getName() + "){\n");
+	setters.append("\t\tthis." + field.getName() + " = " + field.getName() + ";\n");
+	setters.append("\t}\n\n");
+	}%>
+	<%= getters.toString() %>
+	<%= setters.toString() %>
+	
+	public void reset(ActionMapping mapping, HttpServletRequest request) {
+		<% 
+			StringBuffer reset = new StringBuffer();
+			for(Field field : fields){ 
+				reset.append("\t\tthis."+field.getName()+"=null;\n");
+			}
+		%>
+		<%= reset.toString() %>
+	}
+
+	public ActionErrors validate( 
+		  ActionMapping mapping, HttpServletRequest request ) {
+		  ActionErrors errors = new ActionErrors();
+		<% 
+			StringBuffer valide = new StringBuffer();
+			for(Field field : fields){ 
+				valide.append("\t\tif(get"+field.getName()+"() == null || get"+field.getName()+"().length() < 1){\n");
+				valide.append("\t\t\t errors.add(\""+field.getName()+"\",new ActionMessage(\""+field.getName()+".error.required\"));\n");
+				valide.append("\t\t}\n");
+			}
+		%>
+		<%= valide.toString() %>		  
+	  return errors;
+	}	
+	
+}

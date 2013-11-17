@@ -1,0 +1,111 @@
+<%@ jet package="webapp.struts.pages" class="GenerateStrutsJspPage" 
+    imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<%  Page page = (Page)argument;
+    %>
+<%= "<%@ page language=\"java\" contentType=\"text/html; charset=ISO-8859-1\" pageEncoding=\"ISO-8859-1\"%\\>" %>
+<%= "<%@ taglib prefix=\"html\" uri=\"http://struts.apache.org/tags-html\" %\\>" %>
+<%= "<%@ taglib prefix=\"bean\" uri=\"http://struts.apache.org/tags-bean\" %\\>" %>
+<%= "<%@ taglib prefix=\"nested\" uri=\"http://struts.apache.org/tags-nested\" %\\>" %>
+    
+<html:html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<% if (page.getTitle() != null) { %>
+    <title><bean:message key="<%= page.getTitle().getLeft() %>" /></title>
+<% } else { %>
+    <title><%= page.getName() %></title>
+<% } %>
+</head>
+<body>
+<% for(Instruction instr : page.getInstruction()){ %>
+    <% if(instr instanceof Text){ %>
+        <%= ((Text)instr).getContent() %>
+    <% } %>
+    
+    <% if(instr instanceof Form){ %>
+        <% EList<Tag> formTags = ((Form)instr).getTag();
+        StringBuffer contentInputText = new StringBuffer();
+        StringBuffer contentInputButton = new StringBuffer();
+        StringBuffer action = new StringBuffer();
+        
+        for(Tag formTag : formTags){
+            if(formTag instanceof Input){
+                Input input = ((Input)formTag);
+                if(input.getType() == InputType.TEXT){
+                    Mapping label = input.getLabel();
+                    if(label != null) {
+                        contentInputText.append("<label><bean:message key=\"" + label.getLeft() +"\" /></label>\n");
+                    }
+                    Field textValue = input.getTextValue();
+                    String property = input.getProperty();
+                    if(property != null){
+                        contentInputText.append("<html:text type=\"text\" property=\""+ property +"\"");
+                    }
+                    EList<Attribute> attrs = input.getAttribute();
+                    for(Attribute attr : attrs){
+                        contentInputText.append(" "+attr.getName() + "=\"" + attr.getValue() + "\"");
+                    }
+                    contentInputText.append("/>\n");
+                }
+                if(input.getType() == InputType.BUTTON){
+                    Mapping label = input.getButtonValue();
+                    if(label != null) {
+                        contentInputButton.append("<html:submit");
+                        EList<Attribute> attrs = input.getAttribute();
+                        for(Attribute attr : attrs){
+                            contentInputButton.append(" "+attr.getName() + "=\"" + attr.getValue() + "\"");
+                        }                  
+                        contentInputButton.append("><bean:message key=\"" + label.getLeft() +"\" /></html:submit>\n");
+                    }
+                    action.append(input.getAction().getName());
+                }
+            }
+        } %>
+        <html:form action="<%= action.toString() %>">
+            <%= contentInputText.toString() %>
+            <%= contentInputButton.toString() %>
+        </html:form>
+    <% } %>
+    
+    <%    
+        if(instr instanceof Input){
+        
+            StringBuffer contentInputText = new StringBuffer();
+            StringBuffer contentInputButton = new StringBuffer();
+            Input input = ((Input)instr);
+                if(input.getType() == InputType.TEXT){
+                    Mapping label = input.getLabel();
+                    if(label != null) {
+                        contentInputText.append("<label><bean:message key=\"" + label.getLeft() +"\" /></label>\n");
+                    }
+                    Field textValue = input.getTextValue();
+                    String property = input.getProperty();
+                    if(property != null){
+                        contentInputText.append("<html:text type=\"text\" property=\""+ property +"\"");
+                    }
+                    EList<Attribute> attrs = input.getAttribute();
+                    for(Attribute attr : attrs){
+                        contentInputText.append(" "+attr.getName() + "=\"" + attr.getValue() + "\"");
+                    }
+                    contentInputText.append("/>\n");
+                }
+                if(input.getType() == InputType.BUTTON){
+                    Mapping label = input.getButtonValue();
+                    if(label != null) {
+                        contentInputButton.append("<html:submit");
+                        EList<Attribute> attrs = input.getAttribute();
+                        for(Attribute attr : attrs){
+                            contentInputButton.append(" "+attr.getName() + "=\"" + attr.getValue() + "\"");
+                        }                  
+                        contentInputButton.append("><bean:message key=\"" + label.getLeft() +"\" /></html:submit>\n");
+                    }
+                }%>
+                <%= contentInputText.toString() %>
+                <%= contentInputButton.toString() %>
+       <% }     
+    %>
+     
+<% } %>
+
+</body>
+</html:html>
