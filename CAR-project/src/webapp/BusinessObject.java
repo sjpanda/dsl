@@ -18,6 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link webapp.BusinessObject#getName <em>Name</em>}</li>
  *   <li>{@link webapp.BusinessObject#getAction <em>Action</em>}</li>
  *   <li>{@link webapp.BusinessObject#getPackage <em>Package</em>}</li>
+ *   <li>{@link webapp.BusinessObject#getBusinessObject <em>Business Object</em>}</li>
+ *   <li>{@link webapp.BusinessObject#getModel <em>Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -109,5 +111,47 @@ public interface BusinessObject extends EObject {
 	 * @generated
 	 */
 	void setPackage(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Business Object</b></em>' reference list.
+	 * The list contents are of type {@link webapp.BusinessObject}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Business Object</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Business Object</em>' reference list.
+	 * @see webapp.WebappPackage#getBusinessObject_BusinessObject()
+	 * @model
+	 * @generated
+	 */
+	EList<BusinessObject> getBusinessObject();
+
+	/**
+	 * Returns the value of the '<em><b>Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Model</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Model</em>' reference.
+	 * @see #setModel(Model)
+	 * @see webapp.WebappPackage#getBusinessObject_Model()
+	 * @model required="true"
+	 * @generated
+	 */
+	Model getModel();
+
+	/**
+	 * Sets the value of the '{@link webapp.BusinessObject#getModel <em>Model</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Model</em>' reference.
+	 * @see #getModel()
+	 * @generated
+	 */
+	void setModel(Model value);
 
 } // BusinessObject

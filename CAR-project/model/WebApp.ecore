@@ -19,7 +19,7 @@
         eType="#//Library" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="view" lowerBound="1" eType="#//View"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="model" eType="#//Model"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//Model"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="controller" lowerBound="1"
         eType="#//Controller" containment="true"/>
@@ -302,6 +302,9 @@
         eType="#//Action"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="package" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="businessObject" upperBound="-1"
+        eType="#//BusinessObject"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="model" lowerBound="1" eType="#//Model"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Field">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

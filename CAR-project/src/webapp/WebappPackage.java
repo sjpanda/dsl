@@ -1859,13 +1859,31 @@ public interface WebappPackage extends EPackage {
 	int BUSINESS_OBJECT__PACKAGE = 3;
 
 	/**
+	 * The feature id for the '<em><b>Business Object</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_OBJECT__BUSINESS_OBJECT = 4;
+
+	/**
+	 * The feature id for the '<em><b>Model</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BUSINESS_OBJECT__MODEL = 5;
+
+	/**
 	 * The number of structural features of the '<em>Business Object</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BUSINESS_OBJECT_FEATURE_COUNT = 4;
+	int BUSINESS_OBJECT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Business Object</em>' class.
@@ -3315,6 +3333,28 @@ public interface WebappPackage extends EPackage {
 	EAttribute getBusinessObject_Package();
 
 	/**
+	 * Returns the meta object for the reference list '{@link webapp.BusinessObject#getBusinessObject <em>Business Object</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Business Object</em>'.
+	 * @see webapp.BusinessObject#getBusinessObject()
+	 * @see #getBusinessObject()
+	 * @generated
+	 */
+	EReference getBusinessObject_BusinessObject();
+
+	/**
+	 * Returns the meta object for the reference '{@link webapp.BusinessObject#getModel <em>Model</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Model</em>'.
+	 * @see webapp.BusinessObject#getModel()
+	 * @see #getBusinessObject()
+	 * @generated
+	 */
+	EReference getBusinessObject_Model();
+
+	/**
 	 * Returns the meta object for class '{@link webapp.Field <em>Field</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -4480,6 +4520,22 @@ public interface WebappPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BUSINESS_OBJECT__PACKAGE = eINSTANCE.getBusinessObject_Package();
+
+		/**
+		 * The meta object literal for the '<em><b>Business Object</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_OBJECT__BUSINESS_OBJECT = eINSTANCE.getBusinessObject_BusinessObject();
+
+		/**
+		 * The meta object literal for the '<em><b>Model</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BUSINESS_OBJECT__MODEL = eINSTANCE.getBusinessObject_Model();
 
 		/**
 		 * The meta object literal for the '{@link webapp.impl.FieldImpl <em>Field</em>}' class.

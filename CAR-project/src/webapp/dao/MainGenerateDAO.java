@@ -33,11 +33,11 @@ public class MainGenerateDAO {
 			System.err.println("Null BusinessObject");
 		}
 
-		GenerateJsfManagedbean generator = GenerateJsfManagedbean.create(null);
+		GenerateDAO generator = GenerateDAO.create(null);
 
 		try {
 			for(BusinessObject businessObject : businessObjects){
-				output = new FileWriter("generated_daos/" + businessObject.getName() + ".java");
+				output = new FileWriter("generated_daos/DAO" + businessObject.getName() + ".java");
 				writer = new BufferedWriter(output);
 				writer.write(generator.generate(businessObject));
 				writer.close();

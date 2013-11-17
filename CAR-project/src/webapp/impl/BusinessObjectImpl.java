@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import webapp.Action;
 import webapp.BusinessObject;
 import webapp.Field;
+import webapp.Model;
 import webapp.WebappPackage;
 
 /**
@@ -35,6 +36,8 @@ import webapp.WebappPackage;
  *   <li>{@link webapp.impl.BusinessObjectImpl#getName <em>Name</em>}</li>
  *   <li>{@link webapp.impl.BusinessObjectImpl#getAction <em>Action</em>}</li>
  *   <li>{@link webapp.impl.BusinessObjectImpl#getPackage <em>Package</em>}</li>
+ *   <li>{@link webapp.impl.BusinessObjectImpl#getBusinessObject <em>Business Object</em>}</li>
+ *   <li>{@link webapp.impl.BusinessObjectImpl#getModel <em>Model</em>}</li>
  * </ul>
  * </p>
  *
@@ -100,6 +103,26 @@ public class BusinessObjectImpl extends MinimalEObjectImpl.Container implements 
 	 * @ordered
 	 */
 	protected String package_ = PACKAGE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBusinessObject() <em>Business Object</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBusinessObject()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<BusinessObject> businessObject;
+
+	/**
+	 * The cached value of the '{@link #getModel() <em>Model</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getModel()
+	 * @generated
+	 * @ordered
+	 */
+	protected Model model;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,6 +214,56 @@ public class BusinessObjectImpl extends MinimalEObjectImpl.Container implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<BusinessObject> getBusinessObject() {
+		if (businessObject == null) {
+			businessObject = new EObjectResolvingEList<BusinessObject>(BusinessObject.class, this, WebappPackage.BUSINESS_OBJECT__BUSINESS_OBJECT);
+		}
+		return businessObject;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Model getModel() {
+		if (model != null && model.eIsProxy()) {
+			InternalEObject oldModel = (InternalEObject)model;
+			model = (Model)eResolveProxy(oldModel);
+			if (model != oldModel) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, WebappPackage.BUSINESS_OBJECT__MODEL, oldModel, model));
+			}
+		}
+		return model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Model basicGetModel() {
+		return model;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setModel(Model newModel) {
+		Model oldModel = model;
+		model = newModel;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, WebappPackage.BUSINESS_OBJECT__MODEL, oldModel, model));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -216,6 +289,11 @@ public class BusinessObjectImpl extends MinimalEObjectImpl.Container implements 
 				return getAction();
 			case WebappPackage.BUSINESS_OBJECT__PACKAGE:
 				return getPackage();
+			case WebappPackage.BUSINESS_OBJECT__BUSINESS_OBJECT:
+				return getBusinessObject();
+			case WebappPackage.BUSINESS_OBJECT__MODEL:
+				if (resolve) return getModel();
+				return basicGetModel();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,6 +321,13 @@ public class BusinessObjectImpl extends MinimalEObjectImpl.Container implements 
 			case WebappPackage.BUSINESS_OBJECT__PACKAGE:
 				setPackage((String)newValue);
 				return;
+			case WebappPackage.BUSINESS_OBJECT__BUSINESS_OBJECT:
+				getBusinessObject().clear();
+				getBusinessObject().addAll((Collection<? extends BusinessObject>)newValue);
+				return;
+			case WebappPackage.BUSINESS_OBJECT__MODEL:
+				setModel((Model)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,6 +352,12 @@ public class BusinessObjectImpl extends MinimalEObjectImpl.Container implements 
 			case WebappPackage.BUSINESS_OBJECT__PACKAGE:
 				setPackage(PACKAGE_EDEFAULT);
 				return;
+			case WebappPackage.BUSINESS_OBJECT__BUSINESS_OBJECT:
+				getBusinessObject().clear();
+				return;
+			case WebappPackage.BUSINESS_OBJECT__MODEL:
+				setModel((Model)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -287,6 +378,10 @@ public class BusinessObjectImpl extends MinimalEObjectImpl.Container implements 
 				return action != null && !action.isEmpty();
 			case WebappPackage.BUSINESS_OBJECT__PACKAGE:
 				return PACKAGE_EDEFAULT == null ? package_ != null : !PACKAGE_EDEFAULT.equals(package_);
+			case WebappPackage.BUSINESS_OBJECT__BUSINESS_OBJECT:
+				return businessObject != null && !businessObject.isEmpty();
+			case WebappPackage.BUSINESS_OBJECT__MODEL:
+				return model != null;
 		}
 		return super.eIsSet(featureID);
 	}

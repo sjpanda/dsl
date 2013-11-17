@@ -1827,4 +1827,32 @@
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZHaVkE7kEeOlBNMDZ0G53Q" id="(0.08943089430894309,0.4897959183673469)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZHaVkU7kEeOlBNMDZ0G53Q" id="(0.696078431372549,0.7619047619047619)"/>
   </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_qD7gQE8UEeO33ZraumBuCg" type="3002" source="_Mp0u8E6hEeOeZ7B3PHLasg" target="_Mp0u8E6hEeOeZ7B3PHLasg">
+    <children xmi:type="notation:Node" xmi:id="_qD9VcE8UEeO33ZraumBuCg" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qD9VcU8UEeO33ZraumBuCg" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_qD98gE8UEeO33ZraumBuCg" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_qD98gU8UEeO33ZraumBuCg" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_qD7gQU8UEeO33ZraumBuCg" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_qD7gQk8UEeO33ZraumBuCg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="WebApp.ecore#//BusinessObject/businessObject"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_qD7gQ08UEeO33ZraumBuCg" points="[0, -1, -36, 0]$[0, -37, -36, -36]$[11, -37, -25, -36]$[43, -37, 7, -36]$[43, -1, 7, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qEA_0E8UEeO33ZraumBuCg" id="(0.22608695652173913,0.03076923076923077)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_qEA_0U8UEeO33ZraumBuCg" id="(0.5478260869565217,0.015384615384615385)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_RSB90E8dEeO33ZraumBuCg" type="3002" source="_Mp0u8E6hEeOeZ7B3PHLasg" target="_P4bgQEgPEeOeyYdB5-9y4w">
+    <children xmi:type="notation:Node" xmi:id="_RSCk4E8dEeO33ZraumBuCg" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RSCk4U8dEeO33ZraumBuCg" x="-10" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_RSCk4k8dEeO33ZraumBuCg" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_RSCk408dEeO33ZraumBuCg" x="10" y="10"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_RSB90U8dEeO33ZraumBuCg" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_RSB90k8dEeO33ZraumBuCg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="WebApp.ecore#//BusinessObject/model"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RSB9008dEeO33ZraumBuCg" points="[-12, -4, 140, 44]$[-150, -26, 2, 22]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RSEaEE8dEeO33ZraumBuCg" id="(0.11304347826086956,0.7846153846153846)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RSEaEU8dEeO33ZraumBuCg" id="(0.863013698630137,0.7731958762886598)"/>
+  </edges>
 </notation:Diagram>

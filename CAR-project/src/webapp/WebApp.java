@@ -162,7 +162,7 @@ public interface WebApp extends EObject {
 	 * @return the value of the '<em>Model</em>' containment reference.
 	 * @see #setModel(Model)
 	 * @see webapp.WebappPackage#getWebApp_Model()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	Model getModel();

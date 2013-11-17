@@ -37,9 +37,9 @@
   </model>
   <controller>
     <validator
-        name="anActionValidator"/>
+        name="anActionValidator"
+        package="p1"/>
     <action
-        validator="//@controller/@validator.0"
         name="anAction"/>
   </controller>
 </webapp:WebApp>

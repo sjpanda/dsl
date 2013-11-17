@@ -227,6 +227,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//BusinessObject/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference WebApp.ecore#//BusinessObject/action"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//BusinessObject/package"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//BusinessObject/businessObject"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference WebApp.ecore#//BusinessObject/model"/>
     </genClasses>
     <genClasses ecoreClass="WebApp.ecore#//Field">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute WebApp.ecore#//Field/name"/>

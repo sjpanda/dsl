@@ -8,9 +8,14 @@ public class <%= obj.getName() %> {
 	EList<Field> fields = obj.getField();
 	StringBuffer getters = new StringBuffer();
 	StringBuffer setters = new StringBuffer();
-	for(Field field : fields){ %>
+	for(Field field : fields){ 
+		String defaultValue = field.getDefaultValue();
+		if((defaultValue != null) && (! defaultValue.equals(""))){%>
+	private <%= field.getType() %> <%= field.getName() %> = <%= defaultValue %>;
+		<%} else {%>
 	private <%= field.getType() %> <%= field.getName() %>;
 	<%
+		}
 	getters.append("\tpublic " + field.getType() + " get" + field.getName() + "(){\n"); 
 	getters.append("\t\treturn " + field.getName() + ";\n");
 	getters.append("\t}\n\n");

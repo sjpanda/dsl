@@ -2,18 +2,18 @@ package de.vogella.jsf.starter.model;
 
 public class Card {
 	
-	private int left;
+	private int leftside;
 	
-	private int right;
+	private int rightside;
 	
-	private int result;
-	
-	public int getleft(){
-		return left;
+	private int result = 0;
+		
+	public int getleftside(){
+		return leftside;
 	}
 
-	public int getright(){
-		return right;
+	public int getrightside(){
+		return rightside;
 	}
 
 	public int getresult(){
@@ -21,12 +21,12 @@ public class Card {
 	}
 
 
-	public void setleft(int left){
-		this.left = left;
+	public void setleftside(int leftside){
+		this.leftside = leftside;
 	}
 
-	public void setright(int right){
-		this.right = right;
+	public void setrightside(int rightside){
+		this.rightside = rightside;
 	}
 
 	public void setresult(int result){

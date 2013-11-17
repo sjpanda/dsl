@@ -70,7 +70,7 @@
           content="Failed Login"/>
     </page>
   </view>
-  <model databaseName="jee"
+  <model databaseName="jsf"
       url="localhost:3306"
       userName="root">
     <table name="users"
@@ -95,7 +95,8 @@
     <businessObject
         name="User"
         action="//@controller/@action.0"
-        package="de.vogella.jsf.starter.model">
+        package="de.vogella.jsf.starter.model"
+        model="//@model">
       <field
           name="name"
           type="String"
@@ -108,14 +109,15 @@
     <businessObject
         name="Card"
         action="//@controller/@action.1 //@controller/@action.2"
-        package="de.vogella.jsf.starter.model">
+        package="de.vogella.jsf.starter.model"
+        model="//@model">
       <field
-          name="left"
+          name="leftside"
           type="int"
           defaultValue=""
           businessObject="//@model/@businessObject.1"/>
       <field
-          name="right"
+          name="rightside"
           type="int"
           defaultValue=""
           businessObject="//@model/@businessObject.0"/>

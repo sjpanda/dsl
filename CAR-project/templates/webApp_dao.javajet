@@ -1,2 +1,102 @@
 <%@ jet package="webapp.dao" class="GenerateDAO" 
 	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+<% BusinessObject obj = (BusinessObject)argument; %>
+package <%= obj.getPackage() %>;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.ResultSet;
+
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
+
+public class <%= obj.getName() %> {
+	private final static String RESOURCE_JDBC = "java:comp/env/jdbc/<%= obj.getModel().getDatabaseName() %>";
+	
+	private Connection getConnection(){
+		try {
+			final Context lContext = new InitialContext(); 
+			final DataSource lDataSource = (DataSource)lContext.lookup(RESOURCE_JDBC);
+			final Connection lConnection = lDataSource.getConnection();
+			return lConnection;
+		} catch (NamingException e) {
+			return null; 
+		}
+	}
+	
+	public String getAll(){
+		Connection connect = getConnection();
+		try{
+			if(connect == null)
+				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
+			
+			final PreparedStatement lPreparedStatementCreation =
+					lConnection.prepareStatement("SELECT * FROM <%= obj.getName() %>");
+			ResultSet resultSet lPreparedStatementCreation.executeQuery();
+			return null;
+		} catch (NamingException e) {
+			return "NamingException : " + e.getMessage(); 
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		} 
+	}
+	
+	<%
+	EList<Field> fields = obj.getField();
+	String methodArgs = "";
+	String concatFields = "";
+	String queryArgs = "";
+	for(int i=0; i<fields.size(); i++){%>
+	
+	public String update<%= fields.get(i).getName() %>(int id, <%= fields.get(i).getType() %> <%= fields.get(i).getName() %>){
+		Connection connect = getConnection();
+		try{
+			if(connect == null)
+				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
+			
+			final PreparedStatement lPreparedStatementCreation =
+					lConnection.prepareStatement("UPDATE <%= obj.getName() %> SET <%= fields.get(i).getName() %> = " + <%= fields.get(i).getName() %> + " WHERE id = " + id);
+			lPreparedStatementCreation.executeUpdate();
+			return null;
+		} catch (NamingException e) {
+			return "NamingException : " + e.getMessage(); 
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		} 
+	}
+	
+		<%methodArgs += fields.get(i).getType() + " " + fields.get(i).getName();
+		concatFields += fields.get(i).getName();
+		queryArgs += "?";
+		if(i < (fields.size() - 1)){
+			methodArgs += ", ";
+			concatFields += ", ";
+			queryArgs += ", ";
+		}
+	}
+	%>
+	public String add<%= obj.getName() %>(<%= methodArgs %>){
+		Connection connect = getConnection();
+		try{
+			if(connect == null)
+				return "Failed to etablish a connection to datebase <%= obj.getModel().getDatabaseName() %>";
+			
+			final PreparedStatement lPreparedStatementCreation =
+					lConnection.prepareStatement("INSERT INTO <%= obj.getName() %>(<%= concatFields %>) VALUES(<%= queryArgs %>)");
+			<%
+			for(int j=0; j<fields.size(); j++){
+			%>
+			lPreparedStatementCreation.setLong(<%= j+1 %>, <%= fields.get(j).getName() %>); 
+			<%}%>
+			lPreparedStatementCreation.executeUpdate();
+			return null;
+		} catch (NamingException e) {
+			return "NamingException : " + e.getMessage(); 
+		} catch (SQLException e) {
+			return "SQLException : " + e.getMessage();
+		} 
+	}
+}
