@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="ASCII"?>
+<webapp:WebApp
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:webapp="http://webapp/1.0"
+    xsi:schemaLocation="http://webapp/1.0 ../model/WebApp.ecore"
+    name="TestStruts"
+    framework="Struts">
+  <appConfig/>
+  <webConfig
+      displayName="struts-config"/>
+  <view>
+    <page name="contactCreation"
+        isMain="true">
+      <instruction
+          xsi:type="webapp:Form"
+          method="POST">
+        <tag
+            xsi:type="webapp:Input"
+            property="id"
+            textValue="//@model/@businessObject.0/@field.0"/>
+        <tag
+            xsi:type="webapp:Input"
+            property="firstName"
+            textValue="//@model/@businessObject.0/@field.1"/>
+        <tag
+            xsi:type="webapp:Input"
+            property="lastName"
+            textValue="//@model/@businessObject.0/@field.2"/>
+        <tag
+            xsi:type="webapp:Input"
+            property="email"
+            textValue="//@model/@businessObject.0/@field.3"/>
+        <tag
+            xsi:type="webapp:Input"
+            property="save"
+            type="BUTTON"
+            action="//@controller/@action.0"
+            validator="//@controller/@validator.0"/>
+      </instruction>
+    </page>
+    <page name="Ajout contact">
+      <instruction
+          xsi:type="webapp:Text"
+          content="Contact Ajout&#xe9;"/>
+    </page>
+  </view>
+  <model databaseName="jee"
+      url="localhost:3306"
+      userName="root">
+    <table name="Contact">
+      <column
+          name="ID_CONTACT"
+          type="INTEGER"
+          defaultValue=""/>
+      <column
+          name="FIRSTNAME"
+          size="255"
+          type="VARCHAR"/>
+      <column
+          name="LASTNAME"
+          size="255"
+          type="VARCHAR"/>
+      <column
+          name="EMAIL"
+          size="255"
+          type="VARCHAR"/>
+      <constraint>
+        <primaryKey
+            column="//@model/@table.0/@column.0"/>
+      </constraint>
+    </table>
+    <businessObject
+        name="Contact"
+        package="org.lip6.struts"
+        model="//@model">
+      <field
+          name="id_contact"
+          type="int"
+          businessObject="//@model/@businessObject.0"/>
+      <field
+          name="firstName"
+          type="String"
+          defaultValue=""
+          businessObject="//@model/@businessObject.0"/>
+      <field
+          name="lastName"
+          type="String"
+          businessObject="//@model/@businessObject.0"/>
+      <field
+          name="email"
+          type="String"
+          defaultValue=""
+          businessObject="//@model/@businessObject.0"/>
+    </businessObject>
+  </model>
+  <controller>
+    <validator
+        name="addContact"
+        package="org.lip6.struts"
+        page="//@view/@page.1"/>
+    <action
+        name="addContact"
+        businessObject="//@model/@businessObject.0"
+        returnType=""/>
+  </controller>
+  <resource>
+    <propertie
+        name="Resources">
+      <mapping
+          left="label.hello"
+          right="Bonjour Struts!"/>
+      <mapping
+          left="main.page.title"
+          right="Page Principale"/>
+      <mapping
+          left="main.page.menu"
+          right="Menu Principal"/>
+      <mapping
+          left="add.contact"
+          right="Ajout d'un nouveau contact"/>
+      <mapping
+          left="title.error"
+          right="Erreur!!!"/>
+      <mapping
+          left="contact.add"
+          right="Le contact a ete correctement rajoute a la base!"/>
+      <mapping
+          left="success"
+          right="succ&#xfffd;&#xfffd;s!"/>
+      <mapping
+          left="creation.id.error.required"
+          right="L'id du Contact est obligatoire"/>
+      <mapping
+          left="creation.fn.error.required"
+          right="le nom du Contact est obligatoire"/>
+      <mapping
+          left="creation.ln.error.required"
+          right="le pr&#xfffd;&#xfffd;nom du Contact est obligatoire"/>
+      <mapping
+          left="creation.email.error.required"
+          right="l'email du Contact est obligatoire"/>
+      <mapping
+          left="main.addcontact.link"
+          right="Ajouter un nouveau Contact en utilisant l'Action Form Validation"/>
+    </propertie>
+  </resource>
+</webapp:WebApp>

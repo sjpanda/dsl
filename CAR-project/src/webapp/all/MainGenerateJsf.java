@@ -27,10 +27,10 @@ import webapp.jsp.GenerateJsfJspPage;
 import webapp.properties.GenerateProperties;
 import webapp.serializer.WebAppSerializer;
 
-public class MainGenerateAll {
+public class MainGenerateJsf {
 	public static void main(String[] args) {
 		WebAppSerializer serializer = new WebAppSerializer();
-		WebApp webApp = serializer.load(new File("instances/aJsfWebApp.xmi"));
+		WebApp webApp = serializer.load(new File(args[0]));
 		if(webApp == null){
 			System.err.println("Null Web App");
 			return;

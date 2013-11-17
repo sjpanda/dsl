@@ -28,12 +28,12 @@ public class <%= action.getName() %>Action {
 			ActionForm pForm, final HttpServletRequest pRequest,
 			final HttpServletResponse pResponse) {
 			
-		final <%= validator.getPackage() %> pForm = (<%= validator.getPackage() %>)pForm;
+		final <%= validator.getName() %>ValidationForm pForm = (<%= validator.getName() %>ValidationForm )pForm;
 		<% 
 			EList<Field> fields = businessObject.getField();
 			for(Field field : fields){
 		%> 
-				private <%= field.getType() %> <%= field.getName() %> = lform.get<%= field.getName() %>();
+		private <%= field.getType() %> <%= field.getName() %> = lform.get<%= field.getName() %>();
 		<%
 			}
 		%>

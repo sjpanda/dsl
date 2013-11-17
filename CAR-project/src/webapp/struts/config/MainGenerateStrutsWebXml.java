@@ -18,7 +18,7 @@ public class MainGenerateStrutsWebXml {
 		BufferedWriter writer;
 
 		WebAppSerializer serializer = new WebAppSerializer();
-		WebApp webApp = serializer.load(new File("instances/aStrutsWebApp.xmi"));
+		WebApp webApp = serializer.load(new File(args[0]));
 		if(webApp == null){
 			System.out.println("Null Web App");
 		}

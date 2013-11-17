@@ -35,8 +35,7 @@ public class GenerateStrutsJspPage
   protected final String TEXT_18 = NL + "    ";
   protected final String TEXT_19 = NL + "                ";
   protected final String TEXT_20 = NL + "                ";
-  protected final String TEXT_21 = NL + "     ";
-  protected final String TEXT_22 = NL + NL + "</body>" + NL + "</html:html>";
+  protected final String TEXT_21 = NL + "</body>" + NL + "</html:html>";
 
   public String generate(Object argument)
   {
@@ -103,6 +102,9 @@ public class GenerateStrutsJspPage
                         }                  
                         contentInputButton.append("><bean:message key=\"" + label.getLeft() +"\" /></html:submit>\n");
                     }
+                    else{
+                    	contentInputButton.append("<html:submit></html:submit>");
+                    }
                     action.append(input.getAction().getName());
                 }
             }
@@ -156,9 +158,8 @@ public class GenerateStrutsJspPage
     stringBuffer.append( contentInputButton.toString() );
      }     
     
-    stringBuffer.append(TEXT_21);
      } 
-    stringBuffer.append(TEXT_22);
+    stringBuffer.append(TEXT_21);
     return stringBuffer.toString();
   }
 }

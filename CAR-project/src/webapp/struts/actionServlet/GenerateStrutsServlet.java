@@ -21,9 +21,9 @@ public class GenerateStrutsServlet
   protected final String TEXT_4 = ".";
   protected final String TEXT_5 = ";" + NL + "" + NL + "public class ";
   protected final String TEXT_6 = "Action {" + NL + "" + NL + "\tpublic ActionForward execute(final ActionMapping pMapping," + NL + "\t\t\tActionForm pForm, final HttpServletRequest pRequest," + NL + "\t\t\tfinal HttpServletResponse pResponse) {" + NL + "\t\t\t" + NL + "\t\tfinal ";
-  protected final String TEXT_7 = " pForm = (";
-  protected final String TEXT_8 = ")pForm;" + NL + "\t\t";
-  protected final String TEXT_9 = " " + NL + "\t\t\t\tprivate ";
+  protected final String TEXT_7 = "ValidationForm pForm = (";
+  protected final String TEXT_8 = "ValidationForm )pForm;" + NL + "\t\t";
+  protected final String TEXT_9 = " " + NL + "\t\tprivate ";
   protected final String TEXT_10 = " ";
   protected final String TEXT_11 = " = lform.get";
   protected final String TEXT_12 = "();" + NL + "\t\t";
@@ -56,9 +56,9 @@ public class GenerateStrutsServlet
     stringBuffer.append(TEXT_5);
     stringBuffer.append( action.getName() );
     stringBuffer.append(TEXT_6);
-    stringBuffer.append( validator.getPackage() );
+    stringBuffer.append( validator.getName() );
     stringBuffer.append(TEXT_7);
-    stringBuffer.append( validator.getPackage() );
+    stringBuffer.append( validator.getName() );
     stringBuffer.append(TEXT_8);
      
 			EList<Field> fields = businessObject.getField();

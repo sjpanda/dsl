@@ -57,6 +57,9 @@
                         }                  
                         contentInputButton.append("><bean:message key=\"" + label.getLeft() +"\" /></html:submit>\n");
                     }
+                    else{
+                    	contentInputButton.append("<html:submit></html:submit>");
+                    }
                     action.append(input.getAction().getName());
                 }
             }
@@ -104,8 +107,6 @@
                 <%= contentInputButton.toString() %>
        <% }     
     %>
-     
 <% } %>
-
 </body>
 </html:html>

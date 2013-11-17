@@ -10,7 +10,6 @@ import org.eclipse.emf.common.util.EList;
 import webapp.BusinessObject;
 import webapp.Model;
 import webapp.WebApp;
-import webapp.dao.GenerateDAO;
 import webapp.jsf.managedBean.GenerateJsfManagedbean;
 import webapp.serializer.WebAppSerializer;
 
@@ -21,7 +20,7 @@ public class MainGenerateDAO {
 		BufferedWriter writer;
 
 		WebAppSerializer serializer = new WebAppSerializer();
-		WebApp webApp = serializer.load(new File("instances/aStrutsWebApp.xmi"));
+		WebApp webApp = serializer.load(new File(args[0]));
 		if(webApp == null){
 			System.out.println("Null Web App");
 		}
