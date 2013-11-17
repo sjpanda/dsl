@@ -1,0 +1,3 @@
+<%@ jet package="webapp.jsf.config" class="GenerateJsfWebXml" 
+	imports ="org.eclipse.emf.common.util.EList webapp.*;"%>
+	

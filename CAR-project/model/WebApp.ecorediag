@@ -75,6 +75,10 @@
   <children xmi:type="notation:Node" xmi:id="_YVZCUEgLEeOeyYdB5-9y4w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_YVZpYEgLEeOeyYdB5-9y4w" type="4001"/>
     <children xmi:type="notation:Node" xmi:id="_YVZpYUgLEeOeyYdB5-9y4w" type="5001">
+      <children xmi:type="notation:Node" xmi:id="_rXxQoE9qEeOVKMY9aBmatA" type="2001">
+        <element xmi:type="ecore:EAttribute" href="WebApp.ecore#//WebConfig/displayName"/>
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_rXxQoU9qEeOVKMY9aBmatA"/>
+      </children>
       <styles xmi:type="notation:DrawerStyle" xmi:id="_YVZpYkgLEeOeyYdB5-9y4w"/>
       <styles xmi:type="notation:SortingStyle" xmi:id="_YVZpY0gLEeOeyYdB5-9y4w"/>
       <styles xmi:type="notation:FilteringStyle" xmi:id="_YVZpZEgLEeOeyYdB5-9y4w"/>
@@ -86,7 +90,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_YVZCUUgLEeOeyYdB5-9y4w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="WebApp.ecore#//WebConfig"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YVZCUkgLEeOeyYdB5-9y4w" x="28" y="64"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YVZCUkgLEeOeyYdB5-9y4w" x="28" y="104"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_P4bgQEgPEeOeyYdB5-9y4w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_P4cHUEgPEeOeyYdB5-9y4w" type="4001"/>
@@ -166,7 +170,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_AxcBEUgREeOeyYdB5-9y4w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="WebApp.ecore#//Image"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AxcBEkgREeOeyYdB5-9y4w" x="216" y="52"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_AxcBEkgREeOeyYdB5-9y4w" x="192" y="108"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_UDzpoEgREeOeyYdB5-9y4w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_UD0QsEgREeOeyYdB5-9y4w" type="4001"/>
@@ -182,7 +186,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_UDzpoUgREeOeyYdB5-9y4w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="WebApp.ecore#//File"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UDzpokgREeOeyYdB5-9y4w" x="344" y="52"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_UDzpokgREeOeyYdB5-9y4w" x="308" y="108"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_bE678EgREeOeyYdB5-9y4w" type="1001">
     <children xmi:type="notation:Node" xmi:id="_bE7jAEgREeOeyYdB5-9y4w" type="4001"/>
@@ -739,7 +743,7 @@
     </children>
     <styles xmi:type="notation:ShapeStyle" xmi:id="_TecBoUzFEeO6OenXcuqsKg" fontColor="4210752" fontName="Lucida Grande" fontHeight="10" fillColor="13761016" lineColor="8421504"/>
     <element xmi:type="ecore:EClass" href="WebApp.ecore#//Validator"/>
-    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TecBokzFEeO6OenXcuqsKg" x="600" y="300"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_TecBokzFEeO6OenXcuqsKg" x="592" y="312"/>
   </children>
   <children xmi:type="notation:Node" xmi:id="_wywewE1eEeOp3sImoyx4Tw" type="1001">
     <children xmi:type="notation:Node" xmi:id="_wyxF0E1eEeOp3sImoyx4Tw" type="4001"/>
@@ -1112,7 +1116,7 @@
     <styles xmi:type="notation:FontStyle" xmi:id="_tYRpckgPEeOeyYdB5-9y4w" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
     <element xmi:type="ecore:EReference" href="WebApp.ecore#//WebApp/appConfig"/>
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_tYRpc0gPEeOeyYdB5-9y4w" points="[-22, -7, 222, 68]$[-194, -60, 50, 15]"/>
-    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tYUFsEgPEeOeyYdB5-9y4w" id="(0.1836734693877551,0.24615384615384617)"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_tYUFsEgPEeOeyYdB5-9y4w" id="(0.0,0.5076923076923077)"/>
   </edges>
   <edges xmi:type="notation:Edge" xmi:id="_w6CgAEgPEeOeyYdB5-9y4w" type="3002" source="_R6ZAsEf-EeOeyYdB5-9y4w" target="_YVZCUEgLEeOeyYdB5-9y4w">
     <children xmi:type="notation:Node" xmi:id="_w6DHEEgPEeOeyYdB5-9y4w" type="4011">
@@ -1854,5 +1858,19 @@
     <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RSB9008dEeO33ZraumBuCg" points="[-12, -4, 140, 44]$[-150, -26, 2, 22]"/>
     <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RSEaEE8dEeO33ZraumBuCg" id="(0.11304347826086956,0.7846153846153846)"/>
     <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RSEaEU8dEeO33ZraumBuCg" id="(0.863013698630137,0.7731958762886598)"/>
+  </edges>
+  <edges xmi:type="notation:Edge" xmi:id="_OeebAE9zEeOVKMY9aBmatA" type="3002" source="_TecBoEzFEeO6OenXcuqsKg" target="_wywewE1eEeOp3sImoyx4Tw">
+    <children xmi:type="notation:Node" xmi:id="_OefCEE9zEeOVKMY9aBmatA" type="4011">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_OefCEU9zEeOVKMY9aBmatA" x="-23" y="-10"/>
+    </children>
+    <children xmi:type="notation:Node" xmi:id="_OefCEk9zEeOVKMY9aBmatA" type="4012">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_OefCE09zEeOVKMY9aBmatA" x="-11" y="9"/>
+    </children>
+    <styles xmi:type="notation:ConnectorStyle" xmi:id="_OeebAU9zEeOVKMY9aBmatA" lineColor="4210752"/>
+    <styles xmi:type="notation:FontStyle" xmi:id="_OeebAk9zEeOVKMY9aBmatA" fontColor="4210752" fontName="Lucida Grande" fontHeight="10"/>
+    <element xmi:type="ecore:EReference" href="WebApp.ecore#//Validator/page"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OeebA09zEeOVKMY9aBmatA" points="[2, 0, -78, 43]$[81, -25, 1, 18]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Oeg3QE9zEeOVKMY9aBmatA" id="(0.28695652173913044,0.015384615384615385)"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Oeg3QU9zEeOVKMY9aBmatA" id="(0.08823529411764706,0.6326530612244898)"/>
   </edges>
 </notation:Diagram>

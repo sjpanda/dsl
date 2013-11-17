@@ -8,7 +8,8 @@
     name="Multiplication Calculator"
     framework="jsf">
   <appConfig/>
-  <webConfig/>
+  <webConfig
+      displayName="Multiplication Calculator"/>
   <library/>
   <view>
     <page name="LoginView"
