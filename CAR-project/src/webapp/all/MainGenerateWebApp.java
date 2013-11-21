@@ -4,6 +4,7 @@ import java.io.File;
 
 import webapp.WebApp;
 import webapp.serializer.WebAppSerializer;
+import webapp.struts.main.MainStruts;
 
 public class MainGenerateWebApp {
 	public static void main(String[] args){
@@ -15,7 +16,7 @@ public class MainGenerateWebApp {
 		}
 		String framework = webApp.getFramework();
 		if(framework.equalsIgnoreCase("struts")){
-			// todo
+			MainStruts.main(args);
 			return;
 		}
 		if(framework.equalsIgnoreCase("jsf")){
